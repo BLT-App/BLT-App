@@ -51,4 +51,7 @@
             <point key="canvasLocation" x="1399" y="33"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="nextbutton" width="225" height="225"/>
+    </resources>
 </document>
