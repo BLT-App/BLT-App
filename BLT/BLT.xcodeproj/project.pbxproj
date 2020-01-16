@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0BAB2023CFF41E00BC2A46 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0BAB1F23CFF41E00BC2A46 /* UserProfileViewController.swift */; };
 		3F3E3EA623CE9B4400B18DD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3E3EA523CE9B4400B18DD1 /* AppDelegate.swift */; };
 		3F3E3EA823CE9B4400B18DD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3E3EA723CE9B4400B18DD1 /* ViewController.swift */; };
 		3F3E3EAB23CE9B4400B18DD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3E3EA923CE9B4400B18DD1 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F0BAB1F23CFF41E00BC2A46 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		3F3E3EA223CE9B4400B18DD1 /* BLT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3E3EA523CE9B4400B18DD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F3E3EA723CE9B4400B18DD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				3F3E3EA523CE9B4400B18DD1 /* AppDelegate.swift */,
 				3F3E3EA723CE9B4400B18DD1 /* ViewController.swift */,
 				3F3E3EA923CE9B4400B18DD1 /* Main.storyboard */,
+				3F0BAB1F23CFF41E00BC2A46 /* UserProfileViewController.swift */,
 				3F3E3EAF23CE9B4A00B18DD1 /* Assets.xcassets */,
 				3F3E3EB123CE9B4A00B18DD1 /* LaunchScreen.storyboard */,
 				3F3E3EB423CE9B4A00B18DD1 /* Info.plist */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F3E3EAE23CE9B4400B18DD1 /* BLT.xcdatamodeld in Sources */,
+				3F0BAB2023CFF41E00BC2A46 /* UserProfileViewController.swift in Sources */,
 				3F3E3EA823CE9B4400B18DD1 /* ViewController.swift in Sources */,
 				3F3E3EA623CE9B4400B18DD1 /* AppDelegate.swift in Sources */,
 			);
