@@ -14,16 +14,12 @@ import Foundation
 class ToDoItem: Codable {
     /// The name of the class that the to-do is associated with.
     var className: String
-    
     /// The title of the to-do.
     var title: String
-    
     /// A description of the to-do and any resources/materials that are needed.
     var description: String
-    
     /// A due date fot the to-do.
     var dueDate: Date
-    
     /// Returns the days between now and the due date.
     var dueCounter: Int {
         let calendar = NSCalendar.current
@@ -32,21 +28,21 @@ class ToDoItem: Codable {
         let inBetween = calendar.dateComponents([.day], from: nowDay, to: dueDay).day
         return inBetween!
     }
-    
+
     /// Returns the due date as a relative time measure implemented in a string.
     var dueString: String {
-        if (dueCounter == 0) {
+        if dueCounter == 0 {
             return "Due today"
-        } else if (dueCounter < 0) {
+        } else if dueCounter < 0 {
             return "Due \(abs(dueCounter)) days ago"
         } else {
             return "Due in \(dueCounter) days"
         }
     }
-    
+
     /// Whether the to-do item is completed.
     var completed: Bool
-    
+
     /// Initializer from Decodable
     init(from: Decodable, className: String, title: String, description: String,
          dueDate: Date, completed: Bool) {
@@ -56,7 +52,7 @@ class ToDoItem: Codable {
         self.dueDate = dueDate
         self.completed = completed
     }
-    
+
     /// Initializer method
     init(className: String, title: String, description: String,
          dueDate: Date, completed: Bool) {
@@ -79,7 +75,7 @@ extension ToDoItem: Comparable {
     static func < (lhs: ToDoItem, rhs: ToDoItem) -> Bool {
         return lhs.dueCounter < rhs.dueCounter
     }
-    
+
     static func == (lhs: ToDoItem, rhs: ToDoItem) -> Bool {
         return lhs.dueCounter == rhs.dueCounter
     }

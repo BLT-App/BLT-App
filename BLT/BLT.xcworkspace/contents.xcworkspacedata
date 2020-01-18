@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/CustomIntensityVisualEffectView.swift">
+   </FileRef>
+   <FileRef
       location = "group:BLT.xcodeproj">
    </FileRef>
    <FileRef

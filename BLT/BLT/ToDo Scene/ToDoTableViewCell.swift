@@ -14,18 +14,16 @@ class ToDoTableViewCell: UITableViewCell {
     @IBOutlet weak var assignmentLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var dueLabel: UILabel!
-    
     @IBOutlet weak var itemView: UIView!
     @IBOutlet weak var blurEffectView: UIView!
-    
+    var globalData: UserData = UserData()
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
         classLabel.sizeThatFits(CGSize(width: classLabel.frame.size.width, height: 30))
         classLabel.layer.cornerRadius = 11.0
         classLabel.clipsToBounds = true
-        
         itemView.layer.cornerRadius = 20.0
         itemView.layer.shadowColor = UIColor.gray.cgColor
         itemView.layer.shadowOpacity = 0.2
@@ -33,11 +31,9 @@ class ToDoTableViewCell: UITableViewCell {
         itemView.layer.shadowRadius = 5.0
         itemView.layer.masksToBounds = false
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
     /**
@@ -62,12 +58,12 @@ class InsetLabel: UILabel {
     let bottomInset = CGFloat(3.5)
     let leftInset = CGFloat(7)
     let rightInset = CGFloat(7)
-    
+
     override func drawText(in rect: CGRect) {
         let insets: UIEdgeInsets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
         super.drawText(in: rect.inset(by: insets))
     }
-    
+
     override public var intrinsicContentSize: CGSize {
         var intrinsicSuperViewContentSize = super.intrinsicContentSize
         intrinsicSuperViewContentSize.height += topInset + bottomInset
@@ -83,7 +79,7 @@ class BlurView: UIView {
         super.awakeFromNib()
         self.layer.cornerRadius = 20.0
         self.layer.masksToBounds = true
-        
+
         let blurEffect = UIBlurEffect(style: .extraLight)
         let blurView = CustomIntensityVisualEffectView(effect: blurEffect, intensity: 0.3)
         blurView.frame = self.bounds

@@ -20,23 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        
         self.saveContext()
     }
 
@@ -52,7 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let container = NSPersistentContainer(name: "BLT")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
@@ -67,7 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             do {
                 try context.save()
             } catch {
-                
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }

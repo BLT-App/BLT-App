@@ -14,7 +14,6 @@ import RandomColorSwift
  A class that stores user data.
  */
 class UserData: Codable {
-    
     var hueCounter = 0
     var subjects: [String: Color]
     var subjectList: [String] {
@@ -24,13 +23,13 @@ class UserData: Codable {
     var firstName: String
     var lastName: String
     var includeEndFocusButton: Bool
-    
+
     /// Adds subject
     func addSubject(name: String) {
         subjects[name] = Color(uiColor: randomColor(hue: getHue(), luminosity: .dark))
         saveUserData()
     }
-    
+
     /// Saves user data to local file.
     func saveUserData() {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -39,7 +38,7 @@ class UserData: Codable {
         let encodedNote = try? propertyListEncoder.encode(self)
         try? encodedNote?.write(to: archiveURL, options: .noFileProtection)
     }
-    
+
     /// Retrieves saved user data.
     func retrieveUserData() {
         let propertyListDecoder = PropertyListDecoder()
@@ -53,7 +52,7 @@ class UserData: Codable {
             self.includeEndFocusButton = decodedUserData.includeEndFocusButton
         }
     }
-    
+
     /// Initializer
     init() {
         hueCounter = 0
@@ -63,9 +62,8 @@ class UserData: Codable {
         lastName = ""
         includeEndFocusButton = true
         retrieveUserData()
-        
     }
-    
+
     /// Updates user data. Contains the information about the list of courses.
     func updateCourses(fromList toDoList: ToDoList) {
         print("*** Updating Courses")
@@ -77,7 +75,7 @@ class UserData: Codable {
         }
         saveUserData()
     }
-    
+
     /// Gets the next hue so the colors are differentiated when generating.
     func getHue() -> Hue {
         var hues: [Hue] = [.red, .orange, .green, .blue, .purple, .pink]
@@ -87,14 +85,14 @@ class UserData: Codable {
 }
 
 ///  Codable Color struct to enable saving courses.
-struct Color : Codable {
-    var red : CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
-    
-    var uiColor : UIColor {
+struct Color: Codable {
+    var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
+
+    var uiColor: UIColor {
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
-    
-    init(uiColor : UIColor) {
+
+    init(uiColor: UIColor) {
         uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
     }
 }

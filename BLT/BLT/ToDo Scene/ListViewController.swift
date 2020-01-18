@@ -16,29 +16,23 @@ class ListViewController: UIViewController {
     @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var assignmentsLeftLabel: UILabel!
-    
     var deleteListIndexPath: IndexPath? = nil
-    
     var selectedIndex: Int = -1
-    
     var waves: WaterView = WaterView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-    
-    
+    var myToDoList: ToDoList = ToDoList()
+    var globalData: UserData = UserData()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
-        
         createWave()
-        
         // Programmatically sets up rounded views.
         roundContainerView(cornerRadius: 40, view: tableContainerView, shadowView: shadowView)
-        addShadow(view: shadowView, color: UIColor.gray.cgColor, opacity: 0.2, radius: 10, offset: CGSize(width: 0, height: 5))
+        addShadow(view: shadowView, color: UIColor.gray.cgColor, opacity: 0.2, radius: 10,
+                  offset: CGSize(width: 0, height: 5))
         addShadow(view: addButton, color: UIColor.blue.cgColor, opacity: 0.1, radius: 5, offset: .zero)
-        
         // Loads list from filesystem
         myToDoList.retrieveList()
-        
         // This creates an example list if there is nothing on the list. Debug only.
         if myToDoList.list.count == 0 {
             myToDoList.createExampleList()
@@ -46,15 +40,15 @@ class ListViewController: UIViewController {
         
         globalData.updateCourses(fromList: myToDoList)
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        if (myToDoList.list.count > tableView.numberOfRows(inSection: 0)) {
+
+        if myToDoList.list.count > tableView.numberOfRows(inSection: 0) {
             insertNewTask()
         }
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         update()
@@ -67,7 +61,7 @@ class ListViewController: UIViewController {
         updateText()
         tableView.reloadData()
     }
-    
+
     func updateText() {
         let pluralSingularAssignment = (myToDoList.list.count == 1) ? "assignment" : "assignments"
         assignmentsLeftLabel.text = "\(myToDoList.list.count) \(pluralSingularAssignment) left."
@@ -89,7 +83,7 @@ class ListViewController: UIViewController {
         view.layer.shadowRadius = radius
         view.layer.masksToBounds = false
     }
-    
+
     /// Sets up wave view in the background.
     func createWave() {
         waves = WaterView(frame: waterView.frame)
@@ -97,7 +91,6 @@ class ListViewController: UIViewController {
         waves.amplitude = self.view.frame.height / 40.0
         waterView.addSubview(waves)
     }
-    
     /**
      Creates a rounded container view.
      - parameters:
@@ -106,16 +99,17 @@ class ListViewController: UIViewController {
      - shadowView: The accompanying shadowView of the main view to round.
      */
     func roundContainerView(cornerRadius: Double, view: UIView, shadowView: UIView) {
-        let path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+        let path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: [.bottomLeft, .bottomRight],
+                                cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
         let maskLayer = CAShapeLayer()
         maskLayer.frame = view.bounds
         maskLayer.path = path.cgPath
         view.layer.mask = maskLayer
-        
+
         shadowView.layer.cornerRadius = CGFloat(cornerRadius)
         shadowView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     }
-    
+
     /// Updates and animates the insertion of a new task.
     func insertNewTask() {
         let indexPath = IndexPath(row: 0, section: 0)
@@ -123,7 +117,7 @@ class ListViewController: UIViewController {
         tableView.insertRows(at: [indexPath], with: .right)
         tableView.endUpdates()
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "itemViewSegue" {
             if let destination = segue.destination as? ItemViewController {
@@ -134,7 +128,7 @@ class ListViewController: UIViewController {
             }
         }
     }
-    
+
     /*
      // MARK: - Navigation
      
@@ -144,53 +138,54 @@ class ListViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    
+
 }
 
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myToDoList.list.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let toDoItem = myToDoList.list[indexPath.row]
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! ToDoTableViewCell
-        
+
         cell.setItem(item: toDoItem)
-        
+
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             deleteListIndexPath = indexPath
             let itemToDelete = myToDoList.list[indexPath.row]
             confirmDelete(itemToDelete)
         }
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
         performSegue(withIdentifier: "itemViewSegue", sender: self)
     }
-    
+
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let movedItem = myToDoList.list[sourceIndexPath.row]
         myToDoList.list.remove(at: sourceIndexPath.row)
         myToDoList.list.insert(movedItem, at: destinationIndexPath.row)
     }
-    
-    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+    func tableView(_ tableView: UITableView,
+                   leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let configuration = UISwipeActionsConfiguration(actions: [contextualCompletedAction(forRowAtIndexPath: indexPath)])
         return configuration
     }
-    
+
     func contextualCompletedAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "Complete") { (contextAction: UIContextualAction, sourceView: UIView, completionHandler: (Bool) -> Void) in
-            myToDoList.list.remove(at: indexPath.row)
-            myToDoList.storeList()
+            self.myToDoList.list.remove(at: indexPath.row)
+            self.myToDoList.storeList()
             self.tableView.beginUpdates()
             self.tableView.deleteRows(at: [indexPath], with: .top)
             self.tableView.endUpdates()
@@ -200,23 +195,24 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         action.backgroundColor = .blue
         return action
     }
-    
+
     /**
      Prompts a confirmation for a deletion of a ToDoItem.
      - parameters:
      - itemToDelete: The ToDoItem that is going to be deleted.
      */
     func confirmDelete(_ itemToDelete: ToDoItem) {
-        let alert = UIAlertController(title: "Delete To-Do Item", message: "Are you sure you want to delete the item \(itemToDelete.title)?", preferredStyle: .actionSheet)
-        let DeleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: handleDeleteItem)
-        let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: cancelDeleteItem)
-        
-        alert.addAction(DeleteAction)
-        alert.addAction(CancelAction)
-        
+        let confirmationMessage = "Are you sure you want to delete the item \(itemToDelete.title)?"
+        let alert = UIAlertController(title: "Delete To-Do Item", message: confirmationMessage, preferredStyle: .actionSheet)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: handleDeleteItem)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: cancelDeleteItem)
+
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+
         self.present(alert, animated: true, completion: nil)
     }
-    
+
     /**
      Handles the deletion of an item.
      */
@@ -227,12 +223,11 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .left)
             tableView.endUpdates()
-            
             deleteListIndexPath = nil
             updateText()
         }
     }
-    
+
     /**
      Cancels the deletion of an item.
      */

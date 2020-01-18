@@ -14,7 +14,7 @@ import Foundation
 class ToDoList: Codable {
     /// The list of to-do items.
     var list: [ToDoItem]
-    
+
     /// The list of uncompleted to-do items.
     var uncompletedList: [ToDoItem] {
         var uncompleted: [ToDoItem] = []
@@ -27,10 +27,10 @@ class ToDoList: Codable {
     }
     
     /// Initializer from decodable.
-    init(from:Decodable) {
+    init(from: Decodable) {
         self.list = []
     }
-    
+
     /// Initializer.
     init() {
         self.list = []
@@ -46,17 +46,17 @@ class ToDoList: Codable {
         self.list.append(ToDoItem(className: "Econ", title: "Read Unit 7", description: "Read Unit 7 and respond to prompt online", dueDate: Date(), completed: false))
         self.list.append(ToDoItem(className: "Philosophy", title: "Paine", description: "Read Paine's Common Sense from Philosophy reader", dueDate: Date(), completed: false))
     }
-    
+
     /// Stores the ToDoList into local storage.
     func storeList() {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let archiveURL = documentsDirectory.appendingPathComponent("todolist").appendingPathExtension("plist")
         let propertyListEncoder = PropertyListEncoder()
-        
+
         let encodedNote = try? propertyListEncoder.encode(self)
         try? encodedNote?.write(to: archiveURL, options: .noFileProtection)
     }
-    
+
     /// Retrieves the ToDoList from local storage.
     func retrieveList() {
         let propertyListDecoder = PropertyListDecoder()
