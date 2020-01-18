@@ -39,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		157F7E1CCFC05E8D1F7C22F2 /* Pods_BLT_BLTUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BLT_BLTUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2473F3193027FB829289C964 /* Pods-BLTTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLTTests.release.xcconfig"; path = "Target Support Files/Pods-BLTTests/Pods-BLTTests.release.xcconfig"; sourceTree = "<group>"; };
+		3C8D741DE88450E9A1B4C060 /* Pods-BLT-BLTUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLT-BLTUITests.release.xcconfig"; path = "Target Support Files/Pods-BLT-BLTUITests/Pods-BLT-BLTUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3F3E3EA223CE9B4400B18DD1 /* BLT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3E3EA523CE9B4400B18DD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F3E3EA723CE9B4400B18DD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +57,10 @@
 		3F3E3ECA23CE9B4A00B18DD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47AD217EF7128423F27F7C94 /* Pods_BLTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BLTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74C35F07CE8A637EE9C5C0B4 /* Pods_BLT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BLT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		821BCECD98D0D703BF40DA1D /* Pods-BLT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLT.release.xcconfig"; path = "Target Support Files/Pods-BLT/Pods-BLT.release.xcconfig"; sourceTree = "<group>"; };
+		A117F0CC0020E2688FB6B3C7 /* Pods-BLTTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLTTests.debug.xcconfig"; path = "Target Support Files/Pods-BLTTests/Pods-BLTTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A20C1EC0462A8E2144635BA5 /* Pods-BLT-BLTUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLT-BLTUITests.debug.xcconfig"; path = "Target Support Files/Pods-BLT-BLTUITests/Pods-BLT-BLTUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CAFDACA7D2A24CB41CE4C006 /* Pods-BLT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLT.debug.xcconfig"; path = "Target Support Files/Pods-BLT/Pods-BLT.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,7 @@
 				3F3E3EC723CE9B4A00B18DD1 /* BLTUITests */,
 				3F3E3EA323CE9B4400B18DD1 /* Products */,
 				E493962206D8E0BB0F65DAB1 /* Frameworks */,
+				9DF92988E86FE91CD61B37B3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +143,20 @@
 				3F3E3ECA23CE9B4A00B18DD1 /* Info.plist */,
 			);
 			path = BLTUITests;
+			sourceTree = "<group>";
+		};
+		9DF92988E86FE91CD61B37B3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CAFDACA7D2A24CB41CE4C006 /* Pods-BLT.debug.xcconfig */,
+				821BCECD98D0D703BF40DA1D /* Pods-BLT.release.xcconfig */,
+				A20C1EC0462A8E2144635BA5 /* Pods-BLT-BLTUITests.debug.xcconfig */,
+				3C8D741DE88450E9A1B4C060 /* Pods-BLT-BLTUITests.release.xcconfig */,
+				A117F0CC0020E2688FB6B3C7 /* Pods-BLTTests.debug.xcconfig */,
+				2473F3193027FB829289C964 /* Pods-BLTTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		E493962206D8E0BB0F65DAB1 /* Frameworks */ = {
@@ -544,6 +565,7 @@
 		};
 		3F3E3ECE23CE9B4A00B18DD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAFDACA7D2A24CB41CE4C006 /* Pods-BLT.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -561,6 +583,7 @@
 		};
 		3F3E3ECF23CE9B4A00B18DD1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 821BCECD98D0D703BF40DA1D /* Pods-BLT.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -578,6 +601,7 @@
 		};
 		3F3E3ED123CE9B4A00B18DD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A117F0CC0020E2688FB6B3C7 /* Pods-BLTTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -598,6 +622,7 @@
 		};
 		3F3E3ED223CE9B4A00B18DD1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2473F3193027FB829289C964 /* Pods-BLTTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -618,6 +643,7 @@
 		};
 		3F3E3ED423CE9B4A00B18DD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A20C1EC0462A8E2144635BA5 /* Pods-BLT-BLTUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -637,6 +663,7 @@
 		};
 		3F3E3ED523CE9B4A00B18DD1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C8D741DE88450E9A1B4C060 /* Pods-BLT-BLTUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
