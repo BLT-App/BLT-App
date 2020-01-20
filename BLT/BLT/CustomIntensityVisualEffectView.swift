@@ -25,7 +25,7 @@ class CustomIntensityVisualEffectView: UIVisualEffectView {
     required init?(coder aDecoder: NSCoder) {
         fatalError()
     }
-    
+
     // MARK: Private
     private var animator: UIViewPropertyAnimator!
 

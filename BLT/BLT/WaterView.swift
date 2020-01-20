@@ -30,13 +30,13 @@ class WaterView: UIView, RenderTimerDelegate {
     }
     //Wavelength of Wave in Pixels
     var waveLength: CGFloat = -1
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         self.backgroundColor = UIColor.groupTableViewBackground
         self.waveLength = self.frame.width / CGFloat(Double.pi * 2)
-        
+
         renderTimer = RenderTimer()
         renderTimer.delegate = self
         renderTimer.runTimer(interval: 0.07)

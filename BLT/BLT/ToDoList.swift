@@ -25,7 +25,7 @@ class ToDoList: Codable {
         }
         return uncompleted
     }
-    
+
     /// Initializer from decodable.
     init(from: Decodable) {
         self.list = []
@@ -35,7 +35,7 @@ class ToDoList: Codable {
     init() {
         self.list = []
     }
-    
+
     /// Adds example tasks to the to do list, for example funcionality.
     func createExampleList() {
         self.list.append(ToDoItem(className: "Math", title: "Complete Calculus Homework", description: "Discover Calculus pg. 103 - 120", dueDate: Date(), completed: false))
@@ -66,7 +66,7 @@ class ToDoList: Codable {
             self.list = decodedToDoList.list
         }
     }
-    
+
     /// Sorts the ToDoList.
     func sortList() {
         list = list.sorted()

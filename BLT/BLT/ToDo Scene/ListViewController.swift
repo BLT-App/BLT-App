@@ -16,7 +16,7 @@ class ListViewController: UIViewController {
     @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var assignmentsLeftLabel: UILabel!
-    var deleteListIndexPath: IndexPath? = nil
+    var deleteListIndexPath: IndexPath?
     var selectedIndex: Int = -1
     var waves: WaterView = WaterView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
     var myToDoList: ToDoList = ToDoList()
@@ -37,7 +37,7 @@ class ListViewController: UIViewController {
         if myToDoList.list.count == 0 {
             myToDoList.createExampleList()
         }
-        
+
         globalData.updateCourses(fromList: myToDoList)
     }
 
@@ -53,7 +53,7 @@ class ListViewController: UIViewController {
         super.viewWillAppear(animated)
         update()
     }
-    
+
     func update() {
         if globalData.wantsListByDate {
             myToDoList.list = myToDoList.list.sorted()
@@ -66,7 +66,7 @@ class ListViewController: UIViewController {
         let pluralSingularAssignment = (myToDoList.list.count == 1) ? "assignment" : "assignments"
         assignmentsLeftLabel.text = "\(myToDoList.list.count) \(pluralSingularAssignment) left."
     }
-    
+
     /**
      Creates shadows for a view.
      - parameters:
@@ -149,7 +149,10 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let toDoItem = myToDoList.list[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! ToDoTableViewCell
+        var cell: ToDoTableViewCell = ToDoTableViewCell(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        if let tempcell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as? ToDoTableViewCell {
+            cell = tempcell
+        }
 
         cell.setItem(item: toDoItem)
 
@@ -183,7 +186,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func contextualCompletedAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .normal, title: "Complete") { (contextAction: UIContextualAction, sourceView: UIView, completionHandler: (Bool) -> Void) in
+        let action = UIContextualAction(style: .normal, title: "Complete") { (_: UIContextualAction, _: UIView, completionHandler: (Bool) -> Void) in
             self.myToDoList.list.remove(at: indexPath.row)
             self.myToDoList.storeList()
             self.tableView.beginUpdates()

@@ -9,7 +9,7 @@
 import Foundation
 class RenderTimer {
     var myTimer: Timer
-    
+
     weak var delegate: RenderTimerDelegate?
 
     init() {

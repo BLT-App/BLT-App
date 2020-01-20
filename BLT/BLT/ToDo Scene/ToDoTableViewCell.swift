@@ -9,7 +9,7 @@
 import UIKit
 
 class ToDoTableViewCell: UITableViewCell {
-    
+
     @IBOutlet weak var classLabel: UILabel!
     @IBOutlet weak var assignmentLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
@@ -35,7 +35,7 @@ class ToDoTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
+
     /**
      Configures the ToDoTableViewCell to a specific ToDoItem.
      - parameters:
