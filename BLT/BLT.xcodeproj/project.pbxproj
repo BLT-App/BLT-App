@@ -218,6 +218,7 @@
 				3FE3EA5C237718D3002B5303 /* Frameworks */,
 				3FE3EA5D237718D3002B5303 /* Resources */,
 				354EBF9DA5F077581F3AFCE4 /* [CP] Embed Pods Frameworks */,
+				3FE4948C23D92DDE0011C2ED /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -353,6 +354,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BLT/Pods-BLT-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		3FE4948C23D92DDE0011C2ED /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
 		B55A7FF7D0B4A4643EDB57F9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
