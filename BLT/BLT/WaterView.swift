@@ -88,7 +88,9 @@ class WaterView: UIView, RenderTimerDelegate {
             path1.addLine(to: CGPoint(x: 0.0, y: self.frame.height))
             path1.close()
             
-            UIColor(hue: CGFloat(202.0 / 360.0) + (0.001 * CGFloat(waveNum)), saturation: ((35.0 / CGFloat(numberOfWaves)) * CGFloat(waveNum) + 40.0) / 100.0, brightness: 0.8, alpha: (0.85 / (CGFloat(numberOfWaves) + 1)) * (CGFloat(waveNum) + 1.0)).setFill()
+            let saturationAmt: CGFloat = ((35.0 / CGFloat(numberOfWaves)) * CGFloat(waveNum) + 40.0) / 100.0
+            let alphaAmt: CGFloat = (0.85 / (CGFloat(numberOfWaves) + 1)) * (CGFloat(waveNum) + 1.0)
+            UIColor(hue: CGFloat(202.0 / 360.0) + (0.001 * CGFloat(waveNum)), saturation: saturationAmt, brightness: 0.8, alpha: alphaAmt).setFill()
             
             path1.lineWidth = 0.5 / ( (CGFloat(numberOfWaves) - CGFloat(waveNum)) / CGFloat(numberOfWaves) * 2.0 + 1.0)
             
