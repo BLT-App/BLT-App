@@ -56,10 +56,10 @@ class FocusTimer {
     ///Updates the values for minutes and seconds
     @objc func updateVals() {
         if secs != 0 {
-            secs = secs - 1
+            secs -= 1
         } else {
             if mins != 0 {
-                mins = mins - 1
+                mins -= 1
                 secs = 59
             }
             if mins == 0 && secs == 0 {

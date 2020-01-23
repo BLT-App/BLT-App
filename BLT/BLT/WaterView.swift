@@ -57,9 +57,9 @@ class WaterView: UIView, RenderTimerDelegate {
     
     //Called from RenderTimer Class on Interval
     func render() {
-        currentWaveStart = currentWaveStart + 0.03
+        currentWaveStart += 0.03
         if currentWaveStart > 4 * CGFloat(Double.pi) {
-            currentWaveStart = currentWaveStart - (CGFloat(Double.pi)  * ((currentWaveStart / CGFloat(Double.pi)) - 2))
+            currentWaveStart -= CGFloat(Double.pi)  * ((currentWaveStart / CGFloat(Double.pi)) - 2)
         }
         self.setNeedsDisplay()
     }
@@ -103,8 +103,8 @@ class WaterView: UIView, RenderTimerDelegate {
             //Adds Separation Decay
             //yHeight = yHeight + waveVerticalSeparation * ((1.0 / CGFloat(numberOfWaves)) * (CGFloat(numberOfWaves) / (CGFloat(numberOfWaves - waveNum) + 1.0)))
             //Without Separation Decay
-            yHeight = yHeight + waveVerticalSeparation
-            xMod = xMod + 20
+            yHeight += waveVerticalSeparation
+            xMod += 20
         }
         
         for path2 in paths {

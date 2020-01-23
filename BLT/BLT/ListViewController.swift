@@ -158,8 +158,10 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let toDoItem = myToDoList.list[indexPath.row]
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! ToDoTableViewCell
+        var cell: ToDoTableViewCell = ToDoTableViewCell(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        if let tempcell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as? ToDoTableViewCell {
+            cell = tempcell
+        }
         
         cell.setItem(item: toDoItem)
         
@@ -211,11 +213,11 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
      */
     func confirmDelete(_ itemToDelete: ToDoItem) {
         let alert = UIAlertController(title: "Delete To-Do Item", message: "Are you sure you want to delete the item \(itemToDelete.title)?", preferredStyle: .actionSheet)
-        let DeleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: handleDeleteItem)
-        let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: cancelDeleteItem)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: handleDeleteItem)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: cancelDeleteItem)
         
-        alert.addAction(DeleteAction)
-        alert.addAction(CancelAction)
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
         
         self.present(alert, animated: true, completion: nil)
     }
