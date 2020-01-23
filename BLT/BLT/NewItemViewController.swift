@@ -9,7 +9,7 @@
 import UIKit
 import DropDown
 
-class NewItemViewController: UIViewController, UITextFieldDelegate  {
+class NewItemViewController: UIViewController, UITextFieldDelegate {
 
     /// textfield with drop down add on
     @IBOutlet weak var classText: UITextField!
@@ -66,7 +66,7 @@ class NewItemViewController: UIViewController, UITextFieldDelegate  {
             self.classText.text = item
             self.updateClassText()
         }
-        dropDown.bottomOffset = CGPoint(x: 0, y:(dropDown.anchorView?.plainView.bounds.height)!)
+        dropDown.bottomOffset = CGPoint(x: 0, y: (dropDown.anchorView?.plainView.bounds.height)!)
 
         DropDown.appearance().textColor = .white
         DropDown.appearance().backgroundColor = UIColor.white
@@ -87,8 +87,7 @@ class NewItemViewController: UIViewController, UITextFieldDelegate  {
             if (titleTxt == "clear_entire_list") {
                 myToDoList.list = []
                 myToDoList.storeList()
-            }
-            else if (classText.text != "" && titleTxt != "" && descTxt != "") {
+            } else if (classText.text != "" && titleTxt != "" && descTxt != "") {
                 let newToDo = ToDoItem(className: classTxt, title: titleTxt, description: descTxt, dueDate: datePicker.date, completed: false)
                 myToDoList.list.insert(newToDo, at: 0)
                 myToDoList.storeList()

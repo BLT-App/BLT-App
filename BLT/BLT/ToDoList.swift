@@ -27,7 +27,7 @@ class ToDoList: Codable {
     }
     
     /// Initializer from decodable.
-    init(from:Decodable) {
+    init(from: Decodable) {
         self.list = []
     }
     

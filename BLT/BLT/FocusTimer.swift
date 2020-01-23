@@ -33,7 +33,7 @@ class FocusTimer {
     }
     
     ///Sets the string representation
-    func stringMe(){
+    func stringMe() {
         if mins > 0 {
             if secs > 9 {
                 description = "\(mins):\(secs)"
@@ -73,7 +73,7 @@ class FocusTimer {
     }
 }
 
-protocol FocusTimerDelegate : class {
+protocol FocusTimerDelegate: class {
     ///Passes the readout for the timer for display on the screen
     func valsUpdated(_ timerReadout: String)
     ///Runs when the timer has ended

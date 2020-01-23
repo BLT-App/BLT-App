@@ -21,12 +21,11 @@ class ListViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var assignmentsLeftLabel: UILabel!
     
-    var deleteListIndexPath: IndexPath? = nil
+    var deleteListIndexPath: IndexPath?
     
     var selectedIndex: Int = -1
     
     var waves: WaterView = WaterView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -192,7 +191,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func contextualCompletedAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .normal, title: "Complete") { (contextAction: UIContextualAction, sourceView: UIView, completionHandler: (Bool) -> Void) in
+        let action = UIContextualAction(style: .normal, title: "Complete") { (_: UIContextualAction, _: UIView, completionHandler: (Bool) -> Void) in
             myToDoList.list.remove(at: indexPath.row)
             myToDoList.storeList()
             self.tableView.beginUpdates()

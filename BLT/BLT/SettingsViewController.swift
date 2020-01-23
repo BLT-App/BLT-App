@@ -13,8 +13,6 @@ class SettingsViewController: UIViewController, SettingsTableViewControllerDeleg
     @IBOutlet weak var btnProfile: UIButton!
     @IBOutlet weak var btnList: UIButton!
     
-    
-    
     var settingsTable: SettingsTableViewController?
     var currentMenu: String = "profile"
     

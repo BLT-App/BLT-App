@@ -12,11 +12,11 @@ import UIKit
 class FocusViewController: UIViewController, FocusTimerDelegate {
 
     /// The ToDoItem of the current task.
-    var currentTask : ToDoItem = ToDoItem(className: "", title: "", description: "", dueDate: Date(), completed: true)
+    var currentTask: ToDoItem = ToDoItem(className: "", title: "", description: "", dueDate: Date(), completed: true)
     /// Current index of the task displayed
-    var currentTaskNum : Int = 0
+    var currentTaskNum: Int = 0
     /// Timer that handles the countdown
-    var myTimer : FocusTimer = FocusTimer(1,00)
+    var myTimer: FocusTimer = FocusTimer(1, 00)
 
     @IBOutlet weak var lblCurrentTask: UILabel!
     
@@ -36,7 +36,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate {
         super.viewDidLoad()
         setupButtons()
         
-        myTimer = FocusTimer(1,00)
+        myTimer = FocusTimer(1, 00)
         myTimer.delegate = self
         
         setupClassLabel()
@@ -79,8 +79,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate {
         if (!globalData.includeEndFocusButton && myToDoList.list.count > 0) {
             endFocusModeButton.isEnabled = false
             endFocusModeButton.isHidden = true
-        }
-        else {
+        } else {
             endFocusModeButton.isEnabled = true
             endFocusModeButton.isHidden = false
         }
@@ -133,14 +132,13 @@ class FocusViewController: UIViewController, FocusTimerDelegate {
         })
     }
     
-    
     /// Sets the current task to the first task in the to-do list.
     func setCurrentTask() {
-        var notFoundNextItem : Bool = true
+        var notFoundNextItem: Bool = true
         if(myToDoList.list.count > 0) {
             for itemNum in 0 ..< myToDoList.list.count {
                 if (notFoundNextItem) {
-                    if !(myToDoList.list[itemNum].completed){
+                    if !(myToDoList.list[itemNum].completed) {
                         currentTaskNum = itemNum
                         notFoundNextItem = false
                     }
@@ -166,8 +164,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate {
                 endFocusModeButton.isEnabled = true
                 endFocusModeButton.isHidden = false
             }
-        }
-        else {
+        } else {
             lblCurrentTask.text = "No Items In Todo List"
             lblCurrentTaskDesc.isHidden = true
             classLabel.isHidden = true
@@ -189,8 +186,6 @@ class FocusViewController: UIViewController, FocusTimerDelegate {
         
             endFocusModeButton.isEnabled = true
             endFocusModeButton.isHidden = false
-        
-        
 
     }
     

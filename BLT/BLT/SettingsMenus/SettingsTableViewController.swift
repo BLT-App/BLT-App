@@ -12,9 +12,7 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     
-    
-    weak var delegate : SettingsTableViewControllerDelegate?
-    
+    weak var delegate: SettingsTableViewControllerDelegate?
     
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
@@ -75,7 +73,6 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         globalData.addSubject(name: addClassField.text!)
     }
     
-    
     @IBAction func focusModeSwitch(_ sender: UISwitch) {
         globalData.includeEndFocusButton = focusModeButton.isOn
         globalData.saveUserData()
@@ -83,5 +80,5 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     }
 }
 
-protocol SettingsTableViewControllerDelegate : class {
+protocol SettingsTableViewControllerDelegate: class {
 }
