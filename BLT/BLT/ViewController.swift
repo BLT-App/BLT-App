@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  BLT
 //
-//  Created by LorentzenN on 1/14/20.
-//  Copyright © 2020 BLT Group. All rights reserved.
+//  Created by LorentzenN on 11/9/19.
+//  Copyright © 2019 BLT App. All rights reserved.
 //
 
 import UIKit

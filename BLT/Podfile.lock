@@ -1,16 +1,24 @@
 PODS:
+  - DropDown (2.3.4)
+  - RandomColorSwift (1.0.0)
   - SwiftLint (0.38.2)
 
 DEPENDENCIES:
+  - DropDown (= 2.3.4)
+  - RandomColorSwift
   - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - DropDown
+    - RandomColorSwift
     - SwiftLint
 
 SPEC CHECKSUMS:
+  DropDown: f225ff0fd09dde064d17aa03db7e4d4e4ff40b6b
+  RandomColorSwift: 9f85058b721665d52d239ca166a913e083506444
   SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
 
-PODFILE CHECKSUM: 95818923e956ddee22073a41e5c152dece3b68f5
+PODFILE CHECKSUM: ee3ae35a6e89bae77dba410d49e94f9bcd2f27dc
 
 COCOAPODS: 1.8.4
