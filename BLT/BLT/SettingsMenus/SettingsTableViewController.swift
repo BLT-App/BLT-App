@@ -22,15 +22,18 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var focusModeButton: UISwitch!
     @IBOutlet weak var addClassField: UITextField!
     
+    var myToDoList: ToDoList = ToDoList()
+    var userData: UserData = UserData()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        firstNameField.text = globalData.firstName
+        firstNameField.text = userData.firstName
         firstNameField.delegate = self
-        lastNameField.text = globalData.lastName
+        lastNameField.text = userData.lastName
         lastNameField.delegate = self
-        sortListSwitch.isOn = globalData.wantsListByDate
+        sortListSwitch.isOn = userData.wantsListByDate
         addClassField.delegate = self
-        focusModeButton.isOn = globalData.includeEndFocusButton
+        focusModeButton.isOn = userData.includeEndFocusButton
         
     }
     
@@ -41,21 +44,21 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     @IBAction func firstNameEntered(_ sender: UITextField) {
-        globalData.firstName = sender.text ?? ""
-        globalData.saveUserData()
+        userData.firstName = sender.text ?? ""
+        userData.saveUserData()
     }
     
     @IBAction func lastNameEntered(_ sender: UITextField) {
-        globalData.lastName = sender.text ?? ""
-        globalData.saveUserData()
+        userData.lastName = sender.text ?? ""
+        userData.saveUserData()
     }
     
     @IBAction func sortListSwitch(_ sender: UISwitch) {
-        globalData.wantsListByDate = sender.isOn
-        globalData.saveUserData()
+        userData.wantsListByDate = sender.isOn
+        userData.saveUserData()
         
         //Sort If That Is What The User Set
-        if globalData.wantsListByDate {
+        if userData.wantsListByDate {
             myToDoList.sortList()
         }
     }
@@ -70,13 +73,13 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     @IBAction func addClassHit(_ sender: UIButton) {
-        globalData.addSubject(name: addClassField.text!)
+        userData.addSubject(name: addClassField.text!)
     }
     
     @IBAction func focusModeSwitch(_ sender: UISwitch) {
-        globalData.includeEndFocusButton = focusModeButton.isOn
-        globalData.saveUserData()
-        print(globalData.includeEndFocusButton)
+        userData.includeEndFocusButton = focusModeButton.isOn
+        userData.saveUserData()
+        print(userData.includeEndFocusButton)
     }
 }
 
