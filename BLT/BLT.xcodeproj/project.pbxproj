@@ -10,8 +10,8 @@
 		3F2D6FF32399FE6100B8A989 /* WaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D6FF22399FE6100B8A989 /* WaterView.swift */; };
 		3F2D6FF5239A004900B8A989 /* RenderTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D6FF4239A004900B8A989 /* RenderTimer.swift */; };
 		3F73230823860D9300155B70 /* FocusTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F73230723860D9300155B70 /* FocusTimer.swift */; };
+		3FA808B223DBA71300CB4127 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA808B123DBA71300CB4127 /* SettingsViewController.swift */; };
 		3FE3EA63237718D3002B5303 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3EA62237718D3002B5303 /* AppDelegate.swift */; };
-		3FE3EA65237718D3002B5303 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3EA64237718D3002B5303 /* ViewController.swift */; };
 		3FE3EA68237718D3002B5303 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE3EA66237718D3002B5303 /* Main.storyboard */; };
 		3FE3EA6A237718DB002B5303 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FE3EA69237718DB002B5303 /* Assets.xcassets */; };
 		3FE3EA6D237718DB002B5303 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE3EA6B237718DB002B5303 /* LaunchScreen.storyboard */; };
@@ -56,9 +56,9 @@
 		3F2D6FF22399FE6100B8A989 /* WaterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterView.swift; sourceTree = "<group>"; };
 		3F2D6FF4239A004900B8A989 /* RenderTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderTimer.swift; sourceTree = "<group>"; };
 		3F73230723860D9300155B70 /* FocusTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTimer.swift; sourceTree = "<group>"; };
+		3FA808B123DBA71300CB4127 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/SettingsViewController.swift"; sourceTree = "<absolute>"; };
 		3FE3EA5F237718D3002B5303 /* BLT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE3EA62237718D3002B5303 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3FE3EA64237718D3002B5303 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3FE3EA67237718D3002B5303 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3FE3EA69237718DB002B5303 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FE3EA6C237718DB002B5303 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,6 +121,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3FA808B323DBA79300CB4127 /* List Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D721FD5B2378ACA300ABD1EF /* ToDoList.swift */,
+				D721FD582378ACA300ABD1EF /* Milestone.swift */,
+				D721FD572378ACA300ABD1EF /* MilestoneItem.swift */,
+				D721FD592378ACA300ABD1EF /* ToDoItem.swift */,
+			);
+			path = "List Classes";
+			sourceTree = "<group>";
+		};
+		3FA808B423DBA7B800CB4127 /* To Do View */ = {
+			isa = PBXGroup;
+			children = (
+				D721FD622378ACA600ABD1EF /* ListViewController.swift */,
+				D721FD552378AA0300ABD1EF /* ToDoTableViewCell.swift */,
+			);
+			path = "To Do View";
+			sourceTree = "<group>";
+		};
+		3FA808B523DBA7F400CB4127 /* Focus Mode View */ = {
+			isa = PBXGroup;
+			children = (
+				3FE3EA902378DA82002B5303 /* FocusViewController.swift */,
+				3F73230723860D9300155B70 /* FocusTimer.swift */,
+			);
+			path = "Focus Mode View";
+			sourceTree = "<group>";
+		};
 		3FE3EA56237718D3002B5303 = {
 			isa = PBXGroup;
 			children = (
@@ -147,16 +176,14 @@
 		3FE3EA61237718D3002B5303 /* BLT */ = {
 			isa = PBXGroup;
 			children = (
+				3FA808B123DBA71300CB4127 /* SettingsViewController.swift */,
 				3F2D6FF22399FE6100B8A989 /* WaterView.swift */,
 				3F2D6FF4239A004900B8A989 /* RenderTimer.swift */,
 				3FE3EA62237718D3002B5303 /* AppDelegate.swift */,
-				3FE3EA64237718D3002B5303 /* ViewController.swift */,
+				3FA808B523DBA7F400CB4127 /* Focus Mode View */,
 				3FE3EA66237718D3002B5303 /* Main.storyboard */,
 				D721BD5B23830540008E934F /* ItemViewController.swift */,
-				3F73230723860D9300155B70 /* FocusTimer.swift */,
-				D721FD622378ACA600ABD1EF /* ListViewController.swift */,
-				D721FD552378AA0300ABD1EF /* ToDoTableViewCell.swift */,
-				3FE3EA902378DA82002B5303 /* FocusViewController.swift */,
+				3FA808B423DBA7B800CB4127 /* To Do View */,
 				D721FD612378ACA600ABD1EF /* NewItemViewController.swift */,
 				D75B7471238E551000FBE468 /* SubjectCell.xib */,
 				D75B7473238E554A00FBE468 /* SubjectCell.swift */,
@@ -164,10 +191,7 @@
 				3FE3EA6B237718DB002B5303 /* LaunchScreen.storyboard */,
 				3FE3EA6E237718DB002B5303 /* Info.plist */,
 				D721FD5A2378ACA300ABD1EF /* UserData.swift */,
-				D721FD5B2378ACA300ABD1EF /* ToDoList.swift */,
-				D721FD592378ACA300ABD1EF /* ToDoItem.swift */,
-				D721FD572378ACA300ABD1EF /* MilestoneItem.swift */,
-				D721FD582378ACA300ABD1EF /* Milestone.swift */,
+				3FA808B323DBA79300CB4127 /* List Classes */,
 				D7056146238CFB700030B257 /* Additional Classes.swift */,
 			);
 			path = BLT;
@@ -406,12 +430,12 @@
 				D721FD5F2378ACA300ABD1EF /* UserData.swift in Sources */,
 				D721FD602378ACA300ABD1EF /* ToDoList.swift in Sources */,
 				D721FD5E2378ACA300ABD1EF /* ToDoItem.swift in Sources */,
-				3FE3EA65237718D3002B5303 /* ViewController.swift in Sources */,
 				D721FD5D2378ACA300ABD1EF /* Milestone.swift in Sources */,
 				D75B7474238E554A00FBE468 /* SubjectCell.swift in Sources */,
 				D721FD642378ACA600ABD1EF /* ListViewController.swift in Sources */,
 				3FE3EA912378DA82002B5303 /* FocusViewController.swift in Sources */,
 				3FE3EA63237718D3002B5303 /* AppDelegate.swift in Sources */,
+				3FA808B223DBA71300CB4127 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

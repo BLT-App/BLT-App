@@ -357,7 +357,7 @@
         <!--Settings-->
         <scene sceneID="QEC-d0-vVH">
             <objects>
-                <tableViewController id="NZ1-lP-gNC" sceneMemberID="viewController">
+                <tableViewController title="Settings" id="NZ1-lP-gNC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="c8F-L1-U0O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
