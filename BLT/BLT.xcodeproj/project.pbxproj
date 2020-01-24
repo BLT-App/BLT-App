@@ -10,8 +10,6 @@
 		3F2D6FF32399FE6100B8A989 /* WaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D6FF22399FE6100B8A989 /* WaterView.swift */; };
 		3F2D6FF5239A004900B8A989 /* RenderTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D6FF4239A004900B8A989 /* RenderTimer.swift */; };
 		3F73230823860D9300155B70 /* FocusTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F73230723860D9300155B70 /* FocusTimer.swift */; };
-		3FADDE1623804B01005DC492 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FADDE1523804B01005DC492 /* SettingsViewController.swift */; };
-		3FADDE1C23821718005DC492 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FADDE1B23821718005DC492 /* SettingsTableViewController.swift */; };
 		3FE3EA63237718D3002B5303 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3EA62237718D3002B5303 /* AppDelegate.swift */; };
 		3FE3EA65237718D3002B5303 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3EA64237718D3002B5303 /* ViewController.swift */; };
 		3FE3EA68237718D3002B5303 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE3EA66237718D3002B5303 /* Main.storyboard */; };
@@ -58,8 +56,6 @@
 		3F2D6FF22399FE6100B8A989 /* WaterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterView.swift; sourceTree = "<group>"; };
 		3F2D6FF4239A004900B8A989 /* RenderTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderTimer.swift; sourceTree = "<group>"; };
 		3F73230723860D9300155B70 /* FocusTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTimer.swift; sourceTree = "<group>"; };
-		3FADDE1523804B01005DC492 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		3FADDE1B23821718005DC492 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = SettingsMenus/SettingsTableViewController.swift; sourceTree = "<group>"; };
 		3FE3EA5F237718D3002B5303 /* BLT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE3EA62237718D3002B5303 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FE3EA64237718D3002B5303 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -158,7 +154,6 @@
 				3FE3EA66237718D3002B5303 /* Main.storyboard */,
 				D721BD5B23830540008E934F /* ItemViewController.swift */,
 				3F73230723860D9300155B70 /* FocusTimer.swift */,
-				3FADDE1B23821718005DC492 /* SettingsTableViewController.swift */,
 				D721FD622378ACA600ABD1EF /* ListViewController.swift */,
 				D721FD552378AA0300ABD1EF /* ToDoTableViewCell.swift */,
 				3FE3EA902378DA82002B5303 /* FocusViewController.swift */,
@@ -173,7 +168,6 @@
 				D721FD592378ACA300ABD1EF /* ToDoItem.swift */,
 				D721FD572378ACA300ABD1EF /* MilestoneItem.swift */,
 				D721FD582378ACA300ABD1EF /* Milestone.swift */,
-				3FADDE1523804B01005DC492 /* SettingsViewController.swift */,
 				D7056146238CFB700030B257 /* Additional Classes.swift */,
 			);
 			path = BLT;
@@ -412,14 +406,12 @@
 				D721FD5F2378ACA300ABD1EF /* UserData.swift in Sources */,
 				D721FD602378ACA300ABD1EF /* ToDoList.swift in Sources */,
 				D721FD5E2378ACA300ABD1EF /* ToDoItem.swift in Sources */,
-				3FADDE1C23821718005DC492 /* SettingsTableViewController.swift in Sources */,
 				3FE3EA65237718D3002B5303 /* ViewController.swift in Sources */,
 				D721FD5D2378ACA300ABD1EF /* Milestone.swift in Sources */,
 				D75B7474238E554A00FBE468 /* SubjectCell.swift in Sources */,
 				D721FD642378ACA600ABD1EF /* ListViewController.swift in Sources */,
 				3FE3EA912378DA82002B5303 /* FocusViewController.swift in Sources */,
 				3FE3EA63237718D3002B5303 /* AppDelegate.swift in Sources */,
-				3FADDE1623804B01005DC492 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
