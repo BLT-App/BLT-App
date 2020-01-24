@@ -130,3 +130,4 @@ Carthage/Build
 # `pod install` in .travis.yml
 #
 Pods/
+BLT/BLT/.DS_Store
