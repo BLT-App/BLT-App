@@ -1,13 +1,13 @@
 PODS:
-  - Charts (3.4.0):
-    - Charts/Core (= 3.4.0)
-  - Charts/Core (3.4.0)
+  - Charts (3.2.2):
+    - Charts/Core (= 3.2.2)
+  - Charts/Core (3.2.2)
   - DropDown (2.3.4)
   - RandomColorSwift (1.0.0)
   - SwiftLint (0.38.2)
 
 DEPENDENCIES:
-  - Charts
+  - Charts (~> 3.2.2)
   - DropDown (= 2.3.4)
   - RandomColorSwift
   - SwiftLint
@@ -20,11 +20,11 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
-  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
+  Charts: f69cf0518b6d1d62608ca504248f1bbe0b6ae77e
   DropDown: f225ff0fd09dde064d17aa03db7e4d4e4ff40b6b
   RandomColorSwift: 9f85058b721665d52d239ca166a913e083506444
   SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
 
-PODFILE CHECKSUM: 60183b5b0a2dfeb01e12ba321dda2034775292b4
+PODFILE CHECKSUM: 388ccae370b96ff55ab09f2ddfe1851bbd1d848e
 
 COCOAPODS: 1.8.4
