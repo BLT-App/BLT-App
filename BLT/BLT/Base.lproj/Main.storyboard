@@ -567,7 +567,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ora-eY-JBY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2195.6521739130435" y="807.92410714285711"/>
+            <point key="canvasLocation" x="3105.7971014492755" y="807.92410714285711"/>
         </scene>
         <!--Focus-->
         <scene sceneID="CvB-yk-jrt">
@@ -850,6 +850,59 @@
             </objects>
             <point key="canvasLocation" x="714.49275362318849" y="843.75"/>
         </scene>
+        <!--User Profile View Controller Scene-->
+        <scene sceneID="2Cj-cZ-3Fb">
+            <objects>
+                <viewController title="User Profile View Controller Scene" id="hlB-C5-cvK" customClass="UserProfileViewController" customModule="BLT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qMp-jE-G05">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbE-ic-pJq">
+                                <rect key="frame" x="20" y="100" width="374" height="615"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="DLGHigh" translatesAutoresizingMaskIntoConstraints="NO" id="uKr-Lj-dXS">
+                                        <rect key="frame" x="48" y="8" width="279" height="164"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="164" id="qbe-YY-s8M"/>
+                                        </constraints>
+                                    </imageView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NNO-LM-FdC">
+                                        <rect key="frame" x="48" y="219" width="279" height="176"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <connections>
+                                            <segue destination="njB-MZ-Q0V" kind="embed" id="rYB-Qw-DA4"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="uKr-Lj-dXS" firstAttribute="top" secondItem="nbE-ic-pJq" secondAttribute="top" constant="8" id="5sB-9n-1kM"/>
+                                    <constraint firstItem="uKr-Lj-dXS" firstAttribute="centerX" secondItem="nbE-ic-pJq" secondAttribute="centerX" id="5yH-HO-8SR"/>
+                                    <constraint firstAttribute="trailing" secondItem="uKr-Lj-dXS" secondAttribute="trailing" constant="47" id="Cfe-0x-0bV"/>
+                                    <constraint firstItem="uKr-Lj-dXS" firstAttribute="leading" secondItem="nbE-ic-pJq" secondAttribute="leading" constant="48" id="KAy-91-XYh"/>
+                                    <constraint firstAttribute="bottom" secondItem="uKr-Lj-dXS" secondAttribute="bottom" constant="443" id="iFV-5e-iQM"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iiS-Ph-jFh" firstAttribute="bottom" secondItem="nbE-ic-pJq" secondAttribute="bottom" constant="98" id="6Ng-aV-CYW"/>
+                            <constraint firstItem="nbE-ic-pJq" firstAttribute="top" secondItem="iiS-Ph-jFh" secondAttribute="top" constant="56" id="Yjx-Jy-pSu"/>
+                            <constraint firstItem="nbE-ic-pJq" firstAttribute="leading" secondItem="qMp-jE-G05" secondAttribute="leadingMargin" id="aeW-1E-RaQ"/>
+                            <constraint firstItem="nbE-ic-pJq" firstAttribute="trailing" secondItem="qMp-jE-G05" secondAttribute="trailingMargin" id="utt-B1-6S1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iiS-Ph-jFh"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" id="sfz-WK-fiI"/>
+                    <connections>
+                        <outlet property="GraphView" destination="NNO-LM-FdC" id="JQX-0g-y6e"/>
+                        <outlet property="UserImage" destination="uKr-Lj-dXS" id="zOa-M2-bez"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z9Q-FM-3qx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1878" y="886"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DDJ-ga-4dG">
             <objects>
@@ -865,14 +918,30 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="krn-Hr-Uh5"/>
                         <segue destination="8Ou-6j-48c" kind="relationship" relationship="viewControllers" id="Xno-7n-0MZ"/>
                         <segue destination="KiC-80-BUL" kind="relationship" relationship="viewControllers" id="gYJ-81-Igy"/>
+                        <segue destination="hlB-C5-cvK" kind="relationship" relationship="viewControllers" id="yNB-ez-gCM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uo9-iE-JJI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1481" y="-646"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="nz8-Es-gA7">
+            <objects>
+                <viewController id="njB-MZ-Q0V" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I9J-ls-KSC">
+                        <rect key="frame" x="0.0" y="0.0" width="279" height="176"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="JT2-Lx-RT8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qby-GC-lbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
+        <image name="DLGHigh" width="2448" height="3264"/>
         <image name="clock" width="30" height="30"/>
         <image name="database" width="30" height="30"/>
         <image name="plus-large" width="60" height="60"/>
