@@ -8,12 +8,12 @@
 
 import Foundation
 import UIKit
- 
+
 class UserProfileViewController: UIViewController {
     
-    @IBOutlet weak var UserImage: UIImageView!
+    @IBOutlet weak var userImage: UIImageView!
     
-    @IBOutlet weak var GraphView: UIView!
+    @IBOutlet weak var graphView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
