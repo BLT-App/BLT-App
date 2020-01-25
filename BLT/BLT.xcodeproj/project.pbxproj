@@ -11,6 +11,7 @@
 		3F2D6FF5239A004900B8A989 /* RenderTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D6FF4239A004900B8A989 /* RenderTimer.swift */; };
 		3F73230823860D9300155B70 /* FocusTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F73230723860D9300155B70 /* FocusTimer.swift */; };
 		3FA808B223DBA71300CB4127 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA808B123DBA71300CB4127 /* SettingsViewController.swift */; };
+		3FA808B923DCD66200CB4127 /* SettingsSubmenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA808B823DCD66100CB4127 /* SettingsSubmenuTableViewController.swift */; };
 		3FE3EA63237718D3002B5303 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3EA62237718D3002B5303 /* AppDelegate.swift */; };
 		3FE3EA68237718D3002B5303 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE3EA66237718D3002B5303 /* Main.storyboard */; };
 		3FE3EA6A237718DB002B5303 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FE3EA69237718DB002B5303 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		3F2D6FF4239A004900B8A989 /* RenderTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderTimer.swift; sourceTree = "<group>"; };
 		3F73230723860D9300155B70 /* FocusTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTimer.swift; sourceTree = "<group>"; };
 		3FA808B123DBA71300CB4127 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/SettingsViewController.swift"; sourceTree = "<absolute>"; };
+		3FA808B823DCD66100CB4127 /* SettingsSubmenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSubmenuTableViewController.swift; sourceTree = "<group>"; };
 		3FE3EA5F237718D3002B5303 /* BLT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE3EA62237718D3002B5303 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FE3EA67237718D3002B5303 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -176,12 +178,13 @@
 		3FE3EA61237718D3002B5303 /* BLT */ = {
 			isa = PBXGroup;
 			children = (
+				3FE3EA66237718D3002B5303 /* Main.storyboard */,
+				3FA808B823DCD66100CB4127 /* SettingsSubmenuTableViewController.swift */,
 				3FA808B123DBA71300CB4127 /* SettingsViewController.swift */,
 				3F2D6FF22399FE6100B8A989 /* WaterView.swift */,
 				3F2D6FF4239A004900B8A989 /* RenderTimer.swift */,
 				3FE3EA62237718D3002B5303 /* AppDelegate.swift */,
 				3FA808B523DBA7F400CB4127 /* Focus Mode View */,
-				3FE3EA66237718D3002B5303 /* Main.storyboard */,
 				D721BD5B23830540008E934F /* ItemViewController.swift */,
 				3FA808B423DBA7B800CB4127 /* To Do View */,
 				D721FD612378ACA600ABD1EF /* NewItemViewController.swift */,
@@ -429,6 +432,7 @@
 				D721FD632378ACA600ABD1EF /* NewItemViewController.swift in Sources */,
 				D721FD5F2378ACA300ABD1EF /* UserData.swift in Sources */,
 				D721FD602378ACA300ABD1EF /* ToDoList.swift in Sources */,
+				3FA808B923DCD66200CB4127 /* SettingsSubmenuTableViewController.swift in Sources */,
 				D721FD5E2378ACA300ABD1EF /* ToDoItem.swift in Sources */,
 				D721FD5D2378ACA300ABD1EF /* Milestone.swift in Sources */,
 				D75B7474238E554A00FBE468 /* SubjectCell.swift in Sources */,
