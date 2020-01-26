@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/SettingsViewController.swift">
-   </FileRef>
-   <FileRef
       location = "group:BLT.xcodeproj">
    </FileRef>
    <FileRef
