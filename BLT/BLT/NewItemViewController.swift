@@ -42,11 +42,10 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
         exitButton.layer.masksToBounds = false
         titleText.delegate = self
         descText.delegate = self
-        globalData.retrieveUserData()
         
         // Loads DropDown
         dropDown.anchorView = classText
-        dropDown.dataSource = globalData.subjectList
+        dropDown.dataSource = userData.subjectList
         dropDown.direction = .bottom
         dropDown.cellNib = UINib(nibName: "SubjectCell", bundle: nil)
         
@@ -54,7 +53,7 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
             guard let cell = cell as? SubjectCell else { return }
             
             // Setup your custom UI components
-            if let color = globalData.subjects[item] {
+            if let color = userData.subjects[item] {
                 cell.subjectLabel.backgroundColor = color.uiColor
             }
             cell.subjectLabel.sizeThatFits(CGSize(width: cell.subjectLabel.frame.size.width, height: 30))
@@ -93,11 +92,11 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
                 myToDoList.storeList()
                 
                 //If Users Have it Set, Sort List By Due Date
-                if globalData.wantsListByDate {
+                if userData.wantsListByDate {
                     myToDoList.sortList()
                 }
             }
-            globalData.updateCourses(fromList: myToDoList)
+            userData.updateCourses(fromList: myToDoList)
             self.dismiss(animated: true, completion: nil)
         }
     }
@@ -117,14 +116,14 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
     }
     
     func updateDropDown() {
-        dropDown.dataSource = valuesStartingWith(classText.text ?? "", fromArray: globalData.subjectList)
+        dropDown.dataSource = valuesStartingWith(classText.text ?? "", fromArray: userData.subjectList)
         dropDown.reloadAllComponents()
         dropDown.show()
     }
     
     func updateClassText() {
         let currentClass = classText.text ?? ""
-        if let color = globalData.subjects[currentClass] {
+        if let color = userData.subjects[currentClass] {
             classText.backgroundColor = color.uiColor
             classText.textColor = .white
         } else {

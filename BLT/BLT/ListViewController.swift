@@ -8,7 +8,8 @@
 
 import UIKit
 
-
+let userData = UserData()
+let myToDoList = ToDoList()
 
 class ListViewController: UIViewController {
     @IBOutlet weak var addTaskButton: UIBarButtonItem!
@@ -39,9 +40,6 @@ class ListViewController: UIViewController {
         roundContainerView(cornerRadius: 40, view: tableContainerView, shadowView: shadowView)
         addShadow(view: shadowView, color: UIColor.gray.cgColor, opacity: 0.2, radius: 10, offset: CGSize(width: 0, height: 5))
         addShadow(view: addButton, color: UIColor.blue.cgColor, opacity: 0.1, radius: 5, offset: .zero)
-        
-        // Loads list from filesystem
-        myToDoList.retrieveList()
         
         // This creates an example list if there is nothing on the list. Debug only.
         if myToDoList.list.count == 0 {
