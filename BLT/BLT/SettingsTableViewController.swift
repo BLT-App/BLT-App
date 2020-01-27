@@ -17,6 +17,6 @@ class SettingsTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToRootViewController(segue: UIStoryboardSegue) {
-        print("Unwind to Root View Controller")
+        //print("Unwind to Root View Controller")
     }
 }
