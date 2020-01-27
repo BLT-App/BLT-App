@@ -71,9 +71,9 @@ class UserProfileViewController: UIViewController
         userNameLabel.clipsToBounds = true
         userNameLabel.layer.cornerRadius = 5
         userNameLabel.backgroundColor = .blue
-        globalData.firstName = "Baku" //placeholder name
-        userNameLabel.text = globalData.firstName
-        
+        if let firstName: String = globalData.firstName {
+            userNameLabel.text = firstName
+        }
     }
     
     
