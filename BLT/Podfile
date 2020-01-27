@@ -3,8 +3,7 @@ use_frameworks!
 
 target 'BLT' do
   pod 'Charts', '~> 3.2.2'
-  
-  
+  pod 'SwiftReorder', '~> 6.0.2'
   pod 'DropDown', '2.3.4'
   pod 'RandomColorSwift'
   pod 'SwiftLint'
