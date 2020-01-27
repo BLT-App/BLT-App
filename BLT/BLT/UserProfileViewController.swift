@@ -24,8 +24,8 @@ class UserProfileViewController: UIViewController
     
     func barChartUpdate(){
         var list: [BarChartDataEntry] = []
-        for i in 0 ... 6{
-            list.append(BarChartDataEntry(x: Double(i), y: Double(Int.random(in: 0..<10))))
+        for index in 0 ... 6{
+            list.append(BarChartDataEntry(x: Double(index), y: Double(Int.random(in: 0..<10))))
         }
         
         let dataSet = BarChartDataSet(values: list, label: "Tasks completed")
