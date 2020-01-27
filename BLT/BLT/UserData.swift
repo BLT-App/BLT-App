@@ -13,15 +13,7 @@ import RandomColorSwift
 /**
  A class that stores user data. 
  */
-class UserData {
-    
-    /// Defaults.
-    let defaults = UserDefaults.standard
-    
-    /// Whether or not User Data has been loaded.
-    var hasLoaded: Bool {
-        return defaults.object(forKey: "User Data") != nil
-    }
+class UserData: Codable {
     
     /// Number of hues currently defined.
     var hueCounter = 0
@@ -35,42 +27,66 @@ class UserData {
     }
     
     /// Whether or not user wants to do list sorted by date.
-    var wantsListByDate: Bool = true
+    var wantsListByDate: Bool = true {
+        didSet {
+            saveUserData()
+        }
+    }
     
     /// First name of the user.
-    var firstName: String = ""
+    var firstName: String = "" {
+        didSet {
+            saveUserData()
+        }
+    }
     
     /// Last name of the user.
-    var lastName: String = ""
+    var lastName: String = "" {
+        didSet {
+            saveUserData()
+        }
+    }
     
     /// Whether or not user wants 'End focus mode' button.
-    var includeEndFocusButton: Bool = true
+    var includeEndFocusButton: Bool = true {
+        didSet {
+            saveUserData()
+        }
+    }
     
     /// Saves user data to local file.
     func saveUserData() {
-        defaults.set(self, forKey: "UserData")
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL = documentsDirectory.appendingPathComponent("userSettings").appendingPathExtension("plist")
+        let propertyListEncoder = PropertyListEncoder()
+        let encodedNote = try? propertyListEncoder.encode(self)
+        try? encodedNote?.write(to: archiveURL, options: .noFileProtection)
+        UserDefaults.standard.set(true, forKey: "UserDataHasLoaded")
+        print("** Stored User Data")
     }
     
     /// Retrieves saved user data.
     func retrieveUserData() {
-        let data = defaults.object(forKey: "UserData")
-        if data == nil {
-            saveUserData()
-        } else {
-            if let userData = data as? UserData {
-                self.hueCounter = userData.hueCounter
-                self.subjects = userData.subjects
-                self.wantsListByDate = userData.wantsListByDate
-                self.firstName = userData.firstName
-                self.lastName = userData.lastName
-                self.includeEndFocusButton = userData.includeEndFocusButton
-            }
+        print("** Retrieving User Data")
+        let propertyListDecoder = PropertyListDecoder()
+        let documentsDirectory = FileManager.default
+            .urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL = documentsDirectory.appendingPathComponent("userSettings")
+            .appendingPathExtension("plist")
+        if let retrievedNoteData = try? Data(contentsOf: archiveURL),
+            let decodedUserData = try? propertyListDecoder.decode(UserData.self, from: retrievedNoteData) {
+            self.hueCounter = decodedUserData.hueCounter
+            self.subjects = decodedUserData.subjects
+            self.firstName = decodedUserData.firstName
+            self.lastName = decodedUserData.lastName
+            self.wantsListByDate = decodedUserData.wantsListByDate
+            self.includeEndFocusButton = decodedUserData.includeEndFocusButton
         }
     }
     
     /// Initializer
     init() {
-        if defaults.object(forKey: "UserData") == nil {
+        if UserDefaults.standard.object(forKey: "UserDataHasLoaded") == nil {
             saveUserData()
         }
         retrieveUserData()

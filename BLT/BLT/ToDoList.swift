@@ -11,10 +11,7 @@ import Foundation
 /**
  A class that represents entire lists of to-do. This is what is stored into storage by the system.
  */
-class ToDoList {
-    
-    /// Defaults.
-    let defaults = UserDefaults.standard
+class ToDoList: Codable {
     
     /// The list of to-do items. 
     var list: [ToDoItem] = []
@@ -32,24 +29,31 @@ class ToDoList {
     
     /// Saves user data to local file.
     func storeList() {
-        defaults.set(self, forKey: "ToDoList")
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL = documentsDirectory.appendingPathComponent("todolist").appendingPathExtension("plist")
+        let propertyListEncoder = PropertyListEncoder()
+        let encodedNote = try? propertyListEncoder.encode(self)
+        try? encodedNote?.write(to: archiveURL, options: .noFileProtection)
+        UserDefaults.standard.set(true, forKey: "ListHasLoaded")
+        print("** Stored To Do List")
     }
     
     /// Retrieves saved user data.
     func retrieveList() {
-        let list = defaults.object(forKey: "ToDoList")
-        if list == nil {
-            storeList()
-        } else {
-            if let toDoList = list as? ToDoList {
-                self.list = toDoList.list
-            }
+        print("** Retrieving To Do List")
+        let propertyListDecoder = PropertyListDecoder()
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL = documentsDirectory.appendingPathComponent("todolist").appendingPathExtension("plist")
+        if let retrievedNoteData = try? Data(contentsOf: archiveURL), let decodedToDoList = try? propertyListDecoder.decode(ToDoList.self, from: retrievedNoteData) {
+            self.list = decodedToDoList.list
+            print(list.count)
+            print("** Retrieved To Do List")
         }
     }
     
     /// Initializer
     init() {
-        if defaults.object(forKey: "ToDoList") == nil {
+        if UserDefaults.standard.object(forKey: "ListHasLoaded") == nil {
             storeList()
         }
         retrieveList()

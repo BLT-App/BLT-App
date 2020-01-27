@@ -13,9 +13,6 @@ class ItemViewController: UIViewController {
     var delegate: UIViewController?
     var targetIndex: Int?
     
-    var myToDoList: ToDoList = ToDoList()
-    var userData: UserData = UserData()
-
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var classNameField: UITextField!
     @IBOutlet weak var assignmentField: UITextField!
@@ -34,6 +31,7 @@ class ItemViewController: UIViewController {
     }
     
     func loadPage() {
+        print(myToDoList.list.count)
         if let thisIndex = targetIndex {
             let thisToDo = myToDoList.list[thisIndex]
             classNameField.text = thisToDo.className
