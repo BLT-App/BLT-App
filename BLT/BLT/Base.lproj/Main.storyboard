@@ -1125,20 +1125,6 @@
             </objects>
             <point key="canvasLocation" x="3284" y="1521"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="nz8-Es-gA7">
-            <objects>
-                <viewController id="njB-MZ-Q0V" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="I9J-ls-KSC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="JT2-Lx-RT8"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qby-GC-lbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="clock" width="30" height="30"/>
