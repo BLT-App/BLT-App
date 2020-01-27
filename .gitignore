@@ -2,7 +2,6 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
-
 ##Old BLT Files
 BLT-Bad/
 
@@ -94,7 +93,7 @@ fastlane/test_output
 iOSInjectionProject/
 
 # OS X
-.DS_Store
+**.DS_Store
 
 # Xcode
 build/
