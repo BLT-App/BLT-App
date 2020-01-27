@@ -1144,6 +1144,7 @@
         <image name="clock" width="30" height="30"/>
         <image name="database" width="30" height="30"/>
         <image name="plus-large" width="60" height="60"/>
+        <image name="profile" width="30" height="30"/>
         <image name="settings" width="30" height="30"/>
     </resources>
 </document>
