@@ -10,8 +10,6 @@
 		3F2D6FF32399FE6100B8A989 /* WaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D6FF22399FE6100B8A989 /* WaterView.swift */; };
 		3F2D6FF5239A004900B8A989 /* RenderTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D6FF4239A004900B8A989 /* RenderTimer.swift */; };
 		3F73230823860D9300155B70 /* FocusTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F73230723860D9300155B70 /* FocusTimer.swift */; };
-		3FA808BD23DE549F00CB4127 /* SettingsUserProfileSubmenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA808BC23DE549F00CB4127 /* SettingsUserProfileSubmenuTableViewController.swift */; };
-		3FA808BF23DE588B00CB4127 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA808BE23DE588B00CB4127 /* SettingsTableViewController.swift */; };
 		3FA808C223DE83C400CB4127 /* SettingsListPrefSubmenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA808C123DE83C400CB4127 /* SettingsListPrefSubmenuTableViewController.swift */; };
 		3FA808C423DE843300CB4127 /* SettingsNotifPrefSubmenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA808C323DE843300CB4127 /* SettingsNotifPrefSubmenuTableViewController.swift */; };
 		3FA808C623DE967800CB4127 /* SettingsFocusPrefSubmenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA808C523DE967800CB4127 /* SettingsFocusPrefSubmenuTableViewController.swift */; };
@@ -34,6 +32,8 @@
 		D721FD602378ACA300ABD1EF /* ToDoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D721FD5B2378ACA300ABD1EF /* ToDoList.swift */; };
 		D721FD632378ACA600ABD1EF /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D721FD612378ACA600ABD1EF /* NewItemViewController.swift */; };
 		D721FD642378ACA600ABD1EF /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D721FD622378ACA600ABD1EF /* ListViewController.swift */; };
+		D745011E23DEB1DA00508639 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D745011C23DEB1DA00508639 /* SettingsTableViewController.swift */; };
+		D745011F23DEB1DA00508639 /* SettingsUserProfileSubmenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D745011D23DEB1DA00508639 /* SettingsUserProfileSubmenuTableViewController.swift */; };
 		D75B7472238E551000FBE468 /* SubjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75B7471238E551000FBE468 /* SubjectCell.xib */; };
 		D75B7474238E554A00FBE468 /* SubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B7473238E554A00FBE468 /* SubjectCell.swift */; };
 		D7F0D7302378A06E0044E694 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D7F0D72F2378A06E0044E694 /* Podfile */; };
@@ -61,8 +61,6 @@
 		3F2D6FF22399FE6100B8A989 /* WaterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterView.swift; sourceTree = "<group>"; };
 		3F2D6FF4239A004900B8A989 /* RenderTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderTimer.swift; sourceTree = "<group>"; };
 		3F73230723860D9300155B70 /* FocusTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTimer.swift; sourceTree = "<group>"; };
-		3FA808BC23DE549F00CB4127 /* SettingsUserProfileSubmenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsUserProfileSubmenuTableViewController.swift; path = "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/SettingsUserProfileSubmenuTableViewController.swift"; sourceTree = "<absolute>"; };
-		3FA808BE23DE588B00CB4127 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/SettingsTableViewController.swift"; sourceTree = "<absolute>"; };
 		3FA808C123DE83C400CB4127 /* SettingsListPrefSubmenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListPrefSubmenuTableViewController.swift; sourceTree = "<group>"; };
 		3FA808C323DE843300CB4127 /* SettingsNotifPrefSubmenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNotifPrefSubmenuTableViewController.swift; sourceTree = "<group>"; };
 		3FA808C523DE967800CB4127 /* SettingsFocusPrefSubmenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFocusPrefSubmenuTableViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +90,8 @@
 		D721FD5B2378ACA300ABD1EF /* ToDoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
 		D721FD612378ACA600ABD1EF /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 		D721FD622378ACA600ABD1EF /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		D745011C23DEB1DA00508639 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		D745011D23DEB1DA00508639 /* SettingsUserProfileSubmenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsUserProfileSubmenuTableViewController.swift; sourceTree = "<group>"; };
 		D75B7471238E551000FBE468 /* SubjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectCell.xib; sourceTree = "<group>"; };
 		D75B7473238E554A00FBE468 /* SubjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCell.swift; sourceTree = "<group>"; };
 		D7F0D72F2378A06E0044E694 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -131,47 +131,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3FA808B323DBA79300CB4127 /* List Classes */ = {
-			isa = PBXGroup;
-			children = (
-				D721FD5B2378ACA300ABD1EF /* ToDoList.swift */,
-				D721FD582378ACA300ABD1EF /* Milestone.swift */,
-				D721FD572378ACA300ABD1EF /* MilestoneItem.swift */,
-				D721FD592378ACA300ABD1EF /* ToDoItem.swift */,
-			);
-			path = "List Classes";
-			sourceTree = "<group>";
-		};
-		3FA808B423DBA7B800CB4127 /* To Do View */ = {
-			isa = PBXGroup;
-			children = (
-				D721FD622378ACA600ABD1EF /* ListViewController.swift */,
-				D721FD552378AA0300ABD1EF /* ToDoTableViewCell.swift */,
-			);
-			path = "To Do View";
-			sourceTree = "<group>";
-		};
-		3FA808B523DBA7F400CB4127 /* Focus Mode View */ = {
-			isa = PBXGroup;
-			children = (
-				3FE3EA902378DA82002B5303 /* FocusViewController.swift */,
-				3F73230723860D9300155B70 /* FocusTimer.swift */,
-			);
-			path = "Focus Mode View";
-			sourceTree = "<group>";
-		};
-		3FA808C023DE58B800CB4127 /* Settings Views */ = {
-			isa = PBXGroup;
-			children = (
-				3FA808BE23DE588B00CB4127 /* SettingsTableViewController.swift */,
-				3FA808BC23DE549F00CB4127 /* SettingsUserProfileSubmenuTableViewController.swift */,
-				3FA808C123DE83C400CB4127 /* SettingsListPrefSubmenuTableViewController.swift */,
-				3FA808C323DE843300CB4127 /* SettingsNotifPrefSubmenuTableViewController.swift */,
-				3FA808C523DE967800CB4127 /* SettingsFocusPrefSubmenuTableViewController.swift */,
-			);
-			path = "Settings Views";
-			sourceTree = "<group>";
-		};
 		3FE3EA56237718D3002B5303 = {
 			isa = PBXGroup;
 			children = (
@@ -203,18 +162,18 @@
 				3F2D6FF4239A004900B8A989 /* RenderTimer.swift */,
 				3FE3EA62237718D3002B5303 /* AppDelegate.swift */,
 				3FE61D6F23D9DE36002C6A0C /* UserProfileViewController.swift */,
-				3FA808C023DE58B800CB4127 /* Settings Views */,
-				3FA808B523DBA7F400CB4127 /* Focus Mode View */,
-				D721BD5B23830540008E934F /* ItemViewController.swift */,
-				3FA808B423DBA7B800CB4127 /* To Do View */,
+				D745012223DEB26A00508639 /* Focus Mode View */,
+				D745012123DEB25400508639 /* Settings Views */,
+				D745012323DEB28300508639 /* To Do View */,
 				D721FD612378ACA600ABD1EF /* NewItemViewController.swift */,
+				D721BD5B23830540008E934F /* ItemViewController.swift */,
 				D75B7471238E551000FBE468 /* SubjectCell.xib */,
 				D75B7473238E554A00FBE468 /* SubjectCell.swift */,
 				3FE3EA69237718DB002B5303 /* Assets.xcassets */,
 				3FE3EA6B237718DB002B5303 /* LaunchScreen.storyboard */,
 				3FE3EA6E237718DB002B5303 /* Info.plist */,
 				D721FD5A2378ACA300ABD1EF /* UserData.swift */,
-				3FA808B323DBA79300CB4127 /* List Classes */,
+				D745012423DEB29C00508639 /* List Classes */,
 				D7056146238CFB700030B257 /* Additional Classes.swift */,
 			);
 			path = BLT;
@@ -245,6 +204,47 @@
 				3BD6BFEBB320243A67A7513E /* Pods-BLT.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D745012123DEB25400508639 /* Settings Views */ = {
+			isa = PBXGroup;
+			children = (
+				3FA808C123DE83C400CB4127 /* SettingsListPrefSubmenuTableViewController.swift */,
+				3FA808C323DE843300CB4127 /* SettingsNotifPrefSubmenuTableViewController.swift */,
+				3FA808C523DE967800CB4127 /* SettingsFocusPrefSubmenuTableViewController.swift */,
+				D745011C23DEB1DA00508639 /* SettingsTableViewController.swift */,
+				D745011D23DEB1DA00508639 /* SettingsUserProfileSubmenuTableViewController.swift */,
+			);
+			path = "Settings Views";
+			sourceTree = "<group>";
+		};
+		D745012223DEB26A00508639 /* Focus Mode View */ = {
+			isa = PBXGroup;
+			children = (
+				3FE3EA902378DA82002B5303 /* FocusViewController.swift */,
+				3F73230723860D9300155B70 /* FocusTimer.swift */,
+			);
+			path = "Focus Mode View";
+			sourceTree = "<group>";
+		};
+		D745012323DEB28300508639 /* To Do View */ = {
+			isa = PBXGroup;
+			children = (
+				D721FD622378ACA600ABD1EF /* ListViewController.swift */,
+				D721FD552378AA0300ABD1EF /* ToDoTableViewCell.swift */,
+			);
+			path = "To Do View";
+			sourceTree = "<group>";
+		};
+		D745012423DEB29C00508639 /* List Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D721FD5B2378ACA300ABD1EF /* ToDoList.swift */,
+				D721FD582378ACA300ABD1EF /* Milestone.swift */,
+				D721FD572378ACA300ABD1EF /* MilestoneItem.swift */,
+				D721FD592378ACA300ABD1EF /* ToDoItem.swift */,
+			);
+			path = "List Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,7 +453,6 @@
 				3F2D6FF32399FE6100B8A989 /* WaterView.swift in Sources */,
 				D721BD5C23830540008E934F /* ItemViewController.swift in Sources */,
 				D721FD632378ACA600ABD1EF /* NewItemViewController.swift in Sources */,
-				3FA808BD23DE549F00CB4127 /* SettingsUserProfileSubmenuTableViewController.swift in Sources */,
 				D721FD5F2378ACA300ABD1EF /* UserData.swift in Sources */,
 				D721FD602378ACA300ABD1EF /* ToDoList.swift in Sources */,
 				D721FD5E2378ACA300ABD1EF /* ToDoItem.swift in Sources */,
@@ -462,8 +461,9 @@
 				D721FD642378ACA600ABD1EF /* ListViewController.swift in Sources */,
 				3FE3EA912378DA82002B5303 /* FocusViewController.swift in Sources */,
 				3FE3EA63237718D3002B5303 /* AppDelegate.swift in Sources */,
-				3FA808BF23DE588B00CB4127 /* SettingsTableViewController.swift in Sources */,
 				3FA808C223DE83C400CB4127 /* SettingsListPrefSubmenuTableViewController.swift in Sources */,
+				D745011F23DEB1DA00508639 /* SettingsUserProfileSubmenuTableViewController.swift in Sources */,
+				D745011E23DEB1DA00508639 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
