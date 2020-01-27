@@ -5,14 +5,12 @@ PODS:
   - DropDown (2.3.4)
   - RandomColorSwift (1.0.0)
   - SwiftLint (0.38.2)
-  - SwiftReorder (6.0.2)
 
 DEPENDENCIES:
   - Charts (~> 3.2.2)
   - DropDown (= 2.3.4)
   - RandomColorSwift
   - SwiftLint
-  - SwiftReorder (~> 6.0.2)
 
 SPEC REPOS:
   trunk:
@@ -20,15 +18,13 @@ SPEC REPOS:
     - DropDown
     - RandomColorSwift
     - SwiftLint
-    - SwiftReorder
 
 SPEC CHECKSUMS:
   Charts: f69cf0518b6d1d62608ca504248f1bbe0b6ae77e
   DropDown: f225ff0fd09dde064d17aa03db7e4d4e4ff40b6b
   RandomColorSwift: 9f85058b721665d52d239ca166a913e083506444
   SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
-  SwiftReorder: 60ef1faf6446cf68f9a647cb975530db8efd6620
 
-PODFILE CHECKSUM: 14915cf50c61f2396d618d4b10678b6a8106299f
+PODFILE CHECKSUM: 388ccae370b96ff55ab09f2ddfe1851bbd1d848e
 
 COCOAPODS: 1.8.4

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftReorder
 
 /// Global ToDoList variable. 
 var myToDoList: ToDoList = ToDoList()
@@ -48,8 +47,6 @@ class ListViewController: UIViewController {
             myToDoList.createExampleList()
         }
         
-        tableView.reorder.delegate = self
-        
         globalData.updateCourses(fromList: myToDoList)
     }
     
@@ -69,9 +66,6 @@ class ListViewController: UIViewController {
     func update() {
         if globalData.wantsListByDate {
             myToDoList.list = myToDoList.list.sorted()
-            tableView.reorder.delegate = nil
-        } else {
-            tableView.reorder.delegate = self
         }
         updateText()
         tableView.reloadData()
@@ -156,17 +150,13 @@ class ListViewController: UIViewController {
 
 }
 
-extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableViewReorderDelegate {
+extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myToDoList.list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let spacer = tableView.reorder.spacerCell(for: indexPath) {
-            return spacer
-        }
-        
         let toDoItem = myToDoList.list[indexPath.row]
         var cell: ToDoTableViewCell = ToDoTableViewCell(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         if let tempcell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as? ToDoTableViewCell {
@@ -191,7 +181,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
         performSegue(withIdentifier: "itemViewSegue", sender: self)
     }
     
-    func tableView(_ tableView: UITableView, reorderRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let movedItem = myToDoList.list[sourceIndexPath.row]
         myToDoList.list.remove(at: sourceIndexPath.row)
         myToDoList.list.insert(movedItem, at: destinationIndexPath.row)
