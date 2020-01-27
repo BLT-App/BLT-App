@@ -22,6 +22,7 @@
 		3FE3EA78237718DB002B5303 /* BLTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3EA77237718DB002B5303 /* BLTTests.swift */; };
 		3FE3EA83237718DB002B5303 /* BLTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3EA82237718DB002B5303 /* BLTUITests.swift */; };
 		3FE3EA912378DA82002B5303 /* FocusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3EA902378DA82002B5303 /* FocusViewController.swift */; };
+		3FE61D7023D9DE36002C6A0C /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE61D6F23D9DE36002C6A0C /* UserProfileViewController.swift */; };
 		5EC4BDA89C3F094DB85D29C1 /* Pods_BLT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AD7BB0B401C38CBCB198C5 /* Pods_BLT.framework */; };
 		D7056147238CFB700030B257 /* Additional Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7056146238CFB700030B257 /* Additional Classes.swift */; };
 		D721BD5C23830540008E934F /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D721BD5B23830540008E934F /* ItemViewController.swift */; };
@@ -78,6 +79,7 @@
 		3FE3EA82237718DB002B5303 /* BLTUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLTUITests.swift; sourceTree = "<group>"; };
 		3FE3EA84237718DB002B5303 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FE3EA902378DA82002B5303 /* FocusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusViewController.swift; sourceTree = "<group>"; };
+		3FE61D6F23D9DE36002C6A0C /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		624A30B37FCA4FC9A8B86B67 /* Pods-BLT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLT.debug.xcconfig"; path = "Target Support Files/Pods-BLT/Pods-BLT.debug.xcconfig"; sourceTree = "<group>"; };
 		B8AD7BB0B401C38CBCB198C5 /* Pods_BLT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BLT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7056146238CFB700030B257 /* Additional Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Additional Classes.swift"; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				3F2D6FF22399FE6100B8A989 /* WaterView.swift */,
 				3F2D6FF4239A004900B8A989 /* RenderTimer.swift */,
 				3FE3EA62237718D3002B5303 /* AppDelegate.swift */,
+				3FE61D6F23D9DE36002C6A0C /* UserProfileViewController.swift */,
 				3FA808C023DE58B800CB4127 /* Settings Views */,
 				3FA808B523DBA7F400CB4127 /* Focus Mode View */,
 				D721BD5B23830540008E934F /* ItemViewController.swift */,
@@ -408,7 +411,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/SwiftLint/swiftlint\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
 		B55A7FF7D0B4A4643EDB57F9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -441,6 +444,7 @@
 			files = (
 				3FA808C423DE843300CB4127 /* SettingsNotifPrefSubmenuTableViewController.swift in Sources */,
 				3F2D6FF5239A004900B8A989 /* RenderTimer.swift in Sources */,
+				3FE61D7023D9DE36002C6A0C /* UserProfileViewController.swift in Sources */,
 				D7056147238CFB700030B257 /* Additional Classes.swift in Sources */,
 				D721FD562378AA0300ABD1EF /* ToDoTableViewCell.swift in Sources */,
 				D721FD5C2378ACA300ABD1EF /* MilestoneItem.swift in Sources */,
