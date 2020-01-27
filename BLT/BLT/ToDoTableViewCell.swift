@@ -47,7 +47,7 @@ class ToDoTableViewCell: UITableViewCell {
      */
     func setItem(item: ToDoItem) {
         classLabel.text = item.className
-        if let classColor = userData.subjects[item.className]?.uiColor {
+        if let classColor = globalData.subjects[item.className]?.uiColor {
             classLabel.backgroundColor = classColor
         }
         assignmentLabel.text = item.title

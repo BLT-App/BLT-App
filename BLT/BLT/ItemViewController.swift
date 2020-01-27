@@ -12,9 +12,6 @@ class ItemViewController: UIViewController {
     
     var delegate: UIViewController?
     var targetIndex: Int?
-    
-    var myToDoList: ToDoList = ToDoList()
-    var userData: UserData = UserData()
 
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var classNameField: UITextField!
@@ -37,7 +34,7 @@ class ItemViewController: UIViewController {
         if let thisIndex = targetIndex {
             let thisToDo = myToDoList.list[thisIndex]
             classNameField.text = thisToDo.className
-            classNameField.backgroundColor = userData.subjects[thisToDo.className]?.uiColor
+            classNameField.backgroundColor = globalData.subjects[thisToDo.className]?.uiColor
             assignmentField.text = thisToDo.title
             descriptionField.text = thisToDo.description
             datePicker.date = thisToDo.dueDate
@@ -59,10 +56,10 @@ class ItemViewController: UIViewController {
             if (classTxt != "" && titleTxt != "") {
                 myToDoList.list[thisIndex] = ToDoItem(className: classTxt, title: titleTxt, description: descTxt, dueDate: datePicker.date, completed: myToDoList.list[thisIndex].completed)
                 myToDoList.storeList()
-                userData.updateCourses(fromList: myToDoList)
+                globalData.updateCourses(fromList: myToDoList)
                 
                 //If Users Have it Set, Sort List By Due Date
-                if userData.wantsListByDate {
+                if globalData.wantsListByDate {
                     myToDoList.sortList()
                 }
             }
