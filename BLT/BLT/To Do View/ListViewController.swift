@@ -195,6 +195,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
         let movedItem = myToDoList.list[sourceIndexPath.row]
         myToDoList.list.remove(at: sourceIndexPath.row)
         myToDoList.list.insert(movedItem, at: destinationIndexPath.row)
+        myToDoList.storeList()
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
