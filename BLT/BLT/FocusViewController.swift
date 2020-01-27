@@ -59,7 +59,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate {
         super.viewDidAppear(animated)
         hideTabBar()
         print("view has appeared")
-        print(globalData.includeEndFocusButton)
+        print(userData.includeEndFocusButton)
 //        if includeEndButton{
 //            endFocusModeButton.isEnabled = false
 //            endFocusModeButton.isHidden = true
@@ -76,7 +76,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         setCurrentTask()
         
-        if (!globalData.includeEndFocusButton && myToDoList.list.count > 0) {
+        if (!userData.includeEndFocusButton && myToDoList.list.count > 0) {
             endFocusModeButton.isEnabled = false
             endFocusModeButton.isHidden = true
         } else {
@@ -149,7 +149,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate {
                 lblCurrentTask.text = currentTask.title
                 lblCurrentTaskDesc.text = currentTask.description
                 classLabel.text = currentTask.className
-                classLabel.backgroundColor = globalData.subjects[currentTask.className]?.uiColor
+                classLabel.backgroundColor = userData.subjects[currentTask.className]?.uiColor
                 lblCurrentTaskDesc.isHidden = false
                 classLabel.isHidden = false
                 btnCompleteTask.isEnabled = true

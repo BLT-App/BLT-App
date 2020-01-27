@@ -8,9 +8,8 @@
 
 import UIKit
 
-/// Global ToDoList variable. 
-var myToDoList: ToDoList = ToDoList()
-var globalData = UserData()
+let userData = UserData()
+let myToDoList = ToDoList()
 
 class ListViewController: UIViewController {
     @IBOutlet weak var addTaskButton: UIBarButtonItem!
@@ -20,6 +19,9 @@ class ListViewController: UIViewController {
     @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var assignmentsLeftLabel: UILabel!
+    
+    var myToDoList: ToDoList = ToDoList()
+    var userData: UserData = UserData()
     
     var deleteListIndexPath: IndexPath?
     
@@ -39,15 +41,12 @@ class ListViewController: UIViewController {
         addShadow(view: shadowView, color: UIColor.gray.cgColor, opacity: 0.2, radius: 10, offset: CGSize(width: 0, height: 5))
         addShadow(view: addButton, color: UIColor.blue.cgColor, opacity: 0.1, radius: 5, offset: .zero)
         
-        // Loads list from filesystem
-        myToDoList.retrieveList()
-        
         // This creates an example list if there is nothing on the list. Debug only.
         if myToDoList.list.count == 0 {
             myToDoList.createExampleList()
         }
         
-        globalData.updateCourses(fromList: myToDoList)
+        userData.updateCourses(fromList: myToDoList)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,7 +63,7 @@ class ListViewController: UIViewController {
     }
     
     func update() {
-        if globalData.wantsListByDate {
+        if userData.wantsListByDate {
             myToDoList.list = myToDoList.list.sorted()
         }
         updateText()
@@ -152,6 +151,8 @@ class ListViewController: UIViewController {
 
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myToDoList.list.count
     }
@@ -194,8 +195,8 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func contextualCompletedAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "Complete") { (_: UIContextualAction, _: UIView, completionHandler: (Bool) -> Void) in
-            myToDoList.list.remove(at: indexPath.row)
-            myToDoList.storeList()
+            self.myToDoList.list.remove(at: indexPath.row)
+            self.myToDoList.storeList()
             self.tableView.beginUpdates()
             self.tableView.deleteRows(at: [indexPath], with: .top)
             self.tableView.endUpdates()

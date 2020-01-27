@@ -13,60 +13,80 @@ import RandomColorSwift
 /**
  A class that stores user data. 
  */
-class UserData: Codable {
+class UserData {
     
+    /// Defaults.
+    let defaults = UserDefaults.standard
+    
+    /// Whether or not User Data has been loaded.
+    var hasLoaded: Bool {
+        return defaults.object(forKey: "User Data") != nil
+    }
+    
+    /// Number of hues currently defined.
     var hueCounter = 0
-    var subjects: [String: Color]
+    
+    /// Subject to Color dictionary.
+    var subjects: [String: Color] = [:]
+    
+    /// Sorted list of Subjects.
     var subjectList: [String] {
         return Array(subjects.keys).sorted()
     }
-    var wantsListByDate: Bool
-    var firstName: String
-    var lastName: String
-    var includeEndFocusButton: Bool
     
-    /// Adds subject
-    func addSubject(name: String) {
-        subjects[name] = Color(uiColor: randomColor(hue: getHue(), luminosity: .dark))
-        saveUserData()
-    }
+    /// Whether or not user wants to do list sorted by date.
+    var wantsListByDate: Bool = true
+    
+    /// First name of the user.
+    var firstName: String = ""
+    
+    /// Last name of the user.
+    var lastName: String = ""
+    
+    /// Whether or not user wants 'End focus mode' button.
+    var includeEndFocusButton: Bool = true
     
     /// Saves user data to local file.
     func saveUserData() {
-        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archiveURL = documentsDirectory.appendingPathComponent("userSettings").appendingPathExtension("plist")
-        let propertyListEncoder = PropertyListEncoder()
-        let encodedNote = try? propertyListEncoder.encode(self)
-        try? encodedNote?.write(to: archiveURL, options: .noFileProtection)
+        defaults.set(self, forKey: "UserData")
     }
     
     /// Retrieves saved user data.
     func retrieveUserData() {
-        let propertyListDecoder = PropertyListDecoder()
-        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archiveURL = documentsDirectory.appendingPathComponent("userSettings").appendingPathExtension("plist")
-        if let retrievedNoteData = try? Data(contentsOf: archiveURL), let decodedUserData = try? propertyListDecoder.decode(UserData.self, from: retrievedNoteData) {
-            self.subjects = decodedUserData.subjects
-            self.firstName = decodedUserData.firstName
-            self.lastName = decodedUserData.lastName
-            self.wantsListByDate = decodedUserData.wantsListByDate
-            self.includeEndFocusButton = decodedUserData.includeEndFocusButton
+        let data = defaults.object(forKey: "UserData")
+        if data == nil {
+            saveUserData()
+        } else {
+            if let userData = data as? UserData {
+                self.hueCounter = userData.hueCounter
+                self.subjects = userData.subjects
+                self.wantsListByDate = userData.wantsListByDate
+                self.firstName = userData.firstName
+                self.lastName = userData.lastName
+                self.includeEndFocusButton = userData.includeEndFocusButton
+            }
         }
     }
     
     /// Initializer
     init() {
-        hueCounter = 0
-        subjects = [:]
-        wantsListByDate = true
-        firstName = ""
-        lastName = ""
-        includeEndFocusButton = true
+        if defaults.object(forKey: "UserData") == nil {
+            saveUserData()
+        }
         retrieveUserData()
-        
+    }
+    
+    /// Adds subject
+    /// - Parameters:
+    ///     - name: The name of the Subject to add.
+    func addSubject(name: String) {
+        subjects[name] = Color(uiColor: randomColor(hue: getHue(), luminosity: .dark))
+        saveUserData()
     }
     
     /// Updates user data. Contains the information about the list of courses.
+    /// - Parameters:
+    ///     - toDoList: The main ToDoList of the user.
     func updateCourses(fromList toDoList: ToDoList) {
         print("*** Updating Courses")
         for item: ToDoItem in toDoList.list {
@@ -82,6 +102,7 @@ class UserData: Codable {
     func getHue() -> Hue {
         var hues: [Hue] = [.red, .orange, .green, .blue, .purple, .pink]
         hueCounter += 1
+        saveUserData()
         return hues[hueCounter % 6]
     }
 }
@@ -89,11 +110,9 @@ class UserData: Codable {
 ///  Codable Color struct to enable saving courses.
 struct Color: Codable {
     var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
-
     var uiColor: UIColor {
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
-    
     init(uiColor: UIColor) {
         uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
     }

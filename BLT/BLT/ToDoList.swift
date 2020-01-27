@@ -11,9 +11,13 @@ import Foundation
 /**
  A class that represents entire lists of to-do. This is what is stored into storage by the system.
  */
-class ToDoList: Codable {
+class ToDoList {
+    
+    /// Defaults.
+    let defaults = UserDefaults.standard
+    
     /// The list of to-do items. 
-    var list: [ToDoItem]
+    var list: [ToDoItem] = []
     
     /// The list of uncompleted to-do items.
     var uncompletedList: [ToDoItem] {
@@ -26,14 +30,35 @@ class ToDoList: Codable {
         return uncompleted
     }
     
-    /// Initializer from decodable.
-    init(from: Decodable) {
-        self.list = []
+    /// Saves user data to local file.
+    func storeList() {
+        defaults.set(self, forKey: "ToDoList")
     }
     
-    /// Initializer.
+    /// Retrieves saved user data.
+    func retrieveList() {
+        let list = defaults.object(forKey: "ToDoList")
+        if list == nil {
+            storeList()
+        } else {
+            if let toDoList = list as? ToDoList {
+                self.list = toDoList.list
+            }
+        }
+    }
+    
+    /// Initializer
     init() {
-        self.list = []
+        if defaults.object(forKey: "ToDoList") == nil {
+            storeList()
+        }
+        retrieveList()
+    }
+    
+    /// Sorts the ToDoList.
+    func sortList() {
+        list = list.sorted()
+        storeList()
     }
     
     /// Adds example tasks to the to do list, for example funcionality.
@@ -45,30 +70,6 @@ class ToDoList: Codable {
         self.list.append(ToDoItem(className: "Photo", title: "Print photos", description: "Print and mount pieces from last week", dueDate: Date(), completed: false))
         self.list.append(ToDoItem(className: "Econ", title: "Read Unit 7", description: "Read Unit 7 and respond to prompt online", dueDate: Date(), completed: false))
         self.list.append(ToDoItem(className: "Philosophy", title: "Paine", description: "Read Paine's Common Sense from Philosophy reader", dueDate: Date(), completed: false))
-    }
-    
-    /// Stores the ToDoList into local storage.
-    func storeList() {
-        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archiveURL = documentsDirectory.appendingPathComponent("todolist").appendingPathExtension("plist")
-        let propertyListEncoder = PropertyListEncoder()
-        
-        let encodedNote = try? propertyListEncoder.encode(self)
-        try? encodedNote?.write(to: archiveURL, options: .noFileProtection)
-    }
-    
-    /// Retrieves the ToDoList from local storage.
-    func retrieveList() {
-        let propertyListDecoder = PropertyListDecoder()
-        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archiveURL = documentsDirectory.appendingPathComponent("todolist").appendingPathExtension("plist")
-        if let retrievedNoteData = try? Data(contentsOf: archiveURL), let decodedToDoList = try? propertyListDecoder.decode(ToDoList.self, from: retrievedNoteData) {
-            self.list = decodedToDoList.list
-        }
-    }
-    
-    /// Sorts the ToDoList.
-    func sortList() {
-        list = list.sorted()
+        storeList()
     }
 }
