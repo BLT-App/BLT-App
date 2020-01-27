@@ -41,8 +41,9 @@ class ToDoList {
         if list == nil {
             storeList()
         } else {
-            let toDoList = list as! ToDoList
-            self.list = toDoList.list
+            if let toDoList = list as? ToDoList {
+                self.list = toDoList.list
+            }
         }
     }
     

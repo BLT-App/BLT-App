@@ -57,13 +57,14 @@ class UserData {
         if data == nil {
             saveUserData()
         } else {
-            let userData = data as! UserData
-            self.hueCounter = userData.hueCounter
-            self.subjects = userData.subjects
-            self.wantsListByDate = userData.wantsListByDate
-            self.firstName = userData.firstName
-            self.lastName = userData.lastName
-            self.includeEndFocusButton = userData.includeEndFocusButton
+            if let userData = data as? UserData {
+                self.hueCounter = userData.hueCounter
+                self.subjects = userData.subjects
+                self.wantsListByDate = userData.wantsListByDate
+                self.firstName = userData.firstName
+                self.lastName = userData.lastName
+                self.includeEndFocusButton = userData.includeEndFocusButton
+            }
         }
     }
     
