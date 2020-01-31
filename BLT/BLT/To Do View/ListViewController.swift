@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftReorder
-
+import UserNotifications
 /// Global ToDoList variable. 
 var myToDoList: ToDoList = ToDoList()
 var globalData = UserData()
@@ -32,7 +32,8 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
+        let obj = Notifications()
+        obj.prepareNotification(title: "does it work?", subtitle: "yes it does", body: "Yeah")
         createWave()
         
         // Programmatically sets up rounded views.
