@@ -164,6 +164,7 @@
 				3F2D6FF4239A004900B8A989 /* RenderTimer.swift */,
 				3FE3EA62237718D3002B5303 /* AppDelegate.swift */,
 				3FE61D6F23D9DE36002C6A0C /* UserProfileViewController.swift */,
+				3FCE102D23E29D9A003F0D7D /* Notifications.swift */,
 				D745012223DEB26A00508639 /* Focus Mode View */,
 				D745012123DEB25400508639 /* Settings Views */,
 				D745012323DEB28300508639 /* To Do View */,
@@ -245,7 +246,6 @@
 				D721FD582378ACA300ABD1EF /* Milestone.swift */,
 				D721FD572378ACA300ABD1EF /* MilestoneItem.swift */,
 				D721FD592378ACA300ABD1EF /* ToDoItem.swift */,
-				3FCE102D23E29D9A003F0D7D /* Notifications.swift */,
 			);
 			path = "List Classes";
 			sourceTree = "<group>";

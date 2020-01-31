@@ -11,35 +11,33 @@ import UserNotifications
 import UIKit
 class Notifications {
     
-    
-    
     init(){
         
     }
     
     func prepareNotification(title: String?, subtitle: String?, body: String?){
-        var center = UNUserNotificationCenter.current()
-        var content = UNMutableNotificationContent()
+        let center = UNUserNotificationCenter.current()
+        let content = UNMutableNotificationContent()
         
-        if let t: String = title{
-            content.title = t
+        if let title: String = title {
+            content.title = title
         }
         else {
-            content.title = "default"
-            
-        }
-        if let s: String = subtitle {
-            content.subtitle = s
-        }
-        else{
-            content.subtitle = "it works"
+            content.title = "Title"
         }
         
-        if let b: String = body {
-            content.body = b
+        if let subtitle: String = subtitle {
+            content.subtitle = subtitle
         }
-        else{
-            content.body = "Yaaaayy"
+        else {
+            content.subtitle = "Subtitle"
+        }
+        
+        if let body: String = body {
+            content.body = body
+        }
+        else {
+            content.body = "Body"
         }
         
         content.sound = UNNotificationSound.default
@@ -55,18 +53,8 @@ class Notifications {
         
             center.add(request) {(error) in
             if error != nil {
-                print(error)
+                print("Error")
             }
-            }
+        }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
