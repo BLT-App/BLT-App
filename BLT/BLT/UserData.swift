@@ -87,6 +87,7 @@ class UserData: Codable {
     init() {
         if UserDefaults.standard.object(forKey: "UserDataHasLoaded") == nil {
             saveUserData()
+            // Run any code for the first time user launches app
         }
         retrieveUserData()
     }
