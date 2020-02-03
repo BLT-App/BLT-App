@@ -325,6 +325,10 @@
                                     <constraint firstItem="Ftt-hP-CPO" firstAttribute="top" secondItem="RIt-2R-z2g" secondAttribute="top" constant="20" id="nXw-SW-LD4"/>
                                 </constraints>
                             </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iHy-BG-2zW">
+                                <rect key="frame" x="50" y="130" width="314" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -347,6 +351,7 @@
                         <outlet property="itemView" destination="RIt-2R-z2g" id="kLt-jT-gMg"/>
                         <outlet property="lblCurrentTask" destination="ugR-Bz-WuA" id="hCs-Lh-n3E"/>
                         <outlet property="lblCurrentTaskDesc" destination="7qy-iM-Ea1" id="jYR-F6-5pM"/>
+                        <outlet property="progressTimer" destination="iHy-BG-2zW" id="pNn-5f-qRr"/>
                         <outlet property="timerDisplay" destination="1Oc-RX-9Op" id="n5A-GN-5zF"/>
                     </connections>
                 </viewController>

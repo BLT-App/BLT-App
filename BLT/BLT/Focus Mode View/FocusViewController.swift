@@ -32,13 +32,15 @@ class FocusViewController: UIViewController, FocusTimerDelegate {
     
     @IBOutlet weak var classLabel: InsetLabel!
     
+    @IBOutlet weak var progressTimer: UIProgressView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtons()
         
-        myTimer = FocusTimer(1, 00)
+        myTimer = FocusTimer(2, 00)
         myTimer.delegate = self
-        
+        progressTimer.transform = progressTimer.transform.scaledBy(x: 1, y: 8)
         setupClassLabel()
         
         itemView.layer.cornerRadius = 20.0
@@ -83,8 +85,8 @@ class FocusViewController: UIViewController, FocusTimerDelegate {
             endFocusModeButton.isEnabled = true
             endFocusModeButton.isHidden = false
         }
-        
-        myTimer.mins = 1
+        progressTimer.setProgress(1, animated: false)
+        myTimer.mins = 2
         myTimer.secs = 00
         myTimer.runTimer()
     }
@@ -178,6 +180,11 @@ class FocusViewController: UIViewController, FocusTimerDelegate {
     ///Runs when the timer has updated its own values
     func valsUpdated(_ timerReadout: String) {
         timerDisplay.text = timerReadout
+        var timeLeft = myTimer.secs + 60 * myTimer.mins
+        progressTimer.setProgress( Float(Float(timeLeft)/Float(myTimer.totalSecs)), animated: false)
+        print("valsUpdated called ")
+        print(timeLeft)
+        print(myTimer.totalSecs)
     }
     
     ///Runs when the timer has hit zero

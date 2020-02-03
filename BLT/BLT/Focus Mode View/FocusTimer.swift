@@ -18,6 +18,9 @@ class FocusTimer {
     ///String to send to the focus mode screen for display
     var description: String
     
+    //total number of seconds initially
+    var totalSecs: Int
+    
     weak var delegate: FocusTimerDelegate?
     
     init(_ mins: Int, _ secs: Int) {
@@ -25,6 +28,7 @@ class FocusTimer {
         self.secs = secs
         myTimer = Timer()
         description = ""
+        self.totalSecs = 60 * mins + secs
     }
     
     ///Starts the timer
