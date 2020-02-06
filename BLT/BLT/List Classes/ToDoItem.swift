@@ -24,6 +24,15 @@ class ToDoItem: Codable {
     /// A due date fot the to-do.
     var dueDate: Date
     
+    /// Date of creation
+    let dateCreated: Date = Date()
+    
+    /// Date of Completion
+    var dateCompleted: Date? = nil
+    
+    ///Hash Value
+    let hashValue: String
+    
     /// Returns the days between now and the due date.
     var dueCounter: Int {
         let calendar = NSCalendar.current
@@ -45,16 +54,35 @@ class ToDoItem: Codable {
     }
 
     /// Whether the to-do item is completed.
-    var completed: Bool
+    private var completed: Bool
+    
+    func completeTask() {
+        if !completed {
+            completed = true
+            dateCompleted = Date()
+        }
+    }
+    
+    func undoCompleteTask() {
+        completed = false
+        dateCompleted = nil
+    }
+    
+    func isCompleted() -> Bool {
+        return completed
+    }
     
     /// Initializer from Decodable
     init(from: Decodable, className: String, title: String, description: String,
-         dueDate: Date, completed: Bool) {
+         dueDate: Date, completed: Bool, hashValue: String) {
         self.className = className
         self.title = title
         self.description = description
         self.dueDate = dueDate
         self.completed = completed
+        self.hashValue = hashValue
+        print("Item with hash value \(self.hashValue) was created")
+        globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .Created))
     }
     
     /// Initializer method
@@ -65,6 +93,10 @@ class ToDoItem: Codable {
         self.description = description
         self.dueDate = dueDate
         self.completed = completed
+        self.hashValue = dateCreated.description + "_" + title.uppercased()
+        let hashForbiddenCharacters: Set<Character> = [" ", "+", ":", "-"]
+        self.hashValue.removeAll(where: {hashForbiddenCharacters.contains($0)})
+        print("Item with hash value \(self.hashValue) was added")
     }
     
     /// Marks an item as completed
@@ -84,3 +116,4 @@ extension ToDoItem: Comparable {
         return lhs.dueCounter == rhs.dueCounter
     }
 }
+

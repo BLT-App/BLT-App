@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 import RandomColorSwift
 
+///Global UserData Variable
+var globalData = UserData()
+
 /**
  A class that stores user data. 
  */
@@ -63,14 +66,11 @@ class UserData: Codable {
         lastName = ""
         includeEndFocusButton = true
         retrieveUserData()
-        
     }
     
     /// Updates user data. Contains the information about the list of courses.
     func updateCourses(fromList toDoList: ToDoList) {
-        print("*** Updating Courses")
         for item: ToDoItem in toDoList.list {
-            print("*** Updating \(item.className)")
             if subjects[item.className] == nil {
                 subjects[item.className] = Color(uiColor: randomColor(hue: getHue(), luminosity: .dark))
             }

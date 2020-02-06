@@ -9,10 +9,6 @@
 import UIKit
 import SwiftReorder
 
-/// Global ToDoList variable. 
-var myToDoList: ToDoList = ToDoList()
-var globalData = UserData()
-
 class ListViewController: UIViewController {
     @IBOutlet weak var addTaskButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
@@ -51,6 +47,8 @@ class ListViewController: UIViewController {
         tableView.reorder.delegate = self
         
         globalData.updateCourses(fromList: myToDoList)
+        
+        print( "Currently \(globalTaskDatabase.currentDatabaseLog.numOfEvents) in log")
     }
     
     override func viewDidAppear(_ animated: Bool) {

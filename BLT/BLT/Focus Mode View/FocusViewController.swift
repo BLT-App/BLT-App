@@ -138,7 +138,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate {
         if(myToDoList.list.count > 0) {
             for itemNum in 0 ..< myToDoList.list.count {
                 if (notFoundNextItem) {
-                    if !(myToDoList.list[itemNum].completed) {
+                    if !(myToDoList.list[itemNum].isCompleted()) {
                         currentTaskNum = itemNum
                         notFoundNextItem = false
                     }
@@ -191,7 +191,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate {
     
     /// Pressing on complete task that queues the next task.
     @IBAction func completeTaskPress(_ sender: UIButton) {
-        myToDoList.list[currentTaskNum].completed = true
+        myToDoList.list[currentTaskNum].completeTask()
         myToDoList.list.remove(at: currentTaskNum)
         setCurrentTask()
     }
