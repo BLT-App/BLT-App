@@ -8,11 +8,11 @@
 
 import Foundation
 enum GeneralEventType: Int, Codable {
-    case DueDateChanged
-    case MarkedCompletedInFocusMode
-    case Created
-    case MarkedCompletedInListView
-    case UnmarkedComplete
+    case dueDateChanged
+    case markedCompletedInFocusMode
+    case created
+    case markedCompletedInListView
+    case unmarkedComplete
 }
 
 class DatabaseEvent: Codable {
