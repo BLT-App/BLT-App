@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         myToDoList.storeList()
         globalTaskDatabase.saveDatabaseLog(targetLog: globalTaskDatabase.currentDatabaseLog)
+        globalTaskDatabase.saveDatabaseIndex()
     }
 
 }
