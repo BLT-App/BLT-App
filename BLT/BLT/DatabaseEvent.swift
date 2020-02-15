@@ -25,6 +25,7 @@ class DatabaseEvent: Codable {
     init(item: ToDoItem, event: GeneralEventType) {
         self.toDoItemIdentifier = item.hashValue
         self.eventType = event
+        self.eventNumber = globalTaskDatabase.myDatabaseIndex.getEventNumForUse()
     }
     
 }

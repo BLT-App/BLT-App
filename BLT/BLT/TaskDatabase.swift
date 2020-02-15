@@ -46,10 +46,57 @@ class TaskDatabase {
         }
     }
     
+    struct DatabaseIndex: Codable {
+        private var eventNumber : Int
+        
+        mutating func getEventNumForUse() -> Int {
+            self.eventNumber += 1
+            return self.eventNumber
+        }
+        
+        init() {
+            self.eventNumber = 0
+        }
+    }
+    
     init() {
+        print("Getting Database Index")
+        let propertyListDecoder = PropertyListDecoder()
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL = documentsDirectory.appendingPathComponent("databaseIndex").appendingPathExtension("plist")
+        if let retrievedNoteData = try? Data(contentsOf: archiveURL), let decodedDatabaseIndex = try? propertyListDecoder.decode(DatabaseIndex.self, from: retrievedNoteData) {
+            print("Loaded Database Index")
+            self.myDatabaseIndex = decodedDatabaseIndex
+        } else {
+            print("No Database Index Found")
+            print("Creating New Database Index")
+            self.myDatabaseIndex = DatabaseIndex()
+        }
         print("Initializing DatabaseLog")
         currentDatabaseLog = DatabaseLog(year: -1, month: -1)
         currentDatabaseLog = fetchDatabaseLog(targetDate: Date())
+    }
+    
+    func loadDatabaseIndex() -> DatabaseIndex {
+        let propertyListDecoder = PropertyListDecoder()
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL = documentsDirectory.appendingPathComponent("databaseIndex").appendingPathExtension("plist")
+        if let retrievedNoteData = try? Data(contentsOf: archiveURL), let decodedDatabaseIndex = try? propertyListDecoder.decode(DatabaseIndex.self, from: retrievedNoteData) {
+            print("Loaded Database Index")
+            return decodedDatabaseIndex
+        } else {
+            print("No Database Index Found")
+            print("Creating New Logfile")
+            return DatabaseIndex()
+        }
+    }
+    
+    func saveDatabaseIndex() {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL = documentsDirectory.appendingPathComponent("databaseIndex").appendingPathExtension("plist")
+        let propertyListEncoder = PropertyListEncoder()
+        let encodedNote = try? propertyListEncoder.encode(self.myDatabaseIndex)
+        try? encodedNote?.write(to: archiveURL, options: .noFileProtection)
     }
     
     func fetchDatabaseLog(year: Int, month: Int) -> DatabaseLog {
