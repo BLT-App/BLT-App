@@ -114,6 +114,8 @@ class FocusViewController: UIViewController, FocusTimerDelegate {
 
     }
     
+    
+    
     /// Hides the Tab Bar controller.
     func hideTabBar() {
         var frame = self.tabBarController?.tabBar.frame
