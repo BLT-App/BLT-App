@@ -62,7 +62,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3BD6BFEBB320243A67A7513E /* Pods-BLT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLT.release.xcconfig"; path = "Target Support Files/Pods-BLT/Pods-BLT.release.xcconfig"; sourceTree = "<group>"; };
 		3F19AE3F23EC620100DECA17 /* FMPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMPopUpViewController.swift; sourceTree = "<group>"; };
 		3F2D6FF22399FE6100B8A989 /* WaterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterView.swift; sourceTree = "<group>"; };
 		3F2D6FF4239A004900B8A989 /* RenderTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderTimer.swift; sourceTree = "<group>"; };
