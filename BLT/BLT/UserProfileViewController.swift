@@ -32,13 +32,6 @@ class UserProfileViewController: UIViewController
         tasksCompletedChart.addLine(trendData)
         tasksCompletedChart.y.grid.count = 5
         
-//        userDataChart.data = data
-//        userDataChart.chartDescription?.text = "Tasks completed"
-        
-        //All other additions to this function will go here
-        
-        //This must stay at end of function
-//        userDataChart.notifyDataSetChanged()
     }
     
     override func viewDidLoad() {
@@ -66,17 +59,6 @@ class UserProfileViewController: UIViewController
         userImage.clipsToBounds = true
         userImage.layer.cornerRadius = 50
         
-//        userDataChart.clipsToBounds = true
-//        userDataChart.layer.cornerRadius = 25
-//        userDataChart.backgroundColor = .gray
-        
-//        scrollView.layer.cornerRadius = 25
-//        scrollView.backgroundColor = .lightGray
-        
-        
-//        userNameLabel.clipsToBounds = true
-//        userNameLabel.layer.cornerRadius = 5
-//        userNameLabel.backgroundColor = .blue
         userNameLabel.text = "\(globalData.firstName) \(globalData.lastName)"
     }
 }
