@@ -16,11 +16,10 @@ enum GeneralEventType: Int, Codable {
 }
 
 class DatabaseEvent: Codable {
-
-    
     let eventType: GeneralEventType
     let date: Date = Date()
     let toDoItemIdentifier: String
+    let eventNumber: Int
     
     init(item: ToDoItem, event: GeneralEventType) {
         self.toDoItemIdentifier = item.hashValue

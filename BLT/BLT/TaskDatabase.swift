@@ -13,6 +13,8 @@ var globalTaskDatabase: TaskDatabase = TaskDatabase()
 
 class TaskDatabase {
     
+    ///Database Index
+    var myDatabaseIndex: DatabaseIndex
     ///Current Working Database Log
     var currentDatabaseLog: DatabaseLog
     
@@ -47,7 +49,8 @@ class TaskDatabase {
     }
     
     struct DatabaseIndex: Codable {
-        private var eventNumber : Int
+        private var eventNumber: Int
+        var listOfDatabases: [String]
         
         mutating func getEventNumForUse() -> Int {
             self.eventNumber += 1
@@ -56,6 +59,7 @@ class TaskDatabase {
         
         init() {
             self.eventNumber = 0
+            self.listOfDatabases = []
         }
     }
     
