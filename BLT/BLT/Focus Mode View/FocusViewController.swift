@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LBConfettiView
 
 /// The ViewController that controls the Focus View.
 class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewControllerDelegate {
@@ -36,10 +37,20 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     
     @IBOutlet weak var progressTimer: UIProgressView!
     
+    @IBOutlet weak var pointsCounter: UILabel!
+    
+    var confettiView: ConfettiView?
+    
     var leaveView: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtons()
+        
+        let confV = ConfettiView(frame: self.view.bounds)
+        confV.style = .star
+        confV.intensity = 0.7
+        self.view.addSubview(confV)
+        confettiView = confV
         
         myTimer = FocusTimer(countdownTime: 0.0)
         myTimer.delegate = self
@@ -215,9 +226,21 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     
     /// Pressing on complete task that queues the next task.
     @IBAction func completeTaskPress(_ sender: UIButton) {
+        if let confettiView = self.confettiView {
+            confettiView.start()
+        }
         myToDoList.list[currentTaskNum].completed = true
         myToDoList.list.remove(at: currentTaskNum)
         setCurrentTask()
+        let seconds = 1.0
+        let oldPoints = myToDoList.points
+        myToDoList.points += 10
+        self.incrementPoints(oldPoints: oldPoints)
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            if let confettiView = self.confettiView {
+                confettiView.stop()
+            }
+        }
     }
     
     /// Ending focus mode brings user back to the list view.
@@ -240,6 +263,25 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
         
     }
     
+    /// Animates a point incrementation with the pointCounter
+    func incrementPoints(oldPoints: Int) {
+        let newValue = myToDoList.points
+        let diff = newValue - oldPoints
+        let deltaT: Double = 1.0 / Double(diff)
+        for i in 1...diff {
+            let seconds = Double(i) * deltaT
+            let currentPoints = oldPoints + i
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                self.updatePointsCounter(currentPoints)
+            }
+        }
+    }
+    
+    /// Updates the point counter.
+    func updatePointsCounter(_ points: Int) {
+        pointsCounter.text = "\(points) ⭐"
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -251,4 +293,5 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     }
     */
 
+    
 }

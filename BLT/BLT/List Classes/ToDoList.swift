@@ -15,6 +15,13 @@ class ToDoList: Codable {
     /// The list of to-do items.
     var list: [ToDoItem] = []
     
+    /// Current number of points.
+    var points: Int = 0 {
+        didSet {
+            storeList()
+        }
+    }
+    
     /// The list of uncompleted to-do items.
     var uncompletedList: [ToDoItem] {
         var uncompleted: [ToDoItem] = []
@@ -45,6 +52,7 @@ class ToDoList: Codable {
         let archiveURL = documentsDirectory.appendingPathComponent("todolist").appendingPathExtension("plist")
         if let retrievedNoteData = try? Data(contentsOf: archiveURL), let decodedToDoList = try? propertyListDecoder.decode(ToDoList.self, from: retrievedNoteData) {
             self.list = decodedToDoList.list
+            self.points = decodedToDoList.points
             print(list.count)
             print("** Retrieved To Do List")
         }

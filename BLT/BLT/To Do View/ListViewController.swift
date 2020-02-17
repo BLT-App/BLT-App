@@ -9,6 +9,8 @@
 import UIKit
 import SwiftReorder
 import UserNotifications
+import LBConfettiView
+
 /// Global ToDoList variable. 
 var myToDoList: ToDoList = ToDoList()
 var globalData = UserData()
@@ -21,8 +23,10 @@ class ListViewController: UIViewController {
     @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var assignmentsLeftLabel: UILabel!
+    @IBOutlet weak var pointsCounter: UILabel!
     
     var deleteListIndexPath: IndexPath?
+    var confettiView: ConfettiView?
     
     var selectedIndex: Int = -1
     
@@ -37,6 +41,12 @@ class ListViewController: UIViewController {
         obj.prepareNotification(title: "take2 ", subtitle: "yeet", body: "!!!", notifDate: Date(timeIntervalSinceNow: 15))
         
         createWave()
+        
+        let confV = ConfettiView(frame: self.view.bounds)
+        confV.style = .star
+        confV.intensity = 0.7
+        self.view.addSubview(confV)
+        confettiView = confV
         
         // Programmatically sets up rounded views.
         roundContainerView(cornerRadius: 40, view: tableContainerView, shadowView: shadowView)
@@ -54,6 +64,7 @@ class ListViewController: UIViewController {
         tableView.reorder.delegate = self
         
         globalData.updateCourses(fromList: myToDoList)
+        update()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -83,6 +94,7 @@ class ListViewController: UIViewController {
     func updateText() {
         let pluralSingularAssignment = (myToDoList.list.count == 1) ? "assignment" : "assignments"
         assignmentsLeftLabel.text = "\(myToDoList.list.count) \(pluralSingularAssignment) left."
+        updatePointsCounter(myToDoList.points)
     }
     
     /**
@@ -210,10 +222,22 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
         let action = UIContextualAction(style: .normal, title: "Complete") { (_: UIContextualAction, _: UIView, completionHandler: (Bool) -> Void) in
             myToDoList.list.remove(at: indexPath.row)
             myToDoList.storeList()
+            if let confettiView = self.confettiView {
+                confettiView.start()
+            }
             self.tableView.beginUpdates()
             self.tableView.deleteRows(at: [indexPath], with: .top)
             self.tableView.endUpdates()
             self.updateText()
+            let seconds = 1.0
+            let oldPoints = myToDoList.points
+            myToDoList.points += 10
+            self.incrementPoints(oldPoints: oldPoints)
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                if let confettiView = self.confettiView {
+                    confettiView.stop()
+                }
+            }
             completionHandler(true)
         }
         action.backgroundColor = .blue
@@ -257,5 +281,24 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
      */
     func cancelDeleteItem(alertAction: UIAlertAction!) {
         deleteListIndexPath = nil
+    }
+    
+    /// Animates a point incrementation with the pointCounter
+    func incrementPoints(oldPoints: Int) {
+        let newValue = myToDoList.points
+        let diff = newValue - oldPoints
+        let deltaT: Double = 1.0 / Double(diff)
+        for i in 1...diff {
+            let seconds = Double(i) * deltaT
+            let currentPoints = oldPoints + i
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                self.updatePointsCounter(currentPoints)
+            }
+        }
+    }
+    
+    /// Updates the point counter.
+    func updatePointsCounter(_ points: Int) {
+        pointsCounter.text = "\(points) ⭐"
     }
 }

@@ -7,6 +7,7 @@ target 'BLT' do
   pod 'DropDown', '2.3.4'
   pod 'RandomColorSwift'
   pod 'SwiftLint'
+  pod 'LBConfettiView'
 
 end
 
