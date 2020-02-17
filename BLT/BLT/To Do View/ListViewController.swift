@@ -281,9 +281,9 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
         let newValue = myToDoList.points
         let diff = newValue - oldPoints
         let deltaT: Double = 1.0 / Double(diff)
-        for 🤣🤣🤣 in 1...diff {
-            let seconds = Double(🤣🤣🤣) * deltaT
-            let currentPoints = oldPoints + 🤣🤣🤣
+        for inc in 1...diff {
+            let seconds = Double(inc) * deltaT
+            let currentPoints = oldPoints + inc
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                 self.updatePointsCounter(currentPoints)
             }
