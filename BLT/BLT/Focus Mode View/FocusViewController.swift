@@ -167,7 +167,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
         if(myToDoList.list.count > 0) {
             for itemNum in 0 ..< myToDoList.list.count {
                 if (notFoundNextItem) {
-                    if !(myToDoList.list[itemNum].completed) {
+                    if !(myToDoList.list[itemNum].isCompleted()) {
                         currentTaskNum = itemNum
                         notFoundNextItem = false
                     }
@@ -229,7 +229,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
         if let confettiView = self.confettiView {
             confettiView.start()
         }
-        myToDoList.list[currentTaskNum].completed = true
+        myToDoList.list[currentTaskNum].completeTask()
         myToDoList.list.remove(at: currentTaskNum)
         setCurrentTask()
         let seconds = 1.0

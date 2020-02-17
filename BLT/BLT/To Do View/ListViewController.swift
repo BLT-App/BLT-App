@@ -11,10 +11,6 @@ import SwiftReorder
 import UserNotifications
 import LBConfettiView
 
-/// Global ToDoList variable. 
-var myToDoList: ToDoList = ToDoList()
-var globalData = UserData()
-
 class ListViewController: UIViewController {
     @IBOutlet weak var addTaskButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
@@ -34,11 +30,6 @@ class ListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        let obj = Notifications()
-        obj.prepareNotification(title: "does it work?", subtitle: "yes it does!", body: "hooray!!", notifDate: nil)
-        obj.prepareNotification(title: "take2 ", subtitle: "yeet", body: "!!!", notifDate: Date(timeIntervalSinceNow: 15))
         
         createWave()
         
@@ -65,6 +56,8 @@ class ListViewController: UIViewController {
         
         globalData.updateCourses(fromList: myToDoList)
         update()
+        
+        print( "Currently \(globalTaskDatabase.currentDatabaseLog.numOfEvents) in log")
     }
     
     override func viewDidAppear(_ animated: Bool) {

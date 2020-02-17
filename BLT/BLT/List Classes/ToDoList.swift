@@ -7,6 +7,9 @@
 //
 import Foundation
 
+///Global ToDoList Variable
+var myToDoList: ToDoList = ToDoList()
+
 /**
  A class that represents entire lists of to-do. This is what is stored into storage by the system.
  */
@@ -26,7 +29,7 @@ class ToDoList: Codable {
     var uncompletedList: [ToDoItem] {
         var uncompleted: [ToDoItem] = []
         for item: ToDoItem in list {
-            if !item.completed {
+            if !item.isCompleted() {
                 uncompleted.append(item)
             }
         }
