@@ -27,11 +27,22 @@ class UserProfileViewController: UIViewController
     @IBOutlet weak var tasksCompletedChart: LineChart!
     
     func chartUpdate(){
-        var trendData: [CGFloat] = [5, 2, 7, 8, 3, 5]
+        var trendData: [CGFloat] = []
+        
+        var previousDayTotal: Int = 0
+        for day in 1...7 {
+            var numEventsCompletedOnDay = 0
+            numEventsCompletedOnDay += globalTaskDatabase.getNumEventsOfTypeInLast(numDays: day, eventType: .markedCompletedInListView)
+            numEventsCompletedOnDay += globalTaskDatabase.getNumEventsOfTypeInLast(numDays: day, eventType: .markedCompletedInFocusMode)
+            numEventsCompletedOnDay -= globalTaskDatabase.getNumEventsOfTypeInLast(numDays: day, eventType: .unmarkedComplete)
+            trendData.append(CGFloat(numEventsCompletedOnDay - previousDayTotal))
+            
+            previousDayTotal = numEventsCompletedOnDay
+        }
+        
         tasksCompletedChart.clear()
         tasksCompletedChart.addLine(trendData)
-        tasksCompletedChart.y.grid.count = 5
-        
+        tasksCompletedChart.y.grid.count = 7
     }
     
     override func viewDidLoad() {
