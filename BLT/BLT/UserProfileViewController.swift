@@ -26,6 +26,12 @@ class UserProfileViewController: UIViewController
     
     @IBOutlet weak var tasksCompletedChart: LineChart!
     
+    @IBOutlet weak var streakLabel: UILabel!
+    
+    @IBOutlet weak var completedLabel: UILabel!
+    
+    @IBOutlet weak var focusLabel: UILabel!
+    
     func chartUpdate(){
         var trendData: [CGFloat] = []
         

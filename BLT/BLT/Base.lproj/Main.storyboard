@@ -1036,10 +1036,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="User Profile" id="riR-1m-TQQ"/>
                     <connections>
+                        <outlet property="completedLabel" destination="NbH-l0-E2h" id="3Km-Ai-mwx"/>
                         <outlet property="containerView" destination="g2w-DP-DBt" id="W5R-LP-djl"/>
+                        <outlet property="focusLabel" destination="4Bq-n3-Svz" id="YR4-Pw-Qf3"/>
                         <outlet property="graphContainerView" destination="VsB-1i-9yn" id="UAQ-Tn-d0P"/>
                         <outlet property="graphShadowView" destination="lUN-JG-IQl" id="tXA-fP-q7M"/>
                         <outlet property="shadowView" destination="A6A-YW-7KF" id="Dgs-BV-e8t"/>
+                        <outlet property="streakLabel" destination="sUH-IB-mgb" id="TZR-O2-JHV"/>
                         <outlet property="tasksCompletedChart" destination="nbU-YL-gDn" id="SOi-xp-G9j"/>
                         <outlet property="userImage" destination="uKr-Lj-dXS" id="be0-zK-C13"/>
                         <outlet property="userNameLabel" destination="hlW-7X-OXR" id="3v0-cp-RW7"/>
