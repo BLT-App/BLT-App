@@ -33,6 +33,9 @@ class ToDoItem: Codable {
     ///Hash Value
     let hashValue: String
     
+    ///Time Spent In Focus Mode
+    var timeSpentInFocusMode: DateInterval = DateInterval(start: Date(), end: Date())
+    
     /// Returns the days between now and the due date.
     var dueCounter: Int {
         let calendar = NSCalendar.current
@@ -44,9 +47,9 @@ class ToDoItem: Codable {
     
     /// Returns the due date as a relative time measure implemented in a string.
     var dueString: String {
-        if (dueCounter == 0) {
+        if dueCounter == 0 {
             return "Due today"
-        } else if (dueCounter < 0) {
+        } else if dueCounter < 0 {
             return "Due \(abs(dueCounter)) days ago"
         } else {
             return "Due in \(dueCounter) days"
@@ -81,8 +84,7 @@ class ToDoItem: Codable {
         self.dueDate = dueDate
         self.completed = completed
         self.hashValue = hashValue
-        print("Item with hash value \(self.hashValue) was created")
-        globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .Created))
+        print("Item with hash value \(self.hashValue) was created from memory")
     }
     
     /// Initializer method
@@ -97,6 +99,7 @@ class ToDoItem: Codable {
         let hashForbiddenCharacters: Set<Character> = [" ", "+", ":", "-"]
         self.hashValue.removeAll(where: {hashForbiddenCharacters.contains($0)})
         print("Item with hash value \(self.hashValue) was added")
+                globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .created))
     }
     
     /// Marks an item as completed
@@ -116,4 +119,3 @@ extension ToDoItem: Comparable {
         return lhs.dueCounter == rhs.dueCounter
     }
 }
-
