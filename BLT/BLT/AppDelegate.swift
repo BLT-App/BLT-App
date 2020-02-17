@@ -55,6 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func applicationWillTerminate(_ application: UIApplication) {
         myToDoList.storeList()
+        globalTaskDatabase.saveDatabaseLog(targetLog: globalTaskDatabase.currentDatabaseLog)
+        globalTaskDatabase.saveDatabaseIndex()
     }
 
 }

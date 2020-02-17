@@ -30,3 +30,4 @@ class CustomIntensityVisualEffectView: UIVisualEffectView {
     private var animator: UIViewPropertyAnimator!
     
 }
+

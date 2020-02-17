@@ -54,6 +54,8 @@ class ListViewController: UIViewController {
         tableView.reorder.delegate = self
         
         globalData.updateCourses(fromList: myToDoList)
+        
+        print( "Currently \(globalTaskDatabase.currentDatabaseLog.numOfEvents) in log")
     }
     
     override func viewDidAppear(_ animated: Bool) {

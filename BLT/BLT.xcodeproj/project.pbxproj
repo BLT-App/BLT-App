@@ -14,6 +14,8 @@
 		3FA808C223DE83C400CB4127 /* SettingsListPrefSubmenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA808C123DE83C400CB4127 /* SettingsListPrefSubmenuTableViewController.swift */; };
 		3FA808C423DE843300CB4127 /* SettingsNotifPrefSubmenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA808C323DE843300CB4127 /* SettingsNotifPrefSubmenuTableViewController.swift */; };
 		3FA808C623DE967800CB4127 /* SettingsFocusPrefSubmenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA808C523DE967800CB4127 /* SettingsFocusPrefSubmenuTableViewController.swift */; };
+		3FBFEE5423E26CD20003394F /* TaskDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBFEE5323E26CD20003394F /* TaskDatabase.swift */; };
+		3FBFEE5623E3112F0003394F /* DatabaseEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBFEE5523E3112F0003394F /* DatabaseEvent.swift */; };
 		3FCE102E23E29D9A003F0D7D /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCE102D23E29D9A003F0D7D /* Notifications.swift */; };
 		3FE3EA63237718D3002B5303 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3EA62237718D3002B5303 /* AppDelegate.swift */; };
 		3FE3EA68237718D3002B5303 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE3EA66237718D3002B5303 /* Main.storyboard */; };
@@ -68,6 +70,8 @@
 		3FA808C123DE83C400CB4127 /* SettingsListPrefSubmenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListPrefSubmenuTableViewController.swift; sourceTree = "<group>"; };
 		3FA808C323DE843300CB4127 /* SettingsNotifPrefSubmenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNotifPrefSubmenuTableViewController.swift; sourceTree = "<group>"; };
 		3FA808C523DE967800CB4127 /* SettingsFocusPrefSubmenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFocusPrefSubmenuTableViewController.swift; sourceTree = "<group>"; };
+		3FBFEE5323E26CD20003394F /* TaskDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDatabase.swift; sourceTree = "<group>"; };
+		3FBFEE5523E3112F0003394F /* DatabaseEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseEvent.swift; sourceTree = "<group>"; };
 		3FCE102D23E29D9A003F0D7D /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		3FE3EA5F237718D3002B5303 /* BLT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE3EA62237718D3002B5303 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +179,8 @@
 				3FE3EA6B237718DB002B5303 /* LaunchScreen.storyboard */,
 				3FE3EA6E237718DB002B5303 /* Info.plist */,
 				D721FD5A2378ACA300ABD1EF /* UserData.swift */,
+				3FBFEE5323E26CD20003394F /* TaskDatabase.swift */,
+				3FBFEE5523E3112F0003394F /* DatabaseEvent.swift */,
 				D745012423DEB29C00508639 /* List Classes */,
 				D7056146238CFB700030B257 /* Additional Classes.swift */,
 			);
@@ -426,7 +432,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#${PODS_ROOT}/SwiftLint/swiftlint\n";
+			shellScript = "# Comment Out Line Below For Swift Lint\n# ${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
 		40DE08C8D33BCDE1E970AB49 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -458,6 +464,7 @@
 				D7093E9023EC661200513448 /* LineChart.swift in Sources */,
 				D7056147238CFB700030B257 /* Additional Classes.swift in Sources */,
 				D721FD562378AA0300ABD1EF /* ToDoTableViewCell.swift in Sources */,
+				3FBFEE5623E3112F0003394F /* DatabaseEvent.swift in Sources */,
 				D721FD5C2378ACA300ABD1EF /* MilestoneItem.swift in Sources */,
 				3F73230823860D9300155B70 /* FocusTimer.swift in Sources */,
 				3FA808C623DE967800CB4127 /* SettingsFocusPrefSubmenuTableViewController.swift in Sources */,
@@ -470,6 +477,7 @@
 				D721FD5E2378ACA300ABD1EF /* ToDoItem.swift in Sources */,
 				D721FD5D2378ACA300ABD1EF /* Milestone.swift in Sources */,
 				D75B7474238E554A00FBE468 /* SubjectCell.swift in Sources */,
+				3FBFEE5423E26CD20003394F /* TaskDatabase.swift in Sources */,
 				D721FD642378ACA600ABD1EF /* ListViewController.swift in Sources */,
 				3FE3EA912378DA82002B5303 /* FocusViewController.swift in Sources */,
 				3FE3EA63237718D3002B5303 /* AppDelegate.swift in Sources */,
