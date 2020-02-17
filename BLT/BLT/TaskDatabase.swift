@@ -14,9 +14,18 @@ var globalTaskDatabase: TaskDatabase = TaskDatabase()
 class TaskDatabase {
     
     ///Database Index
-    var myDatabaseIndex: DatabaseIndex
+    var myDatabaseIndex: DatabaseIndex{
+        didSet {
+            saveDatabaseIndex()
+        }
+    }
+    
     ///Current Working Database Log
-    var currentDatabaseLog: DatabaseLog
+    var currentDatabaseLog: DatabaseLog {
+        didSet {
+            saveDatabaseLog(targetLog: currentDatabaseLog)
+        }
+    }
     
     struct DatabaseLog: Codable {
         var year: Int
@@ -125,6 +134,7 @@ class TaskDatabase {
         let propertyListEncoder = PropertyListEncoder()
         let encodedNote = try? propertyListEncoder.encode(self.myDatabaseIndex)
         try? encodedNote?.write(to: archiveURL, options: .noFileProtection)
+        print("** Stored Database")
     }
     
     func fetchDatabaseLog(year: Int, month: Int) -> DatabaseLog {
@@ -203,7 +213,7 @@ class TaskDatabase {
         let propertyListEncoder = PropertyListEncoder()
         let encodedNote = try? propertyListEncoder.encode(targetLog)
         try? encodedNote?.write(to: archiveURL, options: .noFileProtection)
-        print("Saved Log: log\(targetLog.logString)")
+        print("Saved Log: log\(targetLog.logString) with \(targetLog.log.count) elts. ")
     }
     
     func getDatabaseLogString(date: Date) -> String {
