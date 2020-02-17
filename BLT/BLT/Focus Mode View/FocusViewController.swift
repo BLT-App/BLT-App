@@ -77,7 +77,9 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 //            endFocusModeButton.isEnabled = true
 //            endFocusModeButton.isHidden = false
 //        }
-        popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as! FMPopUpViewController
+        if let temp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as? FMPopUpViewController{
+            self.popup = temp
+        }
         self.addChild(popup)
         popup.view.frame = self.view.frame
         self.view.addSubview(popup.view)
