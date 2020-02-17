@@ -9,14 +9,16 @@
 import UIKit
 
 /// The ViewController that controls the Focus View.
-class FocusViewController: UIViewController, FocusTimerDelegate {
+class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewControllerDelegate {
 
     /// The ToDoItem of the current task.
     var currentTask: ToDoItem = ToDoItem(className: "", title: "", description: "", dueDate: Date(), completed: true)
     /// Current index of the task displayed
     var currentTaskNum: Int = 0
     /// Timer that handles the countdown
-    var myTimer: FocusTimer = FocusTimer(1, 00)
+    var myTimer: FocusTimer = FocusTimer(countdownTime: 0)
+    
+    var popup: FMPopUpViewController = FMPopUpViewController()
 
     @IBOutlet weak var lblCurrentTask: UILabel!
     
@@ -34,13 +36,16 @@ class FocusViewController: UIViewController, FocusTimerDelegate {
     
     @IBOutlet weak var progressTimer: UIProgressView!
     
+    var leaveView: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButtons()
         
-        myTimer = FocusTimer(2, 00)
+        myTimer = FocusTimer(countdownTime: 0.0)
         myTimer.delegate = self
-        progressTimer.transform = progressTimer.transform.scaledBy(x: 1, y: 8)
+        progressTimer.transform =  progressTimer.transform.scaledBy(x: 1, y: 10)
+        progressTimer.layer.cornerRadius = 20
+        progressTimer.clipsToBounds = true
         setupClassLabel()
         
         itemView.layer.cornerRadius = 20.0
@@ -72,7 +77,14 @@ class FocusViewController: UIViewController, FocusTimerDelegate {
 //            endFocusModeButton.isEnabled = true
 //            endFocusModeButton.isHidden = false
 //        }
-
+        popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as! FMPopUpViewController
+        self.addChild(popup)
+        popup.view.frame = self.view.frame
+        self.view.addSubview(popup.view)
+        popup.didMove(toParent: self)
+        popup.delegate = self
+        
+        //performSegue(withIdentifier: "Popup", sender: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,9 +98,9 @@ class FocusViewController: UIViewController, FocusTimerDelegate {
             endFocusModeButton.isHidden = false
         }
         progressTimer.setProgress(1, animated: false)
-        myTimer.mins = 2
-        myTimer.secs = 00
-        myTimer.runTimer()
+        //myTimer.mins = 2
+        //myTimer.secs = 00
+        //myTimer.runTimer()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -182,11 +194,12 @@ class FocusViewController: UIViewController, FocusTimerDelegate {
     ///Runs when the timer has updated its own values
     func valsUpdated(_ timerReadout: String) {
         timerDisplay.text = timerReadout
-        var timeLeft = myTimer.secs + 60 * myTimer.mins
-        progressTimer.setProgress( Float(Float(timeLeft)/Float(myTimer.totalSecs)), animated: false)
+        var timeLeft = myTimer.cdt
+       
+        progressTimer.setProgress( Float(timeLeft/myTimer.totalSecs), animated: false)
         print("valsUpdated called ")
         print(timeLeft)
-        print(myTimer.totalSecs)
+        print("totalSecs: ",myTimer.totalSecs)
     }
     
     ///Runs when the timer has hit zero
@@ -210,6 +223,21 @@ class FocusViewController: UIViewController, FocusTimerDelegate {
         showTabBar()
         self.tabBarController?.selectedIndex = 0
     }
+    
+    func didChooseCancel() {
+        print("Called Did Choose Cancel In Focus Mode")
+        showTabBar()
+        self.tabBarController?.selectedIndex = 0
+    }
+    
+    func didChooseTime(duration: TimeInterval) {
+        print("Chose A Time")
+        myTimer.cdt = duration
+        myTimer.totalSecs = myTimer.cdt
+        myTimer.runTimer()
+        
+    }
+    
 
     /*
     // MARK: - Navigation

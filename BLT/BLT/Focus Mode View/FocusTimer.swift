@@ -10,26 +10,33 @@ import Foundation
 
 class FocusTimer {
     ///Timer object for running the thread
-    var myTimer: Timer
+    var myTimer: Timer = Timer()
     ///Number of mins on the timer
-    var mins: Int
+    var mins: Int {
+        return Int(cdt / 60)
+    }
     ///Number of seconds on the timer
-    var secs: Int
+    var secs: Int {
+        return Int(cdt) % 60
+    }
+    
+    var cdt: TimeInterval
+    
+    //var hours: Int
     ///String to send to the focus mode screen for display
-    var description: String
+    var description: String = ""
     
     //total number of seconds initially
-    var totalSecs: Int
+    var totalSecs: TimeInterval
     
     weak var delegate: FocusTimerDelegate?
     
-    init(_ mins: Int, _ secs: Int) {
-        self.mins = mins
-        self.secs = secs
-        myTimer = Timer()
-        description = ""
-        self.totalSecs = 60 * mins + secs
+    init(countdownTime: TimeInterval) {
+        self.cdt = countdownTime
+        self.totalSecs = countdownTime
+        print(totalSecs)
     }
+    
     
     ///Starts the timer
     func runTimer() {
@@ -59,19 +66,15 @@ class FocusTimer {
     
     ///Updates the values for minutes and seconds
     @objc func updateVals() {
-        if secs != 0 {
-            secs -= 1
-        } else {
-            if mins != 0 {
-                mins -= 1
-                secs = 59
-            }
-            if mins == 0 && secs == 0 {
-                stopRunning()
-            } else {
-                secs = 59
-            }
+        if cdt > 0{
+            cdt -= 1.0
         }
+        else {
+            stopRunning()
+            
+        }
+        
+        
         stringMe()
         delegate?.valsUpdated(description)
     }
