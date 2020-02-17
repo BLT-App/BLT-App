@@ -164,12 +164,20 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="142 ⭐" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVp-Wn-N0H">
+                                                <rect key="frame" x="328.5" y="80" width="65.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="xUW-3F-lDT" firstAttribute="top" secondItem="7up-8Z-uqr" secondAttribute="bottom" id="3Mp-uT-IS0"/>
                                             <constraint firstItem="xUW-3F-lDT" firstAttribute="leading" secondItem="7up-8Z-uqr" secondAttribute="leading" id="HBm-el-Aa4"/>
                                             <constraint firstAttribute="bottom" secondItem="UQ4-EY-KfT" secondAttribute="bottom" constant="15" id="JMs-sM-cDa"/>
+                                            <constraint firstItem="tVp-Wn-N0H" firstAttribute="top" secondItem="GcL-1G-LKs" secondAttribute="top" constant="80" id="Xf7-EP-eHe"/>
+                                            <constraint firstAttribute="trailing" secondItem="tVp-Wn-N0H" secondAttribute="trailing" constant="20" id="gi4-Db-9md"/>
                                             <constraint firstAttribute="bottom" secondItem="xUW-3F-lDT" secondAttribute="bottom" constant="23" id="okG-xC-Rac"/>
                                             <constraint firstAttribute="trailing" secondItem="UQ4-EY-KfT" secondAttribute="trailing" constant="15" id="prt-xm-zef"/>
                                             <constraint firstItem="xUW-3F-lDT" firstAttribute="leading" secondItem="GcL-1G-LKs" secondAttribute="leading" constant="31" id="vkd-Ew-VAn"/>
@@ -228,6 +236,7 @@
                         <outlet property="addButton" destination="UQ4-EY-KfT" id="vgQ-Q2-qTV"/>
                         <outlet property="addTaskButton" destination="Qkn-Qn-9ou" id="Bc1-98-0Zo"/>
                         <outlet property="assignmentsLeftLabel" destination="xUW-3F-lDT" id="ZM1-Hs-o8U"/>
+                        <outlet property="pointsCounter" destination="tVp-Wn-N0H" id="PqK-P0-Glo"/>
                         <outlet property="shadowView" destination="vjA-AA-hQo" id="YMN-TZ-hXZ"/>
                         <outlet property="tableContainerView" destination="GcL-1G-LKs" id="ccU-mV-6Ir"/>
                         <outlet property="tableView" destination="egg-sz-gdj" id="WYX-MC-djl"/>
@@ -329,6 +338,12 @@
                                 <rect key="frame" x="50" y="130" width="314" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="142 ⭐" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTm-MS-Wv2">
+                                <rect key="frame" x="328.5" y="74" width="65.5" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -338,6 +353,8 @@
                             <constraint firstItem="B8C-pt-Izd" firstAttribute="top" secondItem="RIt-2R-z2g" secondAttribute="bottom" constant="100" id="NtF-VT-AFl"/>
                             <constraint firstItem="54u-8A-3Xb" firstAttribute="trailing" secondItem="RIt-2R-z2g" secondAttribute="trailing" constant="50" id="XbU-SN-X2j"/>
                             <constraint firstItem="RRH-ic-pC4" firstAttribute="centerX" secondItem="f3S-L5-YSf" secondAttribute="centerX" id="ZWy-8W-btX"/>
+                            <constraint firstItem="54u-8A-3Xb" firstAttribute="trailing" secondItem="dTm-MS-Wv2" secondAttribute="trailing" constant="20" id="d3v-JT-fM8"/>
+                            <constraint firstItem="dTm-MS-Wv2" firstAttribute="top" secondItem="54u-8A-3Xb" secondAttribute="top" constant="30" id="pZP-pZ-Zn7"/>
                             <constraint firstItem="B8C-pt-Izd" firstAttribute="centerX" secondItem="f3S-L5-YSf" secondAttribute="centerX" id="stD-Vc-EBW"/>
                             <constraint firstItem="RRH-ic-pC4" firstAttribute="top" secondItem="B8C-pt-Izd" secondAttribute="bottom" constant="20" id="vVz-Hr-onJ"/>
                         </constraints>
@@ -351,6 +368,7 @@
                         <outlet property="itemView" destination="RIt-2R-z2g" id="kLt-jT-gMg"/>
                         <outlet property="lblCurrentTask" destination="ugR-Bz-WuA" id="hCs-Lh-n3E"/>
                         <outlet property="lblCurrentTaskDesc" destination="7qy-iM-Ea1" id="jYR-F6-5pM"/>
+                        <outlet property="pointsCounter" destination="dTm-MS-Wv2" id="aCx-nd-JeC"/>
                         <outlet property="progressTimer" destination="iHy-BG-2zW" id="pNn-5f-qRr"/>
                         <outlet property="timerDisplay" destination="1Oc-RX-9Op" id="n5A-GN-5zF"/>
                     </connections>
