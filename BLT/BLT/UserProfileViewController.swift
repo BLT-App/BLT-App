@@ -32,7 +32,7 @@ class UserProfileViewController: UIViewController
     
     @IBOutlet weak var focusLabel: UILabel!
     
-    func chartUpdate(){
+    func chartUpdate() {
         var trendData: [CGFloat] = []
         
         var previousDayTotal: Int = 0
@@ -41,8 +41,8 @@ class UserProfileViewController: UIViewController
             numEventsCompletedOnDay += globalTaskDatabase.getNumEventsOfTypeInLast(numDays: day, eventType: .markedCompletedInListView)
             numEventsCompletedOnDay += globalTaskDatabase.getNumEventsOfTypeInLast(numDays: day, eventType: .markedCompletedInFocusMode)
             numEventsCompletedOnDay -= globalTaskDatabase.getNumEventsOfTypeInLast(numDays: day, eventType: .unmarkedComplete)
+            print("Tasks completed on day \(day): \(numEventsCompletedOnDay - previousDayTotal)")
             trendData.append(CGFloat(numEventsCompletedOnDay - previousDayTotal))
-            
             previousDayTotal = numEventsCompletedOnDay
         }
         
@@ -56,10 +56,13 @@ class UserProfileViewController: UIViewController
         // Do any additional setup after loading
         //the view, typically from a nib.
         prepareProfile()
-        
+        chartUpdate()
         setupCards()
         
-        chartUpdate()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
     }
     
