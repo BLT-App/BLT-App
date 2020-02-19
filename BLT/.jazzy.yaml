@@ -1,0 +1,14 @@
+author: BLT Group
+author_url: https://https://blt-app.github.io/get-blt
+github_url: https://github.com/BLT-App/BLT-App
+theme: jony 
+min_acl: private
+skip_undocumented: false
+readme: README.md
+documentation: Documentation/*.md
+hide_documentation_coverage: false
+sdk: iphonesimulator
+swift_version: '4.2.1'
+module: 'BLT'
+xcodebuild_arguments: ["-workspace","BLT.xcworkspace", "-scheme", "BLT"]
+output: ../docs
