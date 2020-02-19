@@ -46,6 +46,9 @@ class UserProfileViewController: UIViewController
             previousDayTotal = numEventsCompletedOnDay
         }
         
+        // Example data for the trend. 
+        trendData = [5, 2, 7, 8, 3, 5, 6]
+        
         tasksCompletedChart.clear()
         tasksCompletedChart.addLine(trendData)
         tasksCompletedChart.y.grid.count = 7
