@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 import DropDown
 
+/**
+A class that represents the cells of the subjects within the dropdown menu.
+*/
 class SubjectCell: DropDownCell {
-    @IBOutlet weak var subjectLabel: InsetLabel!
+	/// The label of the subject.
+	@IBOutlet weak var subjectLabel: InsetLabel!
 }

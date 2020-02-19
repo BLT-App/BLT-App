@@ -228,13 +228,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="To-Do" image="database" id="Xb6-gt-DmD"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="RNs-5a-mnN">
-                        <barButtonItem key="rightBarButtonItem" title="Add Task" id="Qkn-Qn-9ou"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="RNs-5a-mnN"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addButton" destination="UQ4-EY-KfT" id="vgQ-Q2-qTV"/>
-                        <outlet property="addTaskButton" destination="Qkn-Qn-9ou" id="Bc1-98-0Zo"/>
                         <outlet property="assignmentsLeftLabel" destination="xUW-3F-lDT" id="ZM1-Hs-o8U"/>
                         <outlet property="pointsCounter" destination="tVp-Wn-N0H" id="PqK-P0-Glo"/>
                         <outlet property="shadowView" destination="vjA-AA-hQo" id="YMN-TZ-hXZ"/>
