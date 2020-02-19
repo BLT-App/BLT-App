@@ -12,14 +12,14 @@ import Foundation
  A milestone that an assignment could have. This represents an intermediate deliverable for each MilestoneItem.
  */
 struct Milestone: Codable {
-    
-    /// The title/name of the milestone.
-    var title: String
-    
-    /// The due date object of the milestone.
-    var dueDate: Date
-    
-    /// Whether the milestone is completed.
-    var completed: Bool
-    
+
+	/// The title/name of the milestone.
+	var title: String
+
+	/// The due date object of the milestone.
+	var dueDate: Date
+
+	/// Whether the milestone is completed.
+	var completed: Bool
+
 }
