@@ -1,0 +1,2056 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Additional Classes.swift",
+      "line": 12,
+      "symbol": "CustomIntensityVisualEffectView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Additional Classes.swift",
+      "line": 25,
+      "symbol": "CustomIntensityVisualEffectView.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Additional Classes.swift",
+      "line": 30,
+      "symbol": "CustomIntensityVisualEffectView.animator",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/AppDelegate.swift",
+      "line": 12,
+      "symbol": "AppDelegate",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/AppDelegate.swift",
+      "line": 14,
+      "symbol": "AppDelegate.window",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/AppDelegate.swift",
+      "line": 16,
+      "symbol": "AppDelegate.application(_:didFinishLaunchingWithOptions:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/AppDelegate.swift",
+      "line": 34,
+      "symbol": "AppDelegate.userNotificationCenter(_:willPresent:withCompletionHandler:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/AppDelegate.swift",
+      "line": 40,
+      "symbol": "AppDelegate.applicationWillResignActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/AppDelegate.swift",
+      "line": 44,
+      "symbol": "AppDelegate.applicationDidEnterBackground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/AppDelegate.swift",
+      "line": 48,
+      "symbol": "AppDelegate.applicationWillEnterForeground(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/AppDelegate.swift",
+      "line": 52,
+      "symbol": "AppDelegate.applicationDidBecomeActive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/AppDelegate.swift",
+      "line": 56,
+      "symbol": "AppDelegate.applicationWillTerminate(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/DatabaseEvent.swift",
+      "line": 10,
+      "symbol": "GeneralEventType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/DatabaseEvent.swift",
+      "line": 11,
+      "symbol": "GeneralEventType.dueDateChanged",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/DatabaseEvent.swift",
+      "line": 12,
+      "symbol": "GeneralEventType.markedCompletedInFocusMode",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/DatabaseEvent.swift",
+      "line": 13,
+      "symbol": "GeneralEventType.created",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/DatabaseEvent.swift",
+      "line": 14,
+      "symbol": "GeneralEventType.markedCompletedInListView",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/DatabaseEvent.swift",
+      "line": 15,
+      "symbol": "GeneralEventType.unmarkedComplete",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/DatabaseEvent.swift",
+      "line": 18,
+      "symbol": "DatabaseEvent",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/DatabaseEvent.swift",
+      "line": 19,
+      "symbol": "DatabaseEvent.eventType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/DatabaseEvent.swift",
+      "line": 20,
+      "symbol": "DatabaseEvent.date",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/DatabaseEvent.swift",
+      "line": 21,
+      "symbol": "DatabaseEvent.toDoItemIdentifier",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/DatabaseEvent.swift",
+      "line": 22,
+      "symbol": "DatabaseEvent.eventNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/DatabaseEvent.swift",
+      "line": 24,
+      "symbol": "DatabaseEvent.init(item:event:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/FMPopUpViewController.swift",
+      "line": 11,
+      "symbol": "FMPopUpViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/FMPopUpViewController.swift",
+      "line": 14,
+      "symbol": "FMPopUpViewController.popUpView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/FMPopUpViewController.swift",
+      "line": 15,
+      "symbol": "FMPopUpViewController.timePicker",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/FMPopUpViewController.swift",
+      "line": 17,
+      "symbol": "FMPopUpViewController.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/FMPopUpViewController.swift",
+      "line": 19,
+      "symbol": "FMPopUpViewController.formattedTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/FMPopUpViewController.swift",
+      "line": 27,
+      "symbol": "FMPopUpViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/FMPopUpViewController.swift",
+      "line": 37,
+      "symbol": "FMPopUpViewController.quitPopUp(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/FMPopUpViewController.swift",
+      "line": 42,
+      "symbol": "FMPopUpViewController.beginFocusMode(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/FMPopUpViewController.swift",
+      "line": 47,
+      "symbol": "FMPopUpViewController.showAnimate()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/FMPopUpViewController.swift",
+      "line": 56,
+      "symbol": "FMPopUpViewController.removeAnimate()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/FMPopUpViewController.swift",
+      "line": 70,
+      "symbol": "FMPopUpViewControllerDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/FMPopUpViewController.swift",
+      "line": 71,
+      "symbol": "FMPopUpViewControllerDelegate.didChooseCancel()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/FMPopUpViewController.swift",
+      "line": 72,
+      "symbol": "FMPopUpViewControllerDelegate.didChooseTime(duration:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusTimer.swift",
+      "line": 11,
+      "symbol": "FocusTimer",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusTimer.swift",
+      "line": 23,
+      "symbol": "FocusTimer.cdt",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusTimer.swift",
+      "line": 30,
+      "symbol": "FocusTimer.totalSecs",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusTimer.swift",
+      "line": 32,
+      "symbol": "FocusTimer.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusTimer.swift",
+      "line": 34,
+      "symbol": "FocusTimer.init(countdownTime:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusTimer.swift",
+      "line": 83,
+      "symbol": "FocusTimerDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusViewController.swift",
+      "line": 22,
+      "symbol": "FocusViewController.popup",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusViewController.swift",
+      "line": 24,
+      "symbol": "FocusViewController.lblCurrentTask",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusViewController.swift",
+      "line": 26,
+      "symbol": "FocusViewController.lblCurrentTaskDesc",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusViewController.swift",
+      "line": 28,
+      "symbol": "FocusViewController.btnCompleteTask",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusViewController.swift",
+      "line": 30,
+      "symbol": "FocusViewController.endFocusModeButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusViewController.swift",
+      "line": 32,
+      "symbol": "FocusViewController.timerDisplay",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusViewController.swift",
+      "line": 34,
+      "symbol": "FocusViewController.itemView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusViewController.swift",
+      "line": 36,
+      "symbol": "FocusViewController.classLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusViewController.swift",
+      "line": 38,
+      "symbol": "FocusViewController.progressTimer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusViewController.swift",
+      "line": 40,
+      "symbol": "FocusViewController.pointsCounter",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusViewController.swift",
+      "line": 42,
+      "symbol": "FocusViewController.confettiView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusViewController.swift",
+      "line": 44,
+      "symbol": "FocusViewController.leaveView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusViewController.swift",
+      "line": 45,
+      "symbol": "FocusViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusViewController.swift",
+      "line": 70,
+      "symbol": "FocusViewController.setupClassLabel()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusViewController.swift",
+      "line": 76,
+      "symbol": "FocusViewController.viewDidAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusViewController.swift",
+      "line": 103,
+      "symbol": "FocusViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusViewController.swift",
+      "line": 119,
+      "symbol": "FocusViewController.viewWillDisappear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusViewController.swift",
+      "line": 252,
+      "symbol": "FocusViewController.didChooseCancel()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Focus Mode View/FocusViewController.swift",
+      "line": 258,
+      "symbol": "FocusViewController.didChooseTime(duration:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/ItemViewController.swift",
+      "line": 11,
+      "symbol": "ItemViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/ItemViewController.swift",
+      "line": 13,
+      "symbol": "ItemViewController.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/ItemViewController.swift",
+      "line": 14,
+      "symbol": "ItemViewController.targetIndex",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/ItemViewController.swift",
+      "line": 16,
+      "symbol": "ItemViewController.exitButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/ItemViewController.swift",
+      "line": 17,
+      "symbol": "ItemViewController.classNameField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/ItemViewController.swift",
+      "line": 18,
+      "symbol": "ItemViewController.assignmentField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/ItemViewController.swift",
+      "line": 19,
+      "symbol": "ItemViewController.descriptionField",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/ItemViewController.swift",
+      "line": 20,
+      "symbol": "ItemViewController.datePicker",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/ItemViewController.swift",
+      "line": 22,
+      "symbol": "ItemViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/ItemViewController.swift",
+      "line": 29,
+      "symbol": "ItemViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/ItemViewController.swift",
+      "line": 33,
+      "symbol": "ItemViewController.loadPage()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/ItemViewController.swift",
+      "line": 44,
+      "symbol": "ItemViewController.setupButtons()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/ItemViewController.swift",
+      "line": 53,
+      "symbol": "ItemViewController.backButton(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 8,
+      "symbol": "LineChartDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 9,
+      "symbol": "LineChartDelegate.didSelectDataPoint(_:yValues:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 45,
+      "symbol": "LineChart.Labels",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 46,
+      "symbol": "LineChart.Labels.visible",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 47,
+      "symbol": "LineChart.Labels.values",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 50,
+      "symbol": "LineChart.Grid",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 51,
+      "symbol": "LineChart.Grid.visible",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 52,
+      "symbol": "LineChart.Grid.count",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 54,
+      "symbol": "LineChart.Grid.color",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 57,
+      "symbol": "LineChart.Axis",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 58,
+      "symbol": "LineChart.Axis.visible",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 60,
+      "symbol": "LineChart.Axis.color",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 61,
+      "symbol": "LineChart.Axis.inset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 64,
+      "symbol": "LineChart.Coordinate",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 66,
+      "symbol": "LineChart.Coordinate.labels",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 67,
+      "symbol": "LineChart.Coordinate.grid",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 68,
+      "symbol": "LineChart.Coordinate.axis",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 71,
+      "symbol": "LineChart.Coordinate.linear",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 72,
+      "symbol": "LineChart.Coordinate.scale",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 73,
+      "symbol": "LineChart.Coordinate.invert",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 74,
+      "symbol": "LineChart.Coordinate.ticks",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 77,
+      "symbol": "LineChart.Animation",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 78,
+      "symbol": "LineChart.Animation.enabled",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 79,
+      "symbol": "LineChart.Animation.duration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 82,
+      "symbol": "LineChart.Dots",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 83,
+      "symbol": "LineChart.Dots.visible",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 84,
+      "symbol": "LineChart.Dots.color",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 85,
+      "symbol": "LineChart.Dots.innerRadius",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 86,
+      "symbol": "LineChart.Dots.outerRadius",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 87,
+      "symbol": "LineChart.Dots.innerRadiusHighlighted",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 88,
+      "symbol": "LineChart.Dots.outerRadiusHighlighted",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 92,
+      "symbol": "LineChart.area",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 93,
+      "symbol": "LineChart.animation",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 94,
+      "symbol": "LineChart.dots",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 95,
+      "symbol": "LineChart.lineWidth",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 97,
+      "symbol": "LineChart.x",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 98,
+      "symbol": "LineChart.y",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 102,
+      "symbol": "LineChart.drawingHeight",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 111,
+      "symbol": "LineChart.drawingWidth",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 121,
+      "symbol": "LineChart.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 124,
+      "symbol": "LineChart.dataStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 125,
+      "symbol": "LineChart.dotsDataStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 126,
+      "symbol": "LineChart.lineLayerStore",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 128,
+      "symbol": "LineChart.removeAll",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 131,
+      "symbol": "LineChart.colors",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 144,
+      "symbol": "LineChart.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 149,
+      "symbol": "LineChart.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 153,
+      "symbol": "LineChart.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 157,
+      "symbol": "LineChart.draw(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 585,
+      "symbol": "DotCALayer.innerRadius",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 586,
+      "symbol": "DotCALayer.dotInnerColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 588,
+      "symbol": "DotCALayer.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 592,
+      "symbol": "DotCALayer.init(layer:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 596,
+      "symbol": "DotCALayer.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 600,
+      "symbol": "DotCALayer.layoutSublayers()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 619,
+      "symbol": "LinearScale.domain",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 620,
+      "symbol": "LinearScale.range",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 622,
+      "symbol": "LinearScale.init(domain:range:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 627,
+      "symbol": "LinearScale.scale()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 631,
+      "symbol": "LinearScale.invert()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 635,
+      "symbol": "LinearScale.ticks(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 639,
+      "symbol": "LinearScale.scale_linearTicks(_:m:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 643,
+      "symbol": "LinearScale.scale_linearTickRange(_:m:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 665,
+      "symbol": "LinearScale.scaleExtent(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 671,
+      "symbol": "LinearScale.interpolate(_:b:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 673,
+      "symbol": "LinearScale.interpolate(_:b:).f(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 679,
+      "symbol": "LinearScale.uninterpolate(_:b:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 682,
+      "symbol": "LinearScale.uninterpolate(_:b:).f(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 688,
+      "symbol": "LinearScale.bilinear(_:range:uninterpolate:interpolate:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/LineChart.swift",
+      "line": 691,
+      "symbol": "LinearScale.bilinear(_:range:uninterpolate:interpolate:).f(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/List Classes/MilestoneItem.swift",
+      "line": 36,
+      "symbol": "MilestoneItem.init(from:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/List Classes/ToDoItem.swift",
+      "line": 62,
+      "symbol": "ToDoItem.completeTask()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/List Classes/ToDoItem.swift",
+      "line": 69,
+      "symbol": "ToDoItem.undoCompleteTask()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/List Classes/ToDoItem.swift",
+      "line": 74,
+      "symbol": "ToDoItem.isCompleted()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/NewItemViewController.swift",
+      "line": 12,
+      "symbol": "NewItemViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/NewItemViewController.swift",
+      "line": 27,
+      "symbol": "NewItemViewController.selected",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/NewItemViewController.swift",
+      "line": 32,
+      "symbol": "NewItemViewController.dropDown",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/NewItemViewController.swift",
+      "line": 34,
+      "symbol": "NewItemViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/NewItemViewController.swift",
+      "line": 84,
+      "symbol": "NewItemViewController.addButton(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/NewItemViewController.swift",
+      "line": 105,
+      "symbol": "NewItemViewController.showDropDown(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/NewItemViewController.swift",
+      "line": 110,
+      "symbol": "NewItemViewController.hideDropDown(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/NewItemViewController.swift",
+      "line": 114,
+      "symbol": "NewItemViewController.subjectChanged(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/NewItemViewController.swift",
+      "line": 119,
+      "symbol": "NewItemViewController.updateDropDown()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/NewItemViewController.swift",
+      "line": 125,
+      "symbol": "NewItemViewController.updateClassText()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/NewItemViewController.swift",
+      "line": 136,
+      "symbol": "NewItemViewController.valuesStartingWith(_:fromArray:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/NewItemViewController.swift",
+      "line": 147,
+      "symbol": "NewItemViewController.textFieldShouldReturn(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Notifications.swift",
+      "line": 12,
+      "symbol": "Notifications",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Notifications.swift",
+      "line": 14,
+      "symbol": "Notifications.date",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Notifications.swift",
+      "line": 17,
+      "symbol": "Notifications.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Notifications.swift",
+      "line": 27,
+      "symbol": "Notifications.prepareNotification(title:subtitle:body:notifDate:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/RenderTimer.swift",
+      "line": 10,
+      "symbol": "RenderTimer",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/RenderTimer.swift",
+      "line": 11,
+      "symbol": "RenderTimer.myTimer",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/RenderTimer.swift",
+      "line": 13,
+      "symbol": "RenderTimer.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/RenderTimer.swift",
+      "line": 15,
+      "symbol": "RenderTimer.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/RenderTimer.swift",
+      "line": 19,
+      "symbol": "RenderTimer.runTimer(interval:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/RenderTimer.swift",
+      "line": 23,
+      "symbol": "RenderTimer.updateVals()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/RenderTimer.swift",
+      "line": 28,
+      "symbol": "RenderTimerDelegate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsFocusPrefSubmenuTableViewController.swift",
+      "line": 10,
+      "symbol": "SettingsFocusPrefSubmenuTableViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsFocusPrefSubmenuTableViewController.swift",
+      "line": 12,
+      "symbol": "SettingsFocusPrefSubmenuTableViewController.switchShowEndButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsFocusPrefSubmenuTableViewController.swift",
+      "line": 14,
+      "symbol": "SettingsFocusPrefSubmenuTableViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsFocusPrefSubmenuTableViewController.swift",
+      "line": 18,
+      "symbol": "SettingsFocusPrefSubmenuTableViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsFocusPrefSubmenuTableViewController.swift",
+      "line": 22,
+      "symbol": "SettingsFocusPrefSubmenuTableViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsListPrefSubmenuTableViewController.swift",
+      "line": 10,
+      "symbol": "SettingsListPrefSubmenuTableViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsListPrefSubmenuTableViewController.swift",
+      "line": 11,
+      "symbol": "SettingsListPrefSubmenuTableViewController.switchSortList",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsListPrefSubmenuTableViewController.swift",
+      "line": 13,
+      "symbol": "SettingsListPrefSubmenuTableViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsListPrefSubmenuTableViewController.swift",
+      "line": 17,
+      "symbol": "SettingsListPrefSubmenuTableViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsListPrefSubmenuTableViewController.swift",
+      "line": 21,
+      "symbol": "SettingsListPrefSubmenuTableViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsNotifPrefSubmenuTableViewController.swift",
+      "line": 10,
+      "symbol": "SettingsNotifPrefSubmenuTableViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsNotifPrefSubmenuTableViewController.swift",
+      "line": 12,
+      "symbol": "SettingsNotifPrefSubmenuTableViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsTableViewController.swift",
+      "line": 10,
+      "symbol": "SettingsTableViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsTableViewController.swift",
+      "line": 12,
+      "symbol": "SettingsTableViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsTableViewController.swift",
+      "line": 16,
+      "symbol": "SettingsTableViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsTableViewController.swift",
+      "line": 19,
+      "symbol": "SettingsTableViewController.unwindToRootViewController(segue:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsUserProfileSubmenuTableViewController.swift",
+      "line": 10,
+      "symbol": "SettingsUserProfileSubmenuTableViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsUserProfileSubmenuTableViewController.swift",
+      "line": 12,
+      "symbol": "SettingsUserProfileSubmenuTableViewController.txtFirstName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsUserProfileSubmenuTableViewController.swift",
+      "line": 13,
+      "symbol": "SettingsUserProfileSubmenuTableViewController.txtLastName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsUserProfileSubmenuTableViewController.swift",
+      "line": 16,
+      "symbol": "SettingsUserProfileSubmenuTableViewController.txtSchoolName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsUserProfileSubmenuTableViewController.swift",
+      "line": 17,
+      "symbol": "SettingsUserProfileSubmenuTableViewController.txtSchoolCode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsUserProfileSubmenuTableViewController.swift",
+      "line": 19,
+      "symbol": "SettingsUserProfileSubmenuTableViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsUserProfileSubmenuTableViewController.swift",
+      "line": 24,
+      "symbol": "SettingsUserProfileSubmenuTableViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsUserProfileSubmenuTableViewController.swift",
+      "line": 43,
+      "symbol": "SettingsUserProfileSubmenuTableViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/SubjectCell.swift",
+      "line": 13,
+      "symbol": "SubjectCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/SubjectCell.swift",
+      "line": 14,
+      "symbol": "SubjectCell.subjectLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 14,
+      "symbol": "TaskDatabase",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 21,
+      "symbol": "TaskDatabase.DatabaseLog",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 22,
+      "symbol": "TaskDatabase.DatabaseLog.year",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 23,
+      "symbol": "TaskDatabase.DatabaseLog.month",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 24,
+      "symbol": "TaskDatabase.DatabaseLog.log",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 25,
+      "symbol": "TaskDatabase.DatabaseLog.numOfEvents",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 28,
+      "symbol": "TaskDatabase.DatabaseLog.logString",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 49,
+      "symbol": "TaskDatabase.DatabaseLog.init(date:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 64,
+      "symbol": "TaskDatabase.DatabaseLog.init(year:month:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 71,
+      "symbol": "TaskDatabase.DatabaseIndex",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 72,
+      "symbol": "TaskDatabase.DatabaseIndex.eventNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 73,
+      "symbol": "TaskDatabase.DatabaseIndex.listOfDatabases",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 75,
+      "symbol": "TaskDatabase.DatabaseIndex.getEventNumForUse()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 80,
+      "symbol": "TaskDatabase.DatabaseIndex.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 86,
+      "symbol": "TaskDatabase.DatabaseError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 87,
+      "symbol": "TaskDatabase.DatabaseError.databaseDoesntExistError",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 90,
+      "symbol": "TaskDatabase.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 108,
+      "symbol": "TaskDatabase.loadDatabaseIndex()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 122,
+      "symbol": "TaskDatabase.saveDatabaseIndex()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 130,
+      "symbol": "TaskDatabase.fetchDatabaseLog(year:month:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 166,
+      "symbol": "TaskDatabase.fetchDatabaseLog(targetDate:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 186,
+      "symbol": "TaskDatabase.fetchDatabaseLog(targetLogString:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 200,
+      "symbol": "TaskDatabase.saveDatabaseLog(targetLog:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 209,
+      "symbol": "TaskDatabase.getDatabaseLogString(date:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 215,
+      "symbol": "TaskDatabase.getDatabaseLogString(year:month:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 237,
+      "symbol": "TaskDatabase.getNumEventsOfTypeInLast(numDays:eventType:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/TaskDatabase.swift",
+      "line": 243,
+      "symbol": "TaskDatabase.getNumEventsOfTypeFrom(startDate:endDate:eventType:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 14,
+      "symbol": "ListViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 15,
+      "symbol": "ListViewController.addTaskButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 16,
+      "symbol": "ListViewController.tableView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 17,
+      "symbol": "ListViewController.waterView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 18,
+      "symbol": "ListViewController.tableContainerView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 19,
+      "symbol": "ListViewController.shadowView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 20,
+      "symbol": "ListViewController.addButton",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 21,
+      "symbol": "ListViewController.assignmentsLeftLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 22,
+      "symbol": "ListViewController.pointsCounter",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 24,
+      "symbol": "ListViewController.deleteListIndexPath",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 25,
+      "symbol": "ListViewController.confettiView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 27,
+      "symbol": "ListViewController.selectedIndex",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 29,
+      "symbol": "ListViewController.waves",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 31,
+      "symbol": "ListViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 63,
+      "symbol": "ListViewController.viewDidAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 71,
+      "symbol": "ListViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 76,
+      "symbol": "ListViewController.update()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 87,
+      "symbol": "ListViewController.updateText()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 144,
+      "symbol": "ListViewController.prepare(for:sender:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 167,
+      "symbol": "ListViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 169,
+      "symbol": "ListViewController.tableView(_:numberOfRowsInSection:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 173,
+      "symbol": "ListViewController.tableView(_:cellForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 189,
+      "symbol": "ListViewController.tableView(_:commit:forRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 197,
+      "symbol": "ListViewController.tableView(_:didSelectRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 209,
+      "symbol": "ListViewController.tableView(_:leadingSwipeActionsConfigurationForRowAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
+      "line": 214,
+      "symbol": "ListViewController.contextualCompletedAction(forRowAtIndexPath:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ToDoTableViewCell.swift",
+      "line": 11,
+      "symbol": "ToDoTableViewCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ToDoTableViewCell.swift",
+      "line": 13,
+      "symbol": "ToDoTableViewCell.classLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ToDoTableViewCell.swift",
+      "line": 14,
+      "symbol": "ToDoTableViewCell.assignmentLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ToDoTableViewCell.swift",
+      "line": 15,
+      "symbol": "ToDoTableViewCell.descLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ToDoTableViewCell.swift",
+      "line": 16,
+      "symbol": "ToDoTableViewCell.dueLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ToDoTableViewCell.swift",
+      "line": 18,
+      "symbol": "ToDoTableViewCell.itemView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ToDoTableViewCell.swift",
+      "line": 19,
+      "symbol": "ToDoTableViewCell.blurEffectView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ToDoTableViewCell.swift",
+      "line": 21,
+      "symbol": "ToDoTableViewCell.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ToDoTableViewCell.swift",
+      "line": 37,
+      "symbol": "ToDoTableViewCell.setSelected(_:animated:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ToDoTableViewCell.swift",
+      "line": 61,
+      "symbol": "InsetLabel.topInset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ToDoTableViewCell.swift",
+      "line": 62,
+      "symbol": "InsetLabel.bottomInset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ToDoTableViewCell.swift",
+      "line": 63,
+      "symbol": "InsetLabel.leftInset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ToDoTableViewCell.swift",
+      "line": 64,
+      "symbol": "InsetLabel.rightInset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ToDoTableViewCell.swift",
+      "line": 66,
+      "symbol": "InsetLabel.drawText(in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ToDoTableViewCell.swift",
+      "line": 71,
+      "symbol": "InsetLabel.intrinsicContentSize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ToDoTableViewCell.swift",
+      "line": 82,
+      "symbol": "BlurView.awakeFromNib()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserData.swift",
+      "line": 129,
+      "symbol": "Color.alpha",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserData.swift",
+      "line": 129,
+      "symbol": "Color.blue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserData.swift",
+      "line": 129,
+      "symbol": "Color.green",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserData.swift",
+      "line": 129,
+      "symbol": "Color.red",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserData.swift",
+      "line": 130,
+      "symbol": "Color.uiColor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserData.swift",
+      "line": 133,
+      "symbol": "Color.init(uiColor:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserData.swift",
+      "line": 139,
+      "symbol": "print(_:filename:function:line:separator:terminator:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserProfileViewController.swift",
+      "line": 12,
+      "symbol": "UserProfileViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserProfileViewController.swift",
+      "line": 15,
+      "symbol": "UserProfileViewController.userNameLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserProfileViewController.swift",
+      "line": 17,
+      "symbol": "UserProfileViewController.userImage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserProfileViewController.swift",
+      "line": 19,
+      "symbol": "UserProfileViewController.shadowView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserProfileViewController.swift",
+      "line": 21,
+      "symbol": "UserProfileViewController.containerView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserProfileViewController.swift",
+      "line": 23,
+      "symbol": "UserProfileViewController.graphShadowView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserProfileViewController.swift",
+      "line": 25,
+      "symbol": "UserProfileViewController.graphContainerView",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserProfileViewController.swift",
+      "line": 27,
+      "symbol": "UserProfileViewController.tasksCompletedChart",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserProfileViewController.swift",
+      "line": 29,
+      "symbol": "UserProfileViewController.chartUpdate()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserProfileViewController.swift",
+      "line": 37,
+      "symbol": "UserProfileViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserProfileViewController.swift",
+      "line": 49,
+      "symbol": "UserProfileViewController.setupCards()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserProfileViewController.swift",
+      "line": 57,
+      "symbol": "UserProfileViewController.prepareProfile()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserProfileViewController.swift",
+      "line": 66,
+      "symbol": "UserProfileViewController",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/WaterView.swift",
+      "line": 12,
+      "symbol": "WaterView",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/WaterView.swift",
+      "line": 33,
+      "symbol": "WaterView.waveLength",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/WaterView.swift",
+      "line": 35,
+      "symbol": "WaterView.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/WaterView.swift",
+      "line": 46,
+      "symbol": "WaterView.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/WaterView.swift",
+      "line": 54,
+      "symbol": "WaterView.draw(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/WaterView.swift",
+      "line": 67,
+      "symbol": "WaterView.drawWave()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT"
+}

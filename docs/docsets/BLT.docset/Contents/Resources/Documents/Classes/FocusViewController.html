@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FocusViewController Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0" />
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/FocusViewController" class="dashAnchor"></a>
+    <a title="FocusViewController Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p>
+          <a href="../index.html">BLT Docs</a>
+          <span class="no-mobile"> (31% documented)</span>
+        </p>
+    
+        <p class="header-right">
+          <a href="https://github.com/BLT-App/BLT-App">
+            <img src="../img/gh.png"/>
+            <span class="no-mobile">View on GitHub</span>
+          </a>
+        </p>
+    
+      </div>
+    </header>
+    <div id="breadcrumbs-container">
+      <div class="content-wrapper">
+        <p id="breadcrumbs">
+          <span class="no-mobile">
+            <a href="../index.html">BLT Reference</a>
+            <img id="carat" src="../img/carat.png" />
+          </span>
+          FocusViewController Class Reference
+        </p>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="article-wrapper">
+        <article class="main-content">
+          <section>
+            <section class="section">
+              <h1>FocusViewController</h1>
+                <div class="declaration">
+                  <div class="language">
+                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">FocusViewController</span> <span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/FocusTimerDelegate.html">FocusTimerDelegate</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/FMPopUpViewControllerDelegate.html">FMPopUpViewControllerDelegate</a></span></code></pre>
+
+                  </div>
+                </div>
+              <p>The ViewController that controls the Focus View.</p>
+
+            </section>
+            <section class="section task-group-section">
+              <div class="task-group">
+                <ul>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:3BLT19FocusViewControllerC11currentTaskAA8ToDoItemCvp"></a>
+                      <a name="//apple_ref/swift/Property/currentTask" class="dashAnchor"></a>
+                      <a class="token" href="#/s:3BLT19FocusViewControllerC11currentTaskAA8ToDoItemCvp">currentTask</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>The ToDoItem of the current task.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">currentTask</span><span class="p">:</span> <span class="kt"><a href="../Classes/ToDoItem.html">ToDoItem</a></span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:3BLT19FocusViewControllerC14currentTaskNumSivp"></a>
+                      <a name="//apple_ref/swift/Property/currentTaskNum" class="dashAnchor"></a>
+                      <a class="token" href="#/s:3BLT19FocusViewControllerC14currentTaskNumSivp">currentTaskNum</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Current index of the task displayed</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">currentTaskNum</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:3BLT19FocusViewControllerC7myTimerAA0bF0Cvp"></a>
+                      <a name="//apple_ref/swift/Property/myTimer" class="dashAnchor"></a>
+                      <a class="token" href="#/s:3BLT19FocusViewControllerC7myTimerAA0bF0Cvp">myTimer</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Timer that handles the countdown</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">myTimer</span><span class="p">:</span> <span class="kt"><a href="../Classes/FocusTimer.html">FocusTimer</a></span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:3BLT19FocusViewControllerC5popupAA07FMPopUpcD0Cvp"></a>
+                      <a name="//apple_ref/swift/Property/popup" class="dashAnchor"></a>
+                      <a class="token" href="#/s:3BLT19FocusViewControllerC5popupAA07FMPopUpcD0Cvp">popup</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">popup</span><span class="p">:</span> <span class="kt"><a href="../Classes/FMPopUpViewController.html">FMPopUpViewController</a></span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@BLT@objc(cs)FocusViewController(py)lblCurrentTask"></a>
+                      <a name="//apple_ref/swift/Property/lblCurrentTask" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)lblCurrentTask">lblCurrentTask</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">lblCurrentTask</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@BLT@objc(cs)FocusViewController(py)lblCurrentTaskDesc"></a>
+                      <a name="//apple_ref/swift/Property/lblCurrentTaskDesc" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)lblCurrentTaskDesc">lblCurrentTaskDesc</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">lblCurrentTaskDesc</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@BLT@objc(cs)FocusViewController(py)btnCompleteTask"></a>
+                      <a name="//apple_ref/swift/Property/btnCompleteTask" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)btnCompleteTask">btnCompleteTask</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">btnCompleteTask</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@BLT@objc(cs)FocusViewController(py)endFocusModeButton"></a>
+                      <a name="//apple_ref/swift/Property/endFocusModeButton" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)endFocusModeButton">endFocusModeButton</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">endFocusModeButton</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@BLT@objc(cs)FocusViewController(py)timerDisplay"></a>
+                      <a name="//apple_ref/swift/Property/timerDisplay" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)timerDisplay">timerDisplay</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">timerDisplay</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@BLT@objc(cs)FocusViewController(py)itemView"></a>
+                      <a name="//apple_ref/swift/Property/itemView" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)itemView">itemView</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">itemView</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@BLT@objc(cs)FocusViewController(py)classLabel"></a>
+                      <a name="//apple_ref/swift/Property/classLabel" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)classLabel">classLabel</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">classLabel</span><span class="p">:</span> <span class="kt"><a href="../Classes/InsetLabel.html">InsetLabel</a></span><span class="o">!</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@BLT@objc(cs)FocusViewController(py)progressTimer"></a>
+                      <a name="//apple_ref/swift/Property/progressTimer" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)progressTimer">progressTimer</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">progressTimer</span><span class="p">:</span> <span class="kt">UIProgressView</span><span class="o">!</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@BLT@objc(cs)FocusViewController(py)pointsCounter"></a>
+                      <a name="//apple_ref/swift/Property/pointsCounter" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)pointsCounter">pointsCounter</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">pointsCounter</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:3BLT19FocusViewControllerC08confettiC0010LBConfettiC008ConfettiC0CSgvp"></a>
+                      <a name="//apple_ref/swift/Property/confettiView" class="dashAnchor"></a>
+                      <a class="token" href="#/s:3BLT19FocusViewControllerC08confettiC0010LBConfettiC008ConfettiC0CSgvp">confettiView</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">confettiView</span><span class="p">:</span> <span class="kt">ConfettiView</span><span class="p">?</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:3BLT19FocusViewControllerC05leaveC0Sbvp"></a>
+                      <a name="//apple_ref/swift/Property/leaveView" class="dashAnchor"></a>
+                      <a class="token" href="#/s:3BLT19FocusViewControllerC05leaveC0Sbvp">leaveView</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">leaveView</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@BLT@objc(cs)FocusViewController(im)viewDidLoad"></a>
+                      <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(im)viewDidLoad">viewDidLoad()</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:3BLT19FocusViewControllerC15setupClassLabelyyF"></a>
+                      <a name="//apple_ref/swift/Method/setupClassLabel()" class="dashAnchor"></a>
+                      <a class="token" href="#/s:3BLT19FocusViewControllerC15setupClassLabelyyF">setupClassLabel()</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setupClassLabel</span><span class="p">()</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@BLT@objc(cs)FocusViewController(im)viewDidAppear:"></a>
+                      <a name="//apple_ref/swift/Method/viewDidAppear(_:)" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(im)viewDidAppear:">viewDidAppear(_:)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@BLT@objc(cs)FocusViewController(im)viewWillAppear:"></a>
+                      <a name="//apple_ref/swift/Method/viewWillAppear(_:)" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(im)viewWillAppear:">viewWillAppear(_:)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@BLT@objc(cs)FocusViewController(im)viewWillDisappear:"></a>
+                      <a name="//apple_ref/swift/Method/viewWillDisappear(_:)" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(im)viewWillDisappear:">viewWillDisappear(_:)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillDisappear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:3BLT19FocusViewControllerC12setupButtonsyyF"></a>
+                      <a name="//apple_ref/swift/Method/setupButtons()" class="dashAnchor"></a>
+                      <a class="token" href="#/s:3BLT19FocusViewControllerC12setupButtonsyyF">setupButtons()</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Stylizes buttons with curves.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setupButtons</span><span class="p">()</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:3BLT19FocusViewControllerC10hideTabBaryyF"></a>
+                      <a name="//apple_ref/swift/Method/hideTabBar()" class="dashAnchor"></a>
+                      <a class="token" href="#/s:3BLT19FocusViewControllerC10hideTabBaryyF">hideTabBar()</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Hides the Tab Bar controller.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">hideTabBar</span><span class="p">()</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:3BLT19FocusViewControllerC10showTabBaryyF"></a>
+                      <a name="//apple_ref/swift/Method/showTabBar()" class="dashAnchor"></a>
+                      <a class="token" href="#/s:3BLT19FocusViewControllerC10showTabBaryyF">showTabBar()</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Shows the Tab Bar controller.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">showTabBar</span><span class="p">()</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:3BLT19FocusViewControllerC14setCurrentTaskyyF"></a>
+                      <a name="//apple_ref/swift/Method/setCurrentTask()" class="dashAnchor"></a>
+                      <a class="token" href="#/s:3BLT19FocusViewControllerC14setCurrentTaskyyF">setCurrentTask()</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Sets the current task to the first task in the to-do list.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setCurrentTask</span><span class="p">()</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:3BLT19FocusViewControllerC11valsUpdatedyySSF"></a>
+                      <a name="//apple_ref/swift/Method/valsUpdated(_:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:3BLT19FocusViewControllerC11valsUpdatedyySSF">valsUpdated(_:)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Runs when the timer has updated its own values</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">valsUpdated</span><span class="p">(</span><span class="n">_</span> <span class="nv">timerReadout</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:3BLT19FocusViewControllerC10timerEndedyyF"></a>
+                      <a name="//apple_ref/swift/Method/timerEnded()" class="dashAnchor"></a>
+                      <a class="token" href="#/s:3BLT19FocusViewControllerC10timerEndedyyF">timerEnded()</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Runs when the timer has hit zero</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">timerEnded</span><span class="p">()</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@BLT@objc(cs)FocusViewController(im)completeTaskPress:"></a>
+                      <a name="//apple_ref/swift/Method/completeTaskPress(_:)" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(im)completeTaskPress:">completeTaskPress(_:)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Pressing on complete task that queues the next task.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">@IBAction</span>
+<span class="kd">func</span> <span class="nf">completeTaskPress</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:@M@BLT@objc(cs)FocusViewController(im)endFocusModeHit:"></a>
+                      <a name="//apple_ref/swift/Method/endFocusModeHit(_:)" class="dashAnchor"></a>
+                      <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(im)endFocusModeHit:">endFocusModeHit(_:)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Ending focus mode brings user back to the list view.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">@IBAction</span>
+<span class="kd">func</span> <span class="nf">endFocusModeHit</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:3BLT19FocusViewControllerC15didChooseCancelyyF"></a>
+                      <a name="//apple_ref/swift/Method/didChooseCancel()" class="dashAnchor"></a>
+                      <a class="token" href="#/s:3BLT19FocusViewControllerC15didChooseCancelyyF">didChooseCancel()</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">didChooseCancel</span><span class="p">()</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:3BLT19FocusViewControllerC13didChooseTime8durationySd_tF"></a>
+                      <a name="//apple_ref/swift/Method/didChooseTime(duration:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:3BLT19FocusViewControllerC13didChooseTime8durationySd_tF">didChooseTime(duration:)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Undocumented</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">didChooseTime</span><span class="p">(</span><span class="nv">duration</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:3BLT19FocusViewControllerC15incrementPoints03oldF0ySi_tF"></a>
+                      <a name="//apple_ref/swift/Method/incrementPoints(oldPoints:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:3BLT19FocusViewControllerC15incrementPoints03oldF0ySi_tF">incrementPoints(oldPoints:)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Animates a point incrementation with the pointCounter</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">incrementPoints</span><span class="p">(</span><span class="nv">oldPoints</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:3BLT19FocusViewControllerC19updatePointsCounteryySiF"></a>
+                      <a name="//apple_ref/swift/Method/updatePointsCounter(_:)" class="dashAnchor"></a>
+                      <a class="token" href="#/s:3BLT19FocusViewControllerC19updatePointsCounteryySiF">updatePointsCounter(_:)</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Updates the point counter.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">updatePointsCounter</span><span class="p">(</span><span class="n">_</span> <span class="nv">points</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </section>
+        </article>
+      </div>
+      <div class="nav-wrapper">
+        <nav class="nav-bottom">
+          <ul class="nav-groups">
+            <li class="nav-group-name">
+              <a href="../Classes.html">Classes</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/AppDelegate.html">AppDelegate</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/BlurView.html">BlurView</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/CustomIntensityVisualEffectView.html">CustomIntensityVisualEffectView</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/DatabaseEvent.html">DatabaseEvent</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/DotCALayer.html">DotCALayer</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/FMPopUpViewController.html">FMPopUpViewController</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/FocusTimer.html">FocusTimer</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/FocusViewController.html">FocusViewController</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/InsetLabel.html">InsetLabel</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/ItemViewController.html">ItemViewController</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/LineChart.html">LineChart</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/LineChart/Helpers.html">– Helpers</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/LineChart/Labels.html">– Labels</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/LineChart/Grid.html">– Grid</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/LineChart/Axis.html">– Axis</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/LineChart/Coordinate.html">– Coordinate</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/LineChart/Animation.html">– Animation</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/LineChart/Dots.html">– Dots</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/LinearScale.html">LinearScale</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/ListViewController.html">ListViewController</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MilestoneItem.html">MilestoneItem</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/NewItemViewController.html">NewItemViewController</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/Notifications.html">Notifications</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/RenderTimer.html">RenderTimer</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/SettingsFocusPrefSubmenuTableViewController.html">SettingsFocusPrefSubmenuTableViewController</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/SettingsListPrefSubmenuTableViewController.html">SettingsListPrefSubmenuTableViewController</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/SettingsNotifPrefSubmenuTableViewController.html">SettingsNotifPrefSubmenuTableViewController</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/SettingsTableViewController.html">SettingsTableViewController</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/SettingsUserProfileSubmenuTableViewController.html">SettingsUserProfileSubmenuTableViewController</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/SubjectCell.html">SubjectCell</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/TaskDatabase.html">TaskDatabase</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/TaskDatabase/DatabaseLog.html">– DatabaseLog</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/TaskDatabase/DatabaseIndex.html">– DatabaseIndex</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/TaskDatabase/DatabaseError.html">– DatabaseError</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/ToDoItem.html">ToDoItem</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/ToDoList.html">ToDoList</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/ToDoTableViewCell.html">ToDoTableViewCell</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/UserData.html">UserData</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/UserProfileViewController.html">UserProfileViewController</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/WaterView.html">WaterView</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../Global%20Variables.html">Global Variables</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Global%20Variables.html#/s:3BLT10globalDataAA04UserC0Cvp">globalData</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Global%20Variables.html#/s:3BLT18globalTaskDatabaseAA0cD0Cvp">globalTaskDatabase</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Global%20Variables.html#/s:3BLT10myToDoListAA0cdE0Cvp">myToDoList</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../Enums.html">Enumerations</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Enums/GeneralEventType.html">GeneralEventType</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../Functions.html">Functions</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Functions.html#/s:3BLT5print_8filename8function4line9separator10terminatorySSd_S2SSiS2StF">print(_:filename:function:line:separator:terminator:)</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../Protocols.html">Protocols</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Protocols/FMPopUpViewControllerDelegate.html">FMPopUpViewControllerDelegate</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Protocols/FocusTimerDelegate.html">FocusTimerDelegate</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Protocols/LineChartDelegate.html">LineChartDelegate</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Protocols/RenderTimerDelegate.html">RenderTimerDelegate</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../Structs.html">Structures</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Structs/Color.html">Color</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Structs/Milestone.html">Milestone</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-wrapper">
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://https//blt-app.github.io/get-blt" target="_blank" rel="external">BLT Group</a>. All rights reserved. (Last updated: 2020-02-19)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </div>
+    </div>
+  </body>
+</div>
+</html>
