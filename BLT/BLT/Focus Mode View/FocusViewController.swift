@@ -79,6 +79,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		hideTabBar()
 		print("view has appeared")
 		print(globalData.includeEndFocusButton)
+    
 //        if includeEndButton{
 //            endFocusModeButton.isEnabled = false
 //            endFocusModeButton.isHidden = true
@@ -89,6 +90,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 //            endFocusModeButton.isEnabled = true
 //            endFocusModeButton.isHidden = false
 //        }
+    
 		if let temp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as? FMPopUpViewController {
 			self.popup = temp
 		}
@@ -229,7 +231,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		if let confettiView = self.confettiView {
 			confettiView.start()
 		}
-		myToDoList.list[currentTaskNum].completeTask()
+		myToDoList.list[currentTaskNum].completeTask(mark: .markedCompletedInFocusMode)
 		myToDoList.list.remove(at: currentTaskNum)
 		setCurrentTask()
 		let seconds = 1.0
@@ -281,17 +283,4 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 	func updatePointsCounter(_ points: Int) {
 		pointsCounter.text = "\(points) ⭐"
 	}
-
-
-	/*
-	// MARK: - Navigation
-
-	// In a storyboard-based application, you will often want to do a little preparation before navigation
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		// Get the new view controller using segue.destination.
-		// Pass the selected object to the new view controller.
-	}
-	*/
-
-
 }

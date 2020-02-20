@@ -8,9 +8,7 @@
 
 import Foundation
 
-/**
- A to-do item is an item represneting a to-do in the list.
- */
+///A to-do item is an item representing a to-do in the list.
 class ToDoItem: Codable {
 
 	/// The name of the class that the to-do is associated with.
@@ -61,10 +59,11 @@ class ToDoItem: Codable {
 	private var completed: Bool
 
 	/// Completes the current task.
-	func completeTask() {
+	func completeTask(mark: GeneralEventType) {
 		if !completed {
 			completed = true
 			dateCompleted = Date()
+            globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: mark, currentDate: Date()))
 		}
 	}
 
@@ -118,7 +117,7 @@ class ToDoItem: Codable {
 		let hashForbiddenCharacters: Set<Character> = [" ", "+", ":", "-"]
 		self.hashValue.removeAll(where: { hashForbiddenCharacters.contains($0) })
 		print("Item with hash value \(self.hashValue) was added")
-		globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .created))
+        globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .created, currentDate: Date()))
 	}
 
 	/// Marks an item as completed

@@ -10,57 +10,81 @@ import Foundation
 import UIKit
 import Charts
 
-class UserProfileViewController: UIViewController {
-
-	@IBOutlet weak var userNameLabel: UILabel!
-
-	@IBOutlet weak var userImage: UIImageView!
-
-	@IBOutlet weak var shadowView: UIView!
-
-	@IBOutlet weak var containerView: UIView!
-
-	@IBOutlet weak var graphShadowView: UIView!
-
-	@IBOutlet weak var graphContainerView: UIView!
-
-	@IBOutlet weak var tasksCompletedChart: LineChart!
-
-	func chartUpdate() {
-		var trendData: [CGFloat] = [5, 2, 7, 8, 3, 5]
-		tasksCompletedChart.clear()
-		tasksCompletedChart.addLine(trendData)
-		tasksCompletedChart.y.grid.count = 5
-
-	}
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		// Do any additional setup after loading
-		//the view, typically from a nib.
-		prepareProfile()
-
-		setupCards()
-
-		chartUpdate()
-
-	}
-
-	func setupCards() {
-		roundContainerView(cornerRadius: 20, view: containerView, shadowView: shadowView)
-		addShadow(view: shadowView, color: UIColor.gray.cgColor, opacity: 0.2, radius: 10, offset: CGSize(width: 0, height: 5))
-		roundContainerView(cornerRadius: 20, view: graphContainerView, shadowView: graphShadowView)
-		addShadow(view: graphShadowView, color: UIColor.gray.cgColor, opacity: 0.2, radius: 10, offset: CGSize(width: 0, height: 5))
-	}
-
-
-	func prepareProfile() {
-		//add colors and round corners
-		userImage.clipsToBounds = true
-		userImage.layer.cornerRadius = 50
-
-		userNameLabel.text = "\(globalData.firstName) \(globalData.lastName)"
-	}
+class UserProfileViewController: UIViewController
+{
+    
+    @IBOutlet weak var userNameLabel: UILabel!
+    
+    @IBOutlet weak var userImage: UIImageView!
+    
+    @IBOutlet weak var shadowView: UIView!
+    
+    @IBOutlet weak var containerView: UIView!
+    
+    @IBOutlet weak var graphShadowView: UIView!
+    
+    @IBOutlet weak var graphContainerView: UIView!
+    
+    @IBOutlet weak var tasksCompletedChart: LineChart!
+    
+    @IBOutlet weak var streakLabel: UILabel!
+    
+    @IBOutlet weak var completedLabel: UILabel!
+    
+    @IBOutlet weak var focusLabel: UILabel!
+    
+    func chartUpdate() {
+        var trendData: [CGFloat] = []
+        
+        var previousDayTotal: Int = 0
+        for day in 1...7 {
+            var numEventsCompletedOnDay = 0
+            numEventsCompletedOnDay += globalTaskDatabase.getNumEventsOfTypeInLast(numDays: day, eventType: .markedCompletedInListView)
+            numEventsCompletedOnDay += globalTaskDatabase.getNumEventsOfTypeInLast(numDays: day, eventType: .markedCompletedInFocusMode)
+            numEventsCompletedOnDay -= globalTaskDatabase.getNumEventsOfTypeInLast(numDays: day, eventType: .unmarkedComplete)
+            print("Tasks completed on day \(day): \(numEventsCompletedOnDay - previousDayTotal)")
+            trendData.append(CGFloat(numEventsCompletedOnDay - previousDayTotal))
+            previousDayTotal = numEventsCompletedOnDay
+        }
+        
+        // Example data for the trend. 
+        //trendData = [5, 2, 7, 8, 3, 5, 6]
+        
+        tasksCompletedChart.clear()
+        tasksCompletedChart.addLine(trendData)
+        tasksCompletedChart.y.grid.count = 7
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading
+        //the view, typically from a nib.
+        prepareProfile()
+        chartUpdate()
+        setupCards()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        chartUpdate()
+    }
+    
+    func setupCards() {
+        roundContainerView(cornerRadius: 20, view: containerView, shadowView: shadowView)
+        addShadow(view: shadowView, color: UIColor.gray.cgColor, opacity: 0.2, radius: 10, offset: CGSize(width: 0, height: 5))
+        roundContainerView(cornerRadius: 20, view: graphContainerView, shadowView: graphShadowView)
+        addShadow(view: graphShadowView, color: UIColor.gray.cgColor, opacity: 0.2, radius: 10, offset: CGSize(width: 0, height: 5))
+    }
+    
+    
+    func prepareProfile(){
+        //add colors and round corners
+        userImage.clipsToBounds = true
+        userImage.layer.cornerRadius = 50
+        
+        userNameLabel.text = "\(globalData.firstName) \(globalData.lastName)"
+    }
 }
 
 extension UserProfileViewController {

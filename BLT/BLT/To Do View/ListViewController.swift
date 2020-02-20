@@ -235,6 +235,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 
 	func contextualCompletedAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
 		let action = UIContextualAction(style: .normal, title: "Complete") { (_: UIContextualAction, _: UIView, completionHandler: (Bool) -> Void) in
+            myToDoList.list[indexPath.row].completeTask(mark: .markedCompletedInFocusMode)
 			myToDoList.list.remove(at: indexPath.row)
 			myToDoList.storeList()
 			if let confettiView = self.confettiView {
