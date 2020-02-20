@@ -47,7 +47,7 @@ class UserProfileViewController: UIViewController
         }
         
         // Example data for the trend. 
-        trendData = [5, 2, 7, 8, 3, 5, 6]
+        //trendData = [5, 2, 7, 8, 3, 5, 6]
         
         tasksCompletedChart.clear()
         tasksCompletedChart.addLine(trendData)
