@@ -9,7 +9,6 @@
 import Foundation
 import UserNotifications
 import UIKit
-
 /// class that handles notifications
 class Notifications {
     

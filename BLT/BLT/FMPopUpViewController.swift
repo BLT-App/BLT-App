@@ -10,7 +10,7 @@ import UIKit
 
 /// view controller for the pop up in focus mode
 class FMPopUpViewController: UIViewController {
-
+  
     /// outlet for the pop up view
     @IBOutlet weak var popUpView: UIView!
     

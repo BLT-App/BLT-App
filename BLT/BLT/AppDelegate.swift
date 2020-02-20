@@ -8,10 +8,10 @@
 
 import UIKit
 import UserNotifications
+
 @UIApplicationMain
 /// delegate for the app
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-    
     var window: UIWindow?
     
     /**
