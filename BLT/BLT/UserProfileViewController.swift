@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Charts
+/// view controller class for the
 class UserProfileViewController: UIViewController
 {
     
@@ -45,6 +46,7 @@ class UserProfileViewController: UIViewController
         chartUpdate()
         
     }
+    
     
     func setupCards() {
         roundContainerView(cornerRadius: 20, view: containerView, shadowView: shadowView)
