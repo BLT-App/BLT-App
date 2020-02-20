@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Charts
 
+/// View controller class for the User Profile page
 class UserProfileViewController: UIViewController
 {
     
@@ -69,6 +70,7 @@ class UserProfileViewController: UIViewController
         super.viewDidAppear(animated)
         chartUpdate()
     }
+    
     
     func setupCards() {
         roundContainerView(cornerRadius: 20, view: containerView, shadowView: shadowView)
