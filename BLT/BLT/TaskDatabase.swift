@@ -334,6 +334,7 @@ class TaskDatabase {
      - Returns: The number of events matching the query within the date constraint
      */
     func getNumEventsOfTypeFrom(startDate: Date, endDate: Date, eventType: GeneralEventType) -> Int {
+        saveDatabaseLog(targetLog: currentDatabaseLog)
         print("Searching logs from \(startDate.description.prefix(10)) to \(endDate.description.prefix(10)) for \(eventType) from list of \(myDatabaseIndex.listOfDatabases.count) logs")
         var numEvents = 0
         for databaseString in myDatabaseIndex.listOfDatabases {
