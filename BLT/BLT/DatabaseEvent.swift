@@ -46,5 +46,4 @@ class DatabaseEvent: Codable {
         self.eventNumber = globalTaskDatabase.myDatabaseIndex.getEventNumForUse()
         self.date = currentDate
     }
-    
 }

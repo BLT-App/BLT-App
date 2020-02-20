@@ -8,55 +8,57 @@
 
 import UIKit
 import UserNotifications
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
-    var window: UIWindow?
+	var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        let center = UNUserNotificationCenter.current()
-        
-        let options: UNAuthorizationOptions = [.sound, .alert]
-        
-        center.requestAuthorization(options: options) {
-            (granted, error) in if error != nil {
-                print("Error")
-            }
-        }
-        
-        center.delegate = self
-        
-        return true
-    }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .badge, .sound])
-    }
+	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+		// Override point for customization after application launch.
 
-    func applicationWillResignActive(_ application: UIApplication) {
+		let center = UNUserNotificationCenter.current()
 
-    }
+		let options: UNAuthorizationOptions = [.sound, .alert]
 
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        
-    }
+		center.requestAuthorization(options: options) {
+			(granted, error) in
+			if error != nil {
+				print("Error")
+			}
+		}
 
-    func applicationWillEnterForeground(_ application: UIApplication) {
+		center.delegate = self
 
-    }
+		return true
+	}
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
+	func userNotificationCenter(_ center: UNUserNotificationCenter,
+								willPresent notification: UNNotification,
+								withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+		completionHandler([.alert, .badge, .sound])
+	}
 
-    }
+	func applicationWillResignActive(_ application: UIApplication) {
 
-    func applicationWillTerminate(_ application: UIApplication) {
-        myToDoList.storeList()
-        globalTaskDatabase.saveDatabaseLog(targetLog: globalTaskDatabase.currentDatabaseLog)
-        globalTaskDatabase.saveDatabaseIndex()
-    }
+	}
+
+	func applicationDidEnterBackground(_ application: UIApplication) {
+
+	}
+
+	func applicationWillEnterForeground(_ application: UIApplication) {
+
+	}
+
+	func applicationDidBecomeActive(_ application: UIApplication) {
+
+	}
+
+	func applicationWillTerminate(_ application: UIApplication) {
+		myToDoList.storeList()
+		globalTaskDatabase.saveDatabaseLog(targetLog: globalTaskDatabase.currentDatabaseLog)
+		globalTaskDatabase.saveDatabaseIndex()
+	}
 
 }
