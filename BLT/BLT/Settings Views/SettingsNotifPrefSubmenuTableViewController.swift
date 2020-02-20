@@ -8,9 +8,9 @@
 import UIKit
 
 class SettingsNotifPrefSubmenuTableViewController: UITableViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+	}
+
 }
