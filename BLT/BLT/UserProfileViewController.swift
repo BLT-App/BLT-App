@@ -67,7 +67,7 @@ class UserProfileViewController: UIViewController
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        chartUpdate()
     }
     
     func setupCards() {

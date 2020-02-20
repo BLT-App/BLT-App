@@ -231,7 +231,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		if let confettiView = self.confettiView {
 			confettiView.start()
 		}
-		myToDoList.list[currentTaskNum].completeTask()
+		myToDoList.list[currentTaskNum].completeTask(mark: .markedCompletedInFocusMode)
 		myToDoList.list.remove(at: currentTaskNum)
 		setCurrentTask()
 		let seconds = 1.0

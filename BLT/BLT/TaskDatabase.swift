@@ -29,6 +29,9 @@ class TaskDatabase {
     var currentDatabaseLog: DatabaseLog {
         didSet {
             saveDatabaseLog(targetLog: currentDatabaseLog)
+            for event in currentDatabaseLog.log {
+                print("Event: \(event.toDoItemIdentifier), \(event.eventType), \(event.date)")
+            }
         }
     }
     

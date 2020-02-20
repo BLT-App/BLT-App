@@ -59,10 +59,11 @@ class ToDoItem: Codable {
 	private var completed: Bool
 
 	/// Completes the current task.
-	func completeTask() {
+	func completeTask(mark: GeneralEventType) {
 		if !completed {
 			completed = true
 			dateCompleted = Date()
+            globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: mark, currentDate: Date()))
 		}
 	}
 
