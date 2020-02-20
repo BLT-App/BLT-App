@@ -17,7 +17,7 @@
       <div class="content-wrapper">
         <p>
           <a href="../index.html">BLT Docs</a>
-          <span class="no-mobile"> (31% documented)</span>
+          <span class="no-mobile"> (56% documented)</span>
         </p>
     
         <p class="header-right">
@@ -52,12 +52,39 @@
 
                   </div>
                 </div>
-              <p>Undocumented</p>
+              <p>Stores User Events For Use In Creating Our Profile Page Statistics</p>
 
             </section>
             <section class="section task-group-section">
               <div class="task-group">
                 <ul>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/s:3BLT12TaskDatabaseC13inTestingModeSbvp"></a>
+                      <a name="//apple_ref/swift/Property/inTestingMode" class="dashAnchor"></a>
+                      <a class="token" href="#/s:3BLT12TaskDatabaseC13inTestingModeSbvp">inTestingMode</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Boolean to set testing mode</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">inTestingMode</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
                   <li class="item">
                     <div>
                       <code>
@@ -71,14 +98,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Database Index</p>
+                          <p><code><a href="../Classes/TaskDatabase/DatabaseIndex.html">DatabaseIndex</a></code> Of The User</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">myDatabaseIndex</span><span class="p">:</span> <span class="kt"><a href="../Classes/TaskDatabase/DatabaseIndex.html">DatabaseIndex</a></span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">myDatabaseIndex</span><span class="p">:</span> <span class="kt"><a href="../Classes/TaskDatabase/DatabaseIndex.html">DatabaseIndex</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                           </div>
                         </div>
@@ -98,14 +125,14 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Current Working Database Log</p>
+                          <p>Current Working <code><a href="../Classes/TaskDatabase/DatabaseLog.html">DatabaseLog</a></code></p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">currentDatabaseLog</span><span class="p">:</span> <span class="kt"><a href="../Classes/TaskDatabase/DatabaseLog.html">DatabaseLog</a></span></code></pre>
+                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">currentDatabaseLog</span><span class="p">:</span> <span class="kt"><a href="../Classes/TaskDatabase/DatabaseLog.html">DatabaseLog</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                           </div>
                         </div>
@@ -125,7 +152,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Holds Info About Various Events Caused By The User</p>
 
                           <a href="../Classes/TaskDatabase/DatabaseLog.html" class="slightly-smaller">See more</a>
                         </div>
@@ -153,7 +180,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Index Of All Databases And Other Info For All Databases</p>
 
                           <a href="../Classes/TaskDatabase/DatabaseIndex.html" class="slightly-smaller">See more</a>
                         </div>
@@ -181,7 +208,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Enum for possible errors that arise from a database</p>
 
                           <a href="../Classes/TaskDatabase/DatabaseError.html" class="slightly-smaller">See more</a>
                         </div>
@@ -236,7 +263,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Loads The <code><a href="../Classes/TaskDatabase/DatabaseIndex.html">DatabaseIndex</a></code> Object For The User</p>
 
                         </div>
                         <div class="declaration">
@@ -246,6 +273,10 @@
                             <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">loadDatabaseIndex</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/TaskDatabase/DatabaseIndex.html">DatabaseIndex</a></span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p>The <code><a href="../Classes/TaskDatabase/DatabaseIndex.html">DatabaseIndex</a></code> from memory or creates a new <code><a href="../Classes/TaskDatabase/DatabaseIndex.html">DatabaseIndex</a></code> using default constructor</p>
                         </div>
                       </section>
                     </div>
@@ -263,7 +294,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Saves The &lsquo;DatabaseIndex&rsquo; Of The User</p>
 
                         </div>
                         <div class="declaration">
@@ -290,7 +321,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Fetches the <code><a href="../Classes/TaskDatabase/DatabaseLog.html">DatabaseLog</a></code> for the month year combo</p>
 
                         </div>
                         <div class="declaration">
@@ -300,6 +331,41 @@
                             <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">fetchDatabaseLog</span><span class="p">(</span><span class="nv">year</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">month</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/TaskDatabase/DatabaseLog.html">DatabaseLog</a></span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>year</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>year of log</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>month</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>month of log</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p><code><a href="../Classes/TaskDatabase/DatabaseLog.html">DatabaseLog</a></code> for the given inputs from memory, or creates a new <code><a href="../Classes/TaskDatabase/DatabaseLog.html">DatabaseLog</a></code></p>
                         </div>
                       </section>
                     </div>
@@ -317,7 +383,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Fetches the <code><a href="../Classes/TaskDatabase/DatabaseLog.html">DatabaseLog</a></code> that encompasses the date given</p>
 
                         </div>
                         <div class="declaration">
@@ -327,6 +393,29 @@
                             <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">fetchDatabaseLog</span><span class="p">(</span><span class="nv">targetDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/TaskDatabase/DatabaseLog.html">DatabaseLog</a></span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>targetDate</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>date for which the target <code><a href="../Classes/TaskDatabase/DatabaseLog.html">DatabaseLog</a></code> should encompass</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p><code><a href="../Classes/TaskDatabase/DatabaseLog.html">DatabaseLog</a></code> for the given inputs from memory, or creates a new <code><a href="../Classes/TaskDatabase/DatabaseLog.html">DatabaseLog</a></code></p>
                         </div>
                       </section>
                     </div>
@@ -344,7 +433,12 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Fetches the <code><a href="../Classes/TaskDatabase/DatabaseLog.html">DatabaseLog</a></code> with the target identifier</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code><a href="../Classes/TaskDatabase/DatabaseError.html#/s:3BLT12TaskDatabaseC0C5ErrorO019databaseDoesntExistD0yA2EmF">DatabaseError.databaseDoesntExistError</a></code> if the desired <code><a href="../Classes/TaskDatabase/DatabaseLog.html">DatabaseLog</a></code> doesn&rsquo;t exist
+
+</div>
 
                         </div>
                         <div class="declaration">
@@ -354,6 +448,29 @@
                             <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">fetchDatabaseLog</span><span class="p">(</span><span class="nv">targetLogString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/TaskDatabase/DatabaseLog.html">DatabaseLog</a></span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>targetLogString</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>identifier of the <code><a href="../Classes/TaskDatabase/DatabaseLog.html">DatabaseLog</a></code> to load</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p><code><a href="../Classes/TaskDatabase/DatabaseLog.html">DatabaseLog</a></code> for the given inputs from memory, or creates a new <code><a href="../Classes/TaskDatabase/DatabaseLog.html">DatabaseLog</a></code></p>
                         </div>
                       </section>
                     </div>
@@ -371,7 +488,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Saves the specified log to local storage</p>
 
                         </div>
                         <div class="declaration">
@@ -381,6 +498,25 @@
                             <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">saveDatabaseLog</span><span class="p">(</span><span class="nv">targetLog</span><span class="p">:</span> <span class="kt"><a href="../Classes/TaskDatabase/DatabaseLog.html">DatabaseLog</a></span><span class="p">)</span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>targetLog</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The log to be saved</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
                       </section>
                     </div>
@@ -398,7 +534,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Gets the URL of database for a given date</p>
 
                         </div>
                         <div class="declaration">
@@ -408,6 +544,29 @@
                             <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getDatabaseLogString</span><span class="p">(</span><span class="nv">date</span><span class="p">:</span> <span class="kt">Date</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>date</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The date for which the DatabaseLog will represent</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p></p>
                         </div>
                       </section>
                     </div>
@@ -452,7 +611,12 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Searches databases efficiently for items matching the queries from the current date back</p>
+
+<ul>
+<li>numDays: Number of days back to search</li>
+<li><p>eventType: The type of event searching for</p></li>
+</ul>
 
                         </div>
                         <div class="declaration">
@@ -462,6 +626,10 @@
                             <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getNumEventsOfTypeInLast</span><span class="p">(</span><span class="nv">numDays</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">eventType</span><span class="p">:</span> <span class="kt"><a href="../Enums/GeneralEventType.html">GeneralEventType</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p>The number of events matching the query from the present day back to the number of days specified</p>
                         </div>
                       </section>
                     </div>
@@ -479,7 +647,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>Searches databases efficiently for items matching the queries</p>
 
                         </div>
                         <div class="declaration">
@@ -489,6 +657,53 @@
                             <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getNumEventsOfTypeFrom</span><span class="p">(</span><span class="nv">startDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span> <span class="nv">endDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">,</span> <span class="nv">eventType</span><span class="p">:</span> <span class="kt"><a href="../Enums/GeneralEventType.html">GeneralEventType</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>startDate</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>Start of the search boundary for date</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>endDate</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>End of the search boundary for date</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>eventType</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The type of event searching for</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p>The number of events matching the query within the date constraint</p>
                         </div>
                       </section>
                     </div>
@@ -690,7 +905,7 @@
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://https//blt-app.github.io/get-blt" target="_blank" rel="external">BLT Group</a>. All rights reserved. (Last updated: 2020-02-19)</p>
+          <p>&copy; 2020 <a class="link" href="https://https//blt-app.github.io/get-blt" target="_blank" rel="external">BLT Group</a>. All rights reserved. (Last updated: 2020-02-20)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>

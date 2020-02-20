@@ -9,6 +9,8 @@
 import UIKit
 import Foundation
 
+
+/// Class That Manages The Water View Featured On The List Page
 class WaterView: UIView, RenderTimerDelegate {
 
 	/// Path for view
@@ -32,6 +34,10 @@ class WaterView: UIView, RenderTimerDelegate {
 	/// Wavelength of Wave in Pixels
 	var waveLength: CGFloat = -1
 
+    
+    /// Initializes A `WaterView` With A Frame
+    ///
+    /// - Parameter frame: Frame to hold the `WaterView`
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 
@@ -43,6 +49,10 @@ class WaterView: UIView, RenderTimerDelegate {
 		renderTimer.runTimer(interval: 0.07)
 	}
 
+    
+    /// Init From Decoder As Required By `UIView`
+    ///
+    /// - Parameter aDecoder: Decoder Initializer
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 
@@ -51,11 +61,15 @@ class WaterView: UIView, RenderTimerDelegate {
 		renderTimer.runTimer(interval: 0.07)
 	}
 
+    
+    /// `UIView` Required Method For Reloading View
+    ///
+    /// - Parameter rect: Where to Draw
 	override func draw(_ rect: CGRect) {
 		self.drawWave()
 	}
 
-	//Called from RenderTimer Class on Interval
+	///Called from RenderTimer Class on Interval
 	func render() {
 		currentWaveStart += 0.03
 		if currentWaveStart > 4 * CGFloat(Double.pi) {
@@ -64,6 +78,7 @@ class WaterView: UIView, RenderTimerDelegate {
 		self.setNeedsDisplay()
 	}
 
+    /// Draws the wave
 	func drawWave() {
 		self.path = UIBezierPath()
 		var paths: [UIBezierPath] = []

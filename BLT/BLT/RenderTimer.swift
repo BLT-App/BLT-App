@@ -8,7 +8,10 @@
 
 import Foundation
 
+/// Class To Handle Running A Method Call To The `WaterView` On An Interval
 class RenderTimer {
+    
+    /// <#Description#>
 	var myTimer: Timer
 
 	weak var delegate: RenderTimerDelegate?

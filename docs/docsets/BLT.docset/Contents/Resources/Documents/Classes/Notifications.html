@@ -17,7 +17,7 @@
       <div class="content-wrapper">
         <p>
           <a href="../index.html">BLT Docs</a>
-          <span class="no-mobile"> (31% documented)</span>
+          <span class="no-mobile"> (56% documented)</span>
         </p>
     
         <p class="header-right">
@@ -52,7 +52,7 @@
 
                   </div>
                 </div>
-              <p>Undocumented</p>
+              <p>class that handles notifications</p>
 
             </section>
             <section class="section task-group-section">
@@ -71,7 +71,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>date object for when the user recieves a notification</p>
 
                         </div>
                         <div class="declaration">
@@ -98,7 +98,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>basic initializer sets default notification date to 10s from when called</p>
 
                         </div>
                         <div class="declaration">
@@ -125,7 +125,7 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>Undocumented</p>
+                          <p>creates a new notification and adds it to the notification center to be sent at a specified time</p>
 
                         </div>
                         <div class="declaration">
@@ -135,6 +135,61 @@
                             <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">prepareNotification</span><span class="p">(</span><span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">subtitle</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">body</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">notifDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?)</span></code></pre>
 
                           </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>title</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>the string to be displayed in title of the notification; can be nil.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>subtitle</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>the <em>subtitle</em> of the notification. can be nil.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>body</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>the string to be displayed in the body of the notification. can be nil</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>notifDate</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>the date when the user should recieve the notification. can be nil will resort to default date if nil.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
                       </section>
                     </div>
@@ -336,7 +391,7 @@
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://https//blt-app.github.io/get-blt" target="_blank" rel="external">BLT Group</a>. All rights reserved. (Last updated: 2020-02-19)</p>
+          <p>&copy; 2020 <a class="link" href="https://https//blt-app.github.io/get-blt" target="_blank" rel="external">BLT Group</a>. All rights reserved. (Last updated: 2020-02-20)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>
