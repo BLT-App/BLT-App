@@ -117,7 +117,7 @@ class ToDoItem: Codable {
 		let hashForbiddenCharacters: Set<Character> = [" ", "+", ":", "-"]
 		self.hashValue.removeAll(where: { hashForbiddenCharacters.contains($0) })
 		print("Item with hash value \(self.hashValue) was added")
-        globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .created, currentDate: Date()))
+    globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .created, currentDate: Date()))
 	}
 
 	/// Marks an item as completed
