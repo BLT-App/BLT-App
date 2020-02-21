@@ -163,7 +163,6 @@
 			children = (
 				3FE3EA66237718D3002B5303 /* Main.storyboard */,
 				D7093E8F23EC661200513448 /* LineChart.swift */,
-				3F19AE3F23EC620100DECA17 /* FMPopUpViewController.swift */,
 				3F2D6FF22399FE6100B8A989 /* WaterView.swift */,
 				3F2D6FF4239A004900B8A989 /* RenderTimer.swift */,
 				3FE3EA62237718D3002B5303 /* AppDelegate.swift */,
@@ -239,6 +238,7 @@
 		D745012223DEB26A00508639 /* Focus Mode View */ = {
 			isa = PBXGroup;
 			children = (
+				3F19AE3F23EC620100DECA17 /* FMPopUpViewController.swift */,
 				3FE3EA902378DA82002B5303 /* FocusViewController.swift */,
 				3F73230723860D9300155B70 /* FocusTimer.swift */,
 			);
@@ -664,7 +664,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7SR627V48N;
+				DEVELOPMENT_TEAM = QEJW2NUXDQ;
 				INFOPLIST_FILE = BLT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -683,7 +683,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7SR627V48N;
+				DEVELOPMENT_TEAM = QEJW2NUXDQ;
 				INFOPLIST_FILE = BLT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

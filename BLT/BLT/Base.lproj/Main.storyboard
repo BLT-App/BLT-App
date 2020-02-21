@@ -723,7 +723,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o3z-wC-5yn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="ub5-9W-2Eh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1943" y="1483"/>
+            <point key="canvasLocation" x="2238" y="1210"/>
         </scene>
         <!--Item View Controller-->
         <scene sceneID="1ay-9B-aD2">
@@ -798,7 +798,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6N-mR-BGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="854"/>
+            <point key="canvasLocation" x="17" y="1209"/>
         </scene>
         <!--New Item View Controller-->
         <scene sceneID="3ac-Wj-hTW">
@@ -889,7 +889,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZw-yO-yAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="714" y="855"/>
+            <point key="canvasLocation" x="754" y="1209"/>
         </scene>
         <!--Pop Up View Controller-->
         <scene sceneID="S8A-h6-hgN">
@@ -902,10 +902,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fhr-Td-UFd">
                                 <rect key="frame" x="44" y="312" width="326" height="272"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naN-iW-idc">
-                                        <rect key="frame" x="8" y="0.0" width="315" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naN-iW-idc">
+                                        <rect key="frame" x="0.0" y="20" width="326" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -916,27 +915,49 @@
                                             <!--2020-02-06 14:59:03 +0000-->
                                         </date>
                                     </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMN-Mt-Xmb">
-                                        <rect key="frame" x="8" y="224" width="94" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Exit"/>
-                                        <connections>
-                                            <action selector="quitPopUp:" destination="zDc-dZ-dsG" eventType="touchUpInside" id="Xtl-P7-PAR"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="v9T-cK-2ze">
+                                        <rect key="frame" x="73" y="222" width="180" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMN-Mt-Xmb">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="Dss-CI-ndG"/>
+                                                </constraints>
+                                                <state key="normal" title="Exit">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="quitPopUp:" destination="zDc-dZ-dsG" eventType="touchUpInside" id="Xtl-P7-PAR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ny4-37-GM5">
+                                                <rect key="frame" x="70" y="0.0" width="110" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="110" id="3Te-GP-ckt"/>
+                                                </constraints>
+                                                <state key="normal" title="Begin Timer">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="beginFocusMode:" destination="zDc-dZ-dsG" eventType="touchUpInside" id="qwO-AD-2Nc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="naN-iW-idc" firstAttribute="leading" secondItem="Fhr-Td-UFd" secondAttribute="leading" id="9Dy-mk-Kq2"/>
+                                    <constraint firstAttribute="trailing" secondItem="naN-iW-idc" secondAttribute="trailing" id="KRb-Uv-jhy"/>
+                                    <constraint firstItem="naN-iW-idc" firstAttribute="top" secondItem="Fhr-Td-UFd" secondAttribute="top" constant="20" id="b5T-m4-lzu"/>
+                                    <constraint firstItem="v9T-cK-2ze" firstAttribute="centerX" secondItem="Fhr-Td-UFd" secondAttribute="centerX" id="j3f-xt-cs9"/>
+                                    <constraint firstAttribute="bottom" secondItem="v9T-cK-2ze" secondAttribute="bottom" constant="20" id="k0x-WH-3Le"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ny4-37-GM5">
-                                <rect key="frame" x="160" y="533" width="94" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Begin Timer"/>
-                                <connections>
-                                    <action selector="beginFocusMode:" destination="zDc-dZ-dsG" eventType="touchUpInside" id="qwO-AD-2Nc"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Fhr-Td-UFd" firstAttribute="leading" secondItem="hAn-zb-hiz" secondAttribute="leading" constant="44" id="ZGT-7b-DPs"/>
                             <constraint firstItem="Fhr-Td-UFd" firstAttribute="top" secondItem="hAn-zb-hiz" secondAttribute="top" constant="268" id="g2a-r7-l4H"/>
@@ -948,6 +969,8 @@
                         <viewLayoutGuide key="safeArea" id="hAn-zb-hiz"/>
                     </view>
                     <connections>
+                        <outlet property="beginTimer" destination="ny4-37-GM5" id="Jem-kr-gL7"/>
+                        <outlet property="exitButton" destination="rMN-Mt-Xmb" id="kTa-No-Ylg"/>
                         <outlet property="popUpView" destination="Fhr-Td-UFd" id="aPX-b9-ZPo"/>
                         <outlet property="timePicker" destination="af1-Ln-f3c" id="mGg-Sm-pRE"/>
                     </connections>
@@ -1214,7 +1237,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81j-oT-ADQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="7Wv-SA-dxJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2616" y="1434"/>
+            <point key="canvasLocation" x="2930" y="1210"/>
         </scene>
         <!--Settings Focus Mode Preferences Submenu-->
         <scene sceneID="y8n-YT-zhl">
@@ -1289,7 +1312,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sVJ-wS-kjf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="0q1-D1-V8I" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3390" y="1402"/>
+            <point key="canvasLocation" x="3641" y="1210"/>
         </scene>
         <!--Settings Notification Preferences Submenu-->
         <scene sceneID="T62-Gs-xL4">
@@ -1340,7 +1363,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f21-sK-fYL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Efi-XT-t2b" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4307" y="1402"/>
+            <point key="canvasLocation" x="4354" y="1210"/>
         </scene>
         <!--Profile-->
         <scene sceneID="L4d-Wq-I6f">
