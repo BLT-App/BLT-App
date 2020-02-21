@@ -43,14 +43,14 @@ class FMPopUpViewController: UIViewController {
     func setupButtons() {
         beginTimer.layer.cornerRadius = 15.0
         beginTimer.layer.shadowColor = UIColor.blue.cgColor
-        beginTimer.layer.shadowOpacity = 0.2
+        beginTimer.layer.shadowOpacity = 0.1
         beginTimer.layer.shadowOffset = CGSize(width: 0, height: 0)
         beginTimer.layer.shadowRadius = 5.0
         beginTimer.layer.masksToBounds = false
         
         exitButton.layer.cornerRadius = 15.0
         exitButton.layer.shadowColor = UIColor.red.cgColor
-        exitButton.layer.shadowOpacity = 0.2
+        exitButton.layer.shadowOpacity = 0.1
         exitButton.layer.shadowOffset = CGSize(width: 0, height: 0)
         exitButton.layer.shadowRadius = 5.0
         exitButton.layer.masksToBounds = false
