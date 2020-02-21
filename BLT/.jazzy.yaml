@@ -12,3 +12,4 @@ swift_version: '4.2.1'
 module: 'BLT'
 xcodebuild_arguments: ["-workspace","BLT.xcworkspace", "-scheme", "BLT"]
 output: ../docs
+exclude: "**/LineChart.swift"
