@@ -23,11 +23,15 @@ class CustomIntensityVisualEffectView: UIVisualEffectView {
 		animator.fractionComplete = intensity
 	}
 
+    
+    /// Initializer From Decoder
+    ///
+    /// - Parameter aDecoder: Decoder
 	required init?(coder aDecoder: NSCoder) {
 		fatalError()
 	}
 
-	// MARK: Private
+	/// Animator Object
 	private var animator: UIViewPropertyAnimator!
 
 }

@@ -8,9 +8,12 @@
 
 import Foundation
 
+
+/// Handles The Countdown Of `FocusViewController`
 class FocusTimer {
 	///Timer object for running the thread
 	var myTimer: Timer = Timer()
+    
 	///Number of mins on the timer
 	var mins: Int {
 		return Int(cdt / 60)
@@ -20,17 +23,22 @@ class FocusTimer {
 		return Int(cdt) % 60
 	}
 
+    ///Current TimeInterval to 0
 	var cdt: TimeInterval
 
-	//var hours: Int
 	///String to send to the focus mode screen for display
 	var description: String = ""
 
-	//total number of seconds initially
+	///total number of seconds initially
 	var totalSecs: TimeInterval
 
+    ///Reference To The Storyboard With The Countdown
 	weak var delegate: FocusTimerDelegate?
 
+    
+    /// Initializes A New FocusTimer
+    ///
+    /// - Parameter countdownTime: Number Of Seconds To Run The Timer For
 	init(countdownTime: TimeInterval) {
 		self.cdt = countdownTime
 		self.totalSecs = countdownTime
@@ -79,6 +87,8 @@ class FocusTimer {
 	}
 }
 
+
+/// Protocol For Storyboards That Have A FocusTimer
 protocol FocusTimerDelegate: class {
 	///Passes the readout for the timer for display on the screen
 	func valsUpdated(_ timerReadout: String)
