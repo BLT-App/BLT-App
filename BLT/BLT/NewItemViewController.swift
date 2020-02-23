@@ -91,7 +91,7 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
 				myToDoList.list = []
 				myToDoList.storeList()
 			} else if (classText.text != "" && titleTxt != "" && descTxt != "") {
-				let newToDo = ToDoItem(className: classTxt, title: titleTxt, description: descTxt, dueDate: datePicker.date, completed: false)
+				let newToDo = ToDoItem(className: classTxt, title: titleTxt, description: descTxt, dueDate: datePicker.date, completed: false, deleted: false)
 				myToDoList.list.insert(newToDo, at: 0)
 				myToDoList.storeList()
 

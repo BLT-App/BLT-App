@@ -13,7 +13,7 @@ import LBConfettiView
 class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewControllerDelegate {
 
 	/// The ToDoItem of the current task.
-	var currentTask: ToDoItem = ToDoItem(className: "", title: "", description: "", dueDate: Date(), completed: true)
+	var currentTask: ToDoItem = ToDoItem(className: "", title: "", description: "", dueDate: Date(), completed: true, deleted: false)
 	/// Current index of the task displayed
 	var currentTaskNum: Int = 0
 	/// Timer that handles the countdown
@@ -106,7 +106,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		self.view.addSubview(popup.view)
 		popup.didMove(toParent: self)
 		popup.delegate = self
-		//performSegue(withIdentifier: "Popup", sender: nil)
+		
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -225,7 +225,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 	///Runs when the timer has hit zero
 	func timerEnded() {
 		print("timerEnded called")
-
+        
 		endFocusModeButton.isEnabled = true
 		endFocusModeButton.isHidden = false
 
@@ -237,6 +237,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 			confettiView.start()
 		}
 		myToDoList.list[currentTaskNum].completeTask(mark: .markedCompletedInFocusMode)
+        myToDoList.deletedAndCompletedList.append(myToDoList.list[currentTaskNum])
 		myToDoList.list.remove(at: currentTaskNum)
 		setCurrentTask()
 		let seconds = 1.0
@@ -254,20 +255,23 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 	@IBAction func endFocusModeHit(_ sender: UIButton) {
 		showTabBar()
 		self.tabBarController?.selectedIndex = 0
+        
+        globalData.updateFocusTime(change: myTimer.timeStudied)
 	}
-
+    
 	func didChooseCancel() {
 		print("Called Did Choose Cancel In Focus Mode")
 		showTabBar()
 		self.tabBarController?.selectedIndex = 0
 	}
 
+    ///
 	func didChooseTime(duration: TimeInterval) {
 		print("Chose A Time")
 		myTimer.cdt = duration
 		myTimer.totalSecs = myTimer.cdt
 		myTimer.runTimer()
-
+        
 	}
 
 	/// Animates a point incrementation with the pointCounter

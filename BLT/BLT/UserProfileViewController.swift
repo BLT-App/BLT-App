@@ -63,14 +63,19 @@ class UserProfileViewController: UIViewController
         prepareProfile()
         chartUpdate()
         setupCards()
+        updateUserStats()
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         chartUpdate()
+        
     }
     
+    func updateUserStats(){
+        focusLabel.text = "\(Int(globalData.focusTime) / 3600)"
+    }
     
     func setupCards() {
         roundContainerView(cornerRadius: 20, view: containerView, shadowView: shadowView)

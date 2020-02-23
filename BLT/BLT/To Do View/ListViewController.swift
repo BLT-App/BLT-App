@@ -61,10 +61,10 @@ class ListViewController: UIViewController {
 		roundContainerView(cornerRadius: 40, view: tableContainerView, shadowView: shadowView)
 		addShadow(view: shadowView, color: UIColor.gray.cgColor, opacity: 0.2, radius: 10, offset: CGSize(width: 0, height: 5))
 		addShadow(view: addButton, color: UIColor.blue.cgColor, opacity: 0.1, radius: 5, offset: .zero)
-
+        
 		// Loads list from filesystem
 		myToDoList.retrieveList()
-
+        
 		// This creates an example list if there is nothing on the list. Debug only.
 		if myToDoList.list.count == 0 {
 			myToDoList.createExampleList()
@@ -78,6 +78,48 @@ class ListViewController: UIViewController {
 		print("Currently \(globalTaskDatabase.currentDatabaseLog.numOfEvents) in log")
 	}
 
+    /**
+     allows the viewcontroller to respond to touch events
+     - Returns: true
+    */
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    /**
+     runs whenever a motion occurs, brings back a recently
+     - Parameters:
+     - motion: the type of motion that occurs
+     - with event: the type of event
+    */
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if(motion  == .motionShake){
+            print("shook")
+            var recentlyDeletedCompletedItem = myToDoList.deletedAndCompletedList[myToDoList.deletedAndCompletedList.count - 1]
+            
+            myToDoList.deletedAndCompletedList.remove(at: myToDoList.deletedAndCompletedList.count - 1)
+            if(recentlyDeletedCompletedItem.isDeleted()){
+                recentlyDeletedCompletedItem.undoDeleteTask()
+                myToDoList.list.append(recentlyDeletedCompletedItem)
+                
+                myToDoList.sortList()
+                insertNewTask()
+                update()
+            }
+            else if(recentlyDeletedCompletedItem.isCompleted()){
+                recentlyDeletedCompletedItem.undoCompleteTask()
+                let oldPoints = myToDoList.points
+                myToDoList.points -= 10
+                self.incrementPoints(oldPoints: oldPoints)
+                myToDoList.list.append(recentlyDeletedCompletedItem)
+                myToDoList.sortList()
+                insertNewTask()
+                update()
+            }
+            
+            
+        }
+    }
 	/// View did appear function. (If a new task is added then put the task into the tableView. )
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
@@ -204,7 +246,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 		}
 
 		cell.setItem(item: toDoItem)
-
+        
 		return cell
 	}
 
@@ -236,6 +278,9 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 	func contextualCompletedAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
 		let action = UIContextualAction(style: .normal, title: "Complete") { (_: UIContextualAction, _: UIView, completionHandler: (Bool) -> Void) in
       myToDoList.list[indexPath.row].completeTask(mark: .markedCompletedInFocusMode)
+            var completedItem = myToDoList.list[indexPath.row]
+            completedItem.markCompleted()
+            myToDoList.deletedAndCompletedList.append(myToDoList.list[indexPath.row])
 			myToDoList.list.remove(at: indexPath.row)
 			myToDoList.storeList()
 			if let confettiView = self.confettiView {
@@ -281,12 +326,15 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 	 */
 	func handleDeleteItem(alertAction: UIAlertAction!) {
 		if let indexPath = deleteListIndexPath {
+            var deletedItem = myToDoList.list[indexPath.row]
+            deletedItem.markDeleted()
+            myToDoList.deletedAndCompletedList.append(deletedItem)
 			myToDoList.list.remove(at: indexPath.row)
 			myToDoList.storeList()
 			tableView.beginUpdates()
 			tableView.deleteRows(at: [indexPath], with: .left)
 			tableView.endUpdates()
-
+            
 			deleteListIndexPath = nil
 			updateText()
 		}
@@ -304,13 +352,27 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 		let newValue = myToDoList.points
 		let diff = newValue - oldPoints
 		let deltaT: Double = 1.0 / Double(diff)
-		for inc in 1...diff {
-			let seconds = Double(inc) * deltaT
-			let currentPoints = oldPoints + inc
-			DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-				self.updatePointsCounter(currentPoints)
-			}
-		}
+        
+        if(diff < 0){
+            let newDiff = abs(diff)
+            for inc in 1...newDiff {
+                let seconds = Double(inc) * deltaT
+                let currentPoints = oldPoints - inc
+                DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                    self.updatePointsCounter(currentPoints)
+                }
+            }
+        }
+        else{
+            for inc in 1...diff {
+                let seconds = Double(inc) * deltaT
+                let currentPoints = oldPoints + inc
+                DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                    self.updatePointsCounter(currentPoints)
+                }
+            }
+        }
+		
 	}
 
 	/// Updates the point counter.

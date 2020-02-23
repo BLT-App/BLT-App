@@ -54,10 +54,12 @@ class ToDoItem: Codable {
 			return "Due in \(dueCounter) days"
 		}
 	}
-
 	/// Whether the to-do item is completed.
 	private var completed: Bool
 
+    /// whether the to-do item has been deleted
+    private var deleted: Bool
+    
 	/// Completes the current task.
 	func completeTask(mark: GeneralEventType) {
 		if !completed {
@@ -67,35 +69,55 @@ class ToDoItem: Codable {
 		}
 	}
 
+    /// undeletes a task
+    func undoDeleteTask(){
+        deleted = false
+    }
+    
+    /// marks an item as deleted
+    func markDeleted(){
+        self.deleted = true
+    }
+    
+    /**
+     returns whether the function is deleted
+     - Returns: the value of the deleted variable for the item
+    */
+    func isDeleted()-> Bool {
+        return self.deleted
+    }
+    
 	/// Uncompletes a task.
 	func undoCompleteTask() {
 		completed = false
 		dateCompleted = nil
 	}
-
+    
 	/// Checks whether a task is completed.
 	///  - Returns: The state of completion of the item.
 	func isCompleted() -> Bool {
 		return completed
 	}
 
-	/// Initializer from Decodable
-	/// - Parameters:
-	///   - from: Decodable file to initialize from.
-	///   - className: Name of the class.
-	///   - title: Title of the item.
-	///   - description: Description of the item.
-	///   - dueDate: Date object of the due date.
-	///   - completed: Whether or not an item is completed.
-	///   - hashValue: The hashvalue of a specific item.
+	/** Initializer from Decodable
+	 - Parameters:
+	   - from: Decodable file to initialize from.
+	  - className: Name of the class.
+	   - title: Title of the item.
+	   - description: Description of the item.
+	   - dueDate: Date object of the due date.
+	   - completed: Whether or not an item is completed.
+	   - hashValue: The hashvalue of a specific item.
+    */
 	init(from: Decodable, className: String, title: String, description: String,
-		 dueDate: Date, completed: Bool, hashValue: String) {
+         dueDate: Date, completed: Bool, hashValue: String, deleted: Bool) {
 		self.className = className
 		self.title = title
 		self.description = description
 		self.dueDate = dueDate
 		self.completed = completed
 		self.hashValue = hashValue
+        self.deleted = deleted
 		print("Item with hash value \(self.hashValue) was created from memory")
 	}
 
@@ -107,12 +129,13 @@ class ToDoItem: Codable {
 	///   - dueDate: Date object of the due date.
 	///   - completed: Whether or not an item is completed.
 	init(className: String, title: String, description: String,
-		 dueDate: Date, completed: Bool) {
+         dueDate: Date, completed: Bool, deleted: Bool) {
 		self.className = className
 		self.title = title
 		self.description = description
 		self.dueDate = dueDate
 		self.completed = completed
+        self.deleted = deleted
 		self.hashValue = dateCreated.description + "_" + title.uppercased()
 		let hashForbiddenCharacters: Set<Character> = [" ", "+", ":", "-"]
 		self.hashValue.removeAll(where: { hashForbiddenCharacters.contains($0) })
@@ -126,6 +149,8 @@ class ToDoItem: Codable {
 		self.completed = true
 		return true
 	}
+    
+    
 }
 
 // ToDoItems have a strict ordering using the duedate. 
