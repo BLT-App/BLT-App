@@ -56,6 +56,8 @@ class UserProfileViewController: UIViewController
         tasksCompletedChart.y.grid.count = 7
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading

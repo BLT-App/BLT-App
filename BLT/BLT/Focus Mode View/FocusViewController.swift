@@ -19,30 +19,43 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 	/// Timer that handles the countdown
 	var myTimer: FocusTimer = FocusTimer(countdownTime: 0)
 
+    /// the popup object that will be displayed
 	var popup: FMPopUpViewController = FMPopUpViewController()
-
+    
+    /// the label for the current task
 	@IBOutlet weak var lblCurrentTask: UILabel!
 
+    /// the label for the current task description
 	@IBOutlet weak var lblCurrentTaskDesc: UILabel!
-
+    
+    /// the button to complete a task
 	@IBOutlet weak var btnCompleteTask: UIButton!
-
+    
+    /// the button to end focus mode
 	@IBOutlet weak var endFocusModeButton: UIButton!
-
+    
+    /// displays the timer
 	@IBOutlet weak var timerDisplay: UILabel!
 
+    /// the view that the items are viewed in
 	@IBOutlet weak var itemView: UIView!
-
+    
+    /// the label that displays class
 	@IBOutlet weak var classLabel: InsetLabel!
 
+    /// the progress bar used as a timer
 	@IBOutlet weak var progressTimer: UIProgressView!
 
+    /// the label that displays points
 	@IBOutlet weak var pointsCounter: UILabel!
 
+    /// confetti view
 	var confettiView: ConfettiView?
 
+    /// variable for whether or not to leave the focus view
 	var leaveView: Bool = false
 
+    ///
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupButtons()
@@ -68,12 +81,14 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		itemView.layer.masksToBounds = false
 	}
 
+    /// sets up the label that displays class
 	func setupClassLabel() {
 		classLabel.sizeThatFits(CGSize(width: classLabel.frame.size.width, height: 30))
 		classLabel.layer.cornerRadius = 15.0
 		classLabel.clipsToBounds = true
 	}
 
+    /// runs if the view appears
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		hideTabBar()
@@ -103,6 +118,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		//performSegue(withIdentifier: "Popup", sender: nil)
 	}
 
+    /// runs if the view will appear
 	override func viewWillAppear(_ animated: Bool) {
 		setCurrentTask()
 
@@ -118,7 +134,8 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		//myTimer.secs = 00
 		//myTimer.runTimer()
 	}
-
+    
+    /// runs when the view will dissapear
 	override func viewWillDisappear(_ animated: Bool) {
 		myTimer.stopRunning()
 	}
@@ -206,7 +223,11 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		}
 	}
 
-	///Runs when the timer has updated its own values
+	/**
+     Runs when the timer has updated its own values
+     - Parameters:
+        - timerReadout: the string that the timer prints when it updates
+    */
 	func valsUpdated(_ timerReadout: String) {
 		timerDisplay.text = timerReadout
 		var timeLeft = myTimer.cdt
@@ -251,12 +272,18 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		self.tabBarController?.selectedIndex = 0
 	}
 
+    /// runs when the user exits the pop up
 	func didChooseCancel() {
 		print("Called Did Choose Cancel In Focus Mode")
 		showTabBar()
 		self.tabBarController?.selectedIndex = 0
 	}
 
+    /**
+     updates values for timer and starts the timer in focus mode
+     - Parameters:
+        - duration: the amount of time that the timer is to be set to
+    */
 	func didChooseTime(duration: TimeInterval) {
 		print("Chose A Time")
 		myTimer.cdt = duration
