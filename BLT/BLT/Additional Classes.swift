@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+
+/// Allows Custom Intesities for Blur Views
 class CustomIntensityVisualEffectView: UIVisualEffectView {
 
 	/// Create visual effect view with given effect and its intensity
