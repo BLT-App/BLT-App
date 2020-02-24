@@ -215,7 +215,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 	func valsUpdated(_ timerReadout: String) {
 		timerDisplay.text = timerReadout
 		var timeLeft = myTimer.cdt
-
+        
 		progressTimer.setProgress(Float(timeLeft / myTimer.totalSecs), animated: false)
 		print("valsUpdated called ")
 		print(timeLeft)

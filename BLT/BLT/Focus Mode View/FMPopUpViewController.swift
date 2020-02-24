@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/// view controller class for pop up in focus mode
 class FMPopUpViewController: UIViewController {
 
 
@@ -17,7 +17,7 @@ class FMPopUpViewController: UIViewController {
     @IBOutlet weak var exitButton: UIButton!
     
 	weak var delegate: FMPopUpViewControllerDelegate?
-
+    /// formatted time variable (not used anymore)
 	var formattedTime: String {
 		get {
 			let formatter = DateFormatter()
@@ -39,7 +39,7 @@ class FMPopUpViewController: UIViewController {
 		self.showAnimate()
 
 	}
-    
+    ///sets up the buttons
     func setupButtons() {
         beginTimer.layer.cornerRadius = 15.0
         beginTimer.layer.shadowColor = UIColor.blue.cgColor
