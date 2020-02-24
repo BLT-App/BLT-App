@@ -14,8 +14,10 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 
 	/// The ToDoItem of the current task.
 	var currentTask: ToDoItem = ToDoItem(className: "", title: "", description: "", dueDate: Date(), completed: true)
+
 	/// Current index of the task displayed
 	var currentTaskNum: Int = 0
+
 	/// Timer that handles the countdown
 	var myTimer: FocusTimer = FocusTimer(countdownTime: 0)
 
@@ -55,7 +57,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     /// variable for whether or not to leave the focus view
 	var leaveView: Bool = false
 
-    ///
+    /// To run when the view did finish loading.
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupButtons()
@@ -81,14 +83,14 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		itemView.layer.masksToBounds = false
 	}
 
-    /// sets up the label that displays class
+    /// Sets up the label that displays class.
 	func setupClassLabel() {
 		classLabel.sizeThatFits(CGSize(width: classLabel.frame.size.width, height: 30))
 		classLabel.layer.cornerRadius = 15.0
 		classLabel.clipsToBounds = true
 	}
 
-    /// runs if the view appears
+    /// Runs if the view appears.
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		hideTabBar()
@@ -118,7 +120,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		//performSegue(withIdentifier: "Popup", sender: nil)
 	}
 
-    /// runs if the view will appear
+    /// Runs if the view will appear.
 	override func viewWillAppear(_ animated: Bool) {
 		setCurrentTask()
 
@@ -135,7 +137,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		//myTimer.runTimer()
 	}
     
-    /// runs when the view will dissapear
+    /// Runs when the view will disappear.
 	override func viewWillDisappear(_ animated: Bool) {
 		myTimer.stopRunning()
 	}
@@ -238,7 +240,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		print("totalSecs: ", myTimer.totalSecs)
 	}
 
-	///Runs when the timer has hit zero
+	/// Runs when the timer has hit zero
 	func timerEnded() {
 		print("timerEnded called")
 

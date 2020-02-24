@@ -4,745 +4,695 @@
     <title>UserProfileViewController Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
-    <meta charset='utf-8'>
-	<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0" />
+    <meta charset="utf-8">
     <script src="../js/jquery.min.js" defer></script>
     <script src="../js/jazzy.js" defer></script>
     
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
+
     <a name="//apple_ref/swift/Class/UserProfileViewController" class="dashAnchor"></a>
+
     <a title="UserProfileViewController Class Reference"></a>
-    <header>
-      <div class="content-wrapper">
-        <p>
-          <a href="../index.html">BLT Docs</a>
-          <span class="no-mobile"> (56% documented)</span>
-        </p>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          BLT Docs
+        </a>
+         (100% documented)
+      </p>
     
-        <p class="header-right">
-          <a href="https://github.com/BLT-App/BLT-App">
-            <img src="../img/gh.png"/>
-            <span class="no-mobile">View on GitHub</span>
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/BLT-App/BLT-App">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
           </a>
         </p>
     
-      </div>
     </header>
-    <div id="breadcrumbs-container">
-      <div class="content-wrapper">
-        <p id="breadcrumbs">
-          <span class="no-mobile">
-            <a href="../index.html">BLT Reference</a>
-            <img id="carat" src="../img/carat.png" />
-          </span>
-          UserProfileViewController Class Reference
-        </p>
-      </div>
-    </div>
-    <div class="wrapper">
-      <div class="article-wrapper">
-        <article class="main-content">
-          <section>
-            <section class="section">
-              <h1>UserProfileViewController</h1>
-                <div class="declaration">
-                  <div class="language">
-                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">UserProfileViewController</span> <span class="p">:</span> <span class="kt">UIViewController</span></code></pre>
 
-                  </div>
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">BLT Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      UserProfileViewController Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/BlurView.html">BlurView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CustomIntensityVisualEffectView.html">CustomIntensityVisualEffectView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DatabaseEvent.html">DatabaseEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/FocusTimer.html">FocusTimer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/FocusViewController.html">FocusViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/InsetLabel.html">InsetLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ItemViewController.html">ItemViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ListViewController.html">ListViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MilestoneItem.html">MilestoneItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/NewItemViewController.html">NewItemViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Notifications.html">Notifications</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RenderTimer.html">RenderTimer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SettingsFocusPrefSubmenuTableViewController.html">SettingsFocusPrefSubmenuTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SettingsListPrefSubmenuTableViewController.html">SettingsListPrefSubmenuTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SettingsNotifPrefSubmenuTableViewController.html">SettingsNotifPrefSubmenuTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SettingsTableViewController.html">SettingsTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SettingsUserProfileSubmenuTableViewController.html">SettingsUserProfileSubmenuTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SubjectCell.html">SubjectCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TaskDatabase.html">TaskDatabase</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TaskDatabase/DatabaseLog.html">– DatabaseLog</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TaskDatabase/DatabaseIndex.html">– DatabaseIndex</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TaskDatabase/DatabaseError.html">– DatabaseError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ToDoItem.html">ToDoItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ToDoList.html">ToDoList</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ToDoTableViewCell.html">ToDoTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/UserData.html">UserData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/UserProfileViewController.html">UserProfileViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/WaterView.html">WaterView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT10globalDataAA04UserC0Cvp">globalData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT18globalTaskDatabaseAA0cD0Cvp">globalTaskDatabase</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT10myToDoListAA0cdE0Cvp">myToDoList</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/GeneralEventType.html">GeneralEventType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3BLT5print_8filename8function4line9separator10terminatorySSd_S2SSiS2StF">print(_:filename:function:line:separator:terminator:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/FocusTimerDelegate.html">FocusTimerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RenderTimerDelegate.html">RenderTimerDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Color.html">Color</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Milestone.html">Milestone</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>UserProfileViewController</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">UserProfileViewController</span> <span class="p">:</span> <span class="kt">UIViewController</span></code></pre>
+
                 </div>
-              <p>View controller class for the User Profile page</p>
+              </div>
+            <p>View controller class for the User Profile page.</p>
 
-            </section>
-            <section class="section task-group-section">
-              <div class="task-group">
-                <ul>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)userNameLabel"></a>
-                      <a name="//apple_ref/swift/Property/userNameLabel" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)userNameLabel">userNameLabel</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
+          </div>
+        </section>
 
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)userNameLabel"></a>
+                    <a name="//apple_ref/swift/Property/userNameLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)userNameLabel">userNameLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Label for the name of the user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
 <span class="k">weak</span> <span class="k">var</span> <span class="nv">userNameLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
 
-                          </div>
                         </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)userImage"></a>
-                      <a name="//apple_ref/swift/Property/userImage" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)userImage">userImage</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)userImage"></a>
+                    <a name="//apple_ref/swift/Property/userImage" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)userImage">userImage</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>UIImageView for the image of the user.</p>
 
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
 <span class="k">weak</span> <span class="k">var</span> <span class="nv">userImage</span><span class="p">:</span> <span class="kt">UIImageView</span><span class="o">!</span></code></pre>
 
-                          </div>
                         </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)shadowView"></a>
-                      <a name="//apple_ref/swift/Property/shadowView" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)shadowView">shadowView</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)shadowView"></a>
+                    <a name="//apple_ref/swift/Property/shadowView" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)shadowView">shadowView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Shadow view of the main card.</p>
 
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
 <span class="k">weak</span> <span class="k">var</span> <span class="nv">shadowView</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span></code></pre>
 
-                          </div>
                         </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)containerView"></a>
-                      <a name="//apple_ref/swift/Property/containerView" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)containerView">containerView</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)containerView"></a>
+                    <a name="//apple_ref/swift/Property/containerView" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)containerView">containerView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Container for the main card.</p>
 
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
 <span class="k">weak</span> <span class="k">var</span> <span class="nv">containerView</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span></code></pre>
 
-                          </div>
                         </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)graphShadowView"></a>
-                      <a name="//apple_ref/swift/Property/graphShadowView" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)graphShadowView">graphShadowView</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)graphShadowView"></a>
+                    <a name="//apple_ref/swift/Property/graphShadowView" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)graphShadowView">graphShadowView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Shadow view for the graph.</p>
 
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
 <span class="k">weak</span> <span class="k">var</span> <span class="nv">graphShadowView</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span></code></pre>
 
-                          </div>
                         </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)graphContainerView"></a>
-                      <a name="//apple_ref/swift/Property/graphContainerView" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)graphContainerView">graphContainerView</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)graphContainerView"></a>
+                    <a name="//apple_ref/swift/Property/graphContainerView" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)graphContainerView">graphContainerView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Container for the graph.</p>
 
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
 <span class="k">weak</span> <span class="k">var</span> <span class="nv">graphContainerView</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span></code></pre>
 
-                          </div>
                         </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)tasksCompletedChart"></a>
-                      <a name="//apple_ref/swift/Property/tasksCompletedChart" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)tasksCompletedChart">tasksCompletedChart</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)tasksCompletedChart"></a>
+                    <a name="//apple_ref/swift/Property/tasksCompletedChart" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)tasksCompletedChart">tasksCompletedChart</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Chart that lists number of tasks completed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">tasksCompletedChart</span><span class="p">:</span> <span class="kt">LineChart</span><span class="o">!</span></code></pre>
 
                         </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
-<span class="k">weak</span> <span class="k">var</span> <span class="nv">tasksCompletedChart</span><span class="p">:</span> <span class="kt"><a href="../Classes/LineChart.html">LineChart</a></span><span class="o">!</span></code></pre>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)streakLabel"></a>
+                    <a name="//apple_ref/swift/Property/streakLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)streakLabel">streakLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Label for streak counter.</p>
 
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)streakLabel"></a>
-                      <a name="//apple_ref/swift/Property/streakLabel" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)streakLabel">streakLabel</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
 <span class="k">weak</span> <span class="k">var</span> <span class="nv">streakLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
 
-                          </div>
                         </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)completedLabel"></a>
-                      <a name="//apple_ref/swift/Property/completedLabel" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)completedLabel">completedLabel</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)completedLabel"></a>
+                    <a name="//apple_ref/swift/Property/completedLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)completedLabel">completedLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Label for number of completed item counter.</p>
 
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
 <span class="k">weak</span> <span class="k">var</span> <span class="nv">completedLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
 
-                          </div>
                         </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)focusLabel"></a>
-                      <a name="//apple_ref/swift/Property/focusLabel" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)focusLabel">focusLabel</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)UserProfileViewController(py)focusLabel"></a>
+                    <a name="//apple_ref/swift/Property/focusLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(py)focusLabel">focusLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Label for number of hours focused.</p>
 
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
 <span class="k">weak</span> <span class="k">var</span> <span class="nv">focusLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
 
-                          </div>
                         </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT25UserProfileViewControllerC11chartUpdateyyF"></a>
-                      <a name="//apple_ref/swift/Method/chartUpdate()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT25UserProfileViewControllerC11chartUpdateyyF">chartUpdate()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT25UserProfileViewControllerC11chartUpdateyyF"></a>
+                    <a name="//apple_ref/swift/Method/chartUpdate()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT25UserProfileViewControllerC11chartUpdateyyF">chartUpdate()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates the chart from the globalTaskDatabase.</p>
 
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">chartUpdate</span><span class="p">()</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@BLT@objc(cs)UserProfileViewController(im)viewDidLoad"></a>
-                      <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(im)viewDidLoad">viewDidLoad()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">chartUpdate</span><span class="p">()</span></code></pre>
 
                         </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)UserProfileViewController(im)viewDidLoad"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(im)viewDidLoad">viewDidLoad()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Runs when the view did finish loading.</p>
 
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@BLT@objc(cs)UserProfileViewController(im)viewDidAppear:"></a>
-                      <a name="//apple_ref/swift/Method/viewDidAppear(_:)" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(im)viewDidAppear:">viewDidAppear(_:)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT25UserProfileViewControllerC10setupCardsyyF"></a>
-                      <a name="//apple_ref/swift/Method/setupCards()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT25UserProfileViewControllerC10setupCardsyyF">setupCards()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
 
                         </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setupCards</span><span class="p">()</span></code></pre>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)UserProfileViewController(im)viewDidAppear:"></a>
+                    <a name="//apple_ref/swift/Method/viewDidAppear(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)UserProfileViewController(im)viewDidAppear:">viewDidAppear(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Runs when the view has appeared.</p>
 
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT25UserProfileViewControllerC07prepareC0yyF"></a>
-                      <a name="//apple_ref/swift/Method/prepareProfile()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT25UserProfileViewControllerC07prepareC0yyF">prepareProfile()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Undocumented</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">prepareProfile</span><span class="p">()</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT25UserProfileViewControllerC014roundContainerD012cornerRadius4view06shadowD0ySd_So6UIViewCAItF"></a>
-                      <a name="//apple_ref/swift/Method/roundContainerView(cornerRadius:view:shadowView:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT25UserProfileViewControllerC014roundContainerD012cornerRadius4view06shadowD0ySd_So6UIViewCAItF">roundContainerView(cornerRadius:view:shadowView:)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Creates a rounded container view.</p>
-
-<ul>
-<li>cornerRadius: The corner radius of the rounded container.</li>
-<li>view: The UIView to round.</li>
-<li>shadowView: The accompanying shadowView of the main view to round.</li>
-</ul>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
 
                         </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">roundContainerView</span><span class="p">(</span><span class="nv">cornerRadius</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">shadowView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">)</span></code></pre>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT25UserProfileViewControllerC10setupCardsyyF"></a>
+                    <a name="//apple_ref/swift/Method/setupCards()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT25UserProfileViewControllerC10setupCardsyyF">setupCards()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets up UI appearance of cards.</p>
 
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT25UserProfileViewControllerC9addShadow4view5color7opacity6radius6offsetySo6UIViewC_So10CGColorRefaSf12CoreGraphics7CGFloatVSo6CGSizeVtF"></a>
-                      <a name="//apple_ref/swift/Method/addShadow(view:color:opacity:radius:offset:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT25UserProfileViewControllerC9addShadow4view5color7opacity6radius6offsetySo6UIViewC_So10CGColorRefaSf12CoreGraphics7CGFloatVSo6CGSizeVtF">addShadow(view:color:opacity:radius:offset:)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Creates shadows for a view.</p>
-
-<ul>
-<li>view: The view to add a shadow to.</li>
-<li>color: The color of the shadow.</li>
-<li>opacity: The opacity of the shadow.</li>
-<li>radius: The radius of the shadow.</li>
-<li>offset: The offset of the shadow.</li>
-</ul>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setupCards</span><span class="p">()</span></code></pre>
 
                         </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addShadow</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">CGColor</span><span class="p">,</span> <span class="nv">opacity</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span> <span class="nv">radius</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">)</span></code></pre>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT25UserProfileViewControllerC07prepareC0yyF"></a>
+                    <a name="//apple_ref/swift/Method/prepareProfile()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT25UserProfileViewControllerC07prepareC0yyF">prepareProfile()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Prepares profile name text and image.</p>
 
-                          </div>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">prepareProfile</span><span class="p">()</span></code></pre>
+
                         </div>
-                      </section>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </section>
-          </section>
-        </article>
-      </div>
-      <div class="nav-wrapper">
-        <nav class="nav-bottom">
-          <ul class="nav-groups">
-            <li class="nav-group-name">
-              <a href="../Classes.html">Classes</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../Classes/AppDelegate.html">AppDelegate</a>
+                      </div>
+                    </section>
+                  </div>
                 </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/BlurView.html">BlurView</a>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT25UserProfileViewControllerC014roundContainerD012cornerRadius4view06shadowD0ySd_So6UIViewCAItF"></a>
+                    <a name="//apple_ref/swift/Method/roundContainerView(cornerRadius:view:shadowView:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT25UserProfileViewControllerC014roundContainerD012cornerRadius4view06shadowD0ySd_So6UIViewCAItF">roundContainerView(cornerRadius:view:shadowView:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a rounded container view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">roundContainerView</span><span class="p">(</span><span class="nv">cornerRadius</span><span class="p">:</span> <span class="kt">Double</span><span class="p">,</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">shadowView</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
                 </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/CustomIntensityVisualEffectView.html">CustomIntensityVisualEffectView</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/DatabaseEvent.html">DatabaseEvent</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/DotCALayer.html">DotCALayer</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/FMPopUpViewController.html">FMPopUpViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/FocusTimer.html">FocusTimer</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/FocusViewController.html">FocusViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/InsetLabel.html">InsetLabel</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/ItemViewController.html">ItemViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart.html">LineChart</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Helpers.html">– Helpers</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Labels.html">– Labels</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Grid.html">– Grid</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Axis.html">– Axis</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Coordinate.html">– Coordinate</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Animation.html">– Animation</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Dots.html">– Dots</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LinearScale.html">LinearScale</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/ListViewController.html">ListViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/MilestoneItem.html">MilestoneItem</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/NewItemViewController.html">NewItemViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/Notifications.html">Notifications</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/RenderTimer.html">RenderTimer</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/SettingsFocusPrefSubmenuTableViewController.html">SettingsFocusPrefSubmenuTableViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/SettingsListPrefSubmenuTableViewController.html">SettingsListPrefSubmenuTableViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/SettingsNotifPrefSubmenuTableViewController.html">SettingsNotifPrefSubmenuTableViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/SettingsTableViewController.html">SettingsTableViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/SettingsUserProfileSubmenuTableViewController.html">SettingsUserProfileSubmenuTableViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/SubjectCell.html">SubjectCell</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/TaskDatabase.html">TaskDatabase</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/TaskDatabase/DatabaseLog.html">– DatabaseLog</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/TaskDatabase/DatabaseIndex.html">– DatabaseIndex</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/TaskDatabase/DatabaseError.html">– DatabaseError</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/ToDoItem.html">ToDoItem</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/ToDoList.html">ToDoList</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/ToDoTableViewCell.html">ToDoTableViewCell</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/UserData.html">UserData</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/UserProfileViewController.html">UserProfileViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/WaterView.html">WaterView</a>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT25UserProfileViewControllerC9addShadow4view5color7opacity6radius6offsetySo6UIViewC_So10CGColorRefaSf12CoreGraphics7CGFloatVSo6CGSizeVtF"></a>
+                    <a name="//apple_ref/swift/Method/addShadow(view:color:opacity:radius:offset:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT25UserProfileViewControllerC9addShadow4view5color7opacity6radius6offsetySo6UIViewC_So10CGColorRefaSf12CoreGraphics7CGFloatVSo6CGSizeVtF">addShadow(view:color:opacity:radius:offset:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates shadows for a view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addShadow</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">CGColor</span><span class="p">,</span> <span class="nv">opacity</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span> <span class="nv">radius</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
                 </li>
               </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="../Global%20Variables.html">Global Variables</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../Global%20Variables.html#/s:3BLT10globalDataAA04UserC0Cvp">globalData</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Global%20Variables.html#/s:3BLT18globalTaskDatabaseAA0cD0Cvp">globalTaskDatabase</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Global%20Variables.html#/s:3BLT10myToDoListAA0cdE0Cvp">myToDoList</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="../Enums.html">Enumerations</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../Enums/GeneralEventType.html">GeneralEventType</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="../Functions.html">Functions</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../Functions.html#/s:3BLT5print_8filename8function4line9separator10terminatorySSd_S2SSiS2StF">print(_:filename:function:line:separator:terminator:)</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="../Protocols.html">Protocols</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../Protocols/FMPopUpViewControllerDelegate.html">FMPopUpViewControllerDelegate</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Protocols/FocusTimerDelegate.html">FocusTimerDelegate</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Protocols/LineChartDelegate.html">LineChartDelegate</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Protocols/RenderTimerDelegate.html">RenderTimerDelegate</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="../Structs.html">Structures</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../Structs/Color.html">Color</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Structs/Milestone.html">Milestone</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="footer-wrapper">
-        <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://https//blt-app.github.io/get-blt" target="_blank" rel="external">BLT Group</a>. All rights reserved. (Last updated: 2020-02-20)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+            </div>
+          </div>
         </section>
-      </div>
+
+      </article>
     </div>
+    <section class="footer">
+      <p>&copy; 2020 <a class="link" href="https://https//blt-app.github.io/get-blt" target="_blank" rel="external">Nicholas Lorentzen, Jiahua Chen, and David Lloyd George</a>. All rights reserved. (Last updated: 2020-02-23)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
   </body>
 </div>
 </html>

@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Class To Handle Running A Method Call To The `WaterView` On An Interval
+/// Class To Handle Running A Method Call To The `WaterView` On An Interval.
 class RenderTimer {
     
     /// Timer Object For Handling Multithreading
