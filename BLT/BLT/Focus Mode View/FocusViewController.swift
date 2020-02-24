@@ -71,7 +71,12 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		myTimer = FocusTimer(countdownTime: 0.0)
 		myTimer.delegate = self
 		progressTimer.transform = progressTimer.transform.scaledBy(x: 1, y: 10)
-		progressTimer.layer.cornerRadius = 20
+		progressTimer.layer.cornerRadius = 0
+        progressTimer.layer.shadowColor = UIColor.blue.cgColor
+        progressTimer.layer.shadowOpacity = 0.2
+        progressTimer.layer.shadowOffset = CGSize(width: 0, height: 0)
+        progressTimer.layer.shadowRadius = 5.0
+        progressTimer.layer.masksToBounds = false
 		progressTimer.clipsToBounds = true
 		setupClassLabel()
 
@@ -96,6 +101,8 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		hideTabBar()
 		print("view has appeared")
 		print(globalData.includeEndFocusButton)
+        
+        self.updatePointsCounter(myToDoList.points)
     
 //        if includeEndButton{
 //            endFocusModeButton.isEnabled = false
@@ -116,7 +123,6 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		self.view.addSubview(popup.view)
 		popup.didMove(toParent: self)
 		popup.delegate = self
-
 		//performSegue(withIdentifier: "Popup", sender: nil)
 	}
 
@@ -158,7 +164,6 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		endFocusModeButton.layer.shadowOffset = CGSize(width: 0, height: 0)
 		endFocusModeButton.layer.shadowRadius = 5.0
 		endFocusModeButton.layer.masksToBounds = false
-
 	}
 
 
