@@ -4,509 +4,597 @@
     <title>FMPopUpViewController Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
-    <meta charset='utf-8'>
-	<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0" />
+    <meta charset="utf-8">
     <script src="../js/jquery.min.js" defer></script>
     <script src="../js/jazzy.js" defer></script>
     
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
+
     <a name="//apple_ref/swift/Class/FMPopUpViewController" class="dashAnchor"></a>
+
     <a title="FMPopUpViewController Class Reference"></a>
-    <header>
-      <div class="content-wrapper">
-        <p>
-          <a href="../index.html">BLT Docs</a>
-          <span class="no-mobile"> (56% documented)</span>
-        </p>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          BLT Docs
+        </a>
+         (100% documented)
+      </p>
     
-        <p class="header-right">
-          <a href="https://github.com/BLT-App/BLT-App">
-            <img src="../img/gh.png"/>
-            <span class="no-mobile">View on GitHub</span>
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/BLT-App/BLT-App">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
           </a>
         </p>
     
-      </div>
     </header>
-    <div id="breadcrumbs-container">
-      <div class="content-wrapper">
-        <p id="breadcrumbs">
-          <span class="no-mobile">
-            <a href="../index.html">BLT Reference</a>
-            <img id="carat" src="../img/carat.png" />
-          </span>
-          FMPopUpViewController Class Reference
-        </p>
-      </div>
-    </div>
-    <div class="wrapper">
-      <div class="article-wrapper">
-        <article class="main-content">
-          <section>
-            <section class="section">
-              <h1>FMPopUpViewController</h1>
-                <div class="declaration">
-                  <div class="language">
-                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">FMPopUpViewController</span> <span class="p">:</span> <span class="kt">UIViewController</span></code></pre>
 
-                  </div>
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">BLT Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      FMPopUpViewController Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/BlurView.html">BlurView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CustomIntensityVisualEffectView.html">CustomIntensityVisualEffectView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DatabaseEvent.html">DatabaseEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/FMPopUpViewController.html">FMPopUpViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/FocusTimer.html">FocusTimer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/FocusViewController.html">FocusViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/InsetLabel.html">InsetLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ItemViewController.html">ItemViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ListViewController.html">ListViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MilestoneItem.html">MilestoneItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/NewItemViewController.html">NewItemViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Notifications.html">Notifications</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RenderTimer.html">RenderTimer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SettingsFocusPrefSubmenuTableViewController.html">SettingsFocusPrefSubmenuTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SettingsListPrefSubmenuTableViewController.html">SettingsListPrefSubmenuTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SettingsNotifPrefSubmenuTableViewController.html">SettingsNotifPrefSubmenuTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SettingsTableViewController.html">SettingsTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SettingsUserProfileSubmenuTableViewController.html">SettingsUserProfileSubmenuTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SubjectCell.html">SubjectCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TaskDatabase.html">TaskDatabase</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TaskDatabase/DatabaseLog.html">– DatabaseLog</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TaskDatabase/DatabaseIndex.html">– DatabaseIndex</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TaskDatabase/DatabaseError.html">– DatabaseError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ToDoItem.html">ToDoItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ToDoList.html">ToDoList</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ToDoTableViewCell.html">ToDoTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/UserData.html">UserData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/UserProfileViewController.html">UserProfileViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/WaterView.html">WaterView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT10globalDataAA04UserC0Cvp">globalData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT18globalTaskDatabaseAA0cD0Cvp">globalTaskDatabase</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT10myToDoListAA0cdE0Cvp">myToDoList</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/GeneralEventType.html">GeneralEventType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3BLT5print_8filename8function4line9separator10terminatorySSd_S2SSiS2StF">print(_:filename:function:line:separator:terminator:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/FMPopUpViewControllerDelegate.html">FMPopUpViewControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/FocusTimerDelegate.html">FocusTimerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RenderTimerDelegate.html">RenderTimerDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Color.html">Color</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Milestone.html">Milestone</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>FMPopUpViewController</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">FMPopUpViewController</span> <span class="p">:</span> <span class="kt">UIViewController</span></code></pre>
+
                 </div>
-              <p>view controller for the pop up in focus mode</p>
+              </div>
+            <p>View controller for the pop up in focus mode. This popup prompts the user to input a time to focus for.</p>
 
-            </section>
-            <section class="section task-group-section">
-              <div class="task-group">
-                <ul>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@BLT@objc(cs)FMPopUpViewController(py)popUpView"></a>
-                      <a name="//apple_ref/swift/Property/popUpView" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@BLT@objc(cs)FMPopUpViewController(py)popUpView">popUpView</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>outlet for the pop up view</p>
+          </div>
+        </section>
 
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)FMPopUpViewController(py)popUpView"></a>
+                    <a name="//apple_ref/swift/Property/popUpView" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)FMPopUpViewController(py)popUpView">popUpView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Outlet for the pop up view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
 <span class="k">weak</span> <span class="k">var</span> <span class="nv">popUpView</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span></code></pre>
 
-                          </div>
                         </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@BLT@objc(cs)FMPopUpViewController(py)timePicker"></a>
-                      <a name="//apple_ref/swift/Property/timePicker" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@BLT@objc(cs)FMPopUpViewController(py)timePicker">timePicker</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>outlet for the timePicker in the pop up</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)FMPopUpViewController(py)timePicker"></a>
+                    <a name="//apple_ref/swift/Property/timePicker" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)FMPopUpViewController(py)timePicker">timePicker</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Outlet for the timePicker in the pop up.</p>
 
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
 <span class="k">weak</span> <span class="k">var</span> <span class="nv">timePicker</span><span class="p">:</span> <span class="kt">UIDatePicker</span><span class="o">!</span></code></pre>
 
-                          </div>
                         </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT21FMPopUpViewControllerC8delegateAA0bcdE8Delegate_pSgXwvp"></a>
-                      <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT21FMPopUpViewControllerC8delegateAA0bcdE8Delegate_pSgXwvp">delegate</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>delegate for the FMpopupview controller</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)FMPopUpViewController(py)beginTimer"></a>
+                    <a name="//apple_ref/swift/Property/beginTimer" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)FMPopUpViewController(py)beginTimer">beginTimer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Button to begin timer.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">beginTimer</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span></code></pre>
 
                         </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">weak</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/FMPopUpViewControllerDelegate.html">FMPopUpViewControllerDelegate</a></span><span class="p">?</span></code></pre>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)FMPopUpViewController(py)exitButton"></a>
+                    <a name="//apple_ref/swift/Property/exitButton" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)FMPopUpViewController(py)exitButton">exitButton</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Button to exit focus mode.</p>
 
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT21FMPopUpViewControllerC13formattedTimeSSvp"></a>
-                      <a name="//apple_ref/swift/Property/formattedTime" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT21FMPopUpViewControllerC13formattedTimeSSvp">formattedTime</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>variable for formatted time obtained from a date object (probably not useful at this point though)</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">formattedTime</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@BLT@objc(cs)FMPopUpViewController(im)viewDidLoad"></a>
-                      <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@BLT@objc(cs)FMPopUpViewController(im)viewDidLoad">viewDidLoad()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>runs if the view loads</p>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">exitButton</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span></code></pre>
 
                         </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT21FMPopUpViewControllerC8delegateAA0bcdE8Delegate_pSgXwvp"></a>
+                    <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT21FMPopUpViewControllerC8delegateAA0bcdE8Delegate_pSgXwvp">delegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delegate for the FMPopUpView controller.</p>
 
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@BLT@objc(cs)FMPopUpViewController(im)quitPopUp:"></a>
-                      <a name="//apple_ref/swift/Method/quitPopUp(_:)" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@BLT@objc(cs)FMPopUpViewController(im)quitPopUp:">quitPopUp(_:)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>runs when the user presses the exit button in the pop up</p>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">weak</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/FMPopUpViewControllerDelegate.html">FMPopUpViewControllerDelegate</a></span><span class="p">?</span></code></pre>
 
                         </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@IBAction</span>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT21FMPopUpViewControllerC13formattedTimeSSvp"></a>
+                    <a name="//apple_ref/swift/Property/formattedTime" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT21FMPopUpViewControllerC13formattedTimeSSvp">formattedTime</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Formatter string of time.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">formattedTime</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)FMPopUpViewController(im)viewDidLoad"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)FMPopUpViewController(im)viewDidLoad">viewDidLoad()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Runs if the view loads.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT21FMPopUpViewControllerC12setupButtonsyyF"></a>
+                    <a name="//apple_ref/swift/Method/setupButtons()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT21FMPopUpViewControllerC12setupButtonsyyF">setupButtons()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets up UI for buttons.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setupButtons</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)FMPopUpViewController(im)quitPopUp:"></a>
+                    <a name="//apple_ref/swift/Method/quitPopUp(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)FMPopUpViewController(im)quitPopUp:">quitPopUp(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Runs when the user presses the exit button in the pop up.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span>
 <span class="kd">func</span> <span class="nf">quitPopUp</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span></code></pre>
 
-                          </div>
                         </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:@M@BLT@objc(cs)FMPopUpViewController(im)beginFocusMode:"></a>
-                      <a name="//apple_ref/swift/Method/beginFocusMode(_:)" class="dashAnchor"></a>
-                      <a class="token" href="#/c:@M@BLT@objc(cs)FMPopUpViewController(im)beginFocusMode:">beginFocusMode(_:)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>runs once the user presses the begin timer button in the pop up</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)FMPopUpViewController(im)beginFocusMode:"></a>
+                    <a name="//apple_ref/swift/Method/beginFocusMode(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)FMPopUpViewController(im)beginFocusMode:">beginFocusMode(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Runs once the user presses the begin timer button in the pop up.</p>
 
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">@IBAction</span>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span>
 <span class="kd">func</span> <span class="nf">beginFocusMode</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span></code></pre>
 
-                          </div>
                         </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT21FMPopUpViewControllerC11showAnimateyyF"></a>
-                      <a name="//apple_ref/swift/Method/showAnimate()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT21FMPopUpViewControllerC11showAnimateyyF">showAnimate()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>animates the arrival of the pop up</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT21FMPopUpViewControllerC11showAnimateyyF"></a>
+                    <a name="//apple_ref/swift/Method/showAnimate()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT21FMPopUpViewControllerC11showAnimateyyF">showAnimate()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Animates the arrival of the pop up.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">showAnimate</span><span class="p">()</span></code></pre>
 
                         </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">showAnimate</span><span class="p">()</span></code></pre>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT21FMPopUpViewControllerC13removeAnimateyyF"></a>
+                    <a name="//apple_ref/swift/Method/removeAnimate()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT21FMPopUpViewControllerC13removeAnimateyyF">removeAnimate()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Animates the pop up dissapearance.</p>
 
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT21FMPopUpViewControllerC13removeAnimateyyF"></a>
-                      <a name="//apple_ref/swift/Method/removeAnimate()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT21FMPopUpViewControllerC13removeAnimateyyF">removeAnimate()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>animates the pop up dissapearance</p>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">removeAnimate</span><span class="p">()</span></code></pre>
 
                         </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">removeAnimate</span><span class="p">()</span></code></pre>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT21FMPopUpViewControllerC9addShadow4view5color7opacity6radius6offsetySo6UIViewC_So10CGColorRefaSf12CoreGraphics7CGFloatVSo6CGSizeVtF"></a>
+                    <a name="//apple_ref/swift/Method/addShadow(view:color:opacity:radius:offset:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT21FMPopUpViewControllerC9addShadow4view5color7opacity6radius6offsetySo6UIViewC_So10CGColorRefaSf12CoreGraphics7CGFloatVSo6CGSizeVtF">addShadow(view:color:opacity:radius:offset:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates shadows for a view.</p>
 
-                          </div>
+<ul>
+<li>view: The view to add a shadow to.</li>
+<li>color: The color of the shadow.</li>
+<li>opacity: The opacity of the shadow.</li>
+<li>radius: The radius of the shadow.</li>
+<li>offset: The offset of the shadow.</li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addShadow</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">CGColor</span><span class="p">,</span> <span class="nv">opacity</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span> <span class="nv">radius</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">offset</span><span class="p">:</span> <span class="kt">CGSize</span><span class="p">)</span></code></pre>
+
                         </div>
-                      </section>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </section>
-          </section>
-        </article>
-      </div>
-      <div class="nav-wrapper">
-        <nav class="nav-bottom">
-          <ul class="nav-groups">
-            <li class="nav-group-name">
-              <a href="../Classes.html">Classes</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../Classes/AppDelegate.html">AppDelegate</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/BlurView.html">BlurView</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/CustomIntensityVisualEffectView.html">CustomIntensityVisualEffectView</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/DatabaseEvent.html">DatabaseEvent</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/DotCALayer.html">DotCALayer</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/FMPopUpViewController.html">FMPopUpViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/FocusTimer.html">FocusTimer</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/FocusViewController.html">FocusViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/InsetLabel.html">InsetLabel</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/ItemViewController.html">ItemViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart.html">LineChart</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Helpers.html">– Helpers</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Labels.html">– Labels</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Grid.html">– Grid</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Axis.html">– Axis</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Coordinate.html">– Coordinate</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Animation.html">– Animation</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Dots.html">– Dots</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LinearScale.html">LinearScale</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/ListViewController.html">ListViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/MilestoneItem.html">MilestoneItem</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/NewItemViewController.html">NewItemViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/Notifications.html">Notifications</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/RenderTimer.html">RenderTimer</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/SettingsFocusPrefSubmenuTableViewController.html">SettingsFocusPrefSubmenuTableViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/SettingsListPrefSubmenuTableViewController.html">SettingsListPrefSubmenuTableViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/SettingsNotifPrefSubmenuTableViewController.html">SettingsNotifPrefSubmenuTableViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/SettingsTableViewController.html">SettingsTableViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/SettingsUserProfileSubmenuTableViewController.html">SettingsUserProfileSubmenuTableViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/SubjectCell.html">SubjectCell</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/TaskDatabase.html">TaskDatabase</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/TaskDatabase/DatabaseLog.html">– DatabaseLog</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/TaskDatabase/DatabaseIndex.html">– DatabaseIndex</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/TaskDatabase/DatabaseError.html">– DatabaseError</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/ToDoItem.html">ToDoItem</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/ToDoList.html">ToDoList</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/ToDoTableViewCell.html">ToDoTableViewCell</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/UserData.html">UserData</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/UserProfileViewController.html">UserProfileViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/WaterView.html">WaterView</a>
+                      </div>
+                    </section>
+                  </div>
                 </li>
               </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="../Global%20Variables.html">Global Variables</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../Global%20Variables.html#/s:3BLT10globalDataAA04UserC0Cvp">globalData</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Global%20Variables.html#/s:3BLT18globalTaskDatabaseAA0cD0Cvp">globalTaskDatabase</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Global%20Variables.html#/s:3BLT10myToDoListAA0cdE0Cvp">myToDoList</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="../Enums.html">Enumerations</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../Enums/GeneralEventType.html">GeneralEventType</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="../Functions.html">Functions</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../Functions.html#/s:3BLT5print_8filename8function4line9separator10terminatorySSd_S2SSiS2StF">print(_:filename:function:line:separator:terminator:)</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="../Protocols.html">Protocols</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../Protocols/FMPopUpViewControllerDelegate.html">FMPopUpViewControllerDelegate</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Protocols/FocusTimerDelegate.html">FocusTimerDelegate</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Protocols/LineChartDelegate.html">LineChartDelegate</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Protocols/RenderTimerDelegate.html">RenderTimerDelegate</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="../Structs.html">Structures</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../Structs/Color.html">Color</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Structs/Milestone.html">Milestone</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="footer-wrapper">
-        <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://https//blt-app.github.io/get-blt" target="_blank" rel="external">BLT Group</a>. All rights reserved. (Last updated: 2020-02-20)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+            </div>
+          </div>
         </section>
-      </div>
+
+      </article>
     </div>
+    <section class="footer">
+      <p>&copy; 2020 <a class="link" href="https://https//blt-app.github.io/get-blt" target="_blank" rel="external">Nicholas Lorentzen, Jiahua Chen, and David Lloyd George</a>. All rights reserved. (Last updated: 2020-02-23)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
   </body>
 </div>
 </html>
