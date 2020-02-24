@@ -132,3 +132,6 @@ Pods/
 BLT/BLT/.DS_Store
 BLT/BLT/.DS_Store
 .DS_Store
+
+# Ignores .idea files. 
+BLT/.idea/*

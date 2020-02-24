@@ -4,651 +4,625 @@
     <title>UserData Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
-    <meta charset='utf-8'>
-	<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0" />
+    <meta charset="utf-8">
     <script src="../js/jquery.min.js" defer></script>
     <script src="../js/jazzy.js" defer></script>
     
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
+
     <a name="//apple_ref/swift/Class/UserData" class="dashAnchor"></a>
+
     <a title="UserData Class Reference"></a>
-    <header>
-      <div class="content-wrapper">
-        <p>
-          <a href="../index.html">BLT Docs</a>
-          <span class="no-mobile"> (31% documented)</span>
-        </p>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          BLT Docs
+        </a>
+         (100% documented)
+      </p>
     
-        <p class="header-right">
-          <a href="https://github.com/BLT-App/BLT-App">
-            <img src="../img/gh.png"/>
-            <span class="no-mobile">View on GitHub</span>
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/BLT-App/BLT-App">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
           </a>
         </p>
     
-      </div>
     </header>
-    <div id="breadcrumbs-container">
-      <div class="content-wrapper">
-        <p id="breadcrumbs">
-          <span class="no-mobile">
-            <a href="../index.html">BLT Reference</a>
-            <img id="carat" src="../img/carat.png" />
-          </span>
-          UserData Class Reference
-        </p>
-      </div>
-    </div>
-    <div class="wrapper">
-      <div class="article-wrapper">
-        <article class="main-content">
-          <section>
-            <section class="section">
-              <h1>UserData</h1>
-                <div class="declaration">
-                  <div class="language">
-                    <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">UserData</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
 
-                  </div>
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">BLT Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      UserData Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/BlurView.html">BlurView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CustomIntensityVisualEffectView.html">CustomIntensityVisualEffectView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DatabaseEvent.html">DatabaseEvent</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/FMPopUpViewController.html">FMPopUpViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/FocusTimer.html">FocusTimer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/FocusViewController.html">FocusViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/InsetLabel.html">InsetLabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ItemViewController.html">ItemViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ListViewController.html">ListViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MilestoneItem.html">MilestoneItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/NewItemViewController.html">NewItemViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Notifications.html">Notifications</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RenderTimer.html">RenderTimer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SettingsFocusPrefSubmenuTableViewController.html">SettingsFocusPrefSubmenuTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SettingsListPrefSubmenuTableViewController.html">SettingsListPrefSubmenuTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SettingsNotifPrefSubmenuTableViewController.html">SettingsNotifPrefSubmenuTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SettingsTableViewController.html">SettingsTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SettingsUserProfileSubmenuTableViewController.html">SettingsUserProfileSubmenuTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SubjectCell.html">SubjectCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TaskDatabase.html">TaskDatabase</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TaskDatabase/DatabaseLog.html">– DatabaseLog</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TaskDatabase/DatabaseIndex.html">– DatabaseIndex</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/TaskDatabase/DatabaseError.html">– DatabaseError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ToDoItem.html">ToDoItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ToDoList.html">ToDoList</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ToDoTableViewCell.html">ToDoTableViewCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/UserData.html">UserData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/UserProfileViewController.html">UserProfileViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/WaterView.html">WaterView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Global%20Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT10globalDataAA04UserC0Cvp">globalData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT18globalTaskDatabaseAA0cD0Cvp">globalTaskDatabase</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT10myToDoListAA0cdE0Cvp">myToDoList</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/GeneralEventType.html">GeneralEventType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3BLT5print_8filename8function4line9separator10terminatorySSd_S2SSiS2StF">print(_:filename:function:line:separator:terminator:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/FMPopUpViewControllerDelegate.html">FMPopUpViewControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/FocusTimerDelegate.html">FocusTimerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RenderTimerDelegate.html">RenderTimerDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Color.html">Color</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Milestone.html">Milestone</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>UserData</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">UserData</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
                 </div>
-              <p>A class that stores user data.</p>
-
-            </section>
-            <section class="section task-group-section">
-              <div class="task-group">
-                <ul>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT8UserDataC10hueCounterSivp"></a>
-                      <a name="//apple_ref/swift/Property/hueCounter" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT8UserDataC10hueCounterSivp">hueCounter</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Number of hues currently defined.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hueCounter</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT8UserDataC8subjectsSDySSAA5ColorVGvp"></a>
-                      <a name="//apple_ref/swift/Property/subjects" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT8UserDataC8subjectsSDySSAA5ColorVGvp">subjects</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Subject to Color dictionary.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">subjects</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt"><a href="../Structs/Color.html">Color</a></span><span class="p">]</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT8UserDataC11subjectListSaySSGvp"></a>
-                      <a name="//apple_ref/swift/Property/subjectList" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT8UserDataC11subjectListSaySSGvp">subjectList</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Sorted list of Subjects.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">subjectList</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT8UserDataC15wantsListByDateSbvp"></a>
-                      <a name="//apple_ref/swift/Property/wantsListByDate" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT8UserDataC15wantsListByDateSbvp">wantsListByDate</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Whether or not user wants to do list sorted by date.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">wantsListByDate</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT8UserDataC9firstNameSSvp"></a>
-                      <a name="//apple_ref/swift/Property/firstName" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT8UserDataC9firstNameSSvp">firstName</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>First name of the user.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">firstName</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT8UserDataC8lastNameSSvp"></a>
-                      <a name="//apple_ref/swift/Property/lastName" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT8UserDataC8lastNameSSvp">lastName</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Last name of the user.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">lastName</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT8UserDataC21includeEndFocusButtonSbvp"></a>
-                      <a name="//apple_ref/swift/Property/includeEndFocusButton" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT8UserDataC21includeEndFocusButtonSbvp">includeEndFocusButton</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Whether or not user wants &lsquo;End focus mode&rsquo; button.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">includeEndFocusButton</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT8UserDataC04savebC0yyF"></a>
-                      <a name="//apple_ref/swift/Method/saveUserData()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT8UserDataC04savebC0yyF">saveUserData()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Saves user data to local file.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">saveUserData</span><span class="p">()</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT8UserDataC08retrievebC0yyF"></a>
-                      <a name="//apple_ref/swift/Method/retrieveUserData()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT8UserDataC08retrievebC0yyF">retrieveUserData()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Retrieves saved user data.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">retrieveUserData</span><span class="p">()</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT8UserDataCACycfc"></a>
-                      <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT8UserDataCACycfc">init()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Initializer</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="nf">init</span><span class="p">()</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT8UserDataC10addSubject4nameySS_tF"></a>
-                      <a name="//apple_ref/swift/Method/addSubject(name:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT8UserDataC10addSubject4nameySS_tF">addSubject(name:)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Adds subject</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addSubject</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
-
-                          </div>
-                        </div>
-                        <div>
-                          <h4>Parameters</h4>
-                          <table class="graybox">
-                            <tbody>
-                              <tr>
-                                <td>
-                                  <code>
-                                  <em>name</em>
-                                  </code>
-                                </td>
-                                <td>
-                                  <div>
-                                    <p>The name of the Subject to add.</p>
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT8UserDataC13updateCourses8fromListyAA04ToDoG0C_tF"></a>
-                      <a name="//apple_ref/swift/Method/updateCourses(fromList:)" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT8UserDataC13updateCourses8fromListyAA04ToDoG0C_tF">updateCourses(fromList:)</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Updates user data. Contains the information about the list of courses.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">updateCourses</span><span class="p">(</span><span class="n">fromList</span> <span class="nv">toDoList</span><span class="p">:</span> <span class="kt"><a href="../Classes/ToDoList.html">ToDoList</a></span><span class="p">)</span></code></pre>
-
-                          </div>
-                        </div>
-                        <div>
-                          <h4>Parameters</h4>
-                          <table class="graybox">
-                            <tbody>
-                              <tr>
-                                <td>
-                                  <code>
-                                  <em>toDoList</em>
-                                  </code>
-                                </td>
-                                <td>
-                                  <div>
-                                    <p>The main ToDoList of the user.</p>
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/s:3BLT8UserDataC6getHue16RandomColorSwift0E0OyF"></a>
-                      <a name="//apple_ref/swift/Method/getHue()" class="dashAnchor"></a>
-                      <a class="token" href="#/s:3BLT8UserDataC6getHue16RandomColorSwift0E0OyF">getHue()</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Gets the next hue so the colors are differentiated when generating.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getHue</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Hue</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                </ul>
               </div>
-            </section>
-          </section>
-        </article>
-      </div>
-      <div class="nav-wrapper">
-        <nav class="nav-bottom">
-          <ul class="nav-groups">
-            <li class="nav-group-name">
-              <a href="../Classes.html">Classes</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../Classes/AppDelegate.html">AppDelegate</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/BlurView.html">BlurView</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/CustomIntensityVisualEffectView.html">CustomIntensityVisualEffectView</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/DatabaseEvent.html">DatabaseEvent</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/DotCALayer.html">DotCALayer</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/FMPopUpViewController.html">FMPopUpViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/FocusTimer.html">FocusTimer</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/FocusViewController.html">FocusViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/InsetLabel.html">InsetLabel</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/ItemViewController.html">ItemViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart.html">LineChart</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Helpers.html">– Helpers</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Labels.html">– Labels</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Grid.html">– Grid</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Axis.html">– Axis</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Coordinate.html">– Coordinate</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Animation.html">– Animation</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LineChart/Dots.html">– Dots</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/LinearScale.html">LinearScale</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/ListViewController.html">ListViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/MilestoneItem.html">MilestoneItem</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/NewItemViewController.html">NewItemViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/Notifications.html">Notifications</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/RenderTimer.html">RenderTimer</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/SettingsFocusPrefSubmenuTableViewController.html">SettingsFocusPrefSubmenuTableViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/SettingsListPrefSubmenuTableViewController.html">SettingsListPrefSubmenuTableViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/SettingsNotifPrefSubmenuTableViewController.html">SettingsNotifPrefSubmenuTableViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/SettingsTableViewController.html">SettingsTableViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/SettingsUserProfileSubmenuTableViewController.html">SettingsUserProfileSubmenuTableViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/SubjectCell.html">SubjectCell</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/TaskDatabase.html">TaskDatabase</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/TaskDatabase/DatabaseLog.html">– DatabaseLog</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/TaskDatabase/DatabaseIndex.html">– DatabaseIndex</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/TaskDatabase/DatabaseError.html">– DatabaseError</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/ToDoItem.html">ToDoItem</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/ToDoList.html">ToDoList</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/ToDoTableViewCell.html">ToDoTableViewCell</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/UserData.html">UserData</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/UserProfileViewController.html">UserProfileViewController</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Classes/WaterView.html">WaterView</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="../Global%20Variables.html">Global Variables</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../Global%20Variables.html#/s:3BLT10globalDataAA04UserC0Cvp">globalData</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Global%20Variables.html#/s:3BLT18globalTaskDatabaseAA0cD0Cvp">globalTaskDatabase</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Global%20Variables.html#/s:3BLT10myToDoListAA0cdE0Cvp">myToDoList</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="../Enums.html">Enumerations</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../Enums/GeneralEventType.html">GeneralEventType</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="../Functions.html">Functions</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../Functions.html#/s:3BLT5print_8filename8function4line9separator10terminatorySSd_S2SSiS2StF">print(_:filename:function:line:separator:terminator:)</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="../Protocols.html">Protocols</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../Protocols/FMPopUpViewControllerDelegate.html">FMPopUpViewControllerDelegate</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Protocols/FocusTimerDelegate.html">FocusTimerDelegate</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Protocols/LineChartDelegate.html">LineChartDelegate</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Protocols/RenderTimerDelegate.html">RenderTimerDelegate</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="../Structs.html">Structures</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="../Structs/Color.html">Color</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="../Structs/Milestone.html">Milestone</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="footer-wrapper">
-        <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://https//blt-app.github.io/get-blt" target="_blank" rel="external">BLT Group</a>. All rights reserved. (Last updated: 2020-02-19)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+            <p>A class that stores user data.</p>
+
+          </div>
         </section>
-      </div>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT8UserDataC10hueCounterSivp"></a>
+                    <a name="//apple_ref/swift/Property/hueCounter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT8UserDataC10hueCounterSivp">hueCounter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Number of hues currently defined.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hueCounter</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT8UserDataC8subjectsSDySSAA5ColorVGvp"></a>
+                    <a name="//apple_ref/swift/Property/subjects" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT8UserDataC8subjectsSDySSAA5ColorVGvp">subjects</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Subject to Color dictionary, matches each color to a particular subject.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">subjects</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt"><a href="../Structs/Color.html">Color</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT8UserDataC11subjectListSaySSGvp"></a>
+                    <a name="//apple_ref/swift/Property/subjectList" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT8UserDataC11subjectListSaySSGvp">subjectList</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sorted list of Subjects.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">subjectList</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT8UserDataC15wantsListByDateSbvp"></a>
+                    <a name="//apple_ref/swift/Property/wantsListByDate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT8UserDataC15wantsListByDateSbvp">wantsListByDate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether or not user wants to do list sorted by date.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">wantsListByDate</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT8UserDataC9firstNameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/firstName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT8UserDataC9firstNameSSvp">firstName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>First name of the user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">firstName</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT8UserDataC8lastNameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/lastName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT8UserDataC8lastNameSSvp">lastName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Last name of the user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">lastName</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT8UserDataC21includeEndFocusButtonSbvp"></a>
+                    <a name="//apple_ref/swift/Property/includeEndFocusButton" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT8UserDataC21includeEndFocusButtonSbvp">includeEndFocusButton</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Whether or not user wants &lsquo;End focus mode&rsquo; button.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">includeEndFocusButton</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT8UserDataC04savebC0yyF"></a>
+                    <a name="//apple_ref/swift/Method/saveUserData()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT8UserDataC04savebC0yyF">saveUserData()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Saves user data to local file.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">saveUserData</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT8UserDataC08retrievebC0yyF"></a>
+                    <a name="//apple_ref/swift/Method/retrieveUserData()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT8UserDataC08retrievebC0yyF">retrieveUserData()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves saved user data.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">retrieveUserData</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT8UserDataCACycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT8UserDataCACycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializer</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT8UserDataC10addSubject4nameySS_tF"></a>
+                    <a name="//apple_ref/swift/Method/addSubject(name:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT8UserDataC10addSubject4nameySS_tF">addSubject(name:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds subject</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addSubject</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the Subject to add.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT8UserDataC13updateCourses8fromListyAA04ToDoG0C_tF"></a>
+                    <a name="//apple_ref/swift/Method/updateCourses(fromList:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT8UserDataC13updateCourses8fromListyAA04ToDoG0C_tF">updateCourses(fromList:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Updates user data. Contains the information about the list of courses.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">updateCourses</span><span class="p">(</span><span class="n">fromList</span> <span class="nv">toDoList</span><span class="p">:</span> <span class="kt"><a href="../Classes/ToDoList.html">ToDoList</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>toDoList</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The main ToDoList of the user.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT8UserDataC6getHue16RandomColorSwift0E0OyF"></a>
+                    <a name="//apple_ref/swift/Method/getHue()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT8UserDataC6getHue16RandomColorSwift0E0OyF">getHue()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets the next hue so the colors are differentiated when generating.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getHue</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Hue</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Hue object.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
     </div>
+    <section class="footer">
+      <p>&copy; 2020 <a class="link" href="https://https//blt-app.github.io/get-blt" target="_blank" rel="external">Nicholas Lorentzen, Jiahua Chen, and David Lloyd George</a>. All rights reserved. (Last updated: 2020-02-23)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
   </body>
 </div>
 </html>

@@ -8,7 +8,7 @@
 
 import Foundation
 
-///A to-do item is an item representing a to-do in the list.
+/// A to-do item is an item representing a to-do in the list.
 class ToDoItem: Codable {
 
 	/// The name of the class that the to-do is associated with.

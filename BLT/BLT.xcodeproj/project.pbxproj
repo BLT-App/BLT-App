@@ -241,6 +241,7 @@
 				3F19AE3F23EC620100DECA17 /* FMPopUpViewController.swift */,
 				3FE3EA902378DA82002B5303 /* FocusViewController.swift */,
 				3F73230723860D9300155B70 /* FocusTimer.swift */,
+				3F19AE3F23EC620100DECA17 /* FMPopUpViewController.swift */,
 			);
 			path = "Focus Mode View";
 			sourceTree = "<group>";
