@@ -8,16 +8,29 @@
 
 import UIKit
 
+/// TableView Cell for individual to-do items.
 class ToDoTableViewCell: UITableViewCell {
 
+	/// Label of the class.
 	@IBOutlet weak var classLabel: UILabel!
+
+	/// Label of the name of the assignment.
 	@IBOutlet weak var assignmentLabel: UILabel!
+
+	/// Label of the description.
 	@IBOutlet weak var descLabel: UILabel!
+
+	/// Label of the due date.
 	@IBOutlet weak var dueLabel: UILabel!
 
+	/// View of the item.
 	@IBOutlet weak var itemView: UIView!
+
+	/// Wrapper to enable a blur.
 	@IBOutlet weak var blurEffectView: UIView!
 
+
+	/// When cell is being drawn.
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		// Initialization code
@@ -34,6 +47,7 @@ class ToDoTableViewCell: UITableViewCell {
 		itemView.layer.masksToBounds = false
 	}
 
+	/// Changes the view when selected.
 	override func setSelected(_ selected: Bool, animated: Bool) {
 		super.setSelected(selected, animated: animated)
 
@@ -58,16 +72,22 @@ class ToDoTableViewCell: UITableViewCell {
 
 /// A type of label that is inset so there is additional space to the sides of the text. Allows for rounded background. 
 class InsetLabel: UILabel {
+	/// Top inset.
 	let topInset = CGFloat(3.5)
+	/// Bottom inset.
 	let bottomInset = CGFloat(3.5)
+	/// Left inset.
 	let leftInset = CGFloat(7)
+	/// Right inset.
 	let rightInset = CGFloat(7)
 
+	/// Draws text within the label.
 	override func drawText(in rect: CGRect) {
 		let insets: UIEdgeInsets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
 		super.drawText(in: rect.inset(by: insets))
 	}
 
+	/// Changes intrinsic content size to include the insets.
 	override public var intrinsicContentSize: CGSize {
 		var intrinsicSuperViewContentSize = super.intrinsicContentSize
 		intrinsicSuperViewContentSize.height += topInset + bottomInset
@@ -78,7 +98,7 @@ class InsetLabel: UILabel {
 
 /// Blurs background of view.
 class BlurView: UIView {
-	// Very buggy right now, I'm not quite sure what's going on.
+	/// Creates a blur layer on top of a view.
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		self.layer.cornerRadius = 20.0

@@ -7,8 +7,10 @@
 
 import UIKit
 
+/// Notification preferences table view controller.
 class SettingsNotifPrefSubmenuTableViewController: UITableViewController {
 
+	/// RUns when view did load.
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}

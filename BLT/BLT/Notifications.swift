@@ -9,25 +9,25 @@
 import Foundation
 import UserNotifications
 import UIKit
-/// class that handles notifications
+/// Class that handles notifications.
 class Notifications {
     
-    /// date object for when the user recieves a notification
+    /// Date object for when the user receives a notification.
     var date: Date
     
-    /// basic initializer sets default notification date to 10s from when called
+    /// Basic initializer sets default notification date to 10s from when called.
     init(){
         date = Date(timeIntervalSinceNow: 10)
     }
     
     
     /**
-     creates a new notification and adds it to the notification center to be sent at a specified time
+     Creates a new notification and adds it to the notification center to be sent at a specified time.
      - Parameters:
-         - title: the string to be displayed in title of the notification; can be nil.
-         - subtitle: the *subtitle* of the notification. can be nil.
-         - body: the string to be displayed in the body of the notification. can be nil
-         - notifDate: the date when the user should recieve the notification. can be nil will resort to default date if nil.
+         - title: The string to be displayed in title of the notification; can be nil.
+         - subtitle: The *subtitle* of the notification. can be nil.
+         - body: The string to be displayed in the body of the notification. can be nil
+         - notifDate: The date when the user should recieve the notification. can be nil will resort to default date if nil.
     */
     func prepareNotification(title: String?, subtitle: String?, body: String?, notifDate: Date?){
         let center = UNUserNotificationCenter.current()

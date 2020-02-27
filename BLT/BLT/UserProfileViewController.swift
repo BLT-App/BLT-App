@@ -10,30 +10,31 @@ import Foundation
 import UIKit
 import Charts
 
-/// View controller class for the User Profile page
+/// View controller class for the User Profile page.
 class UserProfileViewController: UIViewController
 {
-    
+    /// Label for the name of the user.
     @IBOutlet weak var userNameLabel: UILabel!
-    
+    /// UIImageView for the image of the user.
     @IBOutlet weak var userImage: UIImageView!
-    
+    /// Shadow view of the main card.
     @IBOutlet weak var shadowView: UIView!
-    
+    /// Container for the main card.
     @IBOutlet weak var containerView: UIView!
-    
+    /// Shadow view for the graph.
     @IBOutlet weak var graphShadowView: UIView!
-    
+    /// Container for the graph.
     @IBOutlet weak var graphContainerView: UIView!
-    
+    /// Chart that lists number of tasks completed.
     @IBOutlet weak var tasksCompletedChart: LineChart!
-    
+    /// Label for streak counter.
     @IBOutlet weak var streakLabel: UILabel!
-    
+    /// Label for number of completed item counter.
     @IBOutlet weak var completedLabel: UILabel!
-    
+    /// Label for number of hours focused.
     @IBOutlet weak var focusLabel: UILabel!
-    
+
+	/// Updates the chart from the globalTaskDatabase.
     func chartUpdate() {
         var trendData: [CGFloat] = []
         
@@ -55,7 +56,8 @@ class UserProfileViewController: UIViewController
         tasksCompletedChart.addLine(trendData)
         tasksCompletedChart.y.grid.count = 7
     }
-    
+
+	/// Runs when the view did finish loading.
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading
@@ -65,13 +67,14 @@ class UserProfileViewController: UIViewController
         setupCards()
         
     }
-    
+
+	/// Runs when the view has appeared.
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         chartUpdate()
     }
     
-    
+    /// Sets up UI appearance of cards.
     func setupCards() {
         roundContainerView(cornerRadius: 20, view: containerView, shadowView: shadowView)
         addShadow(view: shadowView, color: UIColor.gray.cgColor, opacity: 0.2, radius: 10, offset: CGSize(width: 0, height: 5))
@@ -79,7 +82,7 @@ class UserProfileViewController: UIViewController
         addShadow(view: graphShadowView, color: UIColor.gray.cgColor, opacity: 0.2, radius: 10, offset: CGSize(width: 0, height: 5))
     }
     
-    
+    /// Prepares profile name text and image.
     func prepareProfile(){
         //add colors and round corners
         userImage.clipsToBounds = true
@@ -89,13 +92,14 @@ class UserProfileViewController: UIViewController
     }
 }
 
+/// Extension that contains the graphical functions.
 extension UserProfileViewController {
 	/**
 	 Creates a rounded container view.
 	 - parameters:
-	 - cornerRadius: The corner radius of the rounded container.
-	 - view: The UIView to round.
-	 - shadowView: The accompanying shadowView of the main view to round.
+		 - cornerRadius: The corner radius of the rounded container.
+		 - view: The UIView to round.
+		 - shadowView: The accompanying shadowView of the main view to round.
 	 */
 	func roundContainerView(cornerRadius: Double, view: UIView, shadowView: UIView) {
 		let path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
@@ -111,11 +115,11 @@ extension UserProfileViewController {
 	/**
 	 Creates shadows for a view.
 	 - parameters:
-	 - view: The view to add a shadow to.
-	 - color: The color of the shadow.
-	 - opacity: The opacity of the shadow.
-	 - radius: The radius of the shadow.
-	 - offset: The offset of the shadow.
+		 - view: The view to add a shadow to.
+		 - color: The color of the shadow.
+		 - opacity: The opacity of the shadow.
+		 - radius: The radius of the shadow.
+		 - offset: The offset of the shadow.
 	 */
 	func addShadow(view: UIView, color: CGColor, opacity: Float, radius: CGFloat, offset: CGSize) {
 		view.layer.shadowColor = color
