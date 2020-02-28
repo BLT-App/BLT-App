@@ -2,14 +2,16 @@ PODS:
   - Charts (3.2.2):
     - Charts/Core (= 3.2.2)
   - Charts/Core (3.2.2)
+  - Datez (3.1.1)
   - DropDown (2.3.4)
   - LBConfettiView (1.0.0)
   - RandomColorSwift (1.0.0)
-  - SwiftLint (0.38.2)
+  - SwiftLint (0.39.1)
   - SwiftReorder (6.0.2)
 
 DEPENDENCIES:
   - Charts (~> 3.2.2)
+  - Datez
   - DropDown (= 2.3.4)
   - LBConfettiView
   - RandomColorSwift
@@ -19,6 +21,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Charts
+    - Datez
     - DropDown
     - LBConfettiView
     - RandomColorSwift
@@ -27,12 +30,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Charts: f69cf0518b6d1d62608ca504248f1bbe0b6ae77e
+  Datez: 4a10fa184e8f0501624b6ff0e0e5608b4d184f61
   DropDown: f225ff0fd09dde064d17aa03db7e4d4e4ff40b6b
   LBConfettiView: 29e99668b3c0dca25160486dd593f91a0ceeca8e
   RandomColorSwift: 9f85058b721665d52d239ca166a913e083506444
-  SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
+  SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
   SwiftReorder: 60ef1faf6446cf68f9a647cb975530db8efd6620
 
-PODFILE CHECKSUM: 9087137bcc5739141f9670a267902fac7648d29e
+PODFILE CHECKSUM: beb2c29f69f0f60a39c02a722383b80aeeee3943
 
 COCOAPODS: 1.8.4
