@@ -19,12 +19,10 @@ class FocusTimer {
 	var secs: Int {
 		return Int(cdt) % 60
 	}
-    ///amount of time that the timer has been running for
-    var timeStudied: TimeInterval
-
+    
+    ///Current Number Of Seconds To Timer End
 	var cdt: TimeInterval
 
-	//var hours: Int
 	///String to send to the focus mode screen for display
 	var description: String = ""
 
@@ -36,7 +34,6 @@ class FocusTimer {
 	init(countdownTime: TimeInterval) {
 		self.cdt = countdownTime
 		self.totalSecs = countdownTime
-        self.timeStudied = 0
 		print(totalSecs)
 	}
 
@@ -71,8 +68,6 @@ class FocusTimer {
 	@objc func updateVals() {
 		if cdt > 0 {
 			cdt -= 1.0
-            timeStudied = totalSecs - cdt
-            print(timeStudied)
 		} else {
 			stopRunning()
             
