@@ -8,8 +8,8 @@
 
 import Foundation
 
-/// A to-do item is an item representing a to-do in the list.
-class ToDoItem: Codable {
+///A to-do item is an item representing a to-do in the list.
+class ToDoItem: Codable, Hashable {
 
 	/// The name of the class that the to-do is associated with.
 	var className: String
@@ -30,7 +30,7 @@ class ToDoItem: Codable {
 	var dateCompleted: Date? = nil
 
 	///Hash Value
-	let hashValue: String
+	let hashVal: String
 
 	/// Time Spent In Focus Mode
 	var timeSpentInFocusMode: DateInterval = DateInterval(start: Date(), end: Date())
@@ -54,10 +54,12 @@ class ToDoItem: Codable {
 			return "Due in \(dueCounter) days"
 		}
 	}
-
 	/// Whether the to-do item is completed.
 	private var completed: Bool
 
+    /// whether the to-do item has been deleted
+    private var deleted: Bool
+    
 	/// Completes the current task.
 	func completeTask(mark: GeneralEventType) {
 		if !completed {
@@ -67,35 +69,63 @@ class ToDoItem: Codable {
 		}
 	}
 
+    /// undeletes a task
+    func undoDeleteTask(){
+        if deleted {
+            deleted = false
+            //globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .unmarkedComplete, currentDate: Date()))
+        } else {
+            print("Not Quite Sure How You Got Here...")
+        }
+    }
+    
+    /// marks an item as deleted
+    func markDeleted(){
+        self.deleted = true
+    }
+    
+    /**
+     returns whether the function is deleted
+     - Returns: the value of the deleted variable for the item
+    */
+    func isDeleted()-> Bool {
+        return self.deleted
+    }
+    
 	/// Uncompletes a task.
 	func undoCompleteTask() {
-		completed = false
-		dateCompleted = nil
+        if completed {
+            completed = false
+            dateCompleted = nil
+            globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .unmarkedComplete, currentDate: Date()))
+        }
 	}
-
+    
 	/// Checks whether a task is completed.
 	///  - Returns: The state of completion of the item.
 	func isCompleted() -> Bool {
 		return completed
 	}
 
-	/// Initializer from Decodable
-	/// - Parameters:
-	///   - from: Decodable file to initialize from.
-	///   - className: Name of the class.
-	///   - title: Title of the item.
-	///   - description: Description of the item.
-	///   - dueDate: Date object of the due date.
-	///   - completed: Whether or not an item is completed.
-	///   - hashValue: The hashvalue of a specific item.
+	/** Initializer from Decodable
+	 - Parameters:
+	   - from: Decodable file to initialize from.
+	   - className: Name of the class.
+	   - title: Title of the item.
+	   - description: Description of the item.
+	   - dueDate: Date object of the due date.
+	   - completed: Whether or not an item is completed.
+	   - hashValue: The hashvalue of a specific item.
+    */
 	init(from: Decodable, className: String, title: String, description: String,
-		 dueDate: Date, completed: Bool, hashValue: String) {
+         dueDate: Date, completed: Bool, hashVal: String, deleted: Bool) {
 		self.className = className
 		self.title = title
 		self.description = description
 		self.dueDate = dueDate
 		self.completed = completed
-		self.hashValue = hashValue
+		self.hashVal = hashVal
+        self.deleted = deleted
 		print("Item with hash value \(self.hashValue) was created from memory")
 	}
 
@@ -107,16 +137,17 @@ class ToDoItem: Codable {
 	///   - dueDate: Date object of the due date.
 	///   - completed: Whether or not an item is completed.
 	init(className: String, title: String, description: String,
-		 dueDate: Date, completed: Bool) {
+         dueDate: Date, completed: Bool, deleted: Bool) {
 		self.className = className
 		self.title = title
 		self.description = description
 		self.dueDate = dueDate
 		self.completed = completed
-		self.hashValue = dateCreated.description + "_" + title.uppercased()
+        self.deleted = deleted
+		self.hashVal = dateCreated.description + "_" + title.uppercased()
 		let hashForbiddenCharacters: Set<Character> = [" ", "+", ":", "-"]
-		self.hashValue.removeAll(where: { hashForbiddenCharacters.contains($0) })
-		print("Item with hash value \(self.hashValue) was added")
+		self.hashVal.removeAll(where: { hashForbiddenCharacters.contains($0) })
+		print("Item with hash value \(self.hashVal) was added")
     globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .created, currentDate: Date()))
 	}
 
@@ -126,6 +157,13 @@ class ToDoItem: Codable {
 		self.completed = true
 		return true
 	}
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.dueDate)
+        hasher.combine(self.title)
+        hasher.combine(self.dateCreated)
+    }
+    
 }
 
 // ToDoItems have a strict ordering using the duedate. 

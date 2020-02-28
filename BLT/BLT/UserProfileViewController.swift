@@ -57,7 +57,7 @@ class UserProfileViewController: UIViewController
         tasksCompletedChart.y.grid.count = 7
     }
 
-	/// Runs when the view did finish loading.
+    /// Runs when the view did finish loading.
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading
@@ -65,15 +65,22 @@ class UserProfileViewController: UIViewController
         prepareProfile()
         chartUpdate()
         setupCards()
+        updateUserStats()
         
     }
 
-	/// Runs when the view has appeared.
+	  /// Runs when the view has appeared.
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         chartUpdate()
+        
     }
     
+    ///Updates The User Stats Bar By Calculating From Databases
+    func updateUserStats(){
+        ///TODO: Calculate Stats Dynamically
+    }
+  
     /// Sets up UI appearance of cards.
     func setupCards() {
         roundContainerView(cornerRadius: 20, view: containerView, shadowView: shadowView)

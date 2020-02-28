@@ -23,11 +23,11 @@ class FocusTimer {
 	var secs: Int {
 		return Int(cdt) % 60
 	}
-
-    /// Current TimeInterval to 0.
+    
+  ///Current Number Of Seconds To Timer End
 	var cdt: TimeInterval
 
-	/// String to send to the focus mode screen for display.
+	///String to send to the focus mode screen for display
 	var description: String = ""
 
 	/// total number of seconds initially.
@@ -78,7 +78,7 @@ class FocusTimer {
 			cdt -= 1.0
 		} else {
 			stopRunning()
-
+            
 		}
 
 

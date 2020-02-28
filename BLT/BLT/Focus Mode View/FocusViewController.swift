@@ -13,8 +13,8 @@ import LBConfettiView
 class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewControllerDelegate {
 
 	/// The ToDoItem of the current task.
-	var currentTask: ToDoItem = ToDoItem(className: "", title: "", description: "", dueDate: Date(), completed: true)
-
+	var currentTask: ToDoItem = ToDoItem(className: "", title: "", description: "", dueDate: Date(), completed: true, deleted: false)
+  
 	/// Current index of the task displayed
 	var currentTaskNum: Int = 0
 
@@ -123,7 +123,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		self.view.addSubview(popup.view)
 		popup.didMove(toParent: self)
 		popup.delegate = self
-		//performSegue(withIdentifier: "Popup", sender: nil)
+		
 	}
 
     /// Runs if the view will appear.
@@ -238,7 +238,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 	func valsUpdated(_ timerReadout: String) {
 		timerDisplay.text = timerReadout
 		var timeLeft = myTimer.cdt
-
+        
 		progressTimer.setProgress(Float(timeLeft / myTimer.totalSecs), animated: false)
 		print("valsUpdated called ")
 		print(timeLeft)
@@ -248,7 +248,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 	/// Runs when the timer has hit zero
 	func timerEnded() {
 		print("timerEnded called")
-
+        
 		endFocusModeButton.isEnabled = true
 		endFocusModeButton.isHidden = false
 
@@ -260,7 +260,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 			confettiView.start()
 		}
 		myToDoList.list[currentTaskNum].completeTask(mark: .markedCompletedInFocusMode)
-		myToDoList.list.remove(at: currentTaskNum)
+        myToDoList.completedList.append(myToDoList.list.remove(at: currentTaskNum))
 		setCurrentTask()
 		let seconds = 1.0
 		let oldPoints = myToDoList.points
@@ -278,25 +278,25 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		showTabBar()
 		self.tabBarController?.selectedIndex = 0
 	}
-
-    /// runs when the user exits the pop up
+  
+  /// runs when the user exits the pop up using the cancel button
 	func didChooseCancel() {
 		print("Called Did Choose Cancel In Focus Mode")
 		showTabBar()
 		self.tabBarController?.selectedIndex = 0
 	}
 
-    /**
-     updates values for timer and starts the timer in focus mode
-     - Parameters:
-        - duration: the amount of time that the timer is to be set to
-    */
+  /**
+   updates values for timer and starts the timer in focus mode
+   - Parameters:
+      - duration: the amount of time that the timer is to be set to
+  */
 	func didChooseTime(duration: TimeInterval) {
 		print("Chose A Time")
 		myTimer.cdt = duration
 		myTimer.totalSecs = myTimer.cdt
 		myTimer.runTimer()
-
+        
 	}
 
 	/// Animates a point incrementation with the pointCounter

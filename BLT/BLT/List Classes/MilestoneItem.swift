@@ -21,7 +21,7 @@ class MilestoneItem: ToDoItem {
 		 dueDate: Date, completed: Bool, milestones: [Milestone]) {
 		self.milestones = milestones
 		super.init(className: className, title: title, description: description,
-			dueDate: dueDate, completed: completed)
+			dueDate: dueDate, completed: completed, deleted: false)
 	}
 
 	/// Initializer method.
@@ -30,7 +30,7 @@ class MilestoneItem: ToDoItem {
 
 		self.milestones = milestones
 		super.init(className: className, title: title, description: description,
-			dueDate: dueDate, completed: completed)
+			dueDate: dueDate, completed: completed, deleted: false)
 
 	}
 
