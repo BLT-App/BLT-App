@@ -48,8 +48,11 @@ class ListViewController: UIViewController {
     
     ///Enum Specifying Last Action Done For Shake-To-Undo To Work
     enum LastActions {
+        ///No Action Has Been Taken This Session
         case none
+        ///An Item Was Deleted Last
         case deletedItem
+        ///And Item Was Completed Last
         case completedItem
     }
     

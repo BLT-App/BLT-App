@@ -57,7 +57,7 @@ class UserProfileViewController: UIViewController
         tasksCompletedChart.y.grid.count = 7
     }
 
-	  /// Runs when the view did finish loading.
+    /// Runs when the view did finish loading.
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading
@@ -76,6 +76,7 @@ class UserProfileViewController: UIViewController
         
     }
     
+    ///Updates The User Stats Bar By Calculating From Databases
     func updateUserStats(){
         ///TODO: Calculate Stats Dynamically
     }
