@@ -105,14 +105,24 @@ class TaskDatabase {
     
     ///Index Of All Databases And Other Info For All Databases
     struct DatabaseIndex: Codable {
+        
+        /// The Sequential Event Number For Assigning To New DatabaseEvents
         private var eventNumber: Int
+        
+        /// List Of Databases Created
         var listOfDatabases: [String]
         
+        
+        /// Gets The Current Event Number For Use In A New `DatabaseEvent`
+        ///
+        /// - Returns: The Current Event Number
         mutating func getEventNumForUse() -> Int {
             self.eventNumber += 1
             return self.eventNumber
         }
         
+        
+        /// Initializes A New DatabaseIndex
         init() {
             self.eventNumber = 0
             self.listOfDatabases = []
@@ -121,9 +131,12 @@ class TaskDatabase {
     
     ///Enum for possible errors that arise from a database
     enum DatabaseError: Error {
+        /// Error Occurs When Trying To Load A Database By Exact Name That Is Not In Memory
         case databaseDoesntExistError
     }
     
+    
+    /// Intializes A New TaskDatabase
     init() {
         print("Getting Database Index")
         let propertyListDecoder = PropertyListDecoder()
@@ -288,6 +301,13 @@ class TaskDatabase {
         return dateString
     }
     
+    
+    /// Gets The URL of database for a given year month pair
+    ///
+    /// - Parameters:
+    ///   - year: year of database
+    ///   - month: month of database
+    /// - Returns: URL of Database
     func getDatabaseLogString(year: Int, month: Int) -> String {
         let yearString: String
         if year < 1000 {

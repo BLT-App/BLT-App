@@ -9,6 +9,7 @@
 import UIKit
 import DropDown
 
+/// View Controller for creating a new item.
 class NewItemViewController: UIViewController, UITextFieldDelegate {
 
 	/// Text field with drop down add on
@@ -23,7 +24,7 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
 	/// Date picker for the due date.
 	@IBOutlet weak var datePicker: UIDatePicker!
 
-	// variable used for obtaining value in drop down menu
+	/// Variable used for obtaining value in drop down menu.
 	var selected: String = ""
 
 	/// Exiting button.

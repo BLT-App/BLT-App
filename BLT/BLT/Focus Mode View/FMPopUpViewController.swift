@@ -7,17 +7,26 @@
 //
 
 import UIKit
-/// view controller class for pop up in focus mode
+
+/// View controller for the pop up in focus mode. This popup prompts the user to input a time to focus for.
 class FMPopUpViewController: UIViewController {
 
-
+    /// Outlet for the pop up view.
 	@IBOutlet weak var popUpView: UIView!
+    
+    /// Outlet for the timePicker in the pop up.
 	@IBOutlet weak var timePicker: UIDatePicker!
+    
+    /// Button to begin timer.
     @IBOutlet weak var beginTimer: UIButton!
+    
+    /// Button to exit focus mode.
     @IBOutlet weak var exitButton: UIButton!
     
+    /// Delegate for the FMPopUpView controller.
 	weak var delegate: FMPopUpViewControllerDelegate?
-    /// formatted time variable (not used anymore)
+
+  /// Formatted string of time.
 	var formattedTime: String {
 		get {
 			let formatter = DateFormatter()
@@ -26,6 +35,7 @@ class FMPopUpViewController: UIViewController {
 		}
 	}
 
+    /// Runs if the view loads.
 	override func viewDidLoad() {
 		super.viewDidLoad()
         setupButtons()
@@ -39,7 +49,8 @@ class FMPopUpViewController: UIViewController {
 		self.showAnimate()
 
 	}
-    ///sets up the buttons
+    
+    /// Sets up UI for buttons.
     func setupButtons() {
         beginTimer.layer.cornerRadius = 15.0
         beginTimer.layer.shadowColor = UIColor.blue.cgColor
@@ -56,19 +67,19 @@ class FMPopUpViewController: UIViewController {
         exitButton.layer.masksToBounds = false
     }
 
-	// runs when the user presses the exit button in the pop up
+	/// Runs when the user presses the exit button in the pop up.
 	@IBAction func quitPopUp(_ sender: Any) {
 		self.removeAnimate()
 		delegate?.didChooseCancel()
 	}
 
-	// runs once the user presses the begin timer button in the pop up
+	/// Runs once the user presses the begin timer button in the pop up.
 	@IBAction func beginFocusMode(_ sender: UIButton) {
 		self.removeAnimate()
 		delegate?.didChooseTime(duration: timePicker.countDownDuration)
 	}
 
-	//animates the arrival of the pop up
+	/// Animates the arrival of the pop up.
 	func showAnimate() {
 		self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
 		self.view.alpha = 0.0;
@@ -78,7 +89,7 @@ class FMPopUpViewController: UIViewController {
 		});
 	}
 
-	// animates the pop up dissapearance
+	/// Animates the pop up dissapearance.
 	func removeAnimate() {
 		UIView.animate(withDuration: 0.25, animations: {
 			self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
@@ -108,8 +119,11 @@ class FMPopUpViewController: UIViewController {
         view.layer.masksToBounds = false
     }
 }
-
+/// Protocol for the FMPopUpViewController delegate.
 protocol FMPopUpViewControllerDelegate: class {
+    /// The method that runs if the user chooses to exit the pop up.
 	func didChooseCancel()
+    
+    /// The method that runs if the user chooses to start the timer in focus mode.
 	func didChooseTime(duration: TimeInterval)
 }

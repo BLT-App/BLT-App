@@ -128,11 +128,24 @@ class UserData: Codable {
 
 ///  Codable Color struct to enable saving courses.
 struct Color: Codable {
-	var red: CGFloat = 0.0, green: CGFloat = 0.0, blue: CGFloat = 0.0, alpha: CGFloat = 0.0
+	/// Color red value.
+	var red: CGFloat = 0.0
+
+	/// Color green value.
+	var green: CGFloat = 0.0
+
+	/// Color blue value.
+	var blue: CGFloat = 0.0
+
+	/// Transparency value
+	var alpha: CGFloat = 0.0
+
+	/// UIColor that the object represents.
 	var uiColor: UIColor {
 		return UIColor(red: red, green: green, blue: blue, alpha: alpha)
 	}
 
+	/// Creates a new color object.
 	init(uiColor: UIColor) {
 		uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
 	}

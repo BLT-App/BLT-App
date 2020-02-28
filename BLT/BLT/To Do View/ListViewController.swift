@@ -11,6 +11,7 @@ import SwiftReorder
 import UserNotifications
 import LBConfettiView
 
+/// Main view controller of the to do list.
 class ListViewController: UIViewController {
 	/// Tableview of the To Do cards.
 	@IBOutlet weak var tableView: UITableView!
@@ -216,6 +217,7 @@ class ListViewController: UIViewController {
 		tableView.endUpdates()
 	}
 
+	/// Prepares for going into a specific item view.
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "itemViewSegue" {
 			if let destination = segue.destination as? ItemViewController {
@@ -239,12 +241,15 @@ class ListViewController: UIViewController {
 
 }
 
+/// Conforms to Table View classes.
 extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableViewReorderDelegate {
 
+	/// Returns the number of rows in table view.
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return myToDoList.list.count
 	}
 
+	/// Returns the cell with correct content in table view.
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if let spacer = tableView.reorder.spacerCell(for: indexPath) {
 			return spacer
@@ -261,6 +266,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 		return cell
 	}
 
+	/// Delete action (swipe left).
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
 			deleteListIndexPath = indexPath
@@ -269,11 +275,13 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 		}
 	}
 
+	/// Selected row at path.
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		selectedIndex = indexPath.row
 		performSegue(withIdentifier: "itemViewSegue", sender: self)
 	}
 
+	/// Reordered item.
 	func tableView(_ tableView: UITableView, reorderRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
 		let movedItem = myToDoList.list[sourceIndexPath.row]
 		myToDoList.list.remove(at: sourceIndexPath.row)
@@ -281,11 +289,13 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 		myToDoList.storeList()
 	}
 
+	/// Leading configuration.
 	func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 		let configuration = UISwipeActionsConfiguration(actions: [contextualCompletedAction(forRowAtIndexPath: indexPath)])
 		return configuration
 	}
 
+	/// Completed task function.
 	func contextualCompletedAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
 		let action = UIContextualAction(style: .normal, title: "Complete") { (_: UIContextualAction, _: UIView, completionHandler: (Bool) -> Void) in
             let completedItem = myToDoList.list.remove(at: indexPath.row)

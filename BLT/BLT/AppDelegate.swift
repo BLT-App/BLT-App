@@ -10,7 +10,8 @@ import UIKit
 import UserNotifications
 
 @UIApplicationMain
-/// delegate for the app
+
+/// Delegate for the application.
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     var window: UIWindow?
     
@@ -18,11 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
      Tells the delegate that the launch process has begun but that state restoration has not yet occurred.
      also asks the user for notifications permissions when the app is first launched.
      - Parameters:
-     - application: the singleton app object.
-     - didFinishLaunchingWithOptions launchOptions: A dictionary indicating the reason the app was launched.
-     - Returns: false if the app cannot handle the URL resource or continue a user activity. (look up more in developer documentation from apple if you want).
-     
-    
+         - application: the singleton app object.
+         - didFinishLaunchingWithOptions launchOptions: A dictionary indicating the reason the app was launched.
+         - Returns: false if the app cannot handle the URL resource or continue a user activity. (look up more in developer documentation from apple if you want).
     */
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -54,22 +53,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         completionHandler([.alert, .badge, .sound])
     }
 
+    /// Tells the delegate that the app is about to become inactive.
     func applicationWillResignActive(_ application: UIApplication) {
 
     }
-    
+
+    /// Tells the delegate that the app is now in the background.
     func applicationDidEnterBackground(_ application: UIApplication) {
         
     }
 
+    /// Tells the delegate that the app is about to enter the foreground.
     func applicationWillEnterForeground(_ application: UIApplication) {
 
     }
 
+    /// Tells the delegate that the app has become active.
     func applicationDidBecomeActive(_ application: UIApplication) {
 
     }
-    
+
+    /// Tells the delegate when the app is about to terminate.
     func applicationWillTerminate(_ application: UIApplication) {
         myToDoList.storeList()
         globalTaskDatabase.saveDatabaseLog(targetLog: globalTaskDatabase.currentDatabaseLog)

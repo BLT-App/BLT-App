@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// View controller for editing an item.
 class ItemViewController: UIViewController {
 
 	/// Delegate view controller.

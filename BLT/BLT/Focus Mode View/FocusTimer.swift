@@ -8,29 +8,37 @@
 
 import Foundation
 
+
+/// Handles The Countdown Of `FocusViewController`
 class FocusTimer {
-	///Timer object for running the thread
+	/// Timer object for running the thread
 	var myTimer: Timer = Timer()
-	///Number of mins on the timer
+    
+	/// Number of mins on the timer.
 	var mins: Int {
 		return Int(cdt / 60)
 	}
-	///Number of seconds on the timer
+
+	/// Number of seconds on the timer.
 	var secs: Int {
 		return Int(cdt) % 60
 	}
     
-    ///Current Number Of Seconds To Timer End
+  ///Current Number Of Seconds To Timer End
 	var cdt: TimeInterval
 
 	///String to send to the focus mode screen for display
 	var description: String = ""
 
-	//total number of seconds initially
+	/// total number of seconds initially.
 	var totalSecs: TimeInterval
 
+    /// Reference To The Storyboard With The Countdown.
 	weak var delegate: FocusTimerDelegate?
 
+    
+    /// Initializes A New FocusTimer.
+    /// - Parameter countdownTime: Number Of Seconds To Run The Timer For
 	init(countdownTime: TimeInterval) {
 		self.cdt = countdownTime
 		self.totalSecs = countdownTime
@@ -38,12 +46,12 @@ class FocusTimer {
 	}
 
 
-	///Starts the timer
+	/// Starts the timer.
 	func runTimer() {
 		myTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateVals)), userInfo: nil, repeats: true)
 	}
 
-	///Sets the string representation
+	/// Sets the string representation.
 	func stringMe() {
 		if mins > 0 {
 			if secs > 9 {
@@ -58,13 +66,13 @@ class FocusTimer {
 		}
 	}
 
-	///Stops running the timer and notifies delegate
+	/// Stops running the timer and notifies delegate.
 	func stopRunning() {
 		myTimer.invalidate()
 		delegate?.timerEnded()
 	}
 
-	///Updates the values for minutes and seconds
+	/// Updates the values for minutes and seconds.
 	@objc func updateVals() {
 		if cdt > 0 {
 			cdt -= 1.0
@@ -79,9 +87,11 @@ class FocusTimer {
 	}
 }
 
+
+/// Protocol For Storyboards That Have A FocusTimer
 protocol FocusTimerDelegate: class {
-	///Passes the readout for the timer for display on the screen
+	/// Passes the readout for the timer for display on the screen.
 	func valsUpdated(_ timerReadout: String)
-	///Runs when the timer has ended
+	/// Runs when the timer has ended.
 	func timerEnded()
 }
