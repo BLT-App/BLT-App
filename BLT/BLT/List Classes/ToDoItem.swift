@@ -9,7 +9,7 @@
 import Foundation
 
 ///A to-do item is an item representing a to-do in the list.
-class ToDoItem: Codable {
+class ToDoItem: Codable, Hashable {
 
 	/// The name of the class that the to-do is associated with.
 	var className: String
@@ -30,7 +30,7 @@ class ToDoItem: Codable {
 	var dateCompleted: Date? = nil
 
 	///Hash Value
-	let hashValue: String
+	let hashVal: String
 
 	/// Time Spent In Focus Mode
 	var timeSpentInFocusMode: DateInterval = DateInterval(start: Date(), end: Date())
@@ -71,7 +71,12 @@ class ToDoItem: Codable {
 
     /// undeletes a task
     func undoDeleteTask(){
-        deleted = false
+        if deleted {
+            deleted = false
+            //globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .unmarkedComplete, currentDate: Date()))
+        } else {
+            print("Not Quite Sure How You Got Here...")
+        }
     }
     
     /// marks an item as deleted
@@ -89,8 +94,11 @@ class ToDoItem: Codable {
     
 	/// Uncompletes a task.
 	func undoCompleteTask() {
-		completed = false
-		dateCompleted = nil
+        if completed {
+            completed = false
+            dateCompleted = nil
+            globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .unmarkedComplete, currentDate: Date()))
+        }
 	}
     
 	/// Checks whether a task is completed.
@@ -102,7 +110,7 @@ class ToDoItem: Codable {
 	/** Initializer from Decodable
 	 - Parameters:
 	   - from: Decodable file to initialize from.
-	  - className: Name of the class.
+	   - className: Name of the class.
 	   - title: Title of the item.
 	   - description: Description of the item.
 	   - dueDate: Date object of the due date.
@@ -110,13 +118,13 @@ class ToDoItem: Codable {
 	   - hashValue: The hashvalue of a specific item.
     */
 	init(from: Decodable, className: String, title: String, description: String,
-         dueDate: Date, completed: Bool, hashValue: String, deleted: Bool) {
+         dueDate: Date, completed: Bool, hashVal: String, deleted: Bool) {
 		self.className = className
 		self.title = title
 		self.description = description
 		self.dueDate = dueDate
 		self.completed = completed
-		self.hashValue = hashValue
+		self.hashVal = hashVal
         self.deleted = deleted
 		print("Item with hash value \(self.hashValue) was created from memory")
 	}
@@ -136,10 +144,10 @@ class ToDoItem: Codable {
 		self.dueDate = dueDate
 		self.completed = completed
         self.deleted = deleted
-		self.hashValue = dateCreated.description + "_" + title.uppercased()
+		self.hashVal = dateCreated.description + "_" + title.uppercased()
 		let hashForbiddenCharacters: Set<Character> = [" ", "+", ":", "-"]
-		self.hashValue.removeAll(where: { hashForbiddenCharacters.contains($0) })
-		print("Item with hash value \(self.hashValue) was added")
+		self.hashVal.removeAll(where: { hashForbiddenCharacters.contains($0) })
+		print("Item with hash value \(self.hashVal) was added")
     globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .created, currentDate: Date()))
 	}
 
@@ -150,6 +158,11 @@ class ToDoItem: Codable {
 		return true
 	}
     
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.dueDate)
+        hasher.combine(self.title)
+        hasher.combine(self.dateCreated)
+    }
     
 }
 

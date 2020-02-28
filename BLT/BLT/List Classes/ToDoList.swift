@@ -37,7 +37,11 @@ class ToDoList: Codable {
 		return uncompleted
 	}
     
-    var deletedAndCompletedList: [ToDoItem] = []
+    ///List Of Deleted Items
+    var deletedList: [ToDoItem] = []
+    
+    ///List Of Completed Items
+    var completedList: [ToDoItem] = []
 
 	/// Saves user data to local file.
 	func storeList() {
@@ -59,7 +63,8 @@ class ToDoList: Codable {
 		if let retrievedNoteData = try? Data(contentsOf: archiveURL), let decodedToDoList = try? propertyListDecoder.decode(ToDoList.self, from: retrievedNoteData) {
 			self.list = decodedToDoList.list
 			self.points = decodedToDoList.points
-            self.deletedAndCompletedList = decodedToDoList.deletedAndCompletedList
+            self.deletedList = decodedToDoList.deletedList
+            self.completedList = decodedToDoList.completedList
 			print(list.count)
 			print("** Retrieved To Do List")
 		}

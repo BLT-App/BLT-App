@@ -44,6 +44,16 @@ class ListViewController: UIViewController {
 
 	/// The water/waves view.
 	var waves: WaterView = WaterView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    
+    ///Enum Specifying Last Action Done For Shake-To-Undo To Work
+    enum LastActions {
+        case none
+        case deletedItem
+        case completedItem
+    }
+    
+    ///Holds The Last Action Taken By The User
+    var lastAction: LastActions = .none
 
 	/// View did load function.
 	override func viewDidLoad() {
@@ -95,29 +105,30 @@ class ListViewController: UIViewController {
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if(motion  == .motionShake){
             print("shook")
-            var recentlyDeletedCompletedItem = myToDoList.deletedAndCompletedList[myToDoList.deletedAndCompletedList.count - 1]
             
-            myToDoList.deletedAndCompletedList.remove(at: myToDoList.deletedAndCompletedList.count - 1)
-            if(recentlyDeletedCompletedItem.isDeleted()){
-                recentlyDeletedCompletedItem.undoDeleteTask()
-                myToDoList.list.append(recentlyDeletedCompletedItem)
-                
-                myToDoList.sortList()
-                insertNewTask()
-                update()
+            if lastAction == .none {
+                ///TODO: Create A Popup Message About Shake-To-Undo
+                print("No Actions Taken This Session")
+                return
+            } else if lastAction == .completedItem {
+                if let itemToRestore: ToDoItem = myToDoList.completedList.popLast() as? ToDoItem {
+                    itemToRestore.undoCompleteTask()
+                    myToDoList.list.append(itemToRestore)
+                    insertNewTask()
+                    update()
+                } else {
+                    print("Error Occurred")
+                }
+            } else if lastAction == .deletedItem {
+                if let itemToRestore: ToDoItem = myToDoList.deletedList.popLast() as? ToDoItem {
+                    itemToRestore.undoDeleteTask()
+                    myToDoList.list.append(itemToRestore)
+                    insertNewTask()
+                    update()
+                } else {
+                    print("Error Occurred")
+                }
             }
-            else if(recentlyDeletedCompletedItem.isCompleted()){
-                recentlyDeletedCompletedItem.undoCompleteTask()
-                let oldPoints = myToDoList.points
-                myToDoList.points -= 10
-                self.incrementPoints(oldPoints: oldPoints)
-                myToDoList.list.append(recentlyDeletedCompletedItem)
-                myToDoList.sortList()
-                insertNewTask()
-                update()
-            }
-            
-            
         }
     }
 	/// View did appear function. (If a new task is added then put the task into the tableView. )
@@ -277,11 +288,9 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 
 	func contextualCompletedAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
 		let action = UIContextualAction(style: .normal, title: "Complete") { (_: UIContextualAction, _: UIView, completionHandler: (Bool) -> Void) in
-      myToDoList.list[indexPath.row].completeTask(mark: .markedCompletedInFocusMode)
-            var completedItem = myToDoList.list[indexPath.row]
-            completedItem.markCompleted()
-            myToDoList.deletedAndCompletedList.append(myToDoList.list[indexPath.row])
-			myToDoList.list.remove(at: indexPath.row)
+            let completedItem = myToDoList.list.remove(at: indexPath.row)
+            completedItem.completeTask(mark: .markedCompletedInListView)
+            myToDoList.completedList.append(completedItem)
 			myToDoList.storeList()
 			if let confettiView = self.confettiView {
 				confettiView.start()
@@ -300,6 +309,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 				}
 			}
 			completionHandler(true)
+            self.lastAction = .completedItem
 		}
 		action.backgroundColor = .blue
 		return action
@@ -326,17 +336,16 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 	 */
 	func handleDeleteItem(alertAction: UIAlertAction!) {
 		if let indexPath = deleteListIndexPath {
-            var deletedItem = myToDoList.list[indexPath.row]
+            let deletedItem = myToDoList.list.remove(at: indexPath.row)
             deletedItem.markDeleted()
-            myToDoList.deletedAndCompletedList.append(deletedItem)
-			myToDoList.list.remove(at: indexPath.row)
+            myToDoList.deletedList.append(deletedItem)
 			myToDoList.storeList()
 			tableView.beginUpdates()
 			tableView.deleteRows(at: [indexPath], with: .left)
 			tableView.endUpdates()
-            
 			deleteListIndexPath = nil
 			updateText()
+            lastAction = .deletedItem
 		}
 	}
 

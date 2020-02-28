@@ -237,8 +237,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 			confettiView.start()
 		}
 		myToDoList.list[currentTaskNum].completeTask(mark: .markedCompletedInFocusMode)
-        myToDoList.deletedAndCompletedList.append(myToDoList.list[currentTaskNum])
-		myToDoList.list.remove(at: currentTaskNum)
+        myToDoList.completedList.append(myToDoList.list.remove(at: currentTaskNum))
 		setCurrentTask()
 		let seconds = 1.0
 		let oldPoints = myToDoList.points
@@ -255,8 +254,6 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 	@IBAction func endFocusModeHit(_ sender: UIButton) {
 		showTabBar()
 		self.tabBarController?.selectedIndex = 0
-        
-        globalData.updateFocusTime(change: myTimer.timeStudied)
 	}
     
 	func didChooseCancel() {
