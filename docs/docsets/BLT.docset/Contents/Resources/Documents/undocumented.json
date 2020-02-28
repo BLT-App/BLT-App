@@ -1,33 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
-      "line": 51,
-      "symbol": "ListViewController.LastActions.none",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
-      "line": 52,
-      "symbol": "ListViewController.LastActions.deletedItem",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/To Do View/ListViewController.swift",
-      "line": 53,
-      "symbol": "ListViewController.LastActions.completedItem",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserProfileViewController.swift",
-      "line": 79,
-      "symbol": "UserProfileViewController.updateUserStats()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    }
+
   ],
-  "source_directory": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT"
+  "source_directory": "/Users/jiahuachen/Documents/CO650/BLT-App/BLT"
 }
