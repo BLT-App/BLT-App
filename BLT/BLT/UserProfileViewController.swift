@@ -74,7 +74,7 @@ class UserProfileViewController: UIViewController
     }
     
     func updateUserStats(){
-        focusLabel.text = "\(Int(globalData.focusTime) / 3600)"
+        ///TODO: Calculate Stats Dynamically
     }
     
     func setupCards() {

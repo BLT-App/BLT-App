@@ -56,12 +56,6 @@ class UserData: Codable {
 			saveUserData()
 		}
 	}
-    
-    var focusTime: Double = 0 {
-        didSet {
-            saveUserData()
-        }
-    }
 
 	/// Saves user data to local file.
 	func saveUserData() {
@@ -90,7 +84,6 @@ class UserData: Codable {
 			self.lastName = decodedUserData.lastName
 			self.wantsListByDate = decodedUserData.wantsListByDate
 			self.includeEndFocusButton = decodedUserData.includeEndFocusButton
-            self.focusTime = decodedUserData.focusTime
 		}
 	}
 
@@ -110,16 +103,6 @@ class UserData: Codable {
 		subjects[name] = Color(uiColor: randomColor(hue: getHue(), luminosity: .dark))
 		saveUserData()
 	}
-    
-    /**
-     updates the amount of time studied in focus mode
-     - Parameters:
-     - change: the amount to add to the total focus time
-    */
-    func updateFocusTime(change: TimeInterval){
-        focusTime += change
-        saveUserData()
-    }
 
 	/// Updates user data. Contains the information about the list of courses.
 	/// - Parameters:
