@@ -107,28 +107,6 @@ class ToDoItem: Codable, Hashable {
 		return completed
 	}
 
-	/** Initializer from Decodable
-	 - Parameters:
-	   - from: Decodable file to initialize from.
-	   - className: Name of the class.
-	   - title: Title of the item.
-	   - description: Description of the item.
-	   - dueDate: Date object of the due date.
-	   - completed: Whether or not an item is completed.
-	   - hashValue: The hashvalue of a specific item.
-    */
-	init(from: Decodable, className: String, title: String, description: String,
-         dueDate: Date, completed: Bool, hashVal: String, deleted: Bool) {
-		self.className = className
-		self.title = title
-		self.description = description
-		self.dueDate = dueDate
-		self.completed = completed
-		self.hashVal = hashVal
-        self.deleted = deleted
-		print("Item with hash value \(self.hashValue) was created from memory")
-	}
-
 	/// Initializer method
 	/// - Parameters:
 	///   - className: Name of the class.
