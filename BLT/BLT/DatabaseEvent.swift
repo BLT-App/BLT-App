@@ -20,6 +20,10 @@ enum GeneralEventType: Int, Codable {
     case markedCompletedInListView
     ///Occurs when a user unmarks an item as complete
     case unmarkedComplete
+    ///Occurs when item has started to be studied in focus mode
+    case startedStudyingInFocusMode
+    ///Occurs when item has stopped being studied in focus mode
+    case stoppedStudyingInFocusMode
 }
 
 ///Used For Logging Various Events For Later Use
