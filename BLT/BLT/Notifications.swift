@@ -9,6 +9,8 @@
 import Foundation
 import UserNotifications
 import UIKit
+import Datez
+
 /// Class that handles notifications.
 class Notifications {
     
