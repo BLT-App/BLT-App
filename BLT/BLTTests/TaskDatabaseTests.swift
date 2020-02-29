@@ -8,8 +8,9 @@
 
 import XCTest
 @testable import BLT
+import Datez
 
-let exampleToDoItem: ToDoItem = ToDoItem(className: "Math", title: "Complete Calculus Homework", description: "Discover Calculus pg. 103 - 120", dueDate: Date(), completed: false)
+let exampleToDoItem: ToDoItem = ToDoItem(className: "Math", title: "Complete Calculus Homework", description: "Discover Calculus pg. 103 - 120", dueDate: Date(), completed: false, deleted: false)
 
 class TaskDatabaseTests: XCTestCase {
 
@@ -17,20 +18,20 @@ class TaskDatabaseTests: XCTestCase {
     var preservedLog: [DatabaseEvent] = []
     
     let exampleEvents: [DatabaseEvent] = [
-        DatabaseEvent(item: exampleToDoItem, event: .created, currentDate: Date(timeIntervalSinceNow: TimeInterval(-86400 * 2))),
+        DatabaseEvent(item: exampleToDoItem, event: .created, currentDate: Date(timeIntervalSinceNow: 2.days.timeInterval)),
         DatabaseEvent(item: exampleToDoItem, event: .markedCompletedInFocusMode, currentDate: Date(timeIntervalSinceNow: TimeInterval(-86400 * 1))),
-        DatabaseEvent(item: exampleToDoItem, event: .created, currentDate: Date(timeIntervalSinceNow: TimeInterval(-86400 * 2))),
+        DatabaseEvent(item: exampleToDoItem, event: .created, currentDate: Date(timeIntervalSinceNow: 2.days.timeInterval)),
         DatabaseEvent(item: exampleToDoItem, event: .markedCompletedInFocusMode, currentDate: Date(timeIntervalSinceNow: TimeInterval(-86400 * 1))),
-        DatabaseEvent(item: exampleToDoItem, event: .created, currentDate: Date(timeIntervalSinceNow: TimeInterval(-86400 * 4))),
+        DatabaseEvent(item: exampleToDoItem, event: .created, currentDate: Date(timeIntervalSinceNow: 4.days.timeInterval)),
         DatabaseEvent(item: exampleToDoItem, event: .markedCompletedInFocusMode, currentDate: Date(timeIntervalSinceNow: TimeInterval(-86400 * 1))),
-        DatabaseEvent(item: exampleToDoItem, event: .created, currentDate: Date(timeIntervalSinceNow: TimeInterval(-86400 * 5))),
-        DatabaseEvent(item: exampleToDoItem, event: .markedCompletedInFocusMode, currentDate: Date(timeIntervalSinceNow: TimeInterval(-86400 * 2))),
-        DatabaseEvent(item: exampleToDoItem, event: .created, currentDate: Date(timeIntervalSinceNow: TimeInterval(-86400 * 3))),
-        DatabaseEvent(item: exampleToDoItem, event: .markedCompletedInFocusMode, currentDate: Date(timeIntervalSinceNow: TimeInterval(-86400 * 2))),
-        DatabaseEvent(item: exampleToDoItem, event: .created, currentDate: Date(timeIntervalSinceNow: TimeInterval(-86400 * 4))),
-        DatabaseEvent(item: exampleToDoItem, event: .markedCompletedInFocusMode, currentDate: Date(timeIntervalSinceNow: TimeInterval(-86400 * 3))),
-        DatabaseEvent(item: exampleToDoItem, event: .created, currentDate: Date(timeIntervalSinceNow: TimeInterval(-86400 * 4))),
-        DatabaseEvent(item: exampleToDoItem, event: .markedCompletedInFocusMode, currentDate: Date(timeIntervalSinceNow: TimeInterval(-86400 * 3))),
+        DatabaseEvent(item: exampleToDoItem, event: .created, currentDate: Date(timeIntervalSinceNow: 5.days.timeInterval)),
+        DatabaseEvent(item: exampleToDoItem, event: .markedCompletedInFocusMode, currentDate: Date(timeIntervalSinceNow: 2.days.timeInterval)),
+        DatabaseEvent(item: exampleToDoItem, event: .created, currentDate: Date(timeIntervalSinceNow: 3.days.timeInterval)),
+        DatabaseEvent(item: exampleToDoItem, event: .markedCompletedInFocusMode, currentDate: Date(timeIntervalSinceNow: 2.days.timeInterval)),
+        DatabaseEvent(item: exampleToDoItem, event: .created, currentDate: Date(timeIntervalSinceNow: 4.days.timeInterval)),
+        DatabaseEvent(item: exampleToDoItem, event: .markedCompletedInFocusMode, currentDate: Date(timeIntervalSinceNow: 2.days.timeInterval)),
+        DatabaseEvent(item: exampleToDoItem, event: .created, currentDate: Date(timeIntervalSinceNow: 4.days.timeInterval)),
+        DatabaseEvent(item: exampleToDoItem, event: .markedCompletedInFocusMode, currentDate: Date(timeIntervalSinceNow: 3.days.timeInterval)),
     ]
 
     
@@ -41,7 +42,7 @@ class TaskDatabaseTests: XCTestCase {
         testingDatabase.currentDatabaseLog.log.append(contentsOf: exampleEvents)
         testingDatabase.saveDatabaseLog(targetLog: testingDatabase.currentDatabaseLog)
         
-        let pastDate: Date = Date(timeIntervalSinceNow: TimeInterval(-86400 * 3))
+        let pastDate: Date = Date(timeIntervalSinceNow: 3.days.timeInterval)
         print(testingDatabase.getDatabaseLogString(date: pastDate))
         print(testingDatabase.getDatabaseLogString(date: Date()) <= testingDatabase.getDatabaseLogString(date: pastDate))
         print(testingDatabase.getDatabaseLogString(date: Date()) >= testingDatabase.getDatabaseLogString(date: pastDate))
