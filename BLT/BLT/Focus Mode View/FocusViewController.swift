@@ -13,7 +13,7 @@ import LBConfettiView
 class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewControllerDelegate {
 
 	/// The ToDoItem of the current task.
-	var currentTask: ToDoItem = ToDoItem(className: "", title: "", description: "", dueDate: Date(), completed: true, deleted: false)
+	var currentTask: ToDoItem? = nil
   
 	/// Current index of the task displayed
 	var currentTaskNum: Int = 0
@@ -104,17 +104,6 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
         
         self.updatePointsCounter(myToDoList.points)
     
-//        if includeEndButton{
-//            endFocusModeButton.isEnabled = false
-//            endFocusModeButton.isHidden = true
-//            print("isEnabled: ", endFocusModeButton.isEnabled)
-//        }
-//
-//        else{
-//            endFocusModeButton.isEnabled = true
-//            endFocusModeButton.isHidden = false
-//        }
-    
 		if let temp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as? FMPopUpViewController {
 			self.popup = temp
 		}
@@ -138,9 +127,6 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 			endFocusModeButton.isHidden = false
 		}
 		progressTimer.setProgress(1, animated: false)
-		//myTimer.mins = 2
-		//myTimer.secs = 00
-		//myTimer.runTimer()
 	}
     
     /// Runs when the view will disappear.
@@ -201,10 +187,10 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 			}
 			if !notFoundNextItem {
 				currentTask = myToDoList.list[currentTaskNum]
-				lblCurrentTask.text = currentTask.title
-				lblCurrentTaskDesc.text = currentTask.description
-				classLabel.text = currentTask.className
-				classLabel.backgroundColor = globalData.subjects[currentTask.className]?.uiColor
+                lblCurrentTask.text = currentTask?.title
+                lblCurrentTaskDesc.text = currentTask?.description
+                classLabel.text = currentTask?.className
+                classLabel.backgroundColor = globalData.subjects[currentTask?.className ?? ""]?.uiColor
 				lblCurrentTaskDesc.isHidden = false
 				classLabel.isHidden = false
 				btnCompleteTask.isEnabled = true

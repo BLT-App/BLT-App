@@ -55,10 +55,10 @@ class ToDoItem: Codable, Hashable {
 		}
 	}
 	/// Whether the to-do item is completed.
-	private var completed: Bool
+	private var completed: Bool = false
 
     /// whether the to-do item has been deleted
-    private var deleted: Bool
+    private var deleted: Bool = false
     
 	/// Completes the current task.
 	func completeTask(mark: GeneralEventType) {
@@ -137,13 +137,11 @@ class ToDoItem: Codable, Hashable {
 	///   - dueDate: Date object of the due date.
 	///   - completed: Whether or not an item is completed.
 	init(className: String, title: String, description: String,
-         dueDate: Date, completed: Bool, deleted: Bool) {
+         dueDate: Date) {
 		self.className = className
 		self.title = title
 		self.description = description
 		self.dueDate = dueDate
-		self.completed = completed
-        self.deleted = deleted
 		self.hashVal = dateCreated.description + "_" + title.uppercased()
 		let hashForbiddenCharacters: Set<Character> = [" ", "+", ":", "-"]
 		self.hashVal.removeAll(where: { hashForbiddenCharacters.contains($0) })
