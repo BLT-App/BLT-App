@@ -261,7 +261,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRH-ic-pC4">
-                                <rect key="frame" x="127" y="664" width="160" height="36"/>
+                                <rect key="frame" x="127" y="708" width="160" height="36"/>
                                 <color key="backgroundColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="1Y2-RE-5WM"/>
@@ -278,7 +278,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8C-pt-Izd">
-                                <rect key="frame" x="101" y="594" width="212" height="50"/>
+                                <rect key="frame" x="101" y="638" width="212" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="212" id="2I0-tM-KX2"/>
@@ -295,7 +295,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RIt-2R-z2g">
-                                <rect key="frame" x="50" y="194" width="314" height="300"/>
+                                <rect key="frame" x="50" y="238" width="314" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Math" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftt-hP-CPO" customClass="InsetLabel" customModule="BLT" customModuleProvider="target">
                                         <rect key="frame" x="20" y="20" width="45" height="24"/>
@@ -335,12 +335,6 @@
                                 <rect key="frame" x="50" y="130" width="314" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="142 ⭐" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTm-MS-Wv2">
-                                <rect key="frame" x="328.5" y="74" width="65.5" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -350,14 +344,15 @@
                             <constraint firstItem="B8C-pt-Izd" firstAttribute="top" secondItem="RIt-2R-z2g" secondAttribute="bottom" constant="100" id="NtF-VT-AFl"/>
                             <constraint firstItem="54u-8A-3Xb" firstAttribute="trailing" secondItem="RIt-2R-z2g" secondAttribute="trailing" constant="50" id="XbU-SN-X2j"/>
                             <constraint firstItem="RRH-ic-pC4" firstAttribute="centerX" secondItem="f3S-L5-YSf" secondAttribute="centerX" id="ZWy-8W-btX"/>
-                            <constraint firstItem="54u-8A-3Xb" firstAttribute="trailing" secondItem="dTm-MS-Wv2" secondAttribute="trailing" constant="20" id="d3v-JT-fM8"/>
-                            <constraint firstItem="dTm-MS-Wv2" firstAttribute="top" secondItem="54u-8A-3Xb" secondAttribute="top" constant="30" id="pZP-pZ-Zn7"/>
                             <constraint firstItem="B8C-pt-Izd" firstAttribute="centerX" secondItem="f3S-L5-YSf" secondAttribute="centerX" id="stD-Vc-EBW"/>
                             <constraint firstItem="RRH-ic-pC4" firstAttribute="top" secondItem="B8C-pt-Izd" secondAttribute="bottom" constant="20" id="vVz-Hr-onJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="54u-8A-3Xb"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Focus" image="clock" id="c7G-wY-1uh"/>
+                    <navigationItem key="navigationItem" id="lWJ-tW-jJn">
+                        <barButtonItem key="leftBarButtonItem" title="End Focus Mode" id="FtP-Dh-pKl"/>
+                        <barButtonItem key="rightBarButtonItem" title="142 ⭐" id="s17-0I-IIM"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="btnCompleteTask" destination="B8C-pt-Izd" id="tdX-Na-KPO"/>
                         <outlet property="classLabel" destination="Ftt-hP-CPO" id="N0M-cf-NuP"/>
@@ -365,14 +360,14 @@
                         <outlet property="itemView" destination="RIt-2R-z2g" id="kLt-jT-gMg"/>
                         <outlet property="lblCurrentTask" destination="ugR-Bz-WuA" id="hCs-Lh-n3E"/>
                         <outlet property="lblCurrentTaskDesc" destination="7qy-iM-Ea1" id="jYR-F6-5pM"/>
-                        <outlet property="pointsCounter" destination="dTm-MS-Wv2" id="aCx-nd-JeC"/>
+                        <outlet property="pointsCounterBar" destination="s17-0I-IIM" id="ELC-gU-ULj"/>
                         <outlet property="progressTimer" destination="iHy-BG-2zW" id="pNn-5f-qRr"/>
                         <outlet property="timerDisplay" destination="1Oc-RX-9Op" id="n5A-GN-5zF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cde-Mv-hzF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1478.2608695652175" y="136.60714285714286"/>
+            <point key="canvasLocation" x="2388.4057971014495" y="136.60714285714286"/>
         </scene>
         <!--Settings-->
         <scene sceneID="QEC-d0-vVH">
@@ -570,7 +565,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iuk-02-pzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2237.68115942029" y="136.60714285714286"/>
+            <point key="canvasLocation" x="3147.826086956522" y="136.60714285714286"/>
         </scene>
         <!--Settings User Info Submenu-->
         <scene sceneID="ue3-hu-hyQ">
@@ -900,71 +895,77 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fhr-Td-UFd">
-                                <rect key="frame" x="44" y="312" width="326" height="272"/>
+                                <rect key="frame" x="44" y="327" width="326" height="242"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naN-iW-idc">
-                                        <rect key="frame" x="0.0" y="20" width="326" height="23"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="af1-Ln-f3c">
-                                        <rect key="frame" x="0.0" y="54" width="326" height="162"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="602693943.82151604">
-                                            <!--2020-02-06 14:59:03 +0000-->
-                                        </date>
-                                    </datePicker>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="v9T-cK-2ze">
-                                        <rect key="frame" x="73" y="222" width="180" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kSd-Pg-FIR">
+                                        <rect key="frame" x="0.0" y="16.5" width="326" height="209"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMN-Mt-Xmb">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
-                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naN-iW-idc">
+                                                <rect key="frame" x="107.5" y="0.0" width="111.5" height="23"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="af1-Ln-f3c">
+                                                <rect key="frame" x="0.0" y="31" width="326" height="140"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="Dss-CI-ndG"/>
+                                                    <constraint firstAttribute="width" constant="326" id="aY4-d4-glw"/>
+                                                    <constraint firstAttribute="height" constant="140" id="zZF-7Z-6Qg"/>
                                                 </constraints>
-                                                <state key="normal" title="Exit">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="quitPopUp:" destination="zDc-dZ-dsG" eventType="touchUpInside" id="Xtl-P7-PAR"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ny4-37-GM5">
-                                                <rect key="frame" x="70" y="0.0" width="110" height="30"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="110" id="3Te-GP-ckt"/>
-                                                </constraints>
-                                                <state key="normal" title="Begin Timer">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="beginFocusMode:" destination="zDc-dZ-dsG" eventType="touchUpInside" id="qwO-AD-2Nc"/>
-                                                </connections>
-                                            </button>
+                                                <date key="date" timeIntervalSinceReferenceDate="602693943.82151604">
+                                                    <!--2020-02-06 14:59:03 +0000-->
+                                                </date>
+                                            </datePicker>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="v9T-cK-2ze">
+                                                <rect key="frame" x="73" y="179" width="180" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMN-Mt-Xmb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="30"/>
+                                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="Dss-CI-ndG"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Exit">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="quitPopUp:" destination="zDc-dZ-dsG" eventType="touchUpInside" id="Xtl-P7-PAR"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ny4-37-GM5">
+                                                        <rect key="frame" x="70" y="0.0" width="110" height="30"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="110" id="3Te-GP-ckt"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Begin Timer">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="beginFocusMode:" destination="zDc-dZ-dsG" eventType="touchUpInside" id="qwO-AD-2Nc"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="naN-iW-idc" firstAttribute="leading" secondItem="Fhr-Td-UFd" secondAttribute="leading" id="9Dy-mk-Kq2"/>
-                                    <constraint firstAttribute="trailing" secondItem="naN-iW-idc" secondAttribute="trailing" id="KRb-Uv-jhy"/>
-                                    <constraint firstItem="naN-iW-idc" firstAttribute="top" secondItem="Fhr-Td-UFd" secondAttribute="top" constant="20" id="b5T-m4-lzu"/>
-                                    <constraint firstItem="v9T-cK-2ze" firstAttribute="centerX" secondItem="Fhr-Td-UFd" secondAttribute="centerX" id="j3f-xt-cs9"/>
-                                    <constraint firstAttribute="bottom" secondItem="v9T-cK-2ze" secondAttribute="bottom" constant="20" id="k0x-WH-3Le"/>
+                                    <constraint firstAttribute="trailing" secondItem="kSd-Pg-FIR" secondAttribute="trailing" id="Cpd-87-dDj"/>
+                                    <constraint firstItem="kSd-Pg-FIR" firstAttribute="centerY" secondItem="Fhr-Td-UFd" secondAttribute="centerY" id="a39-sT-RJq"/>
+                                    <constraint firstItem="kSd-Pg-FIR" firstAttribute="centerX" secondItem="Fhr-Td-UFd" secondAttribute="centerX" id="d1D-dU-ksL"/>
+                                    <constraint firstAttribute="width" constant="326" id="iQK-Y8-Q8Q"/>
+                                    <constraint firstAttribute="height" constant="242" id="knx-Sr-HPz"/>
+                                    <constraint firstItem="kSd-Pg-FIR" firstAttribute="leading" secondItem="Fhr-Td-UFd" secondAttribute="leading" id="zCX-zv-yUk"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Fhr-Td-UFd" firstAttribute="leading" secondItem="hAn-zb-hiz" secondAttribute="leading" constant="44" id="ZGT-7b-DPs"/>
-                            <constraint firstItem="Fhr-Td-UFd" firstAttribute="top" secondItem="hAn-zb-hiz" secondAttribute="top" constant="268" id="g2a-r7-l4H"/>
                             <constraint firstItem="Fhr-Td-UFd" firstAttribute="centerX" secondItem="es2-3h-Y2a" secondAttribute="centerX" id="phA-VN-II1"/>
                             <constraint firstItem="Fhr-Td-UFd" firstAttribute="centerY" secondItem="es2-3h-Y2a" secondAttribute="centerY" id="v3z-yX-tQI"/>
                             <constraint firstItem="Fhr-Td-UFd" firstAttribute="centerY" secondItem="es2-3h-Y2a" secondAttribute="centerY" id="v5t-9V-y2a"/>
-                            <constraint firstItem="hAn-zb-hiz" firstAttribute="trailing" secondItem="Fhr-Td-UFd" secondAttribute="trailing" constant="44" id="zyd-bS-Y2I"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hAn-zb-hiz"/>
                     </view>
@@ -977,7 +978,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="es0-4v-7JU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1477" y="854"/>
+            <point key="canvasLocation" x="1476.8115942028987" y="853.79464285714278"/>
         </scene>
         <!--User Profile View Controller Scene-->
         <scene sceneID="2Cj-cZ-3Fb">
@@ -1140,7 +1141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z9Q-FM-3qx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3905.7971014492755" y="136.60714285714286"/>
+            <point key="canvasLocation" x="4815.9420289855079" y="136.60714285714286"/>
         </scene>
         <!--Main Tab Bar-->
         <scene sceneID="DDJ-ga-4dG">
@@ -1155,7 +1156,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="krn-Hr-Uh5"/>
-                        <segue destination="8Ou-6j-48c" kind="relationship" relationship="viewControllers" id="Xno-7n-0MZ"/>
+                        <segue destination="rDP-A0-cmk" kind="relationship" relationship="viewControllers" id="Xno-7n-0MZ"/>
                         <segue destination="eDD-HD-1Wx" kind="relationship" relationship="viewControllers" id="yNB-ez-gCM"/>
                         <segue destination="NZ1-lP-gNC" kind="relationship" relationship="viewControllers" id="GLH-zB-SBM"/>
                     </connections>
@@ -1382,7 +1383,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caQ-JA-q55" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2995.6521739130435" y="136.60714285714286"/>
+            <point key="canvasLocation" x="3905.7971014492755" y="136.60714285714286"/>
+        </scene>
+        <!--Focus-->
+        <scene sceneID="vnM-LW-oat">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rDP-A0-cmk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Focus" image="clock" id="c7G-wY-1uh"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Be-sT-abz">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8Ou-6j-48c" kind="relationship" relationship="rootViewController" id="1y8-aq-16t"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v70-EG-4vP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1478.2608695652175" y="136.60714285714286"/>
         </scene>
     </scenes>
     <resources>

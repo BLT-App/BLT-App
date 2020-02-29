@@ -8,6 +8,6 @@ target 'BLT' do
   pod 'RandomColorSwift'
   pod 'SwiftLint'
   pod 'LBConfettiView'
-
+  pod 'VerticalCardSwiper'
 end
 

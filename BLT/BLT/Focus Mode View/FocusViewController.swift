@@ -48,9 +48,9 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     /// the progress bar used as a timer
 	@IBOutlet weak var progressTimer: UIProgressView!
 
-    /// the label that displays points
-	@IBOutlet weak var pointsCounter: UILabel!
-
+    /// Points counter in the navigation bar.
+    @IBOutlet weak var pointsCounterBar: UIBarButtonItem!
+    
     /// confetti view
 	var confettiView: ConfettiView?
 
@@ -120,7 +120,9 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		}
 		self.addChild(popup)
 		popup.view.frame = self.view.frame
-		self.view.addSubview(popup.view)
+        self.view.addSubview(popup.view)
+        self.view.bringSubviewToFront(popup.view)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
 		popup.didMove(toParent: self)
 		popup.delegate = self
 		//performSegue(withIdentifier: "Popup", sender: nil)
@@ -237,9 +239,12 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     */
 	func valsUpdated(_ timerReadout: String) {
 		timerDisplay.text = timerReadout
-		var timeLeft = myTimer.cdt
-
-		progressTimer.setProgress(Float(timeLeft / myTimer.totalSecs), animated: false)
+		let timeLeft = myTimer.cdt
+        UIView.animate(withDuration: 1.0, animations: {
+            self.progressTimer.setProgress(Float(timeLeft / self.myTimer.totalSecs), animated: true)
+        }) { (finished) in
+            return
+        }
 		print("valsUpdated called ")
 		print(timeLeft)
 		print("totalSecs: ", myTimer.totalSecs)
@@ -292,11 +297,18 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
         - duration: the amount of time that the timer is to be set to
     */
 	func didChooseTime(duration: TimeInterval) {
+        // Also shows the navigation bar for simplicity.
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
 		print("Chose A Time")
 		myTimer.cdt = duration
 		myTimer.totalSecs = myTimer.cdt
 		myTimer.runTimer()
-
+        UIView.animate(withDuration: Double(myTimer.totalSecs), delay: 0.0, options: .curveLinear, animations: {
+            self.progressTimer.setProgress(0.0, animated: true)
+        }) { (finished) in
+            return
+        }
 	}
 
 	/// Animates a point incrementation with the pointCounter
@@ -315,6 +327,6 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 
 	/// Updates the point counter.
 	func updatePointsCounter(_ points: Int) {
-		pointsCounter.text = "\(points) ⭐"
+		pointsCounterBar.title = "\(points) ⭐"
 	}
 }

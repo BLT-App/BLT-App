@@ -78,15 +78,10 @@ class FocusTimer {
 			cdt -= 1.0
 		} else {
 			stopRunning()
-
 		}
-
-
 		stringMe()
-		delegate?.valsUpdated(description)
 	}
 }
-
 
 /// Protocol For Storyboards That Have A FocusTimer
 protocol FocusTimerDelegate: class {

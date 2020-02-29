@@ -47,7 +47,6 @@ class FMPopUpViewController: UIViewController {
         addShadow(view: popUpView, color: UIColor.gray.cgColor, opacity: 0.5, radius: 10, offset: CGSize(width: 0, height: 5))
 		timePicker.datePickerMode = .countDownTimer
 		self.showAnimate()
-
 	}
     
     /// Sets up UI for buttons.
@@ -99,7 +98,6 @@ class FMPopUpViewController: UIViewController {
 				self.view.removeFromSuperview()
 			}
 		});
-
 	}
     
     /**
