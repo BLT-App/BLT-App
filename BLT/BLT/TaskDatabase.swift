@@ -304,8 +304,8 @@ class TaskDatabase {
         do {
             let encoder = JSONEncoder()
             encoder.outputFormatting = .prettyPrinted
-            let JsonData = try encoder.encode(targetLog)
-            try JsonData.write(to: archiveURL, options: .noFileProtection)
+            let jsonData = try encoder.encode(targetLog)
+            try jsonData.write(to: archiveURL, options: .noFileProtection)
             print("Saved Log: log\(targetLog.logString) with \(targetLog.log.count) elts. ")
         } catch {
             print("ERROR: Couldn't Save Log \(targetLog.logString)")
