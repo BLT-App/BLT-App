@@ -304,7 +304,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDatasource {
 	/// Number of cards to show in list.
     func numberOfCards(verticalCardSwiperView: VerticalCardSwiperView) -> Int {
-        return myToDoList.uncompletedList.count
+        return myToDoList.list.count
     }
 
 	/// Returns the CardCell of the current item.
