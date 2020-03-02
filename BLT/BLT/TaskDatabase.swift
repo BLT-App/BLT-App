@@ -365,6 +365,19 @@ class TaskDatabase {
         return getNumEventsOfTypeFrom(startDate: startDate, endDate: endDate, eventType: eventType)
     }
     
+    /// Searches databases efficiently for items matching the queries from the current date back
+    ///
+    /// - Parameters:
+    /// - numDays: Number of days back to search
+    /// - eventType: The type of event searching for
+    ///
+    /// - Returns: The events matching the query from the present day back to the number of days specified
+    func getEventsOfTypeInLast(numDays: Int, eventType: GeneralEventType) -> [DatabaseEvent] {
+        let startDate = Date(timeIntervalSinceNow: numDays.days.timeInterval)
+        let endDate = Date()
+        return getEventsOfTypeFrom(startDate: startDate, endDate: endDate, eventType: eventType)
+    }
+    
     
     /// Searches databases efficiently for items matching the queries
     ///
@@ -395,6 +408,38 @@ class TaskDatabase {
             }
         }
         return numEvents
+    }
+    
+    /// Searches databases efficiently for items matching the queries
+    ///
+    /// - Parameters:
+    ///    - startDate: Start of the search boundary for date
+    ///    - endDate: End of the search boundary for date
+    ///    - eventType: The type of event searching for
+    ///
+    /// - Returns: The events matching the query within the date constraint
+    func getEventsOfTypeFrom(startDate: Date, endDate: Date, eventType: GeneralEventType ) -> [DatabaseEvent] {
+        saveDatabaseLog(targetLog: currentDatabaseLog)
+        print("Searching logs from \(startDate.description.prefix(10)) to \(endDate.description.prefix(10)) for \(eventType) from list of \(myDatabaseIndex.listOfDatabases.count) logs")
+        var events: [DatabaseEvent] = []
+        for databaseString in myDatabaseIndex.listOfDatabases {
+            print("\(databaseString) is within date range. : \(databaseString >= getDatabaseLogString(date: startDate) && databaseString <= getDatabaseLogString(date: endDate))")
+            if databaseString >= getDatabaseLogString(date: startDate) && databaseString <= getDatabaseLogString(date: endDate) {
+                print("Checking log\(databaseString) for \(eventType)")
+                if let database = try? fetchDatabaseLog(targetLogString: databaseString) {
+                    for event in database.log {
+                        print("Event with \(event.eventNumber) is correct. : \(event.eventType == eventType && event.date >= startDate && event.date <= endDate)")
+                        if event.eventType == eventType && event.date >= startDate && event.date <= endDate {
+                            events.append(event)
+                        }
+                    }
+                } else {
+                    print("WARNING: Faulty Database Index Contains Non-Existent Log")
+                }
+            }
+        }
+        print("Found \(events.count) events matching specified criteria")
+        return events
     }
 }
 
