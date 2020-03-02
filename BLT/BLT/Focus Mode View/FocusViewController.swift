@@ -76,6 +76,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 
 		myTimer = FocusTimer(countdownTime: 0.0)
 		myTimer.delegate = self
+        
         // *** Setup Progress Bar
         progressView = ProgressView(frame: progressContainer.frame)
         progressView.numberOfSteps = 0
@@ -92,14 +93,32 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
         progressView.layer.shadowRadius = 5.0
         progressView.layer.masksToBounds = false
         
+        stylizeEndFocusModeButton()
+        stylizePointsCounterBar()
+        
+        setCurrentTask()
+	}
+    
+    func setCurrentTask() {
+        if let index = verticalCardSwiper.focussedCardIndex {
+            currentTask = myToDoList.list[index]
+        }
+    }
+    
+    ///Sets Style Of End Focus Mode Button
+    func stylizeEndFocusModeButton() {
         endFocusModeButton.tintColor = .red
         endFocusModeButton.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 18, weight: .semibold)], for: .normal)
         endFocusModeButton.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 18, weight: .semibold)], for: .selected)
+    }
+    
+    ///Sets Style Of Counter Bar
+    func stylizePointsCounterBar() {
         pointsCounterBar.tintColor = .black
         pointsCounterBar.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 18, weight: .semibold)], for: .normal)
         pointsCounterBar.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 18, weight: .semibold)], for: .selected)
-	}
-
+    }
+    
 	/// Runs when view did load all subviews (to load colors)
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -161,7 +180,9 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     /// Runs if the view will appear.
 	override func viewWillAppear(_ animated: Bool) {
         verticalCardSwiper.reloadData()
-		verticalCardSwiper.scrollToCard(at: 0, animated: false)
+        if verticalCardSwiper.scrollToCard(at: 0, animated: false) {
+            print("Going Back To 0")
+        }
     
 		if (!globalData.includeEndFocusButton && myToDoList.list.count > 0) {
 			endFocusModeButton.isEnabled = false
@@ -256,6 +277,8 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		myTimer.totalSecs = myTimer.cdt
 		myTimer.runTimer()
         progressView.animateProgress(to: 0.0, duration: myTimer.totalSecs)
+        
+        currentTask?.startedStudyingInFocusMode()
 	}
 
 	/// Animates a point incrementation with the pointCounter
@@ -295,6 +318,9 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
 
 	/// Called when the VerticalCardSwiper has been scrolled.
     func didScroll(verticalCardSwiperView: VerticalCardSwiperView) {
+        currentTask?.stoppedStudyingInFocusMode()
+        setCurrentTask()
+        currentTask?.startedStudyingInFocusMode()
         if let index = verticalCardSwiper.focussedCardIndex {
             if let color = globalData.subjects[myToDoList.list[index].className]?.uiColor {
                 DispatchQueue.main.async {
@@ -390,9 +416,12 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
 	/// Called when a task is completed
 	/// - Parameter index: Index of completed card.
     func completeTask(index: Int) {
-        myToDoList.list[index].completeTask(mark: .markedCompletedInListView)
-        myToDoList.list.remove(at: index)
+        let task = myToDoList.list.remove(at: index)
+        task.stoppedStudyingInFocusMode()
+        task.completeTask(mark: .markedCompletedInFocusMode)
+        myToDoList.completedList.append(task)
         myToDoList.storeList()
+        
         if let confettiView = self.confettiView {
             confettiView.start()
         }
