@@ -9,6 +9,7 @@ target 'BLT' do
   pod 'SwiftLint'
   pod 'LBConfettiView'
   pod 'Datez'
-
+  pod 'VerticalCardSwiper'
+  pod 'RetroProgress'
 end
 

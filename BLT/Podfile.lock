@@ -6,8 +6,10 @@ PODS:
   - DropDown (2.3.4)
   - LBConfettiView (1.0.0)
   - RandomColorSwift (1.0.0)
-  - SwiftLint (0.39.1)
+  - RetroProgress (1.0.1)
+  - SwiftLint (0.38.2)
   - SwiftReorder (6.0.2)
+  - VerticalCardSwiper (2.2.0)
 
 DEPENDENCIES:
   - Charts (~> 3.2.2)
@@ -15,8 +17,10 @@ DEPENDENCIES:
   - DropDown (= 2.3.4)
   - LBConfettiView
   - RandomColorSwift
+  - RetroProgress
   - SwiftLint
   - SwiftReorder (~> 6.0.2)
+  - VerticalCardSwiper
 
 SPEC REPOS:
   trunk:
@@ -25,8 +29,10 @@ SPEC REPOS:
     - DropDown
     - LBConfettiView
     - RandomColorSwift
+    - RetroProgress
     - SwiftLint
     - SwiftReorder
+    - VerticalCardSwiper
 
 SPEC CHECKSUMS:
   Charts: f69cf0518b6d1d62608ca504248f1bbe0b6ae77e
@@ -34,9 +40,11 @@ SPEC CHECKSUMS:
   DropDown: f225ff0fd09dde064d17aa03db7e4d4e4ff40b6b
   LBConfettiView: 29e99668b3c0dca25160486dd593f91a0ceeca8e
   RandomColorSwift: 9f85058b721665d52d239ca166a913e083506444
-  SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
+  RetroProgress: a5b2514485c0ce75838ad321c77d5746150901cd
+  SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
   SwiftReorder: 60ef1faf6446cf68f9a647cb975530db8efd6620
+  VerticalCardSwiper: 41c8c0d8d87511ec269347f5671386acf66cd31a
 
-PODFILE CHECKSUM: beb2c29f69f0f60a39c02a722383b80aeeee3943
+PODFILE CHECKSUM: 70eb7b0ee8c203d7e1913511d1bb480261698bd7
 
 COCOAPODS: 1.8.4

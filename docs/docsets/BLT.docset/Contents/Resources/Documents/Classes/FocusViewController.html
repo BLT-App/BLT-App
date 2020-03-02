@@ -66,6 +66,9 @@
                 <a class="nav-group-task-link" href="../Classes/FMPopUpViewController.html">FMPopUpViewController</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/FocusCardCell.html">FocusCardCell</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/FocusTimer.html">FocusTimer</a>
               </li>
               <li class="nav-group-task">
@@ -210,6 +213,7 @@
               <div class="declaration">
                 <div class="language">
                   <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">FocusViewController</span> <span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt"><a href="../Protocols/FocusTimerDelegate.html">FocusTimerDelegate</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/FMPopUpViewControllerDelegate.html">FMPopUpViewControllerDelegate</a></span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">FocusViewController</span><span class="p">:</span> <span class="kt">VerticalCardSwiperDelegate</span><span class="p">,</span> <span class="kt">VerticalCardSwiperDatasource</span></code></pre>
 
                 </div>
               </div>
@@ -333,90 +337,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@BLT@objc(cs)FocusViewController(py)lblCurrentTask"></a>
-                    <a name="//apple_ref/swift/Property/lblCurrentTask" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)lblCurrentTask">lblCurrentTask</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>the label for the current task</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
-<span class="k">weak</span> <span class="k">var</span> <span class="nv">lblCurrentTask</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@BLT@objc(cs)FocusViewController(py)lblCurrentTaskDesc"></a>
-                    <a name="//apple_ref/swift/Property/lblCurrentTaskDesc" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)lblCurrentTaskDesc">lblCurrentTaskDesc</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>the label for the current task description</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
-<span class="k">weak</span> <span class="k">var</span> <span class="nv">lblCurrentTaskDesc</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@BLT@objc(cs)FocusViewController(py)btnCompleteTask"></a>
-                    <a name="//apple_ref/swift/Property/btnCompleteTask" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)btnCompleteTask">btnCompleteTask</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>the button to complete a task</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
-<span class="k">weak</span> <span class="k">var</span> <span class="nv">btnCompleteTask</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/c:@M@BLT@objc(cs)FocusViewController(py)endFocusModeButton"></a>
                     <a name="//apple_ref/swift/Property/endFocusModeButton" class="dashAnchor"></a>
                     <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)endFocusModeButton">endFocusModeButton</a>
@@ -435,7 +355,7 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
-<span class="k">weak</span> <span class="k">var</span> <span class="nv">endFocusModeButton</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span></code></pre>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">endFocusModeButton</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -473,9 +393,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@BLT@objc(cs)FocusViewController(py)itemView"></a>
-                    <a name="//apple_ref/swift/Property/itemView" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)itemView">itemView</a>
+                    <a name="/c:@M@BLT@objc(cs)FocusViewController(py)progressContainer"></a>
+                    <a name="//apple_ref/swift/Property/progressContainer" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)progressContainer">progressContainer</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -483,7 +403,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>the view that the items are viewed in</p>
+                        <p>A container to position the progress view</p>
 
                       </div>
                       <div class="declaration">
@@ -491,7 +411,7 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
-<span class="k">weak</span> <span class="k">var</span> <span class="nv">itemView</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span></code></pre>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">progressContainer</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -501,9 +421,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@BLT@objc(cs)FocusViewController(py)classLabel"></a>
-                    <a name="//apple_ref/swift/Property/classLabel" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)classLabel">classLabel</a>
+                    <a name="/s:3BLT19FocusViewControllerC08progressC013RetroProgress0gC0Cvp"></a>
+                    <a name="//apple_ref/swift/Property/progressView" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT19FocusViewControllerC08progressC013RetroProgress0gC0Cvp">progressView</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -511,15 +431,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>the label that displays class</p>
+                        <p>Progress bar.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
-<span class="k">weak</span> <span class="k">var</span> <span class="nv">classLabel</span><span class="p">:</span> <span class="kt"><a href="../Classes/InsetLabel.html">InsetLabel</a></span><span class="o">!</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">progressView</span><span class="p">:</span> <span class="kt">ProgressView</span></code></pre>
 
                         </div>
                       </div>
@@ -529,9 +448,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@BLT@objc(cs)FocusViewController(py)progressTimer"></a>
-                    <a name="//apple_ref/swift/Property/progressTimer" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)progressTimer">progressTimer</a>
+                    <a name="/c:@M@BLT@objc(cs)FocusViewController(py)pointsCounterBar"></a>
+                    <a name="//apple_ref/swift/Property/pointsCounterBar" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)pointsCounterBar">pointsCounterBar</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -539,7 +458,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>the progress bar used as a timer</p>
+                        <p>Points counter in the navigation bar.</p>
 
                       </div>
                       <div class="declaration">
@@ -547,7 +466,7 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
-<span class="k">weak</span> <span class="k">var</span> <span class="nv">progressTimer</span><span class="p">:</span> <span class="kt">UIProgressView</span><span class="o">!</span></code></pre>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">pointsCounterBar</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -557,9 +476,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@BLT@objc(cs)FocusViewController(py)pointsCounter"></a>
-                    <a name="//apple_ref/swift/Property/pointsCounter" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)pointsCounter">pointsCounter</a>
+                    <a name="/c:@M@BLT@objc(cs)FocusViewController(py)verticalCardSwiper"></a>
+                    <a name="//apple_ref/swift/Property/verticalCardSwiper" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)verticalCardSwiper">verticalCardSwiper</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -567,7 +486,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>the label that displays points</p>
+                        <p>Card views.</p>
 
                       </div>
                       <div class="declaration">
@@ -575,7 +494,35 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
-<span class="k">weak</span> <span class="k">var</span> <span class="nv">pointsCounter</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">verticalCardSwiper</span><span class="p">:</span> <span class="kt">VerticalCardSwiper</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)FocusViewController(py)completePrompt"></a>
+                    <a name="//apple_ref/swift/Property/completePrompt" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(py)completePrompt">completePrompt</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Prompts for completion.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">completePrompt</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -666,9 +613,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:3BLT19FocusViewControllerC15setupClassLabelyyF"></a>
-                    <a name="//apple_ref/swift/Method/setupClassLabel()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3BLT19FocusViewControllerC15setupClassLabelyyF">setupClassLabel()</a>
+                    <a name="/c:@M@BLT@objc(cs)FocusViewController(im)viewDidLayoutSubviews"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLayoutSubviews()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(im)viewDidLayoutSubviews">viewDidLayoutSubviews()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -676,14 +623,114 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sets up the label that displays class.</p>
+                        <p>Runs when view did load all subviews (to load colors)</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setupClassLabel</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLayoutSubviews</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT19FocusViewControllerC19changeProgressColor5colorySo7UIColorC_tF"></a>
+                    <a name="//apple_ref/swift/Method/changeProgressColor(color:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT19FocusViewControllerC19changeProgressColor5colorySo7UIColorC_tF">changeProgressColor(color:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Changes progress bar color.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">changeProgressColor</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Color to change color to.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT19FocusViewControllerC23setCurrentProgressColoryyF"></a>
+                    <a name="//apple_ref/swift/Method/setCurrentProgressColor()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT19FocusViewControllerC23setCurrentProgressColoryyF">setCurrentProgressColor()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets progress bar color based on the current card.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setCurrentProgressColor</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT19FocusViewControllerC19setupCompletePromptyyF"></a>
+                    <a name="//apple_ref/swift/Method/setupCompletePrompt()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT19FocusViewControllerC19setupCompletePromptyyF">setupCompletePrompt()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets up the label that displays completion prompting.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setupCompletePrompt</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -855,33 +902,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:3BLT19FocusViewControllerC14setCurrentTaskyyF"></a>
-                    <a name="//apple_ref/swift/Method/setCurrentTask()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3BLT19FocusViewControllerC14setCurrentTaskyyF">setCurrentTask()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Sets the current task to the first task in the to-do list.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setCurrentTask</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:3BLT19FocusViewControllerC11valsUpdatedyySSF"></a>
                     <a name="//apple_ref/swift/Method/valsUpdated(_:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:3BLT19FocusViewControllerC11valsUpdatedyySSF">valsUpdated(_:)</a>
@@ -955,34 +975,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@BLT@objc(cs)FocusViewController(im)completeTaskPress:"></a>
-                    <a name="//apple_ref/swift/Method/completeTaskPress(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(im)completeTaskPress:">completeTaskPress(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Pressing on complete task that queues the next task.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBAction</span>
-<span class="kd">func</span> <span class="nf">completeTaskPress</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/c:@M@BLT@objc(cs)FocusViewController(im)endFocusModeHit:"></a>
                     <a name="//apple_ref/swift/Method/endFocusModeHit(_:)" class="dashAnchor"></a>
                     <a class="token" href="#/c:@M@BLT@objc(cs)FocusViewController(im)endFocusModeHit:">endFocusModeHit(_:)</a>
@@ -1001,7 +993,7 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@IBAction</span>
-<span class="kd">func</span> <span class="nf">endFocusModeHit</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span></code></pre>
+<span class="kd">func</span> <span class="nf">endFocusModeHit</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIBarButtonItem</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -1021,7 +1013,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>runs when the user exits the pop up using the cancel button</p>
+                        <p>runs when the user exits the pop up</p>
 
                       </div>
                       <div class="declaration">
@@ -1135,6 +1127,322 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT19FocusViewControllerC13numberOfCards018verticalCardSwiperC0Si08VerticaliJ00kijC0C_tF"></a>
+                    <a name="//apple_ref/swift/Method/numberOfCards(verticalCardSwiperView:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT19FocusViewControllerC13numberOfCards018verticalCardSwiperC0Si08VerticaliJ00kijC0C_tF">numberOfCards(verticalCardSwiperView:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Number of cards to show in list.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">numberOfCards</span><span class="p">(</span><span class="nv">verticalCardSwiperView</span><span class="p">:</span> <span class="kt">VerticalCardSwiperView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT19FocusViewControllerC13cardForItemAt018verticalCardSwiperC0AD08VerticaljK00J4CellCAF0ljkC0C_SitF"></a>
+                    <a name="//apple_ref/swift/Method/cardForItemAt(verticalCardSwiperView:cardForItemAt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT19FocusViewControllerC13cardForItemAt018verticalCardSwiperC0AD08VerticaljK00J4CellCAF0ljkC0C_SitF">cardForItemAt(verticalCardSwiperView:cardForItemAt:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the CardCell of the current item.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">cardForItemAt</span><span class="p">(</span><span class="nv">verticalCardSwiperView</span><span class="p">:</span> <span class="kt">VerticalCardSwiperView</span><span class="p">,</span> <span class="n">cardForItemAt</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CardCell</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@BLT@objc(cs)FocusViewController(im)didScrollWithVerticalCardSwiperView:"></a>
+                    <a name="//apple_ref/swift/Method/didScroll(verticalCardSwiperView:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@BLT@objc(cs)FocusViewController(im)didScrollWithVerticalCardSwiperView:">didScroll(verticalCardSwiperView:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the VerticalCardSwiper has been scrolled.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">didScroll</span><span class="p">(</span><span class="nv">verticalCardSwiperView</span><span class="p">:</span> <span class="kt">VerticalCardSwiperView</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@BLT@objc(cs)FocusViewController(im)didDragCardWithCard:index:swipeDirection:"></a>
+                    <a name="//apple_ref/swift/Method/didDragCard(card:index:swipeDirection:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@BLT@objc(cs)FocusViewController(im)didDragCardWithCard:index:swipeDirection:">didDragCard(card:index:swipeDirection:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when a card has been dragged.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">didDragCard</span><span class="p">(</span><span class="nv">card</span><span class="p">:</span> <span class="kt">CardCell</span><span class="p">,</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">swipeDirection</span><span class="p">:</span> <span class="kt">SwipeDirection</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@BLT@objc(cs)FocusViewController(im)didCancelSwipeWithCard:index:"></a>
+                    <a name="//apple_ref/swift/Method/didCancelSwipe(card:index:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@BLT@objc(cs)FocusViewController(im)didCancelSwipeWithCard:index:">didCancelSwipe(card:index:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when swiping is cancelled.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">didCancelSwipe</span><span class="p">(</span><span class="nv">card</span><span class="p">:</span> <span class="kt">CardCell</span><span class="p">,</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT19FocusViewControllerC13dragCardRightyyF"></a>
+                    <a name="//apple_ref/swift/Method/dragCardRight()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT19FocusViewControllerC13dragCardRightyyF">dragCardRight()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when card is dragged to the right.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">dragCardRight</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT19FocusViewControllerC12dragCardLeftyyF"></a>
+                    <a name="//apple_ref/swift/Method/dragCardLeft()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT19FocusViewControllerC12dragCardLeftyyF">dragCardLeft()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when card is dragged to the left.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">dragCardLeft</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT19FocusViewControllerC15dragCardNeutralyyF"></a>
+                    <a name="//apple_ref/swift/Method/dragCardNeutral()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT19FocusViewControllerC15dragCardNeutralyyF">dragCardNeutral()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when card is at a neutral position.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">dragCardNeutral</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@BLT@objc(cs)FocusViewController(im)willSwipeCardAwayWithCard:index:swipeDirection:"></a>
+                    <a name="//apple_ref/swift/Method/willSwipeCardAway(card:index:swipeDirection:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@BLT@objc(cs)FocusViewController(im)willSwipeCardAwayWithCard:index:swipeDirection:">willSwipeCardAway(card:index:swipeDirection:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when card will be swiped away.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">willSwipeCardAway</span><span class="p">(</span><span class="nv">card</span><span class="p">:</span> <span class="kt">CardCell</span><span class="p">,</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">swipeDirection</span><span class="p">:</span> <span class="kt">SwipeDirection</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@CM@BLT@objc(cs)FocusViewController(im)didSwipeCardAwayWithCard:index:swipeDirection:"></a>
+                    <a name="//apple_ref/swift/Method/didSwipeCardAway(card:index:swipeDirection:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@CM@BLT@objc(cs)FocusViewController(im)didSwipeCardAwayWithCard:index:swipeDirection:">didSwipeCardAway(card:index:swipeDirection:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when a card has been swiped away.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">didSwipeCardAway</span><span class="p">(</span><span class="nv">card</span><span class="p">:</span> <span class="kt">CardCell</span><span class="p">,</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">swipeDirection</span><span class="p">:</span> <span class="kt">SwipeDirection</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT19FocusViewControllerC12completeTask5indexySi_tF"></a>
+                    <a name="//apple_ref/swift/Method/completeTask(index:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT19FocusViewControllerC12completeTask5indexySi_tF">completeTask(index:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when a task is completed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">completeTask</span><span class="p">(</span><span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Index of completed card.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -1143,7 +1451,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://https//blt-app.github.io/get-blt" target="_blank" rel="external">Nicholas Lorentzen, Jiahua Chen, and David Lloyd George</a>. All rights reserved. (Last updated: 2020-02-28)</p>
+      <p>&copy; 2020 <a class="link" href="https://https//blt-app.github.io/get-blt" target="_blank" rel="external">Nicholas Lorentzen, Jiahua Chen, and David Lloyd George</a>. All rights reserved. (Last updated: 2020-03-02)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

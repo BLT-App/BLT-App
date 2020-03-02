@@ -8,6 +8,8 @@
 
 import UIKit
 import LBConfettiView
+import VerticalCardSwiper
+import RetroProgress
 
 /// The ViewController that controls the Focus View.
 class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewControllerDelegate {
@@ -24,33 +26,27 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     /// the popup object that will be displayed
 	var popup: FMPopUpViewController = FMPopUpViewController()
     
-    /// the label for the current task
-	@IBOutlet weak var lblCurrentTask: UILabel!
-
-    /// the label for the current task description
-	@IBOutlet weak var lblCurrentTaskDesc: UILabel!
-    
-    /// the button to complete a task
-	@IBOutlet weak var btnCompleteTask: UIButton!
-    
     /// the button to end focus mode
-	@IBOutlet weak var endFocusModeButton: UIButton!
+    @IBOutlet weak var endFocusModeButton: UIBarButtonItem!
     
     /// displays the timer
 	@IBOutlet weak var timerDisplay: UILabel!
 
-    /// the view that the items are viewed in
-	@IBOutlet weak var itemView: UIView!
+    /// A container to position the progress view
+    @IBOutlet weak var progressContainer: UIView!
     
-    /// the label that displays class
-	@IBOutlet weak var classLabel: InsetLabel!
+    /// Progress bar.
+    var progressView: ProgressView = ProgressView(frame: CGRect.zero)
 
-    /// the progress bar used as a timer
-	@IBOutlet weak var progressTimer: UIProgressView!
-
-    /// the label that displays points
-	@IBOutlet weak var pointsCounter: UILabel!
-
+    /// Points counter in the navigation bar.
+    @IBOutlet weak var pointsCounterBar: UIBarButtonItem!
+    
+    /// Card views.
+    @IBOutlet weak var verticalCardSwiper: VerticalCardSwiper!
+    
+    /// Prompts for completion.
+    @IBOutlet weak var completePrompt: UILabel!
+    
     /// confetti view
 	var confettiView: ConfettiView?
 
@@ -61,7 +57,17 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupButtons()
-
+        
+        verticalCardSwiper.delegate = self
+        verticalCardSwiper.datasource = self
+        verticalCardSwiper.cardSpacing = 200
+        verticalCardSwiper.isStackOnBottom = false
+        verticalCardSwiper.stackedCardsCount = 1
+        verticalCardSwiper.sideInset = 50
+        
+        // register cardcell for storyboard use
+        verticalCardSwiper.register(nib: UINib(nibName: "FocusCard", bundle: nil), forCellWithReuseIdentifier: "FocusCell")
+        
 		let confV = ConfettiView(frame: self.view.bounds)
 		confV.style = .star
 		confV.intensity = 0.7
@@ -70,29 +76,64 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 
 		myTimer = FocusTimer(countdownTime: 0.0)
 		myTimer.delegate = self
-		progressTimer.transform = progressTimer.transform.scaledBy(x: 1, y: 10)
-		progressTimer.layer.cornerRadius = 0
-        progressTimer.layer.shadowColor = UIColor.blue.cgColor
-        progressTimer.layer.shadowOpacity = 0.2
-        progressTimer.layer.shadowOffset = CGSize(width: 0, height: 0)
-        progressTimer.layer.shadowRadius = 5.0
-        progressTimer.layer.masksToBounds = false
-		progressTimer.clipsToBounds = true
-		setupClassLabel()
+        // *** Setup Progress Bar
+        progressView = ProgressView(frame: progressContainer.frame)
+        progressView.numberOfSteps = 0
+        progressView.progressInset = .zero
+        progressView.layer.cornerRadius = 15
+        setCurrentProgressColor()
+        self.view.addSubview(progressView)
+        
+        setupCompletePrompt()
 
-		itemView.layer.cornerRadius = 20.0
-		itemView.layer.shadowColor = UIColor.gray.cgColor
-		itemView.layer.shadowOpacity = 0.2
-		itemView.layer.shadowOffset = CGSize(width: 0, height: 4)
-		itemView.layer.shadowRadius = 5.0
-		itemView.layer.masksToBounds = false
+//        itemView.layer.cornerRadius = 20.0
+        progressView.layer.shadowOpacity = 0.2
+        progressView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        progressView.layer.shadowRadius = 5.0
+        progressView.layer.masksToBounds = false
+        
+        endFocusModeButton.tintColor = .red
+        endFocusModeButton.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 18, weight: .semibold)], for: .normal)
+        endFocusModeButton.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 18, weight: .semibold)], for: .selected)
+        pointsCounterBar.tintColor = .black
+        pointsCounterBar.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 18, weight: .semibold)], for: .normal)
+        pointsCounterBar.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 18, weight: .semibold)], for: .selected)
 	}
 
-    /// Sets up the label that displays class.
-	func setupClassLabel() {
-		classLabel.sizeThatFits(CGSize(width: classLabel.frame.size.width, height: 30))
-		classLabel.layer.cornerRadius = 15.0
-		classLabel.clipsToBounds = true
+	/// Runs when view did load all subviews (to load colors)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setCurrentProgressColor()
+    }
+
+	/// Changes progress bar color.
+	/// - Parameter color: Color to change color to.
+    func changeProgressColor(color: UIColor) {
+        progressView.layer.borderColor = color.cgColor
+        progressView.trackColor = UIColor.white
+        progressView.progressColor = color
+        progressView.layer.shadowColor = color.cgColor
+    }
+
+    /// Sets progress bar color based on the current card.
+    func setCurrentProgressColor() {
+        if let index = verticalCardSwiper.focussedCardIndex {
+            if let color = globalData.subjects[myToDoList.list[index].className]?.uiColor {
+                changeProgressColor(color: color)
+            }
+        }
+    }
+
+    /// Sets up the label that displays completion prompting.
+	func setupCompletePrompt() {
+        completePrompt.layer.cornerRadius = 25.0
+        completePrompt.layer.shadowOpacity = 0.2
+        completePrompt.layer.shadowOffset = CGSize(width: 0, height: 4)
+        completePrompt.layer.shadowRadius = 5.0
+        completePrompt.layer.shadowColor = UIColor.gray.cgColor
+        completePrompt.layer.masksToBounds = false
+        completePrompt.clipsToBounds = true
+        completePrompt.alpha = 0.0
 	}
 
     /// Runs if the view appears.
@@ -109,7 +150,9 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		}
 		self.addChild(popup)
 		popup.view.frame = self.view.frame
-		self.view.addSubview(popup.view)
+        self.view.addSubview(popup.view)
+        self.view.bringSubviewToFront(popup.view)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
 		popup.didMove(toParent: self)
 		popup.delegate = self
 		
@@ -117,16 +160,15 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 
     /// Runs if the view will appear.
 	override func viewWillAppear(_ animated: Bool) {
-		setCurrentTask()
-
+        verticalCardSwiper.reloadData()
+		verticalCardSwiper.scrollToCard(at: 0, animated: false)
+    
 		if (!globalData.includeEndFocusButton && myToDoList.list.count > 0) {
 			endFocusModeButton.isEnabled = false
-			endFocusModeButton.isHidden = true
 		} else {
 			endFocusModeButton.isEnabled = true
-			endFocusModeButton.isHidden = false
 		}
-		progressTimer.setProgress(1, animated: false)
+    progressView.progress = 1.0
 	}
     
     /// Runs when the view will disappear.
@@ -137,19 +179,12 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 	/// Stylizes buttons with curves.
 	func setupButtons() {
 		// Sets up curves
-		btnCompleteTask.layer.cornerRadius = 25.0
-		btnCompleteTask.layer.shadowColor = UIColor.blue.cgColor
-		btnCompleteTask.layer.shadowOpacity = 0.2
-		btnCompleteTask.layer.shadowOffset = CGSize(width: 0, height: 0)
-		btnCompleteTask.layer.shadowRadius = 5.0
-		btnCompleteTask.layer.masksToBounds = false
-
-		endFocusModeButton.layer.cornerRadius = 18.0
-		endFocusModeButton.layer.shadowColor = UIColor.red.cgColor
-		endFocusModeButton.layer.shadowOpacity = 0.2
-		endFocusModeButton.layer.shadowOffset = CGSize(width: 0, height: 0)
-		endFocusModeButton.layer.shadowRadius = 5.0
-		endFocusModeButton.layer.masksToBounds = false
+//        btnCompleteTask.layer.cornerRadius = 25.0
+//        btnCompleteTask.layer.shadowColor = UIColor.blue.cgColor
+//        btnCompleteTask.layer.shadowOpacity = 0.2
+//        btnCompleteTask.layer.shadowOffset = CGSize(width: 0, height: 0)
+//        btnCompleteTask.layer.shadowRadius = 5.0
+//        btnCompleteTask.layer.masksToBounds = false
 	}
 
 
@@ -172,50 +207,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 			self.tabBarController?.tabBar.frame = frame!
 		})
 	}
-
-	/// Sets the current task to the first task in the to-do list.
-	func setCurrentTask() {
-		var notFoundNextItem: Bool = true
-		if (myToDoList.list.count > 0) {
-			for itemNum in 0..<myToDoList.list.count {
-				if (notFoundNextItem) {
-					if !(myToDoList.list[itemNum].isCompleted()) {
-						currentTaskNum = itemNum
-						notFoundNextItem = false
-					}
-				}
-			}
-			if !notFoundNextItem {
-				currentTask = myToDoList.list[currentTaskNum]
-                lblCurrentTask.text = currentTask?.title
-                lblCurrentTaskDesc.text = currentTask?.description
-                classLabel.text = currentTask?.className
-                classLabel.backgroundColor = globalData.subjects[currentTask?.className ?? ""]?.uiColor
-				lblCurrentTaskDesc.isHidden = false
-				classLabel.isHidden = false
-				btnCompleteTask.isEnabled = true
-				btnCompleteTask.isHidden = false
-
-			} else {
-				lblCurrentTask.text = "No Items Left To Do"
-				lblCurrentTaskDesc.isHidden = true
-				classLabel.isHidden = true
-				btnCompleteTask.isEnabled = false
-				btnCompleteTask.isHidden = true
-				endFocusModeButton.isEnabled = true
-				endFocusModeButton.isHidden = false
-			}
-		} else {
-			lblCurrentTask.text = "No Items In Todo List"
-			lblCurrentTaskDesc.isHidden = true
-			classLabel.isHidden = true
-			btnCompleteTask.isEnabled = false
-			btnCompleteTask.isHidden = true
-			endFocusModeButton.isEnabled = true
-			endFocusModeButton.isHidden = false
-		}
-	}
-
+  
 	/**
      Runs when the timer has updated its own values
      - Parameters:
@@ -223,9 +215,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     */
 	func valsUpdated(_ timerReadout: String) {
 		timerDisplay.text = timerReadout
-		var timeLeft = myTimer.cdt
-        
-		progressTimer.setProgress(Float(timeLeft / myTimer.totalSecs), animated: false)
+		let timeLeft = myTimer.cdt
 		print("valsUpdated called ")
 		print(timeLeft)
 		print("totalSecs: ", myTimer.totalSecs)
@@ -236,36 +226,16 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		print("timerEnded called")
         
 		endFocusModeButton.isEnabled = true
-		endFocusModeButton.isHidden = false
 
 	}
 
-	/// Pressing on complete task that queues the next task.
-	@IBAction func completeTaskPress(_ sender: UIButton) {
-		if let confettiView = self.confettiView {
-			confettiView.start()
-		}
-		myToDoList.list[currentTaskNum].completeTask(mark: .markedCompletedInFocusMode)
-        myToDoList.completedList.append(myToDoList.list.remove(at: currentTaskNum))
-		setCurrentTask()
-		let seconds = 1.0
-		let oldPoints = myToDoList.points
-		myToDoList.points += 10
-		self.incrementPoints(oldPoints: oldPoints)
-		DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-			if let confettiView = self.confettiView {
-				confettiView.stop()
-			}
-		}
-	}
+    /// Ending focus mode brings user back to the list view.
+    @IBAction func endFocusModeHit(_ sender: UIBarButtonItem) {
+        showTabBar()
+        self.tabBarController?.selectedIndex = 0
+    }
 
-	/// Ending focus mode brings user back to the list view.
-	@IBAction func endFocusModeHit(_ sender: UIButton) {
-		showTabBar()
-		self.tabBarController?.selectedIndex = 0
-	}
-  
-  /// runs when the user exits the pop up using the cancel button
+    /// runs when the user exits the pop up
 	func didChooseCancel() {
 		print("Called Did Choose Cancel In Focus Mode")
 		showTabBar()
@@ -278,11 +248,14 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
       - duration: the amount of time that the timer is to be set to
   */
 	func didChooseTime(duration: TimeInterval) {
+        // Also shows the navigation bar for simplicity.
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
 		print("Chose A Time")
 		myTimer.cdt = duration
 		myTimer.totalSecs = myTimer.cdt
 		myTimer.runTimer()
-        
+        progressView.animateProgress(to: 0.0, duration: myTimer.totalSecs)
 	}
 
 	/// Animates a point incrementation with the pointCounter
@@ -301,6 +274,136 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 
 	/// Updates the point counter.
 	func updatePointsCounter(_ points: Int) {
-		pointsCounter.text = "\(points) ⭐"
+		pointsCounterBar.title = "\(points) ⭐"
 	}
+}
+
+extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDatasource {
+	/// Number of cards to show in list.
+    func numberOfCards(verticalCardSwiperView: VerticalCardSwiperView) -> Int {
+        return myToDoList.uncompletedList.count
+    }
+
+	/// Returns the CardCell of the current item.
+    func cardForItemAt(verticalCardSwiperView: VerticalCardSwiperView, cardForItemAt index: Int) -> CardCell {
+        if let cardCell = verticalCardSwiperView.dequeueReusableCell(withReuseIdentifier: "FocusCell", for: index) as? FocusCardCell {
+            cardCell.setupCard(fromItem: myToDoList.list[index])
+            return cardCell
+        }
+        return CardCell()
+    }
+
+	/// Called when the VerticalCardSwiper has been scrolled.
+    func didScroll(verticalCardSwiperView: VerticalCardSwiperView) {
+        if let index = verticalCardSwiper.focussedCardIndex {
+            if let color = globalData.subjects[myToDoList.list[index].className]?.uiColor {
+                DispatchQueue.main.async {
+                    UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
+                        self.changeProgressColor(color: color)
+                    }, completion: { (finished) in
+                        
+                    })
+                }
+            }
+        }
+    }
+
+	/// Called when a card has been dragged.
+    func didDragCard(card: CardCell, index: Int, swipeDirection: SwipeDirection) {
+        switch swipeDirection {
+        case .Right:
+            dragCardRight()
+        case .None:
+            dragCardNeutral()
+        case .Left:
+            dragCardLeft()
+        default:
+            return
+        }
+    }
+
+	/// Called when swiping is cancelled.
+    func didCancelSwipe(card: CardCell, index: Int) {
+        dragCardNeutral()
+    }
+
+	/// Called when card is dragged to the right.
+    func dragCardRight() {
+        self.completePrompt.isHidden = false
+        completePrompt.text = "Complete"
+        completePrompt.backgroundColor = UIColor.blue
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
+                self.completePrompt.alpha = 0.8
+            }, completion: { (finished) in
+                
+            })
+        }
+    }
+
+	/// Called when card is dragged to the left.
+    func dragCardLeft() {
+        self.completePrompt.isHidden = false
+        completePrompt.text = "Do Later"
+        completePrompt.backgroundColor = UIColor.lightGray
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
+                self.completePrompt.alpha = 0.8
+            }, completion: { (finished) in
+                
+            })
+        }
+    }
+
+	/// Called when card is at a neutral position.
+    func dragCardNeutral() {
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
+                self.completePrompt.alpha = 0.0
+            }, completion: { (finished) in
+                self.completePrompt.isHidden = true
+            })
+        }
+    }
+
+	/// Called when card will be swiped away.
+    func willSwipeCardAway(card: CardCell, index: Int, swipeDirection: SwipeDirection) {
+        if index < myToDoList.list.count {
+			switch swipeDirection {
+			case .Left:
+				let task = myToDoList.list[index]
+				myToDoList.list.append(task)
+				verticalCardSwiper.insertCards(at: [myToDoList.list.count - 1])
+				myToDoList.list.remove(at: index)
+			default:
+				completeTask(index: index)
+			}
+        }
+    }
+
+	/// Called when a card has been swiped away.
+    func didSwipeCardAway(card: CardCell, index: Int, swipeDirection: SwipeDirection) {
+        dragCardNeutral()
+        setCurrentProgressColor()
+    }
+
+	/// Called when a task is completed
+	/// - Parameter index: Index of completed card.
+    func completeTask(index: Int) {
+        myToDoList.list[index].completeTask(mark: .markedCompletedInListView)
+        myToDoList.list.remove(at: index)
+        myToDoList.storeList()
+        if let confettiView = self.confettiView {
+            confettiView.start()
+        }
+        let seconds = 1.0
+        let oldPoints = myToDoList.points
+        myToDoList.points += 10
+        self.incrementPoints(oldPoints: oldPoints)
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            if let confettiView = self.confettiView {
+                confettiView.stop()
+            }
+        }
+    }
 }
