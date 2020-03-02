@@ -46,7 +46,10 @@ class UserProfileViewController: UIViewController
             minutes += item.timeSpentInFocusMode
         }
         
-        let hours: Double = (minutes / 6).rounded() / 10
+        var hours: Double = (minutes / 6).rounded() / 10
+        if hours > 10 {
+            hours = hours.rounded()
+        }
         return hours
     }
 
@@ -97,6 +100,8 @@ class UserProfileViewController: UIViewController
         ///TODO: Calculate Stats Dynamically
         
         focusLabel.text = String(totalFocusHours)
+        
+        completedLabel.text = String(myToDoList.completedList.count)
     }
   
     /// Sets up UI appearance of cards.
