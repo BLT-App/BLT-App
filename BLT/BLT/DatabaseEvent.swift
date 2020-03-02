@@ -10,12 +10,12 @@ import Foundation
 
 ///Enum of different events that can occur on a [ToDoItem](x-source-tag://ToDoItem)
 enum GeneralEventType: Int, Codable {
+    ///Occurs when an item is created
+    case created
     ///Occurs when a user changes the due date of an item
     case dueDateChanged
     ///Occurs when a user marks an item as complete from the Focus Mode page
     case markedCompletedInFocusMode
-    ///Occurs when an item is created
-    case created
     ///Occurs when a user marks an item as complete from the List View page
     case markedCompletedInListView
     ///Occurs when a user unmarks an item as complete
