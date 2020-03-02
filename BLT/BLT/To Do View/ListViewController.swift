@@ -115,7 +115,7 @@ class ListViewController: UIViewController {
                 print("No Actions Taken This Session")
                 return
             } else if lastAction == .completedItem {
-                if let itemToRestore: ToDoItem = myToDoList.completedList.popLast() as? ToDoItem {
+                if let itemToRestore: ToDoItem = myToDoList.completedList.popLast() {
                     itemToRestore.undoCompleteTask()
                     myToDoList.list.append(itemToRestore)
                     insertNewTask()
@@ -124,7 +124,7 @@ class ListViewController: UIViewController {
                     print("Error Occurred")
                 }
             } else if lastAction == .deletedItem {
-                if let itemToRestore: ToDoItem = myToDoList.deletedList.popLast() as? ToDoItem {
+                if let itemToRestore: ToDoItem = myToDoList.deletedList.popLast() {
                     itemToRestore.undoDeleteTask()
                     myToDoList.list.append(itemToRestore)
                     insertNewTask()
