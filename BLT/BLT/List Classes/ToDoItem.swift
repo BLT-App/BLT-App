@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Datez
 
 ///A to-do item is an item representing a to-do in the list.
 class ToDoItem: Codable, Hashable {
@@ -33,7 +34,10 @@ class ToDoItem: Codable, Hashable {
 	let hashVal: String
 
 	/// Time Spent In Focus Mode
-	var timeSpentInFocusMode: DateInterval = DateInterval(start: Date(), end: Date())
+	var timeSpentInFocusMode: TimeInterval = Date() - Date()
+    
+    /// Time Started Studying In Focus Mode
+    private var timeStartedStudying: Date? = nil
 
 	/// Returns the days between now and the due date.
 	var dueCounter: Int {
@@ -128,11 +132,24 @@ class ToDoItem: Codable, Hashable {
 	}
 
 	/// Marks an item as completed
-	/// - Returns: true
 	func markCompleted() -> Bool {
 		self.completed = true
 		return true
 	}
+    
+    /// Performs Necessary Setup For Studying In Focus Mode
+    func startedStudyingInFocusMode() {
+        timeStartedStudying = Date()
+        let event: DatabaseEvent = DatabaseEvent(item: self, event: .startedStudyingInFocusMode, currentDate: Date())
+        globalTaskDatabase.currentDatabaseLog.log.append(event)
+    }
+    
+    /// Performs Necessary Actions Following End of Studying In Focus Mode
+    func stoppedStudyingInFocusMode() {
+        timeSpentInFocusMode += (Date() - (timeStartedStudying ?? Date()))
+        let event: DatabaseEvent = DatabaseEvent(item: self, event: .stoppedStudyingInFocusMode, currentDate: Date())
+        globalTaskDatabase.currentDatabaseLog.log.append(event)
+    }
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(self.dueDate)
