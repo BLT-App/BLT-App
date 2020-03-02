@@ -42,6 +42,8 @@
 		D745011F23DEB1DA00508639 /* SettingsUserProfileSubmenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D745011D23DEB1DA00508639 /* SettingsUserProfileSubmenuTableViewController.swift */; };
 		D75B7472238E551000FBE468 /* SubjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75B7471238E551000FBE468 /* SubjectCell.xib */; };
 		D75B7474238E554A00FBE468 /* SubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B7473238E554A00FBE468 /* SubjectCell.swift */; };
+		D776EF8B240ABDF0007E842F /* FocusCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = D776EF8A240ABDF0007E842F /* FocusCard.xib */; };
+		D776EF8D240ABE2A007E842F /* FocusCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776EF8C240ABE2A007E842F /* FocusCardCell.swift */; };
 		D7F0D7302378A06E0044E694 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D7F0D72F2378A06E0044E694 /* Podfile */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +108,8 @@
 		D745011D23DEB1DA00508639 /* SettingsUserProfileSubmenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsUserProfileSubmenuTableViewController.swift; sourceTree = "<group>"; };
 		D75B7471238E551000FBE468 /* SubjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectCell.xib; sourceTree = "<group>"; };
 		D75B7473238E554A00FBE468 /* SubjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCell.swift; sourceTree = "<group>"; };
+		D776EF8A240ABDF0007E842F /* FocusCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FocusCard.xib; sourceTree = "<group>"; };
+		D776EF8C240ABE2A007E842F /* FocusCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusCardCell.swift; sourceTree = "<group>"; };
 		D7F0D72F2378A06E0044E694 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
@@ -162,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				3FE3EA66237718D3002B5303 /* Main.storyboard */,
+				D776EF8A240ABDF0007E842F /* FocusCard.xib */,
+				D776EF8C240ABE2A007E842F /* FocusCardCell.swift */,
 				D7093E8F23EC661200513448 /* LineChart.swift */,
 				3F2D6FF22399FE6100B8A989 /* WaterView.swift */,
 				3F2D6FF4239A004900B8A989 /* RenderTimer.swift */,
@@ -238,7 +244,6 @@
 		D745012223DEB26A00508639 /* Focus Mode View */ = {
 			isa = PBXGroup;
 			children = (
-				3F19AE3F23EC620100DECA17 /* FMPopUpViewController.swift */,
 				3FE3EA902378DA82002B5303 /* FocusViewController.swift */,
 				3F73230723860D9300155B70 /* FocusTimer.swift */,
 				3F19AE3F23EC620100DECA17 /* FMPopUpViewController.swift */,
@@ -377,6 +382,7 @@
 				3FE3EA6A237718DB002B5303 /* Assets.xcassets in Resources */,
 				D7F0D7302378A06E0044E694 /* Podfile in Resources */,
 				D75B7472238E551000FBE468 /* SubjectCell.xib in Resources */,
+				D776EF8B240ABDF0007E842F /* FocusCard.xib in Resources */,
 				3FE3EA68237718D3002B5303 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +487,7 @@
 				D721FD5D2378ACA300ABD1EF /* Milestone.swift in Sources */,
 				D75B7474238E554A00FBE468 /* SubjectCell.swift in Sources */,
 				3FBFEE5423E26CD20003394F /* TaskDatabase.swift in Sources */,
+				D776EF8D240ABE2A007E842F /* FocusCardCell.swift in Sources */,
 				D721FD642378ACA600ABD1EF /* ListViewController.swift in Sources */,
 				3FE3EA912378DA82002B5303 /* FocusViewController.swift in Sources */,
 				3FE3EA63237718D3002B5303 /* AppDelegate.swift in Sources */,

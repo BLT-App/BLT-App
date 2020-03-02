@@ -97,7 +97,7 @@ class ListViewController: UIViewController {
 	/// Updates screen.
 	func update() {
 		if globalData.wantsListByDate {
-			myToDoList.list = myToDoList.list.sorted()
+			myToDoList.sortList()
 			tableView.reorder.delegate = nil
 		} else {
 			tableView.reorder.delegate = self
@@ -245,7 +245,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 	/// Completed task function.
 	func contextualCompletedAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
 		let action = UIContextualAction(style: .normal, title: "Complete") { (_: UIContextualAction, _: UIView, completionHandler: (Bool) -> Void) in
-      myToDoList.list[indexPath.row].completeTask(mark: .markedCompletedInFocusMode)
+            myToDoList.list[indexPath.row].completeTask(mark: .markedCompletedInListView)
 			myToDoList.list.remove(at: indexPath.row)
 			myToDoList.storeList()
 			if let confettiView = self.confettiView {

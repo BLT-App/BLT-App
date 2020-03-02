@@ -1,6 +1,54 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/jiahuachen/Documents/CO650/BLT-App/BLT/BLT/FocusCardCell.swift",
+      "line": 13,
+      "symbol": "FocusCardCell",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jiahuachen/Documents/CO650/BLT-App/BLT/BLT/FocusCardCell.swift",
+      "line": 15,
+      "symbol": "FocusCardCell.classLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jiahuachen/Documents/CO650/BLT-App/BLT/BLT/FocusCardCell.swift",
+      "line": 16,
+      "symbol": "FocusCardCell.assignmentLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jiahuachen/Documents/CO650/BLT-App/BLT/BLT/FocusCardCell.swift",
+      "line": 17,
+      "symbol": "FocusCardCell.descriptionLabel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jiahuachen/Documents/CO650/BLT-App/BLT/BLT/FocusCardCell.swift",
+      "line": 19,
+      "symbol": "FocusCardCell.classBackground",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jiahuachen/Documents/CO650/BLT-App/BLT/BLT/FocusCardCell.swift",
+      "line": 21,
+      "symbol": "FocusCardCell.layoutSubviews()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jiahuachen/Documents/CO650/BLT-App/BLT/BLT/FocusCardCell.swift",
+      "line": 46,
+      "symbol": "FocusCardCell.setupCard(fromItem:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Users/jiahuachen/Documents/CO650/BLT-App/BLT"
 }

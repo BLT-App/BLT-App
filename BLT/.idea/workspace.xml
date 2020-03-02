@@ -2,25 +2,105 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc5a0260-dfed-49ef-9632-13123a8be8e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLT/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BLT/AppDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLT/FMPopUpViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BLT/FMPopUpViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLT/Focus Mode View/FocusTimer.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BLT/Focus Mode View/FocusTimer.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BLT.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/BLT.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BLT/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/BLT/Base.lproj/Main.storyboard" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BLT/Focus Mode View/FocusViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BLT/Focus Mode View/FocusViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLT/ItemViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BLT/ItemViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLT/List Classes/ToDoItem.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BLT/List Classes/ToDoItem.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLT/NewItemViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BLT/NewItemViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLT/Notifications.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BLT/Notifications.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLT/RenderTimer.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BLT/RenderTimer.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLT/Settings Views/SettingsFocusPrefSubmenuTableViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BLT/Settings Views/SettingsFocusPrefSubmenuTableViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLT/Settings Views/SettingsListPrefSubmenuTableViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BLT/Settings Views/SettingsListPrefSubmenuTableViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLT/Settings Views/SettingsNotifPrefSubmenuTableViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BLT/Settings Views/SettingsNotifPrefSubmenuTableViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLT/Settings Views/SettingsTableViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BLT/Settings Views/SettingsTableViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLT/Settings Views/SettingsUserProfileSubmenuTableViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BLT/Settings Views/SettingsUserProfileSubmenuTableViewController.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BLT/To Do View/ListViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BLT/To Do View/ListViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLT/To Do View/ToDoTableViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BLT/To Do View/ToDoTableViewCell.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLT/UserData.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BLT/UserData.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BLT/UserProfileViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/BLT/UserProfileViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/BlurView.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/BlurView.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/CustomIntensityVisualEffectView.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/CustomIntensityVisualEffectView.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/DatabaseEvent.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/DatabaseEvent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/FMPopUpViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/FMPopUpViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/FocusTimer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/FocusTimer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/FocusViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/FocusViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/InsetLabel.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/InsetLabel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/ItemViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/ItemViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/ListViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/ListViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/MilestoneItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/MilestoneItem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/NewItemViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/NewItemViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/Notifications.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/Notifications.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/RenderTimer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/RenderTimer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/SettingsFocusPrefSubmenuTableViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/SettingsFocusPrefSubmenuTableViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/SettingsListPrefSubmenuTableViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/SettingsListPrefSubmenuTableViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/SettingsNotifPrefSubmenuTableViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/SettingsNotifPrefSubmenuTableViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/SettingsTableViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/SettingsTableViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/SettingsUserProfileSubmenuTableViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/SettingsUserProfileSubmenuTableViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/SubjectCell.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/SubjectCell.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/TaskDatabase.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/TaskDatabase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/TaskDatabase/DatabaseError.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/TaskDatabase/DatabaseError.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/TaskDatabase/DatabaseIndex.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/TaskDatabase/DatabaseIndex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/TaskDatabase/DatabaseLog.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/TaskDatabase/DatabaseLog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/ToDoItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/ToDoItem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/ToDoList.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/ToDoList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/ToDoTableViewCell.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/ToDoTableViewCell.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/UserData.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/UserData.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/UserProfileViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/UserProfileViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Classes/WaterView.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Classes/WaterView.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Enums.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Enums.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Enums/GeneralEventType.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Enums/GeneralEventType.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Functions.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Functions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Global Variables.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Global Variables.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Protocols.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Protocols.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Protocols/FMPopUpViewControllerDelegate.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Protocols/FMPopUpViewControllerDelegate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Protocols/FocusTimerDelegate.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Protocols/FocusTimerDelegate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Protocols/RenderTimerDelegate.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Protocols/RenderTimerDelegate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Structs.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Structs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Structs/Color.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Structs/Color.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/Structs/Milestone.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/Structs/Milestone.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/badge.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/badge.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/BlurView.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/BlurView.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/CustomIntensityVisualEffectView.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/CustomIntensityVisualEffectView.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/DatabaseEvent.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/DatabaseEvent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/FMPopUpViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/FMPopUpViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/FocusTimer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/FocusTimer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/FocusViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/FocusViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/InsetLabel.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/InsetLabel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/ItemViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/ItemViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/ListViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/ListViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/MilestoneItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/MilestoneItem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/NewItemViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/NewItemViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/Notifications.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/Notifications.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/RenderTimer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/RenderTimer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/SettingsFocusPrefSubmenuTableViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/SettingsFocusPrefSubmenuTableViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/SettingsListPrefSubmenuTableViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/SettingsListPrefSubmenuTableViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/SettingsNotifPrefSubmenuTableViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/SettingsNotifPrefSubmenuTableViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/SettingsTableViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/SettingsTableViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/SettingsUserProfileSubmenuTableViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/SettingsUserProfileSubmenuTableViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/SubjectCell.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/SubjectCell.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/TaskDatabase.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/TaskDatabase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/TaskDatabase/DatabaseError.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/TaskDatabase/DatabaseError.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/TaskDatabase/DatabaseIndex.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/TaskDatabase/DatabaseIndex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/TaskDatabase/DatabaseLog.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/TaskDatabase/DatabaseLog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/ToDoItem.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/ToDoItem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/ToDoList.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/ToDoList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/ToDoTableViewCell.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/ToDoTableViewCell.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/UserData.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/UserData.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/UserProfileViewController.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/UserProfileViewController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/WaterView.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Classes/WaterView.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Enums.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Enums.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Enums/GeneralEventType.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Enums/GeneralEventType.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Functions.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Functions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Global Variables.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Global Variables.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Protocols.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Protocols.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Protocols/FMPopUpViewControllerDelegate.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Protocols/FMPopUpViewControllerDelegate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Protocols/FocusTimerDelegate.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Protocols/FocusTimerDelegate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Protocols/RenderTimerDelegate.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Protocols/RenderTimerDelegate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Structs.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Structs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Structs/Color.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Structs/Color.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Structs/Milestone.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/Structs/Milestone.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/badge.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/badge.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/search.json" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/search.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/undocumented.json" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/Documents/undocumented.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/docSet.dsidx" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.docset/Contents/Resources/docSet.dsidx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/docsets/BLT.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/docsets/BLT.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/search.json" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/search.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docs/undocumented.json" beforeDir="false" afterPath="$PROJECT_DIR$/../docs/undocumented.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +159,7 @@
       <workItem from="1582158749694" duration="7000" />
       <workItem from="1582158761068" duration="235000" />
       <workItem from="1582505078772" duration="1323000" />
+      <workItem from="1583129325613" duration="432000" />
     </task>
     <servers />
   </component>
@@ -94,9 +175,10 @@
       <screen x="31" y="23" width="1649" height="1027" />
     </state>
     <state x="320" y="200" key="#com.intellij.execution.impl.EditConfigurationsDialog/31.23.1649.1027@31.23.1649.1027" timestamp="1582127108878" />
-    <state x="528" y="371" key="com.intellij.ide.util.TipDialog" timestamp="1582505081071">
-      <screen x="31" y="23" width="1649" height="1027" />
+    <state x="928" y="589" key="com.intellij.ide.util.TipDialog" timestamp="1583129326379">
+      <screen x="30" y="23" width="2978" height="1669" />
     </state>
+    <state x="928" y="589" key="com.intellij.ide.util.TipDialog/30.23.2978.1669/3008.266.1680.1027@30.23.2978.1669" timestamp="1583129326379" />
     <state x="528" y="371" key="com.intellij.ide.util.TipDialog/31.23.1649.1027@31.23.1649.1027" timestamp="1582505081071" />
     <state x="928" y="589" key="com.intellij.ide.util.TipDialog/31.23.2977.1669/3008.266.1680.1027@31.23.2977.1669" timestamp="1582158754048" />
     <state x="520" y="250" width="670" height="676" key="search.everywhere.popup" timestamp="1582506345998">
