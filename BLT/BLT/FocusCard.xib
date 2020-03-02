@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.94999999999999996" contentMode="center" reuseIdentifier="FocusCell" id="hxT-09-Pbh" customClass="FocusCardCell" customModule="BLT" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="490"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="490"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yFY-wd-9gQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supreme Court" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olp-2o-11M">
+                                <rect key="frame" x="20" y="18" width="335" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Olp-2o-11M" firstAttribute="centerY" secondItem="yFY-wd-9gQ" secondAttribute="centerY" id="Hhi-oo-XVF"/>
+                            <constraint firstAttribute="height" constant="60" id="hIt-ye-Yf9"/>
+                            <constraint firstAttribute="trailing" secondItem="Olp-2o-11M" secondAttribute="trailing" constant="20" id="n8t-Eb-uWR"/>
+                            <constraint firstItem="Olp-2o-11M" firstAttribute="leading" secondItem="yFY-wd-9gQ" secondAttribute="leading" constant="20" id="z6A-wE-1cA"/>
+                        </constraints>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VR5-bN-MoG">
+                        <rect key="frame" x="20" y="80" width="335" height="104"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brief Rucho" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ed-Bx-GqC">
+                                <rect key="frame" x="0.0" y="0.0" width="335" height="43"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read Rucho v United States and write brief on case. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dr3-ej-GaV">
+                                <rect key="frame" x="0.0" y="63" width="335" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="VR5-bN-MoG" firstAttribute="leading" secondItem="hxT-09-Pbh" secondAttribute="leading" constant="20" id="JCZ-w1-d4Y"/>
+                <constraint firstAttribute="trailing" secondItem="VR5-bN-MoG" secondAttribute="trailing" constant="20" id="Vnr-FL-hLh"/>
+                <constraint firstAttribute="trailing" secondItem="yFY-wd-9gQ" secondAttribute="trailing" id="avq-gq-QRP"/>
+                <constraint firstItem="yFY-wd-9gQ" firstAttribute="top" secondItem="hxT-09-Pbh" secondAttribute="top" id="fDG-MQ-IEb"/>
+                <constraint firstItem="yFY-wd-9gQ" firstAttribute="leading" secondItem="hxT-09-Pbh" secondAttribute="leading" id="rGO-ki-hlW"/>
+                <constraint firstItem="VR5-bN-MoG" firstAttribute="top" secondItem="yFY-wd-9gQ" secondAttribute="bottom" constant="20" id="z9n-I0-sLw"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="XFx-iw-wpv"/>
+            <size key="customSize" width="375" height="490"/>
+            <connections>
+                <outlet property="assignmentLabel" destination="3ed-Bx-GqC" id="qxa-NG-12R"/>
+                <outlet property="classBackground" destination="yFY-wd-9gQ" id="xmp-Xb-TDq"/>
+                <outlet property="classLabel" destination="Olp-2o-11M" id="CdE-FC-o4X"/>
+                <outlet property="descriptionLabel" destination="dr3-ej-GaV" id="o2c-kX-pE0"/>
+            </connections>
+            <point key="canvasLocation" x="148" y="-278.86056971514245"/>
+        </collectionViewCell>
+    </objects>
+</document>
