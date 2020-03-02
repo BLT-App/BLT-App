@@ -45,6 +45,19 @@ class ListViewController: UIViewController {
 
 	/// The water/waves view.
 	var waves: WaterView = WaterView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    
+    ///Enum Specifying Last Action Done For Shake-To-Undo To Work
+    enum LastActions {
+        ///No Action Has Been Taken This Session
+        case none
+        ///An Item Was Deleted Last
+        case deletedItem
+        ///And Item Was Completed Last
+        case completedItem
+    }
+    
+    ///Holds The Last Action Taken By The User
+    var lastAction: LastActions = .none
 
 	/// View did load function.
 	override func viewDidLoad() {
@@ -62,10 +75,10 @@ class ListViewController: UIViewController {
 		roundContainerView(cornerRadius: 40, view: tableContainerView, shadowView: shadowView)
 		addShadow(view: shadowView, color: UIColor.gray.cgColor, opacity: 0.2, radius: 10, offset: CGSize(width: 0, height: 5))
 		addShadow(view: addButton, color: UIColor.blue.cgColor, opacity: 0.1, radius: 5, offset: .zero)
-
+        
 		// Loads list from filesystem
 		myToDoList.retrieveList()
-
+        
 		// This creates an example list if there is nothing on the list. Debug only.
 		if myToDoList.list.count == 0 {
 			myToDoList.createExampleList()
@@ -79,6 +92,49 @@ class ListViewController: UIViewController {
 		print("Currently \(globalTaskDatabase.currentDatabaseLog.numOfEvents) in log")
 	}
 
+    /**
+     allows the viewcontroller to respond to touch events
+     - Returns: true
+    */
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    /**
+     runs whenever a motion occurs, brings back a recently
+     - Parameters:
+     - motion: the type of motion that occurs
+     - with event: the type of event
+    */
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if(motion  == .motionShake){
+            print("shook")
+            
+            if lastAction == .none {
+                ///TODO: Create A Popup Message About Shake-To-Undo
+                print("No Actions Taken This Session")
+                return
+            } else if lastAction == .completedItem {
+                if let itemToRestore: ToDoItem = myToDoList.completedList.popLast() as? ToDoItem {
+                    itemToRestore.undoCompleteTask()
+                    myToDoList.list.append(itemToRestore)
+                    insertNewTask()
+                    update()
+                } else {
+                    print("Error Occurred")
+                }
+            } else if lastAction == .deletedItem {
+                if let itemToRestore: ToDoItem = myToDoList.deletedList.popLast() as? ToDoItem {
+                    itemToRestore.undoDeleteTask()
+                    myToDoList.list.append(itemToRestore)
+                    insertNewTask()
+                    update()
+                } else {
+                    print("Error Occurred")
+                }
+            }
+        }
+    }
 	/// View did appear function. (If a new task is added then put the task into the tableView. )
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
@@ -209,7 +265,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 		}
 
 		cell.setItem(item: toDoItem)
-
+        
 		return cell
 	}
 
@@ -265,6 +321,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 				}
 			}
 			completionHandler(true)
+            self.lastAction = .completedItem
 		}
 		action.backgroundColor = .blue
 		return action
@@ -291,14 +348,16 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 	 */
 	func handleDeleteItem(alertAction: UIAlertAction!) {
 		if let indexPath = deleteListIndexPath {
-			myToDoList.list.remove(at: indexPath.row)
+            let deletedItem = myToDoList.list.remove(at: indexPath.row)
+            deletedItem.markDeleted()
+            myToDoList.deletedList.append(deletedItem)
 			myToDoList.storeList()
 			tableView.beginUpdates()
 			tableView.deleteRows(at: [indexPath], with: .left)
 			tableView.endUpdates()
-
 			deleteListIndexPath = nil
 			updateText()
+            lastAction = .deletedItem
 		}
 	}
 
@@ -314,13 +373,27 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 		let newValue = myToDoList.points
 		let diff = newValue - oldPoints
 		let deltaT: Double = 1.0 / Double(diff)
-		for inc in 1...diff {
-			let seconds = Double(inc) * deltaT
-			let currentPoints = oldPoints + inc
-			DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-				self.updatePointsCounter(currentPoints)
-			}
-		}
+        
+        if(diff < 0){
+            let newDiff = abs(diff)
+            for inc in 1...newDiff {
+                let seconds = Double(inc) * deltaT
+                let currentPoints = oldPoints - inc
+                DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                    self.updatePointsCounter(currentPoints)
+                }
+            }
+        }
+        else{
+            for inc in 1...diff {
+                let seconds = Double(inc) * deltaT
+                let currentPoints = oldPoints + inc
+                DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                    self.updatePointsCounter(currentPoints)
+                }
+            }
+        }
+		
 	}
 
 	/// Updates the point counter.

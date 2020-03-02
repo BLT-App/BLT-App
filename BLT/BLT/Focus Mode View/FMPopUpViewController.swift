@@ -26,7 +26,7 @@ class FMPopUpViewController: UIViewController {
     /// Delegate for the FMPopUpView controller.
 	weak var delegate: FMPopUpViewControllerDelegate?
 
-    /// Formatter string of time.
+  /// Formatted string of time.
 	var formattedTime: String {
 		get {
 			let formatter = DateFormatter()

@@ -72,7 +72,7 @@ class ItemViewController: UIViewController {
 		if let classTxt = classNameField.text, let titleTxt = assignmentField.text, let descTxt = descriptionField.text, let thisIndex = targetIndex {
 			// Debug for clearing/resetting entire list.
 			if (classTxt != "" && titleTxt != "") {
-				myToDoList.list[thisIndex] = ToDoItem(className: classTxt, title: titleTxt, description: descTxt, dueDate: datePicker.date, completed: myToDoList.list[thisIndex].isCompleted())
+				myToDoList.list[thisIndex] = ToDoItem(className: classTxt, title: titleTxt, description: descTxt, dueDate: datePicker.date, completed: myToDoList.list[thisIndex].isCompleted(), deleted: false)
 				myToDoList.storeList()
 				globalData.updateCourses(fromList: myToDoList)
 

@@ -15,8 +15,8 @@ import RetroProgress
 class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewControllerDelegate {
 
 	/// The ToDoItem of the current task.
-	var currentTask: ToDoItem = ToDoItem(className: "", title: "", description: "", dueDate: Date(), completed: true)
-
+	var currentTask: ToDoItem = ToDoItem(className: "", title: "", description: "", dueDate: Date(), completed: true, deleted: false)
+  
 	/// Current index of the task displayed
 	var currentTaskNum: Int = 0
 
@@ -166,7 +166,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
         self.navigationController?.setNavigationBarHidden(true, animated: false)
 		popup.didMove(toParent: self)
 		popup.delegate = self
-		//performSegue(withIdentifier: "Popup", sender: nil)
+		
 	}
 
     /// Runs if the view will appear.
@@ -238,7 +238,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 	/// Runs when the timer has hit zero
 	func timerEnded() {
 		print("timerEnded called")
-
+        
 		endFocusModeButton.isEnabled = true
 
 	}
@@ -256,11 +256,11 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		self.tabBarController?.selectedIndex = 0
 	}
 
-    /**
-     updates values for timer and starts the timer in focus mode
-     - Parameters:
-        - duration: the amount of time that the timer is to be set to
-    */
+  /**
+   updates values for timer and starts the timer in focus mode
+   - Parameters:
+      - duration: the amount of time that the timer is to be set to
+  */
 	func didChooseTime(duration: TimeInterval) {
         // Also shows the navigation bar for simplicity.
         self.navigationController?.setNavigationBarHidden(false, animated: true)

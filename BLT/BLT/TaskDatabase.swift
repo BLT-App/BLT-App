@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Datez
 
 ///Global `TaskDatabase` Variable
 var globalTaskDatabase: TaskDatabase = TaskDatabase()
@@ -158,7 +159,6 @@ class TaskDatabase {
     
     /**
      Loads The `DatabaseIndex` Object For The User
-     
      - Returns: The `DatabaseIndex` from memory or creates a new `DatabaseIndex` using default constructor
      */
     func loadDatabaseIndex() -> DatabaseIndex {
@@ -341,7 +341,7 @@ class TaskDatabase {
      - Returns: The number of events matching the query from the present day back to the number of days specified
      */
     func getNumEventsOfTypeInLast(numDays: Int, eventType: GeneralEventType) -> Int {
-        let startDate = Date().addingTimeInterval(TimeInterval(-86400 * numDays))
+        let startDate = Date(timeIntervalSinceNow: numDays.days.timeInterval)
         let endDate = Date()
         return getNumEventsOfTypeFrom(startDate: startDate, endDate: endDate, eventType: eventType)
     }
