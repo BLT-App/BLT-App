@@ -139,18 +139,18 @@ class TaskDatabase {
     /// Intializes A New TaskDatabase
     init() {
         print("Getting Database Index")
-        let propertyListDecoder = PropertyListDecoder()
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archiveURL = documentsDirectory.appendingPathComponent("databaseIndex").appendingPathExtension("plist")
-        
-        if let retrievedNoteData = try? Data(contentsOf: archiveURL), let decodedDatabaseIndex = try? propertyListDecoder.decode(DatabaseIndex.self, from: retrievedNoteData) {
-            print("Loaded Database Index")
-            self.myDatabaseIndex = decodedDatabaseIndex
-        } else {
+        let archiveURL = documentsDirectory.appendingPathComponent("databaseIndex").appendingPathExtension("json")
+        do {
+            let jsonData = try Data(contentsOf: archiveURL)
+            let decoder = JSONDecoder()
+            myDatabaseIndex = try decoder.decode(DatabaseIndex.self, from: jsonData)
+        } catch {
             print("No Database Index Found")
             print("Creating New Database Index")
             self.myDatabaseIndex = DatabaseIndex()
         }
+        
         print("Initializing DatabaseLog")
         currentDatabaseLog = DatabaseLog(year: -1, month: -1)
         currentDatabaseLog = fetchDatabaseLog(targetDate: Date())
@@ -161,11 +161,18 @@ class TaskDatabase {
      */
     func saveDatabaseIndex() {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archiveURL = documentsDirectory.appendingPathComponent("databaseIndex").appendingPathExtension("plist")
-        let propertyListEncoder = PropertyListEncoder()
-        let encodedNote = try? propertyListEncoder.encode(self.myDatabaseIndex)
-        try? encodedNote?.write(to: archiveURL, options: .noFileProtection)
-        print("Database Index Stored")
+        let archiveURL = documentsDirectory.appendingPathComponent("databaseIndex").appendingPathExtension("json")
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        do {
+            
+            let jsonData = try encoder.encode(myDatabaseIndex)
+            try jsonData.write(to: archiveURL, options: .noFileProtection)
+            print("Database Index Stored")
+        } catch {
+            print("Could Not Store Database Index")
+        }
+        
     }
     
     
