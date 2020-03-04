@@ -150,6 +150,7 @@ class TaskDatabase {
     
     /// Intializes A New TaskDatabase
     init() {
+        TaskDatabase.createSubdirectories()
         print("Getting Database Index")
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let archiveURL = documentsDirectory.appendingPathComponent("databaseIndex").appendingPathExtension("json")
@@ -187,6 +188,17 @@ class TaskDatabase {
         
     }
     
+    static func createSubdirectories() {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let logsURL: URL = documentsDirectory.appendingPathComponent("/logs")
+        do {
+            let fileManager: FileManager = FileManager()
+            try fileManager.createDirectory(at: logsURL, withIntermediateDirectories: true, attributes: nil)
+        } catch {
+            print("Failed To Create Directory")
+        }
+        
+    }
     
     /// Get The URL of The DatabaseLog
     ///
@@ -214,7 +226,7 @@ class TaskDatabase {
         }
         
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archiveURL = documentsDirectory.appendingPathComponent("log\(yearString)\(monthString)").appendingPathExtension("json")
+        let archiveURL = documentsDirectory.appendingPathComponent("/logs/\(yearString)\(monthString)").appendingPathExtension("json")
         return archiveURL
     }
     
@@ -227,7 +239,7 @@ class TaskDatabase {
         var dateString: String = String(targetDate.description.prefix(7))
         dateString = String(dateString.prefix(4)) + String(dateString.suffix(2))
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archiveURL = documentsDirectory.appendingPathComponent("log\(dateString)").appendingPathExtension("json")
+        let archiveURL = documentsDirectory.appendingPathComponent("/logs/\(dateString)").appendingPathExtension("json")
         return archiveURL
     }
     
@@ -302,7 +314,7 @@ class TaskDatabase {
     /// - Throws: `DatabaseError.databaseDoesntExistError` if the desired `DatabaseLog` doesn't exist
     func fetchDatabaseLog(targetLogString: String) throws -> DatabaseLog {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archiveURL = documentsDirectory.appendingPathComponent("log\(targetLogString)").appendingPathExtension("json")
+        let archiveURL = documentsDirectory.appendingPathComponent("/logs/\(targetLogString)").appendingPathExtension("json")
         do {
             let jsonData = try Data(contentsOf: archiveURL)
             let decoder = JSONDecoder()
@@ -319,13 +331,13 @@ class TaskDatabase {
     /// - Parameter targetLog: The log to be saved
     func saveDatabaseLog(targetLog: DatabaseLog) {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archiveURL = documentsDirectory.appendingPathComponent("log\(targetLog.logString)").appendingPathExtension("json")
+        let archiveURL = documentsDirectory.appendingPathComponent("/logs/\(targetLog.logString)").appendingPathExtension("json")
         do {
             let encoder = JSONEncoder()
             encoder.outputFormatting = .prettyPrinted
             let jsonData = try encoder.encode(targetLog)
             try jsonData.write(to: archiveURL, options: .noFileProtection)
-            print("Saved Log: log\(targetLog.logString) with \(targetLog.log.count) elts. ")
+            print("Saved Log: \(targetLog.logString) with \(targetLog.log.count) elts. ")
         } catch {
             print("ERROR: Couldn't Save Log \(targetLog.logString)")
         }
@@ -444,7 +456,7 @@ class TaskDatabase {
         for databaseString in myDatabaseIndex.listOfDatabases {
             print("\(databaseString) is within date range. : \(databaseString >= getDatabaseLogString(date: startDate) && databaseString <= getDatabaseLogString(date: endDate))")
             if databaseString >= getDatabaseLogString(date: startDate) && databaseString <= getDatabaseLogString(date: endDate) {
-                print("Checking log\(databaseString) for \(eventType)")
+                print("Checking \(databaseString) for \(eventType)")
                 if let database = try? fetchDatabaseLog(targetLogString: databaseString) {
                     for event in database.log {
                         print("Found event \(event.eventNumber) with type \(event.eventType) and date \(event.date)")
