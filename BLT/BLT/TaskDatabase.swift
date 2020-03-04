@@ -150,23 +150,32 @@ class TaskDatabase {
     
     /// Intializes A New TaskDatabase
     init() {
+        myDatabaseIndex = TaskDatabase.loadDatabaseIndex()
+        
         TaskDatabase.createSubdirectories()
+        
+        print("Initializing DatabaseLog")
+        currentDatabaseLog = DatabaseLog(year: -1, month: -1)
+        currentDatabaseLog = fetchDatabaseLog(targetDate: Date())
+    }
+    
+    /// Loads The `DatabaseIndex`
+    ///
+    /// - Returns: The `DatabaseIndex` from local storage if possible, otherwise creates a new one
+    static func loadDatabaseIndex() -> DatabaseIndex {
         print("Getting Database Index")
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let archiveURL = documentsDirectory.appendingPathComponent("databaseIndex").appendingPathExtension("json")
         do {
             let jsonData = try Data(contentsOf: archiveURL)
             let decoder = JSONDecoder()
-            myDatabaseIndex = try decoder.decode(DatabaseIndex.self, from: jsonData)
+            let tempDatabaseIndex = try decoder.decode(DatabaseIndex.self, from: jsonData)
+            return tempDatabaseIndex
         } catch {
             print("No Database Index Found")
             print("Creating New Database Index")
-            self.myDatabaseIndex = DatabaseIndex()
+            return DatabaseIndex()
         }
-        
-        print("Initializing DatabaseLog")
-        currentDatabaseLog = DatabaseLog(year: -1, month: -1)
-        currentDatabaseLog = fetchDatabaseLog(targetDate: Date())
     }
     
     /**
@@ -178,7 +187,6 @@ class TaskDatabase {
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
         do {
-            
             let jsonData = try encoder.encode(myDatabaseIndex)
             try jsonData.write(to: archiveURL, options: .noFileProtection)
             print("Database Index Stored")
@@ -474,4 +482,3 @@ class TaskDatabase {
         return events
     }
 }
-
