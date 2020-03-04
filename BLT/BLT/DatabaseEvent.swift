@@ -9,21 +9,21 @@
 import Foundation
 
 ///Enum of different events that can occur on a [ToDoItem](x-source-tag://ToDoItem)
-enum GeneralEventType: Int, Codable {
+enum GeneralEventType: String, Codable {
     ///Occurs when an item is created
-    case created
+    case created = "Created Event"
     ///Occurs when a user changes the due date of an item
-    case dueDateChanged
+    case dueDateChanged = "Due Date Changed"
     ///Occurs when a user marks an item as complete from the Focus Mode page
-    case markedCompletedInFocusMode
+    case markedCompletedInFocusMode = "Marked Completed In Focus Mode"
     ///Occurs when a user marks an item as complete from the List View page
-    case markedCompletedInListView
+    case markedCompletedInListView = "Marked Completed In List View"
     ///Occurs when a user unmarks an item as complete
-    case unmarkedComplete
+    case unmarkedComplete = "Unmarked Complete"
     ///Occurs when item has started to be studied in focus mode
-    case startedStudyingInFocusMode
+    case startedStudyingInFocusMode = "Started Studying In Focus Mode"
     ///Occurs when item has stopped being studied in focus mode
-    case stoppedStudyingInFocusMode
+    case stoppedStudyingInFocusMode = "Stopped Studying In Focus Mode"
 }
 
 ///Used For Logging Various Events For Later Use
@@ -33,7 +33,7 @@ class DatabaseEvent: Codable {
     ///Date of Event
     let date: Date
     ///Identifier of the ToDoItem that triggered the event
-    let toDoItemIdentifier: String
+    let toDoItemID: Int
     ///Sequential Identifier For Each Event
     let eventNumber: Int
     
@@ -45,7 +45,7 @@ class DatabaseEvent: Codable {
         - currentDate: The date of the event
     */
     init(item: ToDoItem, event: GeneralEventType, currentDate: Date) {
-        self.toDoItemIdentifier = item.hashVal
+        self.toDoItemID = item.identifier
         self.eventType = event
         self.eventNumber = globalTaskDatabase.myDatabaseIndex.getEventNumForUse()
         self.date = currentDate

@@ -7,7 +7,7 @@ PODS:
   - LBConfettiView (1.0.0)
   - RandomColorSwift (1.0.0)
   - RetroProgress (1.0.1)
-  - SwiftLint (0.38.2)
+  - SwiftLint (0.39.1)
   - SwiftReorder (6.0.2)
   - VerticalCardSwiper (2.2.0)
 
@@ -41,7 +41,7 @@ SPEC CHECKSUMS:
   LBConfettiView: 29e99668b3c0dca25160486dd593f91a0ceeca8e
   RandomColorSwift: 9f85058b721665d52d239ca166a913e083506444
   RetroProgress: a5b2514485c0ce75838ad321c77d5746150901cd
-  SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
+  SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
   SwiftReorder: 60ef1faf6446cf68f9a647cb975530db8efd6620
   VerticalCardSwiper: 41c8c0d8d87511ec269347f5671386acf66cd31a
 

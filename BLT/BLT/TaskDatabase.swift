@@ -31,8 +31,46 @@ class TaskDatabase {
         didSet {
             saveDatabaseLog(targetLog: currentDatabaseLog)
             for event in currentDatabaseLog.log {
-                print("Event: \(event.toDoItemIdentifier), \(event.eventType), \(event.date)")
+                print("Event: \(event.toDoItemID), \(event.eventType), \(event.date)")
             }
+        }
+    }
+    
+    ///Index Of All Databases And Other Info For All Databases
+    struct DatabaseIndex: Codable {
+        
+        /// The Sequential Event Number For Assigning To New DatabaseEvents
+        private var eventNumber: Int
+        
+        /// Current Task Identifier
+        private var currentTaskID: Int
+        
+        /// List Of Databases Created
+        var listOfDatabases: [String]
+        
+        /// Gets The Current Event Number For Use In A New `DatabaseEvent`
+        ///
+        /// - Returns: The Current Event Number
+        mutating func getEventNumForUse() -> Int {
+            self.eventNumber += 1
+            return self.eventNumber
+        }
+        
+        
+        /// Gets The Current Task ID For Use In A New `ToDoItem`
+        ///
+        /// - Returns: The Current Task ID
+        mutating func getTaskIDForUse() -> Int {
+            self.currentTaskID += 1
+            return self.currentTaskID
+        }
+        
+        
+        /// Initializes A New DatabaseIndex
+        init() {
+            self.eventNumber = 0
+            self.currentTaskID = 0
+            self.listOfDatabases = []
         }
     }
     
@@ -104,32 +142,6 @@ class TaskDatabase {
         }
     }
     
-    ///Index Of All Databases And Other Info For All Databases
-    struct DatabaseIndex: Codable {
-        
-        /// The Sequential Event Number For Assigning To New DatabaseEvents
-        private var eventNumber: Int
-        
-        /// List Of Databases Created
-        var listOfDatabases: [String]
-        
-        
-        /// Gets The Current Event Number For Use In A New `DatabaseEvent`
-        ///
-        /// - Returns: The Current Event Number
-        mutating func getEventNumForUse() -> Int {
-            self.eventNumber += 1
-            return self.eventNumber
-        }
-        
-        
-        /// Initializes A New DatabaseIndex
-        init() {
-            self.eventNumber = 0
-            self.listOfDatabases = []
-        }
-    }
-    
     ///Enum for possible errors that arise from a database
     enum DatabaseError: Error {
         /// Error Occurs When Trying To Load A Database By Exact Name That Is Not In Memory
@@ -138,22 +150,32 @@ class TaskDatabase {
     
     /// Intializes A New TaskDatabase
     init() {
-        print("Getting Database Index")
-        let propertyListDecoder = PropertyListDecoder()
-        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archiveURL = documentsDirectory.appendingPathComponent("databaseIndex").appendingPathExtension("plist")
+        myDatabaseIndex = TaskDatabase.loadDatabaseIndex()
         
-        if let retrievedNoteData = try? Data(contentsOf: archiveURL), let decodedDatabaseIndex = try? propertyListDecoder.decode(DatabaseIndex.self, from: retrievedNoteData) {
-            print("Loaded Database Index")
-            self.myDatabaseIndex = decodedDatabaseIndex
-        } else {
-            print("No Database Index Found")
-            print("Creating New Database Index")
-            self.myDatabaseIndex = DatabaseIndex()
-        }
+        TaskDatabase.createSubdirectories()
+        
         print("Initializing DatabaseLog")
         currentDatabaseLog = DatabaseLog(year: -1, month: -1)
         currentDatabaseLog = fetchDatabaseLog(targetDate: Date())
+    }
+    
+    /// Loads The `DatabaseIndex`
+    ///
+    /// - Returns: The `DatabaseIndex` from local storage if possible, otherwise creates a new one
+    static func loadDatabaseIndex() -> DatabaseIndex {
+        print("Getting Database Index")
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let archiveURL = documentsDirectory.appendingPathComponent("databaseIndex").appendingPathExtension("json")
+        do {
+            let jsonData = try Data(contentsOf: archiveURL)
+            let decoder = JSONDecoder()
+            let tempDatabaseIndex = try decoder.decode(DatabaseIndex.self, from: jsonData)
+            return tempDatabaseIndex
+        } catch {
+            print("No Database Index Found")
+            print("Creating New Database Index")
+            return DatabaseIndex()
+        }
     }
     
     /**
@@ -161,13 +183,30 @@ class TaskDatabase {
      */
     func saveDatabaseIndex() {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archiveURL = documentsDirectory.appendingPathComponent("databaseIndex").appendingPathExtension("plist")
-        let propertyListEncoder = PropertyListEncoder()
-        let encodedNote = try? propertyListEncoder.encode(self.myDatabaseIndex)
-        try? encodedNote?.write(to: archiveURL, options: .noFileProtection)
-        print("Database Index Stored")
+        let archiveURL = documentsDirectory.appendingPathComponent("databaseIndex").appendingPathExtension("json")
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        do {
+            let jsonData = try encoder.encode(myDatabaseIndex)
+            try jsonData.write(to: archiveURL, options: .noFileProtection)
+            print("Database Index Stored")
+        } catch {
+            print("Could Not Store Database Index")
+        }
+        
     }
     
+    static func createSubdirectories() {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let logsURL: URL = documentsDirectory.appendingPathComponent("/logs")
+        do {
+            let fileManager: FileManager = FileManager()
+            try fileManager.createDirectory(at: logsURL, withIntermediateDirectories: true, attributes: nil)
+        } catch {
+            print("Failed To Create Directory")
+        }
+        
+    }
     
     /// Get The URL of The DatabaseLog
     ///
@@ -195,7 +234,7 @@ class TaskDatabase {
         }
         
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archiveURL = documentsDirectory.appendingPathComponent("log\(yearString)\(monthString)").appendingPathExtension("json")
+        let archiveURL = documentsDirectory.appendingPathComponent("/logs/\(yearString)\(monthString)").appendingPathExtension("json")
         return archiveURL
     }
     
@@ -208,7 +247,7 @@ class TaskDatabase {
         var dateString: String = String(targetDate.description.prefix(7))
         dateString = String(dateString.prefix(4)) + String(dateString.suffix(2))
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archiveURL = documentsDirectory.appendingPathComponent("log\(dateString)").appendingPathExtension("json")
+        let archiveURL = documentsDirectory.appendingPathComponent("/logs/\(dateString)").appendingPathExtension("json")
         return archiveURL
     }
     
@@ -283,7 +322,7 @@ class TaskDatabase {
     /// - Throws: `DatabaseError.databaseDoesntExistError` if the desired `DatabaseLog` doesn't exist
     func fetchDatabaseLog(targetLogString: String) throws -> DatabaseLog {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archiveURL = documentsDirectory.appendingPathComponent("log\(targetLogString)").appendingPathExtension("json")
+        let archiveURL = documentsDirectory.appendingPathComponent("/logs/\(targetLogString)").appendingPathExtension("json")
         do {
             let jsonData = try Data(contentsOf: archiveURL)
             let decoder = JSONDecoder()
@@ -300,13 +339,13 @@ class TaskDatabase {
     /// - Parameter targetLog: The log to be saved
     func saveDatabaseLog(targetLog: DatabaseLog) {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let archiveURL = documentsDirectory.appendingPathComponent("log\(targetLog.logString)").appendingPathExtension("json")
+        let archiveURL = documentsDirectory.appendingPathComponent("/logs/\(targetLog.logString)").appendingPathExtension("json")
         do {
             let encoder = JSONEncoder()
             encoder.outputFormatting = .prettyPrinted
             let jsonData = try encoder.encode(targetLog)
             try jsonData.write(to: archiveURL, options: .noFileProtection)
-            print("Saved Log: log\(targetLog.logString) with \(targetLog.log.count) elts. ")
+            print("Saved Log: \(targetLog.logString) with \(targetLog.log.count) elts. ")
         } catch {
             print("ERROR: Couldn't Save Log \(targetLog.logString)")
         }
@@ -360,7 +399,7 @@ class TaskDatabase {
     ///
     /// - Returns: The number of events matching the query from the present day back to the number of days specified
     func getNumEventsOfTypeInLast(numDays: Int, eventType: GeneralEventType) -> Int {
-        let startDate = Date(timeIntervalSinceNow: numDays.days.timeInterval)
+        let startDate = Date() - numDays.days.timeInterval
         let endDate = Date()
         return getNumEventsOfTypeFrom(startDate: startDate, endDate: endDate, eventType: eventType)
     }
@@ -373,7 +412,7 @@ class TaskDatabase {
     ///
     /// - Returns: The events matching the query from the present day back to the number of days specified
     func getEventsOfTypeInLast(numDays: Int, eventType: GeneralEventType) -> [DatabaseEvent] {
-        let startDate = Date(timeIntervalSinceNow: numDays.days.timeInterval)
+        let startDate = Date() - numDays.days.timeInterval
         let endDate = Date()
         return getEventsOfTypeFrom(startDate: startDate, endDate: endDate, eventType: eventType)
     }
@@ -389,7 +428,7 @@ class TaskDatabase {
     /// - Returns: The number of events matching the query within the date constraint
     func getNumEventsOfTypeFrom(startDate: Date, endDate: Date, eventType: GeneralEventType) -> Int {
         saveDatabaseLog(targetLog: currentDatabaseLog)
-        print("Searching logs from \(startDate.description.prefix(10)) to \(endDate.description.prefix(10)) for \(eventType) from list of \(myDatabaseIndex.listOfDatabases.count) logs")
+        print("Searching logs from \(startDate.description.prefix(10)) to \(endDate.description.prefix(10)) for \(eventType) from list of \(myDatabaseIndex.listOfDatabases.count) logs. ")
         var numEvents = 0
         for databaseString in myDatabaseIndex.listOfDatabases {
             print("\(databaseString) is within date range. : \(databaseString >= getDatabaseLogString(date: startDate) && databaseString <= getDatabaseLogString(date: endDate))")
@@ -425,9 +464,10 @@ class TaskDatabase {
         for databaseString in myDatabaseIndex.listOfDatabases {
             print("\(databaseString) is within date range. : \(databaseString >= getDatabaseLogString(date: startDate) && databaseString <= getDatabaseLogString(date: endDate))")
             if databaseString >= getDatabaseLogString(date: startDate) && databaseString <= getDatabaseLogString(date: endDate) {
-                print("Checking log\(databaseString) for \(eventType)")
+                print("Checking \(databaseString) for \(eventType)")
                 if let database = try? fetchDatabaseLog(targetLogString: databaseString) {
                     for event in database.log {
+                        print("Found event \(event.eventNumber) with type \(event.eventType) and date \(event.date)")
                         print("Event with \(event.eventNumber) is correct. : \(event.eventType == eventType && event.date >= startDate && event.date <= endDate)")
                         if event.eventType == eventType && event.date >= startDate && event.date <= endDate {
                             events.append(event)
@@ -442,4 +482,3 @@ class TaskDatabase {
         return events
     }
 }
-

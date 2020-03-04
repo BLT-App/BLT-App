@@ -33,6 +33,25 @@ class UserProfileViewController: UIViewController
     @IBOutlet weak var completedLabel: UILabel!
     /// Label for number of hours focused.
     @IBOutlet weak var focusLabel: UILabel!
+    
+    var totalFocusHours: Double {
+        var minutes = 0.0
+        for item in myToDoList.list {
+            minutes += item.timeSpentInFocusMode
+        }
+        for item in myToDoList.completedList {
+            minutes += item.timeSpentInFocusMode
+        }
+        for item in myToDoList.deletedList {
+            minutes += item.timeSpentInFocusMode
+        }
+        
+        var hours: Double = (minutes / 6).rounded() / 10
+        if hours > 10 {
+            hours = hours.rounded()
+        }
+        return hours
+    }
 
 	/// Updates the chart from the globalTaskDatabase.
     func chartUpdate() {
@@ -79,6 +98,10 @@ class UserProfileViewController: UIViewController
     ///Updates The User Stats Bar By Calculating From Databases
     func updateUserStats(){
         ///TODO: Calculate Stats Dynamically
+        
+        focusLabel.text = String(totalFocusHours)
+        
+        completedLabel.text = String(myToDoList.completedList.count)
     }
   
     /// Sets up UI appearance of cards.

@@ -26,17 +26,6 @@ class ToDoList: Codable {
 			storeList()
 		}
 	}
-
-	/// The list of uncompleted to-do items.
-	var uncompletedList: [ToDoItem] {
-		var uncompleted: [ToDoItem] = []
-		for item: ToDoItem in list {
-			if !item.isCompleted() {
-				uncompleted.append(item)
-			}
-		}
-		return uncompleted
-	}
     
     ///List Of Deleted Items
     var deletedList: [ToDoItem] = []

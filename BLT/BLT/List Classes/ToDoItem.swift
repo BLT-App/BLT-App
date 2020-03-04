@@ -30,8 +30,8 @@ class ToDoItem: Codable, Hashable {
 	/// Date of Completion
 	var dateCompleted: Date? = nil
 
-	///Hash Value
-	let hashVal: String
+    /// Identifier
+    let identifier: Int
 
 	/// Time Spent In Focus Mode
 	var timeSpentInFocusMode: TimeInterval = Date() - Date()
@@ -124,10 +124,8 @@ class ToDoItem: Codable, Hashable {
 		self.title = title
 		self.description = description
 		self.dueDate = dueDate
-		self.hashVal = dateCreated.description + "_" + title.uppercased()
-		let hashForbiddenCharacters: Set<Character> = [" ", "+", ":", "-"]
-		self.hashVal.removeAll(where: { hashForbiddenCharacters.contains($0) })
-		print("Item with hash value \(self.hashVal) was added")
+        self.identifier = globalTaskDatabase.myDatabaseIndex.getTaskIDForUse()
+		print("Item with hash value \(self.identifier) was added")
     globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .created, currentDate: Date()))
 	}
 
