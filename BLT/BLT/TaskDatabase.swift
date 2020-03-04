@@ -31,8 +31,46 @@ class TaskDatabase {
         didSet {
             saveDatabaseLog(targetLog: currentDatabaseLog)
             for event in currentDatabaseLog.log {
-                print("Event: \(event.toDoItemIdentifier), \(event.eventType), \(event.date)")
+                print("Event: \(event.toDoItemID), \(event.eventType), \(event.date)")
             }
+        }
+    }
+    
+    ///Index Of All Databases And Other Info For All Databases
+    struct DatabaseIndex: Codable {
+        
+        /// The Sequential Event Number For Assigning To New DatabaseEvents
+        private var eventNumber: Int
+        
+        /// Current Task Identifier
+        private var currentTaskID: Int
+        
+        /// List Of Databases Created
+        var listOfDatabases: [String]
+        
+        /// Gets The Current Event Number For Use In A New `DatabaseEvent`
+        ///
+        /// - Returns: The Current Event Number
+        mutating func getEventNumForUse() -> Int {
+            self.eventNumber += 1
+            return self.eventNumber
+        }
+        
+        
+        /// Gets The Current Task ID For Use In A New `ToDoItem`
+        ///
+        /// - Returns: The Current Task ID
+        mutating func getTaskIDForUse() -> Int {
+            self.currentTaskID += 1
+            return self.currentTaskID
+        }
+        
+        
+        /// Initializes A New DatabaseIndex
+        init() {
+            self.eventNumber = 0
+            self.currentTaskID = 0
+            self.listOfDatabases = []
         }
     }
     
@@ -101,32 +139,6 @@ class TaskDatabase {
             self.year = year
             self.month = month
             self.log = []
-        }
-    }
-    
-    ///Index Of All Databases And Other Info For All Databases
-    struct DatabaseIndex: Codable {
-        
-        /// The Sequential Event Number For Assigning To New DatabaseEvents
-        private var eventNumber: Int
-        
-        /// List Of Databases Created
-        var listOfDatabases: [String]
-        
-        
-        /// Gets The Current Event Number For Use In A New `DatabaseEvent`
-        ///
-        /// - Returns: The Current Event Number
-        mutating func getEventNumForUse() -> Int {
-            self.eventNumber += 1
-            return self.eventNumber
-        }
-        
-        
-        /// Initializes A New DatabaseIndex
-        init() {
-            self.eventNumber = 0
-            self.listOfDatabases = []
         }
     }
     

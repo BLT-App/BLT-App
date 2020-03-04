@@ -33,7 +33,7 @@ class DatabaseEvent: Codable {
     ///Date of Event
     let date: Date
     ///Identifier of the ToDoItem that triggered the event
-    let toDoItemIdentifier: String
+    let toDoItemID: Int
     ///Sequential Identifier For Each Event
     let eventNumber: Int
     
@@ -45,7 +45,7 @@ class DatabaseEvent: Codable {
         - currentDate: The date of the event
     */
     init(item: ToDoItem, event: GeneralEventType, currentDate: Date) {
-        self.toDoItemIdentifier = item.hashVal
+        self.toDoItemID = item.identifier
         self.eventType = event
         self.eventNumber = globalTaskDatabase.myDatabaseIndex.getEventNumForUse()
         self.date = currentDate
