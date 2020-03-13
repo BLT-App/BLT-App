@@ -156,7 +156,7 @@ class TaskDatabase {
         
         print("Initializing DatabaseLog")
         currentDatabaseLog = DatabaseLog(year: -1, month: -1)
-        currentDatabaseLog = fetchDatabaseLog(targetDate: Date())
+        currentDatabaseLog = fetchDatabaseLog(targetDate: dateManager.date)
     }
     
     /// Loads The `DatabaseIndex`
@@ -399,8 +399,8 @@ class TaskDatabase {
     ///
     /// - Returns: The number of events matching the query from the present day back to the number of days specified
     func getNumEventsOfTypeInLast(numDays: Int, eventType: GeneralEventType) -> Int {
-        let startDate = Date() - numDays.days.timeInterval
-        let endDate = Date()
+        let startDate = dateManager.date - numDays.days.timeInterval
+        let endDate = dateManager.date
         return getNumEventsOfTypeFrom(startDate: startDate, endDate: endDate, eventType: eventType)
     }
     
@@ -412,8 +412,8 @@ class TaskDatabase {
     ///
     /// - Returns: The events matching the query from the present day back to the number of days specified
     func getEventsOfTypeInLast(numDays: Int, eventType: GeneralEventType) -> [DatabaseEvent] {
-        let startDate = Date() - numDays.days.timeInterval
-        let endDate = Date()
+        let startDate = dateManager.date - numDays.days.timeInterval
+        let endDate = dateManager.date
         return getEventsOfTypeFrom(startDate: startDate, endDate: endDate, eventType: eventType)
     }
     
