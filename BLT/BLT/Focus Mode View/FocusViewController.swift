@@ -276,7 +276,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		myTimer.cdt = duration
 		myTimer.totalSecs = myTimer.cdt
 		myTimer.runTimer()
-        progressView.animateProgress(to: 0.0, duration: myTimer.totalSecs)
+        progressView.animateProgress(to: 0.0, duration: myTimer.totalSecs / Double(dateManager.timeMultiplier))
         
         currentTask?.startedStudyingInFocusMode()
 	}
