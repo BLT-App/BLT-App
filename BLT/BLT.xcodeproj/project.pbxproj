@@ -11,7 +11,6 @@
 		3F19AE4023EC620100DECA17 /* FMPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19AE3F23EC620100DECA17 /* FMPopUpViewController.swift */; };
 		3F2D6FF32399FE6100B8A989 /* WaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D6FF22399FE6100B8A989 /* WaterView.swift */; };
 		3F2D6FF5239A004900B8A989 /* RenderTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D6FF4239A004900B8A989 /* RenderTimer.swift */; };
-		3F3E5CF123FCCFC400033FAB /* TaskDatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3E5CF023FCCFC400033FAB /* TaskDatabaseTests.swift */; };
 		3F73230823860D9300155B70 /* FocusTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F73230723860D9300155B70 /* FocusTimer.swift */; };
 		3FA479A3241C73BE00ADCEB7 /* SettingsDeveloperSubmenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA479A2241C73BE00ADCEB7 /* SettingsDeveloperSubmenuTableViewController.swift */; };
 		3FA808C223DE83C400CB4127 /* SettingsListPrefSubmenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA808C123DE83C400CB4127 /* SettingsListPrefSubmenuTableViewController.swift */; };
@@ -71,7 +70,6 @@
 		3F19AE3F23EC620100DECA17 /* FMPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMPopUpViewController.swift; sourceTree = "<group>"; };
 		3F2D6FF22399FE6100B8A989 /* WaterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterView.swift; sourceTree = "<group>"; };
 		3F2D6FF4239A004900B8A989 /* RenderTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderTimer.swift; sourceTree = "<group>"; };
-		3F3E5CF023FCCFC400033FAB /* TaskDatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDatabaseTests.swift; sourceTree = "<group>"; };
 		3F73230723860D9300155B70 /* FocusTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTimer.swift; sourceTree = "<group>"; };
 		3FA479A2241C73BE00ADCEB7 /* SettingsDeveloperSubmenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDeveloperSubmenuTableViewController.swift; sourceTree = "<group>"; };
 		3FA808C123DE83C400CB4127 /* SettingsListPrefSubmenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListPrefSubmenuTableViewController.swift; sourceTree = "<group>"; };
@@ -201,7 +199,6 @@
 			children = (
 				3FE3EA77237718DB002B5303 /* BLTTests.swift */,
 				3FE3EA79237718DB002B5303 /* Info.plist */,
-				3F3E5CF023FCCFC400033FAB /* TaskDatabaseTests.swift */,
 			);
 			path = BLTTests;
 			sourceTree = "<group>";
@@ -511,7 +508,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FE3EA78237718DB002B5303 /* BLTTests.swift in Sources */,
-				3F3E5CF123FCCFC400033FAB /* TaskDatabaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
