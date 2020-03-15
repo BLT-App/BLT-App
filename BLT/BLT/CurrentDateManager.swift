@@ -40,7 +40,13 @@ class CurrentDateManager {
     private var debugDate: Date = Date()
     
     /// Time Speed Multiplier For Debug Date
-    var timeMultiplier: Float = 1.0
+    var timeMultiplier: Float = 1.0 {
+        didSet {
+            if timeMultiplier != 1.0 {
+                isInDebugMode = true
+            }
+        }
+    }
     
     /// Timer For Incementing Debug Date
     private var timer = Timer()
