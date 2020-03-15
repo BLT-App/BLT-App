@@ -75,7 +75,7 @@ class FocusTimer {
 	/// Updates the values for minutes and seconds.
 	@objc func updateVals() {
 		if cdt > 0 {
-			cdt -= 1.0
+			cdt -= TimeInterval(1.0 * dateManager.timeMultiplier)
 		} else {
 			stopRunning()
 		}
