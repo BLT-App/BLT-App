@@ -25,7 +25,7 @@ class ToDoItem: Codable, Hashable {
 	var dueDate: Date
 
 	/// Date of creation
-	let dateCreated: Date = Date()
+	let dateCreated: Date = dateManager.date
 
 	/// Date of Completion
 	var dateCompleted: Date? = nil
@@ -34,7 +34,7 @@ class ToDoItem: Codable, Hashable {
     let identifier: Int
 
 	/// Time Spent In Focus Mode
-	var timeSpentInFocusMode: TimeInterval = Date() - Date()
+	var timeSpentInFocusMode: TimeInterval = 0.seconds.timeInterval
     
     /// Time Started Studying In Focus Mode
     private var timeStartedStudying: Date? = nil
@@ -43,7 +43,7 @@ class ToDoItem: Codable, Hashable {
 	var dueCounter: Int {
 		let calendar = NSCalendar.current
 		let dueDay = calendar.startOfDay(for: dueDate)
-		let nowDay = calendar.startOfDay(for: Date())
+		let nowDay = calendar.startOfDay(for: dateManager.date)
 		let inBetween = calendar.dateComponents([.day], from: nowDay, to: dueDay).day
 		return inBetween!
 	}
@@ -68,8 +68,8 @@ class ToDoItem: Codable, Hashable {
 	func completeTask(mark: GeneralEventType) {
 		if !completed {
 			completed = true
-			dateCompleted = Date()
-            globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: mark, currentDate: Date()))
+			dateCompleted = dateManager.date
+            globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: mark, currentDate: dateManager.date))
 		}
 	}
 
@@ -77,7 +77,7 @@ class ToDoItem: Codable, Hashable {
     func undoDeleteTask(){
         if deleted {
             deleted = false
-            //globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .unmarkedComplete, currentDate: Date()))
+            //globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .unmarkedComplete, currentDate: currentDate))
         } else {
             print("Not Quite Sure How You Got Here...")
         }
@@ -101,7 +101,7 @@ class ToDoItem: Codable, Hashable {
         if completed {
             completed = false
             dateCompleted = nil
-            globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .unmarkedComplete, currentDate: Date()))
+            globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .unmarkedComplete, currentDate: dateManager.date))
         }
 	}
     
@@ -126,7 +126,7 @@ class ToDoItem: Codable, Hashable {
 		self.dueDate = dueDate
         self.identifier = globalTaskDatabase.myDatabaseIndex.getTaskIDForUse()
 		print("Item with hash value \(self.identifier) was added")
-    globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .created, currentDate: Date()))
+    globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .created, currentDate: dateManager.date))
 	}
 
 	/// Marks an item as completed
@@ -137,15 +137,15 @@ class ToDoItem: Codable, Hashable {
     
     /// Performs Necessary Setup For Studying In Focus Mode
     func startedStudyingInFocusMode() {
-        timeStartedStudying = Date()
-        let event: DatabaseEvent = DatabaseEvent(item: self, event: .startedStudyingInFocusMode, currentDate: Date())
+        timeStartedStudying = dateManager.date
+        let event: DatabaseEvent = DatabaseEvent(item: self, event: .startedStudyingInFocusMode, currentDate: dateManager.date)
         globalTaskDatabase.currentDatabaseLog.log.append(event)
     }
     
     /// Performs Necessary Actions Following End of Studying In Focus Mode
     func stoppedStudyingInFocusMode() {
-        timeSpentInFocusMode += (Date() - (timeStartedStudying ?? Date()))
-        let event: DatabaseEvent = DatabaseEvent(item: self, event: .stoppedStudyingInFocusMode, currentDate: Date())
+        timeSpentInFocusMode += (dateManager.date - (timeStartedStudying ?? dateManager.date))
+        let event: DatabaseEvent = DatabaseEvent(item: self, event: .stoppedStudyingInFocusMode, currentDate: dateManager.date)
         globalTaskDatabase.currentDatabaseLog.log.append(event)
     }
     

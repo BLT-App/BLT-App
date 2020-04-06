@@ -77,6 +77,8 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
 		DropDown.appearance().backgroundColor = UIColor.white
 		DropDown.appearance().selectionBackgroundColor = UIColor.lightGray
 		DropDown.appearance().cornerRadius = 15
+        
+        datePicker.date = dateManager.date + 1.day.timeInterval
 	}
 
 	/// Exits the modal view/screen.
