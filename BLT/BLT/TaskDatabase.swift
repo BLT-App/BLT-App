@@ -196,6 +196,8 @@ class TaskDatabase {
         
     }
     
+    
+    /// Creates A Subdirectory For The Logs
     static func createSubdirectories() {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let logsURL: URL = documentsDirectory.appendingPathComponent("/logs")
