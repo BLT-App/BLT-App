@@ -89,21 +89,18 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
 	/// Checks if the titles are correct, then adds it to the list.
 	@IBAction func addButton(_ sender: UIButton) {
 		if let classTxt = classText.text, let titleTxt = titleText.text, let descTxt = descText.text {
-			// Debug for clearing/resetting entire list.
-			if (titleTxt == "clear_entire_list") {
-				myToDoList.list = []
-				myToDoList.storeList()
-			} else if (classText.text != "" && titleTxt != "" && descTxt != "") {
+			if (classText.text != "" && titleTxt != "" && descTxt != "") {
 				let newToDo = ToDoItem(className: classTxt, title: titleTxt, description: descTxt, dueDate: datePicker.date)
-				myToDoList.list.insert(newToDo, at: 0)
-				myToDoList.storeList()
+				toDoListManager.placeToDoItemAtIndex(item: newToDo, index: 0)
 
 				//If Users Have it Set, Sort List By Due Date
 				if globalData.wantsListByDate {
-					myToDoList.sortList()
+					toDoListManager.sortList()
 				}
+                
+                toDoListManager.storeList()
 			}
-			globalData.updateCourses(fromList: myToDoList)
+			globalData.updateCourses(fromList: toDoListManager.list)
 			self.dismiss(animated: true, completion: nil)
 		}
 	}

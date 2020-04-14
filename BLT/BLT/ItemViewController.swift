@@ -48,7 +48,7 @@ class ItemViewController: UIViewController {
 	/// Loads the page by loading in the latest task into the current card.
 	func loadPage() {
 		if let thisIndex = targetIndex {
-			let thisToDo = myToDoList.list[thisIndex]
+			let thisToDo = toDoListManager.getToDoItemAt(index: thisIndex)
 			classNameField.text = thisToDo.className
 			classNameField.backgroundColor = globalData.subjects[thisToDo.className]?.uiColor
 			assignmentField.text = thisToDo.title
@@ -70,35 +70,26 @@ class ItemViewController: UIViewController {
 	/// Returns to previous screen.
 	@IBAction func backButton(_ sender: UIButton) {
 		if let classTxt = classNameField.text, let titleTxt = assignmentField.text, let descTxt = descriptionField.text, let thisIndex = targetIndex {
-			// Debug for clearing/resetting entire list.
 			if (classTxt != "" && titleTxt != "") {
-				let targetItem = myToDoList.list[thisIndex]
+				let targetItem = toDoListManager.getToDoItemAt(index: thisIndex)
                 targetItem.className = classTxt
                 targetItem.title = titleTxt
                 targetItem.description = descTxt
                 targetItem.dueDate = datePicker.date
-				myToDoList.storeList()
-				globalData.updateCourses(fromList: myToDoList)
+				toDoListManager.placeToDoItemAtIndex(item: targetItem, index: thisIndex)
+				globalData.updateCourses(fromList: toDoListManager.list)
 
 				//If Users Have it Set, Sort List By Due Date
 				if globalData.wantsListByDate {
-					myToDoList.sortList()
+					toDoListManager.sortList()
 				}
-			}
+            } else {
+                /// TODO: Prompt User To Delete Task
+            }
 			self.dismiss(animated: true, completion: nil)
 			if let thisDelegate = delegate as? ListViewController {
 				thisDelegate.update()
 			}
 		}
 	}
-
-	/*
-	// MARK: - Navigation
-	// In a storyboard-based application, you will often want to do a little preparation before navigation
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		// Get the new view controller using segue.destination.
-		// Pass the selected object to the new view controller.
-	}
-	*/
-
 }

@@ -36,13 +36,13 @@ class UserProfileViewController: UIViewController
     
     var totalFocusHours: Double {
         var minutes = 0.0
-        for item in myToDoList.list {
+        for item in toDoListManager.list.list {
             minutes += item.timeSpentInFocusMode
         }
-        for item in myToDoList.completedList {
+        for item in toDoListManager.list.completedList {
             minutes += item.timeSpentInFocusMode
         }
-        for item in myToDoList.deletedList {
+        for item in toDoListManager.list.deletedList {
             minutes += item.timeSpentInFocusMode
         }
         
@@ -101,7 +101,7 @@ class UserProfileViewController: UIViewController
         
         focusLabel.text = String(totalFocusHours)
         
-        completedLabel.text = String(myToDoList.completedList.count)
+        completedLabel.text = String(toDoListManager.list.completedList.count)
     }
   
     /// Sets up UI appearance of cards.

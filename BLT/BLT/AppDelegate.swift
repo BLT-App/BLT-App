@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     /// Tells the delegate when the app is about to terminate.
     func applicationWillTerminate(_ application: UIApplication) {
-        myToDoList.storeList()
+        toDoListManager.storeList()
         globalTaskDatabase.saveDatabaseLog(targetLog: globalTaskDatabase.currentDatabaseLog)
         globalTaskDatabase.saveDatabaseIndex()
     }

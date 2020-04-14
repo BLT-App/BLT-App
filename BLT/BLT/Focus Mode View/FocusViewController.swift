@@ -101,7 +101,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     
     func setCurrentTask() {
         if let index = verticalCardSwiper.focussedCardIndex {
-            currentTask = myToDoList.list[index]
+            currentTask = toDoListManager.getToDoItemAt(index: index)
         }
     }
     
@@ -137,7 +137,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     /// Sets progress bar color based on the current card.
     func setCurrentProgressColor() {
         if let index = verticalCardSwiper.focussedCardIndex {
-            if let color = globalData.subjects[myToDoList.list[index].className]?.uiColor {
+            if let color = globalData.subjects[toDoListManager.getToDoItemAt(index: index).className]?.uiColor {
                 changeProgressColor(color: color)
             }
         }
@@ -162,7 +162,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		print("view has appeared")
 		print(globalData.includeEndFocusButton)
         
-        self.updatePointsCounter(myToDoList.points)
+        self.updatePointsCounter(toDoListManager.list.points)
     
 		if let temp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as? FMPopUpViewController {
 			self.popup = temp
@@ -184,7 +184,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
             print("Going Back To 0")
         }
     
-		if (!globalData.includeEndFocusButton && myToDoList.list.count > 0) {
+		if (!globalData.includeEndFocusButton && toDoListManager.numItemsInList > 0) {
 			endFocusModeButton.isEnabled = false
 		} else {
 			endFocusModeButton.isEnabled = true
@@ -283,7 +283,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 
 	/// Animates a point incrementation with the pointCounter
 	func incrementPoints(oldPoints: Int) {
-		let newValue = myToDoList.points
+		let newValue = toDoListManager.list.points
 		let diff = newValue - oldPoints
 		let deltaT: Double = 1.0 / Double(diff)
 		for inc in 1...diff {
@@ -304,13 +304,13 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDatasource {
 	/// Number of cards to show in list.
     func numberOfCards(verticalCardSwiperView: VerticalCardSwiperView) -> Int {
-        return myToDoList.list.count
+        return toDoListManager.numItemsInList
     }
 
 	/// Returns the CardCell of the current item.
     func cardForItemAt(verticalCardSwiperView: VerticalCardSwiperView, cardForItemAt index: Int) -> CardCell {
         if let cardCell = verticalCardSwiperView.dequeueReusableCell(withReuseIdentifier: "FocusCell", for: index) as? FocusCardCell {
-            cardCell.setupCard(fromItem: myToDoList.list[index])
+            cardCell.setupCard(fromItem: toDoListManager.getToDoItemAt(index: index))
             return cardCell
         }
         return CardCell()
@@ -322,7 +322,7 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
         setCurrentTask()
         currentTask?.startedStudyingInFocusMode()
         if let index = verticalCardSwiper.focussedCardIndex {
-            if let color = globalData.subjects[myToDoList.list[index].className]?.uiColor {
+            if let color = globalData.subjects[toDoListManager.getToDoItemAt(index: index).className]?.uiColor {
                 DispatchQueue.main.async {
                     UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
                         self.changeProgressColor(color: color)
@@ -394,15 +394,17 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
 
 	/// Called when card will be swiped away.
     func willSwipeCardAway(card: CardCell, index: Int, swipeDirection: SwipeDirection) {
-        if index < myToDoList.list.count {
+        if index < toDoListManager.numItemsInList {
 			switch swipeDirection {
 			case .Left:
-				let task = myToDoList.list[index]
-				myToDoList.list.append(task)
-				verticalCardSwiper.insertCards(at: [myToDoList.list.count - 1])
-				myToDoList.list.remove(at: index)
-			default:
+				let task = toDoListManager.getToDoItemAt(index: index)
+				toDoListManager.addNewToDoItem(task)
+				verticalCardSwiper.insertCards(at: [toDoListManager.numItemsInList - 1])
+				toDoListManager.removeItemAt(index: index)
+            case .Right:
 				completeTask(index: index)
+            default:
+                print("Somehow you swiped without swiping")
 			}
         }
     }
@@ -416,18 +418,18 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
 	/// Called when a task is completed
 	/// - Parameter index: Index of completed card.
     func completeTask(index: Int) {
-        let task = myToDoList.list.remove(at: index)
+        let task: ToDoItem = toDoListManager.removeItemAt(index: index)
         task.stoppedStudyingInFocusMode()
         task.completeTask(mark: .markedCompletedInFocusMode)
-        myToDoList.completedList.append(task)
-        myToDoList.storeList()
+        toDoListManager.list.completedList.append(task)
+        toDoListManager.storeList()
         
         if let confettiView = self.confettiView {
             confettiView.start()
         }
         let seconds = 1.0
-        let oldPoints = myToDoList.points
-        myToDoList.points += 10
+        let oldPoints = toDoListManager.list.points
+        toDoListManager.list.points += 10
         self.incrementPoints(oldPoints: oldPoints)
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             if let confettiView = self.confettiView {

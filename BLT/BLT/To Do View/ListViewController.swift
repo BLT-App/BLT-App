@@ -77,16 +77,16 @@ class ListViewController: UIViewController {
 		addShadow(view: addButton, color: UIColor.blue.cgColor, opacity: 0.1, radius: 5, offset: .zero)
         
 		// Loads list from filesystem
-		myToDoList.retrieveList()
+		toDoListManager.retrieveList()
         
 		// This creates an example list if there is nothing on the list. Debug only.
-		if myToDoList.list.count == 0 {
-			myToDoList.createExampleList()
+		if toDoListManager.numItemsInList == 0 {
+			toDoListManager.createExampleList()
 		}
 
 		tableView.reorder.delegate = self
 
-		globalData.updateCourses(fromList: myToDoList)
+		globalData.updateCourses(fromList: toDoListManager.list)
 		update()
 
 		print("Currently \(globalTaskDatabase.currentDatabaseLog.numOfEvents) in log")
@@ -115,18 +115,18 @@ class ListViewController: UIViewController {
                 print("No Actions Taken This Session")
                 return
             } else if lastAction == .completedItem {
-                if let itemToRestore: ToDoItem = myToDoList.completedList.popLast() {
+                if let itemToRestore: ToDoItem = toDoListManager.list.completedList.popLast() {
                     itemToRestore.undoCompleteTask()
-                    myToDoList.list.append(itemToRestore)
+                    toDoListManager.addNewToDoItem(itemToRestore)
                     insertNewTask()
                     update()
                 } else {
                     print("Error Occurred")
                 }
             } else if lastAction == .deletedItem {
-                if let itemToRestore: ToDoItem = myToDoList.deletedList.popLast() {
+                if let itemToRestore: ToDoItem = toDoListManager.list.deletedList.popLast() {
                     itemToRestore.undoDeleteTask()
-                    myToDoList.list.append(itemToRestore)
+                    toDoListManager.addNewToDoItem(itemToRestore)
                     insertNewTask()
                     update()
                 } else {
@@ -139,7 +139,7 @@ class ListViewController: UIViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 
-		if (myToDoList.list.count > tableView.numberOfRows(inSection: 0)) {
+		if (toDoListManager.numItemsInList > tableView.numberOfRows(inSection: 0)) {
 			insertNewTask()
 		}
 	}
@@ -153,7 +153,7 @@ class ListViewController: UIViewController {
 	/// Updates screen.
 	func update() {
 		if globalData.wantsListByDate {
-			myToDoList.sortList()
+			toDoListManager.sortList()
 			tableView.reorder.delegate = nil
 		} else {
 			tableView.reorder.delegate = self
@@ -164,9 +164,9 @@ class ListViewController: UIViewController {
 
 	/// Updates text on the page.
 	func updateText() {
-		let pluralSingularAssignment = (myToDoList.list.count == 1) ? "assignment" : "assignments"
-		assignmentsLeftLabel.text = "\(myToDoList.list.count) \(pluralSingularAssignment) left."
-		updatePointsCounter(myToDoList.points)
+		let pluralSingularAssignment = (toDoListManager.numItemsInList == 1) ? "assignment" : "assignments"
+		assignmentsLeftLabel.text = "\(toDoListManager.list.list.count) \(pluralSingularAssignment) left."
+		updatePointsCounter(toDoListManager.list.points)
 	}
 
 	/**
@@ -249,7 +249,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 
 	/// Returns the number of rows in table view.
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return myToDoList.list.count
+		return toDoListManager.numItemsInList
 	}
 
 	/// Returns the cell with correct content in table view.
@@ -258,7 +258,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 			return spacer
 		}
 
-		let toDoItem = myToDoList.list[indexPath.row]
+		let toDoItem = toDoListManager.list.list[indexPath.row]
 		var cell: ToDoTableViewCell = ToDoTableViewCell(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
 		if let tempcell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as? ToDoTableViewCell {
 			cell = tempcell
@@ -273,7 +273,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
 			deleteListIndexPath = indexPath
-			let itemToDelete = myToDoList.list[indexPath.row]
+			let itemToDelete = toDoListManager.list.list[indexPath.row]
 			confirmDelete(itemToDelete)
 		}
 	}
@@ -286,10 +286,10 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 
 	/// Reordered item.
 	func tableView(_ tableView: UITableView, reorderRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-		let movedItem = myToDoList.list[sourceIndexPath.row]
-		myToDoList.list.remove(at: sourceIndexPath.row)
-		myToDoList.list.insert(movedItem, at: destinationIndexPath.row)
-		myToDoList.storeList()
+		let movedItem = toDoListManager.list.list[sourceIndexPath.row]
+		toDoListManager.list.list.remove(at: sourceIndexPath.row)
+		toDoListManager.list.list.insert(movedItem, at: destinationIndexPath.row)
+		toDoListManager.storeList()
 	}
 
 	/// Leading configuration.
@@ -301,10 +301,10 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 	/// Completed task function.
 	func contextualCompletedAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
 		let action = UIContextualAction(style: .normal, title: "Complete") { (_: UIContextualAction, _: UIView, completionHandler: (Bool) -> Void) in
-            let item = myToDoList.list.remove(at: indexPath.row)
+            let item = toDoListManager.list.list.remove(at: indexPath.row)
             item.completeTask(mark: .markedCompletedInListView)
-            myToDoList.completedList.append(item)
-			myToDoList.storeList()
+            toDoListManager.list.completedList.append(item)
+			toDoListManager.storeList()
 			if let confettiView = self.confettiView {
 				confettiView.start()
 			}
@@ -313,8 +313,8 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 			self.tableView.endUpdates()
 			self.updateText()
 			let seconds = 1.0
-			let oldPoints = myToDoList.points
-			myToDoList.points += 10
+			let oldPoints = toDoListManager.list.points
+			toDoListManager.list.points += 10
 			self.incrementPoints(oldPoints: oldPoints)
 			DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
 				if let confettiView = self.confettiView {
@@ -349,10 +349,10 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 	 */
 	func handleDeleteItem(alertAction: UIAlertAction!) {
 		if let indexPath = deleteListIndexPath {
-            let deletedItem = myToDoList.list.remove(at: indexPath.row)
+            let deletedItem = toDoListManager.removeItemAt(index: indexPath.row)
             deletedItem.markDeleted()
-            myToDoList.deletedList.append(deletedItem)
-			myToDoList.storeList()
+            toDoListManager.list.deletedList.append(deletedItem)
+			toDoListManager.storeList()
 			tableView.beginUpdates()
 			tableView.deleteRows(at: [indexPath], with: .left)
 			tableView.endUpdates()
@@ -371,7 +371,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 
 	/// Animates a point incrementation with the pointCounter
 	func incrementPoints(oldPoints: Int) {
-		let newValue = myToDoList.points
+		let newValue = toDoListManager.list.points
 		let diff = newValue - oldPoints
 		let deltaT: Double = 1.0 / Double(diff)
         

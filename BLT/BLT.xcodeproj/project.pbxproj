@@ -36,7 +36,7 @@
 		D721FD5D2378ACA300ABD1EF /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = D721FD582378ACA300ABD1EF /* Milestone.swift */; };
 		D721FD5E2378ACA300ABD1EF /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D721FD592378ACA300ABD1EF /* ToDoItem.swift */; };
 		D721FD5F2378ACA300ABD1EF /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D721FD5A2378ACA300ABD1EF /* UserData.swift */; };
-		D721FD602378ACA300ABD1EF /* ToDoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D721FD5B2378ACA300ABD1EF /* ToDoList.swift */; };
+		D721FD602378ACA300ABD1EF /* ToDoListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D721FD5B2378ACA300ABD1EF /* ToDoListManager.swift */; };
 		D721FD632378ACA600ABD1EF /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D721FD612378ACA600ABD1EF /* NewItemViewController.swift */; };
 		D721FD642378ACA600ABD1EF /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D721FD622378ACA600ABD1EF /* ListViewController.swift */; };
 		D745011E23DEB1DA00508639 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D745011C23DEB1DA00508639 /* SettingsTableViewController.swift */; };
@@ -103,7 +103,7 @@
 		D721FD582378ACA300ABD1EF /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
 		D721FD592378ACA300ABD1EF /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		D721FD5A2378ACA300ABD1EF /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		D721FD5B2378ACA300ABD1EF /* ToDoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
+		D721FD5B2378ACA300ABD1EF /* ToDoListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListManager.swift; sourceTree = "<group>"; };
 		D721FD612378ACA600ABD1EF /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 		D721FD622378ACA600ABD1EF /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		D745011C23DEB1DA00508639 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -258,7 +258,7 @@
 		D745012423DEB29C00508639 /* List Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D721FD5B2378ACA300ABD1EF /* ToDoList.swift */,
+				D721FD5B2378ACA300ABD1EF /* ToDoListManager.swift */,
 				D721FD582378ACA300ABD1EF /* Milestone.swift */,
 				D721FD572378ACA300ABD1EF /* MilestoneItem.swift */,
 				D721FD592378ACA300ABD1EF /* ToDoItem.swift */,
@@ -485,7 +485,7 @@
 				D721BD5C23830540008E934F /* ItemViewController.swift in Sources */,
 				D721FD632378ACA600ABD1EF /* NewItemViewController.swift in Sources */,
 				D721FD5F2378ACA300ABD1EF /* UserData.swift in Sources */,
-				D721FD602378ACA300ABD1EF /* ToDoList.swift in Sources */,
+				D721FD602378ACA300ABD1EF /* ToDoListManager.swift in Sources */,
 				3F19AE4023EC620100DECA17 /* FMPopUpViewController.swift in Sources */,
 				D721FD5E2378ACA300ABD1EF /* ToDoItem.swift in Sources */,
 				D721FD5D2378ACA300ABD1EF /* Milestone.swift in Sources */,
