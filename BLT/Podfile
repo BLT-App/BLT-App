@@ -11,5 +11,6 @@ target 'BLT' do
   pod 'Datez'
   pod 'VerticalCardSwiper'
   pod 'RetroProgress'
+  pod 'RealmSwift', '~> 4.3.2'
 end
 
