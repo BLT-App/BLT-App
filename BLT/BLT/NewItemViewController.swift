@@ -103,8 +103,6 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
 
-				myToDoList.storeList()
-
 				//If Users Have it Set, Sort List By Due Date
 				if globalData.wantsListByDate {
 					//myToDoList.sortList()

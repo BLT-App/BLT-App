@@ -46,25 +46,13 @@ class ToDoList {
     }
     
     /// Current number of points.
-    var points: Int = 0 {
-        didSet {
-            storeList()
-        }
-    }
-
-	/// Saves user data to local file.
-	func storeList() {
-        print("Storing List")
-	}
-
-	/// Retrieves saved user data.
-	func retrieveList() {
-		print("** Retrieving To Do List")
-	}
+    var points: Int = 0
 
 	/// Initializes a ToDoList object. If it has never been saved to disk before, it saves the object to file.
 	init() {
-		retrieveList()
+        if allToDoItems.count <= 0 {
+            createExampleList()
+        }
 	}
 
 	/// Adds example tasks to the to do list, for example funcionality.

@@ -75,14 +75,6 @@ class ListViewController: UIViewController {
 		roundContainerView(cornerRadius: 40, view: tableContainerView, shadowView: shadowView)
 		addShadow(view: shadowView, color: UIColor.gray.cgColor, opacity: 0.2, radius: 10, offset: CGSize(width: 0, height: 5))
 		addShadow(view: addButton, color: UIColor.blue.cgColor, opacity: 0.1, radius: 5, offset: .zero)
-        
-		// Loads list from filesystem
-		myToDoList.retrieveList()
-        
-		// This creates an example list if there is nothing on the list. Debug only.
-		if myToDoList.uncompletedList.count == 0 {
-			myToDoList.createExampleList()
-		}
 
 		tableView.reorder.delegate = self
 
@@ -294,7 +286,6 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 		//myToDoList.uncompletedList.remove(at: sourceIndexPath.row)
 		//myToDoList.uncompletedList.insert(movedItem, at: destinationIndexPath.row)
         print("Disabled Reordering For Database Migration")
-		myToDoList.storeList()
 	}
 
 	/// Leading configuration.
