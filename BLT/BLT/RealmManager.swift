@@ -23,9 +23,13 @@ class RealmManager {
         
         // Set this as the configuration used for the default Realm
         Realm.Configuration.defaultConfiguration = config
-        realm = try! Realm()
-        print("Realm Connection Established")
+        do {
+            realm = try Realm()
+            print("Realm Connection Established")
+        } catch {
+            print("REALM FAILED TO OPEN: \(error)")
+            realm = try! Realm()
+        }
     }
-    
     
 }

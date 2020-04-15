@@ -38,6 +38,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         center.delegate = self
         
+        //let realm = realmManager.realm
+        
+        //try! realm.write {
+            //realm.add(DatabaseEvent(event: .openedApp))
+        //}
+        
         return true
     }
     /**
@@ -75,9 +81,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     /// Tells the delegate when the app is about to terminate.
     func applicationWillTerminate(_ application: UIApplication) {
-        myToDoList.storeList()
-        globalTaskDatabase.saveDatabaseLog(targetLog: globalTaskDatabase.currentDatabaseLog)
-        globalTaskDatabase.saveDatabaseIndex()
+        let realm = realmManager.realm
+        
+        try! realm.write {
+            realm.add(DatabaseEvent(event: .openedApp))
+        }
     }
 
 }

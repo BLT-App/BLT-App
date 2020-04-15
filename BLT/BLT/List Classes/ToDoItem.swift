@@ -49,6 +49,15 @@ class ToDoItem: Object {
     /// Initializes A New ToDoItem
     required init() {
         super.init()
+        let realm = realmManager.realm
+        let createdTaskEvent = DatabaseEvent(event: .createdItem, item: self)
+        if realm.isInWriteTransaction {
+            realm.add(createdTaskEvent)
+        } else {
+            try! realm.write {
+                realm.add(createdTaskEvent)
+            }
+        }
     }
     
     /// Initializer With Values
@@ -71,7 +80,8 @@ class ToDoItem: Object {
 		if !completed {
 			completed = true
 			dateCompleted = dateManager.date
-            globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: mark, currentDate: dateManager.date))
+            let realm = realmManager.realm
+            realm.add(DatabaseEvent(event: mark, item: self))
 		}
 	}
 
@@ -103,7 +113,8 @@ class ToDoItem: Object {
         if completed {
             completed = false
             dateCompleted = nil
-            globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .unmarkedComplete, currentDate: dateManager.date))
+            let realm = realmManager.realm
+            realm.add(DatabaseEvent(event: .unmarkedComplete, item: self))
         }
 	}
     

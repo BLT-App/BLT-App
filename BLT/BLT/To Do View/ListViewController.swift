@@ -89,7 +89,7 @@ class ListViewController: UIViewController {
 		globalData.updateCourses(fromList: myToDoList)
 		update()
 
-		print("Currently \(globalTaskDatabase.currentDatabaseLog.numOfEvents) in log")
+		print("Currently \(realmManager.realm.objects(DatabaseEvent.self).count) in log")
 	}
 
     /**
