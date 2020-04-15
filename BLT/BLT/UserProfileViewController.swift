@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Charts
+import RealmSwift
 
 /// View controller class for the User Profile page.
 class UserProfileViewController: UIViewController
@@ -36,13 +37,7 @@ class UserProfileViewController: UIViewController
     
     var totalFocusHours: Double {
         var minutes = 0.0
-        for item in myToDoList.list {
-            minutes += item.timeSpentInFocusMode
-        }
-        for item in myToDoList.completedList {
-            minutes += item.timeSpentInFocusMode
-        }
-        for item in myToDoList.deletedList {
+        for item in myToDoList.allToDoItems {
             minutes += item.timeSpentInFocusMode
         }
         

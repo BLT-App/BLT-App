@@ -65,8 +65,8 @@ class ToDoTableViewCell: UITableViewCell {
 			classLabel.backgroundColor = classColor
 		}
 		assignmentLabel.text = item.title
-		descLabel.text = item.description
-		dueLabel.text = item.dueString
+		descLabel.text = item.assignmentDescription
+        dueLabel.text = item.getDueString()
 	}
 }
 

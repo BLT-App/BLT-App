@@ -31,7 +31,7 @@ class TaskDatabase {
         didSet {
             saveDatabaseLog(targetLog: currentDatabaseLog)
             for event in currentDatabaseLog.log {
-                print("Event: \(event.toDoItemID), \(event.eventType), \(event.date)")
+                //print("Event: \(event.toDoItemID), \(event.eventType), \(event.date)")
             }
         }
     }

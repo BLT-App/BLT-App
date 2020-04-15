@@ -8,6 +8,7 @@
 
 import Foundation
 import Datez
+import RealmSwift
 
 /// Global ToDoList Variable
 var myToDoList: ToDoList = ToDoList()
@@ -15,67 +16,63 @@ var myToDoList: ToDoList = ToDoList()
 /**
  A class that represents entire lists of to-do. This is what is stored into storage by the system.
  */
-class ToDoList: Codable {
+class ToDoList {
 
 	/// The list of to-do items.
-	var list: [ToDoItem] = []
-
-	/// Current number of points.
-	var points: Int = 0 {
-		didSet {
-			storeList()
-		}
-	}
+    var uncompletedList: Results<ToDoItem> {
+        let realm = realmManager.realm
+        let results = realm.objects(ToDoItem.self).filter("deleted == false AND completed == false").sorted(byKeyPath: "dueDate")
+        return results
+    }
     
     ///List Of Deleted Items
-    var deletedList: [ToDoItem] = []
+    var deletedList: Results<ToDoItem> {
+        let realm = realmManager.realm
+        let results = realm.objects(ToDoItem.self).filter("deleted == true").sorted(byKeyPath: "dueDate")
+        return results
+    }
     
     ///List Of Completed Items
-    var completedList: [ToDoItem] = []
+    var completedList: Results<ToDoItem> {
+        let realm = realmManager.realm
+        let results = realm.objects(ToDoItem.self).filter("completed == true").sorted(byKeyPath: "completedDate")
+        return results
+    }
+    
+    var allToDoItems: Results<ToDoItem> {
+        let realm = realmManager.realm
+        let results = realm.objects(ToDoItem.self).filter("completed == true").sorted(byKeyPath: "createdDate")
+        return results
+    }
+    
+    /// Current number of points.
+    var points: Int = 0 {
+        didSet {
+            storeList()
+        }
+    }
 
 	/// Saves user data to local file.
 	func storeList() {
-		let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-		let archiveURL = documentsDirectory.appendingPathComponent("todolist").appendingPathExtension("plist")
-		let propertyListEncoder = PropertyListEncoder()
-		let encodedNote = try? propertyListEncoder.encode(self)
-		try? encodedNote?.write(to: archiveURL, options: .noFileProtection)
-		UserDefaults.standard.set(true, forKey: "ListHasLoaded")
-		print("** Stored To Do List")
+        print("Storing List")
 	}
 
 	/// Retrieves saved user data.
 	func retrieveList() {
 		print("** Retrieving To Do List")
-		let propertyListDecoder = PropertyListDecoder()
-		let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-		let archiveURL = documentsDirectory.appendingPathComponent("todolist").appendingPathExtension("plist")
-		if let retrievedNoteData = try? Data(contentsOf: archiveURL), let decodedToDoList = try? propertyListDecoder.decode(ToDoList.self, from: retrievedNoteData) {
-			self.list = decodedToDoList.list
-			self.points = decodedToDoList.points
-            self.deletedList = decodedToDoList.deletedList
-            self.completedList = decodedToDoList.completedList
-			print(list.count)
-			print("** Retrieved To Do List")
-		}
 	}
 
 	/// Initializes a ToDoList object. If it has never been saved to disk before, it saves the object to file.
 	init() {
-		if UserDefaults.standard.object(forKey: "ListHasLoaded") == nil {
-			storeList()
-		}
 		retrieveList()
-	}
-
-	/// Sorts the ToDoList.
-	func sortList() {
-		list = list.sorted()
-		storeList()
 	}
 
 	/// Adds example tasks to the to do list, for example funcionality.
 	func createExampleList() {
+        try! realmManager.realm.write {
+            //realm.add(myDog)
+        }
+        /**
         self.list.append(ToDoItem(className: "Math",
                                   title: "Complete Calculus Homework",
                                   description: "Discover Calculus pg. 103 - 120",
@@ -104,6 +101,7 @@ class ToDoList: Codable {
                                   title: "Paine",
                                   description: "Read Paine's Common Sense from Philosophy reader",
                                   dueDate: Date(timeIntervalSinceNow: 1.days.timeInterval)))
+        */
 		storeList()
 	}
 }
