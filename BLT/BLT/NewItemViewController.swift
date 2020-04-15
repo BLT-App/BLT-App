@@ -92,16 +92,17 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
 		if let classTxt = classText.text, let titleTxt = titleText.text, let descTxt = descText.text {
 			// Debug for clearing/resetting entire list.
 			if (classText.text != "" && titleTxt != "" && descTxt != "") {
-                let newToDo = ToDoItem()
-                newToDo.title = titleTxt
-                newToDo.assignmentDescription = descTxt
-                newToDo.className = classTxt
-                newToDo.dueDate = datePicker.date
+                let newToDo = ToDoItem(className: classTxt, title: titleTxt, description: descTxt, dueDate: datePicker.date)
                 
                 let realm = realmManager.realm
-                try! realm.write {
+                if realm.isInWriteTransaction {
                     realm.add(newToDo)
+                } else {
+                    try! realm.write {
+                        realm.add(newToDo)
+                    }
                 }
+
 				myToDoList.storeList()
 
 				//If Users Have it Set, Sort List By Due Date

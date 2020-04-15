@@ -49,18 +49,6 @@ class ToDoItem: Object {
     /// Initializes A New ToDoItem
     required init() {
         super.init()
-        DispatchQueue.main.async {
-            let realm = realmManager.realm
-            if realm.isInWriteTransaction {
-                let createdItemEvent = DatabaseEvent(event: .createdItem, item: self)
-                self.referencingEvents.append(createdItemEvent)
-            } else {
-                try! realm.write {
-                    let createdItemEvent = DatabaseEvent(event: .createdItem, item: self)
-                    self.referencingEvents.append(createdItemEvent)
-                }
-            }
-        }
         /**
         DispatchQueue.main.async {
             let realm = realmManager.getRealmInstance()
@@ -90,6 +78,18 @@ class ToDoItem: Object {
         self.title = title
         self.assignmentDescription = description
         self.dueDate = dueDate
+        DispatchQueue.main.async {
+            let realm = realmManager.realm
+            if realm.isInWriteTransaction {
+                let createdItemEvent = DatabaseEvent(event: .createdItem, item: self)
+                self.referencingEvents.append(createdItemEvent)
+            } else {
+                try! realm.write {
+                    let createdItemEvent = DatabaseEvent(event: .createdItem, item: self)
+                    self.referencingEvents.append(createdItemEvent)
+                }
+            }
+        }
         print("Task With Title: \(title) created")
     }
     
@@ -99,9 +99,8 @@ class ToDoItem: Object {
 			completed = true
 			dateCompleted = dateManager.date
             let completionEvent = DatabaseEvent(event: mark, item: self)
+            let realm = realmManager.realm
             referencingEvents.append(completionEvent)
-            //let realm = realmManager.realm
-            //realm.add()
 		}
 	}
 
