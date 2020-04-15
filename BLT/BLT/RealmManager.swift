@@ -21,6 +21,8 @@ class RealmManager {
         // Use the default directory, but replace the filename with the username
         config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("BLT.realm")
         
+        //config.objectTypes = [ToDoItem.self, DatabaseEvent.self]
+        
         // Set this as the configuration used for the default Realm
         Realm.Configuration.defaultConfiguration = config
         do {
@@ -30,6 +32,10 @@ class RealmManager {
             print("REALM FAILED TO OPEN: \(error)")
             realm = try! Realm()
         }
+    }
+    
+    func getRealmInstance() -> Realm {
+        return try! Realm()
     }
     
 }

@@ -49,15 +49,32 @@ class ToDoItem: Object {
     /// Initializes A New ToDoItem
     required init() {
         super.init()
-        let realm = realmManager.realm
-        let createdTaskEvent = DatabaseEvent(event: .createdItem, item: self)
-        if realm.isInWriteTransaction {
-            realm.add(createdTaskEvent)
-        } else {
-            try! realm.write {
-                realm.add(createdTaskEvent)
+        DispatchQueue.main.async {
+            let realm = realmManager.realm
+            if realm.isInWriteTransaction {
+                let createdItemEvent = DatabaseEvent(event: .createdItem, item: self)
+                self.referencingEvents.append(createdItemEvent)
+            } else {
+                try! realm.write {
+                    let createdItemEvent = DatabaseEvent(event: .createdItem, item: self)
+                    self.referencingEvents.append(createdItemEvent)
+                }
             }
         }
+        /**
+        DispatchQueue.main.async {
+            let realm = realmManager.getRealmInstance()
+            let createdTaskEvent = DatabaseEvent(event: .createdItem, item: self)
+            if realm.isInWriteTransaction {
+                realm.add(createdTaskEvent)
+            } else {
+                try! realm.write {
+                    realm.add(createdTaskEvent)
+                }
+            }
+        }
+        */
+
     }
     
     /// Initializer With Values
@@ -73,6 +90,7 @@ class ToDoItem: Object {
         self.title = title
         self.assignmentDescription = description
         self.dueDate = dueDate
+        print("Task With Title: \(title) created")
     }
     
 	/// Completes the current task.
@@ -80,8 +98,10 @@ class ToDoItem: Object {
 		if !completed {
 			completed = true
 			dateCompleted = dateManager.date
-            let realm = realmManager.realm
-            realm.add(DatabaseEvent(event: mark, item: self))
+            let completionEvent = DatabaseEvent(event: mark, item: self)
+            referencingEvents.append(completionEvent)
+            //let realm = realmManager.realm
+            //realm.add()
 		}
 	}
 
