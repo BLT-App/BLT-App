@@ -69,41 +69,43 @@ class ToDoList {
 
 	/// Adds example tasks to the to do list, for example funcionality.
 	func createExampleList() {
-        let realm = realmManager.realm
-        try! realm.write {
-            //realm.add(myDog)
-        
-        /**
-        realm.add(ToDoItem(className: "Math",
+        var exampleItems: [ToDoItem] = []
+        exampleItems.append(ToDoItem(className: "Math",
                                   title: "Complete Calculus Homework",
                                   description: "Discover Calculus pg. 103 - 120",
                                   dueDate: Date(timeIntervalSinceNow: 1.days.timeInterval)))
-		realm.add(ToDoItem(className: "English",
+		exampleItems.append(ToDoItem(className: "English",
                                   title: "Read Dalloway",
                                   description: "Page 48 - 64",
                                   dueDate: Date(timeIntervalSinceNow: 1.days.timeInterval)))
-		realm.add(ToDoItem(className: "Computer Science",
+		exampleItems.append(ToDoItem(className: "Computer Science",
                                   title: "Complete Lo-Fi Prototype",
                                   description: "Use Invision and upload to Canvas",
                                   dueDate: Date(timeIntervalSinceNow: 2.days.timeInterval)))
-		realm.add(ToDoItem(className: "Supreme Court",
+		exampleItems.append(ToDoItem(className: "Supreme Court",
                                   title: "Brief Rucho",
                                   description: "Read Rucho v United States and write brief",
                                   dueDate: Date(timeIntervalSinceNow: 3.days.timeInterval)))
-		realm.add(ToDoItem(className: "Photo",
+		exampleItems.append(ToDoItem(className: "Photo",
                                   title: "Print photos",
                                   description: "Print and mount pieces from last week",
                                   dueDate: Date(timeIntervalSinceNow: 2.days.timeInterval)))
-		realm.add(ToDoItem(className: "Econ",
+		exampleItems.append(ToDoItem(className: "Econ",
                                   title: "Read Unit 7",
                                   description: "Read Unit 7 and respond to prompt online",
                                   dueDate: Date(timeIntervalSinceNow: 1.days.timeInterval)))
-		realm.add(ToDoItem(className: "Philosophy",
+		exampleItems.append(ToDoItem(className: "Philosophy",
                                   title: "Paine",
                                   description: "Read Paine's Common Sense from Philosophy reader",
                                   dueDate: Date(timeIntervalSinceNow: 1.days.timeInterval)))
-        */
+        let realm = realmManager.realm
+        
+        if realm.isInWriteTransaction {
+            realm.add(exampleItems)
+        } else {
+            try! realm.write {
+                realm.add(exampleItems)
+            }
         }
-
 	}
 }
