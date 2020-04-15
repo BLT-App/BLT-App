@@ -10,6 +10,7 @@ import UIKit
 import LBConfettiView
 import VerticalCardSwiper
 import RetroProgress
+import RealmSwift
 
 /// The ViewController that controls the Focus View.
 class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewControllerDelegate {
@@ -25,6 +26,8 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 
     /// the popup object that will be displayed
 	var popup: FMPopUpViewController = FMPopUpViewController()
+    
+    var focusModeList: [ToDoItem] = []
     
     /// the button to end focus mode
     @IBOutlet weak var endFocusModeButton: UIBarButtonItem!
@@ -181,6 +184,11 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 
     /// Runs if the view will appear.
 	override func viewWillAppear(_ animated: Bool) {
+        focusModeList = []
+        for item in myToDoList.uncompletedList {
+            focusModeList.append(item)
+        }
+        
         verticalCardSwiper.reloadData()
         if verticalCardSwiper.scrollToCard(at: 0, animated: false) {
             print("Going Back To 0")
@@ -306,25 +314,27 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDatasource {
 	/// Number of cards to show in list.
     func numberOfCards(verticalCardSwiperView: VerticalCardSwiperView) -> Int {
-        return myToDoList.uncompletedList.count
+        return focusModeList.count
     }
 
 	/// Returns the CardCell of the current item.
     func cardForItemAt(verticalCardSwiperView: VerticalCardSwiperView, cardForItemAt index: Int) -> CardCell {
         if let cardCell = verticalCardSwiperView.dequeueReusableCell(withReuseIdentifier: "FocusCell", for: index) as? FocusCardCell {
-            cardCell.setupCard(fromItem: myToDoList.uncompletedList[index])
+            cardCell.setupCard(fromItem: focusModeList[index])
             return cardCell
         }
         return CardCell()
     }
 
 	/// Called when the VerticalCardSwiper has been scrolled.
+    ///
+    /// - Parameter verticalCardSwiperView:
     func didScroll(verticalCardSwiperView: VerticalCardSwiperView) {
         //currentTask?.stoppedStudyingInFocusMode()
         setCurrentTask()
         //currentTask?.startedStudyingInFocusMode()
         if let index = verticalCardSwiper.focussedCardIndex {
-            if let color = globalData.subjects[myToDoList.uncompletedList[index].className]?.uiColor {
+            if let color = globalData.subjects[focusModeList[index].className]?.uiColor {
                 DispatchQueue.main.async {
                     UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
                         self.changeProgressColor(color: color)
@@ -337,6 +347,11 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
     }
 
 	/// Called when a card has been dragged.
+    ///
+    /// - Parameters:
+    ///   - card:
+    ///   - index:
+    ///   - swipeDirection:
     func didDragCard(card: CardCell, index: Int, swipeDirection: SwipeDirection) {
         switch swipeDirection {
         case .Right:
@@ -395,15 +410,19 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
     }
 
 	/// Called when card will be swiped away.
+    ///
+    /// - Parameters:
+    ///   - card: Card being swiped
+    ///   - index: Index of card being swiped
+    ///   - swipeDirection: Direction of swipe
     func willSwipeCardAway(card: CardCell, index: Int, swipeDirection: SwipeDirection) {
-        if index < myToDoList.uncompletedList.count {
+        if index < focusModeList.count {
 			switch swipeDirection {
 			case .Left:
-				let task = myToDoList.uncompletedList[index]
-				//myToDoList.uncompletedList.append(task)
-				//verticalCardSwiper.insertCards(at: [myToDoList.uncompletedList.count - 1])
-				//myToDoList.uncompletedList.remove(at: index)
-                print("This Needs To Be Rewritten")
+                let task = focusModeList[index]
+                focusModeList.append(task)
+                verticalCardSwiper.insertCards(at: [focusModeList.count - 1])
+                focusModeList.remove(at: index)
 			default:
 				completeTask(index: index)
 			}
@@ -419,10 +438,15 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
 	/// Called when a task is completed
 	/// - Parameter index: Index of completed card.
     func completeTask(index: Int) {
-        let task = myToDoList.uncompletedList[index]
-        //task.stoppedStudyingInFocusMode()
-        task.completeTask(mark: .markedCompletedInFocusMode)
-        myToDoList.storeList()
+        let task = focusModeList.remove(at: index)
+        let realm = realmManager.realm
+        if realm.isInWriteTransaction {
+            task.completeTask(mark: .markedCompletedInFocusMode)
+        } else {
+            try! realm.write {
+                task.completeTask(mark: .markedCompletedInFocusMode)
+            }
+        }
         
         if let confettiView = self.confettiView {
             confettiView.start()
