@@ -28,20 +28,20 @@ class ToDoList {
     ///List Of Deleted Items
     var deletedList: Results<ToDoItem> {
         let realm = realmManager.realm
-        let results = realm.objects(ToDoItem.self).filter("deleted == true").sorted(byKeyPath: "dueDate")
+        let results = realm.objects(ToDoItem.self).filter("deleted == true").sorted(byKeyPath: "dateCreated")
         return results
     }
     
     ///List Of Completed Items
     var completedList: Results<ToDoItem> {
         let realm = realmManager.realm
-        let results = realm.objects(ToDoItem.self).filter("completed == true").sorted(byKeyPath: "completedDate")
+        let results = realm.objects(ToDoItem.self).filter("completed == true").sorted(byKeyPath: "dateCompleted")
         return results
     }
     
     var allToDoItems: Results<ToDoItem> {
         let realm = realmManager.realm
-        let results = realm.objects(ToDoItem.self).filter("completed == true").sorted(byKeyPath: "createdDate")
+        let results = realm.objects(ToDoItem.self).filter("completed == true").sorted(byKeyPath: "dateCreated")
         return results
     }
     

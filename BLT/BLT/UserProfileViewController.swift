@@ -51,22 +51,33 @@ class UserProfileViewController: UIViewController
 	/// Updates the chart from the globalTaskDatabase.
     func chartUpdate() {
         var trendData: [CGFloat] = []
+        var trendLabels: [String] = []
+        let realm = realmManager.realm
         
-        var previousDayTotal: Int = 0
-        for day in 1...7 {
-            var numEventsCompletedOnDay = 0
-            print("This Method Is Broken")
-            print("Tasks completed on day \(day): \(numEventsCompletedOnDay - previousDayTotal)")
-            trendData.append(CGFloat(numEventsCompletedOnDay - previousDayTotal))
-            previousDayTotal = numEventsCompletedOnDay
+        let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        
+        //var previousDayTotal: Int = 0
+        for day in 0...6 {
+            let dateBegin: Date = dateManager.date - day.day.timeInterval
+            let dateEnd: Date = dateManager.date - (day + 1).day.timeInterval
+            let numEventsCompletedOnDay = realm.objects(DatabaseEvent.self).filter("eventType == \(GeneralEventType.markedCompletedInFocusMode.rawValue) OR eventType == \(GeneralEventType.markedCompletedInListView.rawValue)").filter("date >= %@ AND date =< %@", dateEnd, dateBegin).count
+            print("Tasks completed on day \(day): \(numEventsCompletedOnDay)")
+            trendData.append(CGFloat(numEventsCompletedOnDay))
+            
+            let myCalendar = Calendar(identifier: .gregorian)
+            let weekDay = myCalendar.component(.weekday, from: dateBegin)
+            trendLabels.append(daysOfWeek[weekDay - 1])
+            //previousDayTotal = numEventsCompletedOnDay
         }
         
         // Example data for the trend. 
-        trendData = [5, 2, 7, 8, 3, 5, 6]
+        //trendData = [5, 2, 7, 8, 3, 5, 6]
         
         tasksCompletedChart.clear()
         tasksCompletedChart.addLine(trendData)
-        tasksCompletedChart.y.grid.count = 7
+        print(tasksCompletedChart.x.labels)
+        print(trendLabels)
+        tasksCompletedChart.x.grid.count = 7
     }
 
     /// Runs when the view did finish loading.
