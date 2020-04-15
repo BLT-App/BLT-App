@@ -40,8 +40,31 @@ class ToDoItem: Object {
 	/// Whether the to-do item is completed.
 	@objc dynamic var completed: Bool = false
 
-    /// whether the to-do item has been deleted
+    /// Whether the to-do item has been deleted
     @objc dynamic var deleted: Bool = false
+    
+    /// List of every event referencing this item
+    let referencingEvents: List<DatabaseEvent> = List<DatabaseEvent>()
+    
+    /// Initializes A New ToDoItem
+    required init() {
+        super.init()
+    }
+    
+    /// Initializer With Values
+    ///
+    /// - Parameters:
+    ///   - className: Name of class the task is for
+    ///   - title: Name of the task
+    ///   - description: Longer description of the task
+    ///   - dueDate: Date task is due
+    convenience init(className: String, title: String, description: String, dueDate: Date) {
+        self.init()
+        self.className = className
+        self.title = title
+        self.assignmentDescription = description
+        self.dueDate = dueDate
+    }
     
 	/// Completes the current task.
 	func completeTask(mark: GeneralEventType) {
@@ -62,7 +85,7 @@ class ToDoItem: Object {
         }
     }
     
-    /// marks an item as deleted
+    /// Marks an item as deleted
     func markDeleted(){
         self.deleted = true
     }
@@ -88,12 +111,6 @@ class ToDoItem: Object {
 	///  - Returns: The state of completion of the item.
 	func isCompleted() -> Bool {
 		return completed
-	}
-
-	/// Initializes A New ToDoItem
-    required init() {
-		print("Item with ID \(self.identifier) and Title \(self.title) was created")
-        //globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .created, currentDate: dateManager.date))
 	}
     
     /// Returns the days between now and the due date.

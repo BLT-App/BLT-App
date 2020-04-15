@@ -55,16 +55,14 @@ class UserProfileViewController: UIViewController
         var previousDayTotal: Int = 0
         for day in 1...7 {
             var numEventsCompletedOnDay = 0
-            numEventsCompletedOnDay += globalTaskDatabase.getNumEventsOfTypeInLast(numDays: day, eventType: .markedCompletedInListView)
-            numEventsCompletedOnDay += globalTaskDatabase.getNumEventsOfTypeInLast(numDays: day, eventType: .markedCompletedInFocusMode)
-            numEventsCompletedOnDay -= globalTaskDatabase.getNumEventsOfTypeInLast(numDays: day, eventType: .unmarkedComplete)
+            print("This Method Is Broken")
             print("Tasks completed on day \(day): \(numEventsCompletedOnDay - previousDayTotal)")
             trendData.append(CGFloat(numEventsCompletedOnDay - previousDayTotal))
             previousDayTotal = numEventsCompletedOnDay
         }
         
         // Example data for the trend. 
-        //trendData = [5, 2, 7, 8, 3, 5, 6]
+        trendData = [5, 2, 7, 8, 3, 5, 6]
         
         tasksCompletedChart.clear()
         tasksCompletedChart.addLine(trendData)
