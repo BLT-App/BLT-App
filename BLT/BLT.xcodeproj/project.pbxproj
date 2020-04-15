@@ -18,7 +18,6 @@
 		3FA808C623DE967800CB4127 /* SettingsFocusPrefSubmenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA808C523DE967800CB4127 /* SettingsFocusPrefSubmenuTableViewController.swift */; };
 		3FB05C862445644B008A5A1C /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB05C852445644B008A5A1C /* RealmManager.swift */; };
 		3FB956C0240FF310003C96C4 /* CurrentDateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB956BF240FF30F003C96C4 /* CurrentDateManager.swift */; };
-		3FBFEE5423E26CD20003394F /* TaskDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBFEE5323E26CD20003394F /* TaskDatabase.swift */; };
 		3FBFEE5623E3112F0003394F /* DatabaseEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBFEE5523E3112F0003394F /* DatabaseEvent.swift */; };
 		3FCE102E23E29D9A003F0D7D /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCE102D23E29D9A003F0D7D /* Notifications.swift */; };
 		3FE3EA63237718D3002B5303 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE3EA62237718D3002B5303 /* AppDelegate.swift */; };
@@ -78,7 +77,6 @@
 		3FA808C523DE967800CB4127 /* SettingsFocusPrefSubmenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFocusPrefSubmenuTableViewController.swift; sourceTree = "<group>"; };
 		3FB05C852445644B008A5A1C /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		3FB956BF240FF30F003C96C4 /* CurrentDateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDateManager.swift; sourceTree = "<group>"; };
-		3FBFEE5323E26CD20003394F /* TaskDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDatabase.swift; sourceTree = "<group>"; };
 		3FBFEE5523E3112F0003394F /* DatabaseEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseEvent.swift; sourceTree = "<group>"; };
 		3FCE102D23E29D9A003F0D7D /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		3FE3EA5F237718D3002B5303 /* BLT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,7 +186,6 @@
 				3FE3EA6B237718DB002B5303 /* LaunchScreen.storyboard */,
 				3FE3EA6E237718DB002B5303 /* Info.plist */,
 				D721FD5A2378ACA300ABD1EF /* UserData.swift */,
-				3FBFEE5323E26CD20003394F /* TaskDatabase.swift */,
 				3FBFEE5523E3112F0003394F /* DatabaseEvent.swift */,
 				D745012423DEB29C00508639 /* List Classes */,
 				D7056146238CFB700030B257 /* Additional Classes.swift */,
@@ -493,7 +490,6 @@
 				D721FD5E2378ACA300ABD1EF /* ToDoItem.swift in Sources */,
 				D721FD5D2378ACA300ABD1EF /* Milestone.swift in Sources */,
 				D75B7474238E554A00FBE468 /* SubjectCell.swift in Sources */,
-				3FBFEE5423E26CD20003394F /* TaskDatabase.swift in Sources */,
 				D776EF8D240ABE2A007E842F /* FocusCardCell.swift in Sources */,
 				D721FD642378ACA600ABD1EF /* ListViewController.swift in Sources */,
 				3FE3EA912378DA82002B5303 /* FocusViewController.swift in Sources */,
