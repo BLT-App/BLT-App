@@ -61,7 +61,6 @@ class UserProfileViewController: UIViewController
             let dateBegin: Date = dateManager.date - day.day.timeInterval
             let dateEnd: Date = dateManager.date - (day + 1).day.timeInterval
             let numEventsCompletedOnDay = realm.objects(DatabaseEvent.self).filter("eventType == \(GeneralEventType.markedCompletedInFocusMode.rawValue) OR eventType == \(GeneralEventType.markedCompletedInListView.rawValue)").filter("date >= %@ AND date =< %@", dateEnd, dateBegin).count
-            print("Tasks completed on day \(day): \(numEventsCompletedOnDay)")
             trendData.append(CGFloat(numEventsCompletedOnDay))
             
             let myCalendar = Calendar(identifier: .gregorian)
@@ -69,15 +68,18 @@ class UserProfileViewController: UIViewController
             trendLabels.append(daysOfWeek[weekDay - 1])
             //previousDayTotal = numEventsCompletedOnDay
         }
+        trendLabels[0] = "Today"
         
         // Example data for the trend. 
         //trendData = [5, 2, 7, 8, 3, 5, 6]
         
         tasksCompletedChart.clear()
-        tasksCompletedChart.addLine(trendData)
-        print(tasksCompletedChart.x.labels)
-        print(trendLabels)
-        tasksCompletedChart.x.grid.count = 7
+        tasksCompletedChart.addLine(trendData.reversed())
+        tasksCompletedChart.x.labels.values = trendLabels.reversed()
+        tasksCompletedChart.x.grid.visible = false
+        tasksCompletedChart.y.grid.count = trendData.max() ?? 1
+        //let chart = tasksCompletedChart
+        print("Chart Setup Done")
     }
 
     /// Runs when the view did finish loading.
