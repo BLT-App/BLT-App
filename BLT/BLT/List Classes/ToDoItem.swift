@@ -99,7 +99,6 @@ class ToDoItem: Object {
 			completed = true
 			dateCompleted = dateManager.date
             let completionEvent = DatabaseEvent(event: mark, item: self)
-            let realm = realmManager.realm
             referencingEvents.append(completionEvent)
 		}
 	}
