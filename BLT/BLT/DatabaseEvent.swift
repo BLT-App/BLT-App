@@ -38,48 +38,7 @@ import RealmSwift
 ///Used For Logging Various Events For Later Use
 class DatabaseEvent: Object {
     ///Type Of Event
-    @objc dynamic var eventType: GeneralEventType {
-        didSet {
-            switch eventType {
-            ///Occurs when an item is created
-            case .createdItem:
-                eventText = "Occurs when an item is created"
-            ///Occurs when a user changes the due date of an item
-            case .itemDueDateChanged:
-                eventText = "Occurs when a user changes the due date of an item"
-            ///Occurs when a user marks an item as complete from the Focus Mode page
-            case .markedCompletedInFocusMode:
-                eventText = "Occurs when a user marks an item as complete from the Focus Mode page"
-            ///Occurs when a user marks an item as complete from the List View page
-            case .markedCompletedInListView:
-                eventText = "Occurs when a user marks an item as complete from the List View page"
-            ///Occurs when a user unmarks an item as complete
-            case .unmarkedComplete:
-                eventText = "Occurs when a user unmarks an item as complete"
-            ///Occurs when an item has started to be studied in focus mode
-            case .startedStudyingInFocusMode:
-                eventText = "Occurs when an item has started to be studied in focus mode"
-            ///Occurs when an item has stopped being studied in focus mode
-            case .stoppedStudyingInFocusMode:
-                eventText = "Occurs when an item has stopped being studied in focus mode"
-            ///Occurs when a Focus Mode session begins
-            case .focusSessionOpened:
-                eventText = "Occurs when a Focus Mode session begins"
-            ///Occurs when a Focus Mode session ends
-            case .focusSessionClosed:
-                eventText = "Occurs when a Focus Mode session begins"
-            ///Occurs when the app is opened
-            case .openedApp:
-                eventText = "Occurs when a Focus Mode session begins"
-            ///Occurs when the app is closed
-            case .closedApp:
-                eventText = "Occurs when a Focus Mode session begins"
-            default:
-                eventText = ""
-            }
-            
-        }
-    }
+    @objc dynamic var eventType: GeneralEventType
     /// String Description Of The Event Text
     @objc private dynamic var eventText: String = ""
     ///Date of Event
@@ -91,25 +50,72 @@ class DatabaseEvent: Object {
     
     required init() {
         self.eventType = .openedApp
+        super.init()
+        setEventText()
     }
     
     /**
      Initializes a DatabaseEvent with parameters
      - Parameters:
-        - item: The ToDoItem triggering the event
         - event: The type of event that was triggered
-        - currentDate: The date of the event
         - item: The ToDoItem triggering the event
     */
     convenience init(event: GeneralEventType, item: ToDoItem) {
         self.init()
         self.eventType = event
         self.item = item
+        setEventText()
     }
     
+    
+    /// Initializes a DatabaseEvent with parameters
+    ///
+    /// - Parameter event: Type of event
     convenience init(event: GeneralEventType) {
         self.init()
         self.eventType = event
+        setEventText()
+    }
+    
+    /// Sets the text representation of the event type
+    func setEventText() {
+        switch self.eventType {
+        ///Occurs when an item is created
+        case .createdItem:
+            eventText = "Occurs when an item is created"
+        ///Occurs when a user changes the due date of an item
+        case .itemDueDateChanged:
+            eventText = "Occurs when a user changes the due date of an item"
+        ///Occurs when a user marks an item as complete from the Focus Mode page
+        case .markedCompletedInFocusMode:
+            eventText = "Occurs when a user marks an item as complete from the Focus Mode page"
+        ///Occurs when a user marks an item as complete from the List View page
+        case .markedCompletedInListView:
+            eventText = "Occurs when a user marks an item as complete from the List View page"
+        ///Occurs when a user unmarks an item as complete
+        case .unmarkedComplete:
+            eventText = "Occurs when a user unmarks an item as complete"
+        ///Occurs when an item has started to be studied in focus mode
+        case .startedStudyingInFocusMode:
+            eventText = "Occurs when an item has started to be studied in focus mode"
+        ///Occurs when an item has stopped being studied in focus mode
+        case .stoppedStudyingInFocusMode:
+            eventText = "Occurs when an item has stopped being studied in focus mode"
+        ///Occurs when a Focus Mode session begins
+        case .focusSessionOpened:
+            eventText = "Occurs when a Focus Mode session begins"
+        ///Occurs when a Focus Mode session ends
+        case .focusSessionClosed:
+            eventText = "Occurs when a Focus Mode session begins"
+        ///Occurs when the app is opened
+        case .openedApp:
+            eventText = "Occurs when a Focus Mode session begins"
+        ///Occurs when the app is closed
+        case .closedApp:
+            eventText = "Occurs when a Focus Mode session begins"
+        default:
+            eventText = ""
+        }
     }
     
     override static func primaryKey() -> String? {
