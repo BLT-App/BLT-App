@@ -461,7 +461,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Comment Out Line Below For Swift Lint\n# ${PODS_ROOT}/SwiftLint/swiftlint\n";
+			shellScript = "# Comment Out Line Below For Swift Lint\n${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -676,7 +676,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QEJW2NUXDQ;
+				DEVELOPMENT_TEAM = 7SR627V48N;
 				INFOPLIST_FILE = BLT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -695,7 +695,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QEJW2NUXDQ;
+				DEVELOPMENT_TEAM = 7SR627V48N;
 				INFOPLIST_FILE = BLT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

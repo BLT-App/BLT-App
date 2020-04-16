@@ -1,0 +1,6 @@
+framework module Datez {
+  umbrella header "Datez-umbrella.h"
+
+  export *
+  module * { export * }
+}
