@@ -135,7 +135,7 @@ class ListViewController: UIViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 
-		if (myToDoList.uncompletedList.count > tableView.numberOfRows(inSection: 0)) {
+		if myToDoList.uncompletedList.count > tableView.numberOfRows(inSection: 0) {
 			insertNewTask()
 		}
 	}
@@ -301,7 +301,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
             
             let realm = realmManager.realm
             try! realm.write {
-                item.completeTask(mark: .markedCompletedInListView)
+                item.completeTaskInListView()
             }
             
 			if let confettiView = self.confettiView {

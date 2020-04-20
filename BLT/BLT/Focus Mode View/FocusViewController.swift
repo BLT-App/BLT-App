@@ -110,7 +110,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     
     func getCurrentTask() -> ToDoItem? {
         if let index = verticalCardSwiper.focussedCardIndex {
-            return myToDoList.uncompletedList[index]
+            return focusModeList[index]
         }
         return nil
     }
@@ -212,6 +212,14 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     /// Runs when the view will disappear.
 	override func viewWillDisappear(_ animated: Bool) {
 		myTimer.stopRunning()
+        let realm = realmManager.realm
+        do {
+            try realm.write {
+                currentTask?.stoppedStudyingInFocusMode(duration: dateManager.date.timeIntervalSince(lastItemStartTime))
+            }
+        } catch {
+            print("Exception Occurred")
+        }
 	}
 
 	/// Hides the Tab Bar controller.
@@ -282,8 +290,15 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		myTimer.totalSecs = myTimer.cdt
 		myTimer.runTimer()
         progressView.animateProgress(to: 0.0, duration: myTimer.totalSecs / Double(dateManager.timeMultiplier))
-        
-        //currentTask?.startedStudyingInFocusMode()
+        currentTask = getCurrentTask()
+        let realm = realmManager.realm
+        do {
+            try realm.write {
+                currentTask?.startedStudyingInFocusMode()
+            }
+        } catch {
+            print("Exception Occurred")
+        }
 	}
 
 	/// Animates a point incrementation with the pointCounter
@@ -325,7 +340,10 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
     ///
     /// - Parameter verticalCardSwiperView:
     func didScroll(verticalCardSwiperView: VerticalCardSwiperView) {
-        changeoverCheckStart()
+        if let item = currentTask {
+            changeoverCheckStart(oldItem: item)
+        }
+        
         if let index = verticalCardSwiper.focussedCardIndex {
             if let color = globalData.subjects[focusModeList[index].className]?.uiColor {
                 DispatchQueue.main.async {
@@ -416,6 +434,7 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
                 focusModeList.append(task)
                 verticalCardSwiper.insertCards(at: [focusModeList.count - 1])
                 focusModeList.remove(at: index)
+                changeoverCheckStart(oldItem: task)
 			default:
 				completeTask(index: index)
 			}
@@ -433,13 +452,21 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
     func completeTask(index: Int) {
         let task = focusModeList.remove(at: index)
         let realm = realmManager.realm
+        currentTask = getCurrentTask()
         if realm.isInWriteTransaction {
-            task.completeTask(mark: .markedCompletedInFocusMode)
+            task.completeTaskInFocusMode(duration: dateManager.date.timeIntervalSince(lastItemStartTime))
+            currentTask?.startedStudyingInFocusMode()
         } else {
-            try! realm.write {
-                task.completeTask(mark: .markedCompletedInFocusMode)
+            do {
+                try realm.write {
+                    task.completeTaskInFocusMode(duration: dateManager.date.timeIntervalSince(dateManager.date))
+                    currentTask?.startedStudyingInFocusMode()
+                }
+            } catch {
+                print("Exception Occurred")
             }
         }
+        lastItemStartTime = dateManager.date
         
         if let confettiView = self.confettiView {
             confettiView.start()
@@ -455,20 +482,21 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
         }
     }
     
-    func changeoverCheckStart() {
+    func changeoverCheckStart(oldItem: ToDoItem) {
         if !isRunningChangeoverCheck {
             isRunningChangeoverCheck = true
+            let oldToDo = oldItem
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                if self.currentTask?.identifier != self.getCurrentTask()?.identifier {
+                if oldToDo.identifier != self.getCurrentTask()?.identifier {
                     let realm = realmManager.realm
                     if realm.isInWriteTransaction {
-                        self.currentTask?.stoppedStudyingInFocusMode(duration: dateManager.date.timeIntervalSince(self.lastItemStartTime))
+                        oldToDo.stoppedStudyingInFocusMode(duration: dateManager.date.timeIntervalSince(self.lastItemStartTime))
                         self.currentTask = self.getCurrentTask()
                         self.currentTask?.startedStudyingInFocusMode()
                     } else {
                         do {
                             try realm.write {
-                                self.currentTask?.stoppedStudyingInFocusMode(duration: dateManager.date.timeIntervalSince(self.lastItemStartTime))
+                                oldToDo.stoppedStudyingInFocusMode(duration: dateManager.date.timeIntervalSince(self.lastItemStartTime))
                                 self.currentTask = self.getCurrentTask()
                                 self.currentTask?.startedStudyingInFocusMode()
                             }

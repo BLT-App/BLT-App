@@ -87,7 +87,7 @@ class DatabaseEvent: Object {
     ///   - item: ToDoItem triggering the event
     ///   - duration:
     convenience init(event: GeneralEventType, item: ToDoItem, duration: TimeInterval) {
-        if event != GeneralEventType.stoppedStudyingInFocusMode {
+        if event != GeneralEventType.stoppedStudyingInFocusMode && event != GeneralEventType.markedCompletedInFocusMode {
             print("WARNING: INCORRECT INITIALIZER USED FOR DATABASEEVENT")
             exit(0)
         }

@@ -29,7 +29,7 @@ class ToDoItem: Object {
 	@objc dynamic var dateCreated: Date = Date()
 
 	/// Date of Completion
-	@objc dynamic var dateCompleted: Date? = nil
+	@objc dynamic var dateCompleted: Date?
 
     /// Identifier
     @objc dynamic var identifier: String = UUID().uuidString
@@ -71,37 +71,52 @@ class ToDoItem: Object {
                 let createdItemEvent = DatabaseEvent(event: .createdItem, item: self)
                 self.referencingEvents.append(createdItemEvent)
             } else {
-                try! realm.write {
-                    let createdItemEvent = DatabaseEvent(event: .createdItem, item: self)
-                    self.referencingEvents.append(createdItemEvent)
+                do {
+                    try realm.write {
+                        let createdItemEvent = DatabaseEvent(event: .createdItem, item: self)
+                        self.referencingEvents.append(createdItemEvent)
+                    }
+                } catch {
+                    print("Error Occurred")
                 }
+                
             }
         }
         print("Task With Title: \(title) created")
     }
     
 	/// Completes the current task.
-	func completeTask(mark: GeneralEventType) {
+	func completeTaskInListView() {
 		if !completed {
 			completed = true
 			dateCompleted = dateManager.date
-            let completionEvent = DatabaseEvent(event: mark, item: self)
+            let completionEvent = DatabaseEvent(event: .markedCompletedInListView, item: self)
             referencingEvents.append(completionEvent)
 		}
 	}
+    
+    /// Completes the current task.
+    func completeTaskInFocusMode(duration: TimeInterval) {
+        timeSpentInFocusMode += duration
+        if !completed {
+            completed = true
+            dateCompleted = dateManager.date
+            let completionEvent = DatabaseEvent(event: .markedCompletedInFocusMode, item: self, duration: duration)
+            referencingEvents.append(completionEvent)
+        }
+    }
 
     /// undeletes a task
-    func undoDeleteTask(){
+    func undoDeleteTask() {
         if deleted {
             deleted = false
-            //globalTaskDatabase.currentDatabaseLog.log.append(DatabaseEvent(item: self, event: .unmarkedComplete, currentDate: currentDate))
         } else {
             print("Not Quite Sure How You Got Here...")
         }
     }
     
     /// Marks an item as deleted
-    func markDeleted(){
+    func markDeleted() {
         self.deleted = true
     }
     
@@ -109,7 +124,7 @@ class ToDoItem: Object {
      returns whether the function is deleted
      - Returns: the value of the deleted variable for the item
     */
-    func isDeleted()-> Bool {
+    func isDeleted() -> Bool {
         return self.deleted
     }
     
