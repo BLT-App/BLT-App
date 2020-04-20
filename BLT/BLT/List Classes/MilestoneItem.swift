@@ -6,11 +6,11 @@
 //  Copyright © 2019 BLT App. All rights reserved.
 //
 
-import Foundation
+//import Foundation
 
 /**
  A MilestoneItem is a ToDoItem that contains milestones. This is meant for larger ToDoItems such as essays or reports.
- */
+
 class MilestoneItem: ToDoItem {
 
 	/// The milestones of the assignment in an array.
@@ -39,3 +39,4 @@ class MilestoneItem: ToDoItem {
 		fatalError("init(from:) has not been implemented")
 	}
 }
+ */

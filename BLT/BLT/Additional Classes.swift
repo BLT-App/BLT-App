@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 /// Allows Custom Intesities for Blur Views
 class CustomIntensityVisualEffectView: UIVisualEffectView {
 
@@ -25,7 +24,6 @@ class CustomIntensityVisualEffectView: UIVisualEffectView {
 		animator.fractionComplete = intensity
 	}
 
-    
     /// Initializer From Decoder
     ///
     /// - Parameter aDecoder: Decoder

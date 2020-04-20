@@ -1,0 +1,6 @@
+framework module RetroProgress {
+  umbrella header "RetroProgress-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -9,7 +9,6 @@
 import Foundation
 import Datez
 
-
 /// Global Date Manager Variable For Accessing The Date
 var dateManager: CurrentDateManager = CurrentDateManager()
 
@@ -51,6 +50,7 @@ class CurrentDateManager {
     /// Timer For Incementing Debug Date
     private var timer = Timer()
     
+    /// Initializes A DateManager
     init() {
         print("Date Manager Created")
         timer.invalidate()
@@ -63,7 +63,6 @@ class CurrentDateManager {
         debugDate = to
         isInDebugMode = true
     }
-    
     
     /// Adds The Specified Amount Of Time To The Debug Date
     ///

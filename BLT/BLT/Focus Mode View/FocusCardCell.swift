@@ -52,7 +52,7 @@ class FocusCardCell: CardCell {
     func setupCard(fromItem item: ToDoItem) {
         classLabel.text = item.className
         assignmentLabel.text = item.title
-        descriptionLabel.text = item.description
+        descriptionLabel.text = item.assignmentDescription
         if let subjectColor = globalData.subjects[item.className]?.uiColor {
             classBackground.backgroundColor = subjectColor
         }

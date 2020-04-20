@@ -1,0 +1,60 @@
+PODS:
+  - Charts (3.2.2):
+    - Charts/Core (= 3.2.2)
+  - Charts/Core (3.2.2)
+  - Datez (3.1.1)
+  - DropDown (2.3.4)
+  - LBConfettiView (1.0.0)
+  - RandomColorSwift (2.0.0)
+  - Realm (4.3.2):
+    - Realm/Headers (= 4.3.2)
+  - Realm/Headers (4.3.2)
+  - RealmSwift (4.3.2):
+    - Realm (= 4.3.2)
+  - RetroProgress (1.0.1)
+  - SwiftLint (0.39.2)
+  - SwiftReorder (6.0.2)
+  - VerticalCardSwiper (2.2.0)
+
+DEPENDENCIES:
+  - Charts (~> 3.2.2)
+  - Datez
+  - DropDown (= 2.3.4)
+  - LBConfettiView
+  - RandomColorSwift
+  - RealmSwift (~> 4.3.2)
+  - RetroProgress
+  - SwiftLint
+  - SwiftReorder (~> 6.0.2)
+  - VerticalCardSwiper
+
+SPEC REPOS:
+  trunk:
+    - Charts
+    - Datez
+    - DropDown
+    - LBConfettiView
+    - RandomColorSwift
+    - Realm
+    - RealmSwift
+    - RetroProgress
+    - SwiftLint
+    - SwiftReorder
+    - VerticalCardSwiper
+
+SPEC CHECKSUMS:
+  Charts: f69cf0518b6d1d62608ca504248f1bbe0b6ae77e
+  Datez: 4a10fa184e8f0501624b6ff0e0e5608b4d184f61
+  DropDown: f225ff0fd09dde064d17aa03db7e4d4e4ff40b6b
+  LBConfettiView: 29e99668b3c0dca25160486dd593f91a0ceeca8e
+  RandomColorSwift: d18b9b025403137b5543a002187489b06cc1782b
+  Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
+  RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
+  RetroProgress: a5b2514485c0ce75838ad321c77d5746150901cd
+  SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
+  SwiftReorder: 60ef1faf6446cf68f9a647cb975530db8efd6620
+  VerticalCardSwiper: 41c8c0d8d87511ec269347f5671386acf66cd31a
+
+PODFILE CHECKSUM: d3e5a80acc963ea4d81073ad22ccaa752b52f659
+
+COCOAPODS: 1.8.4

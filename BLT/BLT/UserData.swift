@@ -108,10 +108,8 @@ class UserData: Codable {
 	/// - Parameters:
 	///     - toDoList: The main ToDoList of the user.
 	func updateCourses(fromList toDoList: ToDoList) {
-		for item: ToDoItem in toDoList.list {
-			if subjects[item.className] == nil {
-				subjects[item.className] = Color(uiColor: randomColor(hue: getHue(), luminosity: .dark))
-			}
+		for item: ToDoItem in toDoList.uncompletedList where subjects[item.className] == nil {
+            subjects[item.className] = Color(uiColor: randomColor(hue: getHue(), luminosity: .dark))
 		}
 		saveUserData()
 	}

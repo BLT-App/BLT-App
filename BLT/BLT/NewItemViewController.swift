@@ -8,6 +8,7 @@
 
 import UIKit
 import DropDown
+import RealmSwift
 
 /// View Controller for creating a new item.
 class NewItemViewController: UIViewController, UITextFieldDelegate {
@@ -90,17 +91,26 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
 	@IBAction func addButton(_ sender: UIButton) {
 		if let classTxt = classText.text, let titleTxt = titleText.text, let descTxt = descText.text {
 			// Debug for clearing/resetting entire list.
-			if (titleTxt == "clear_entire_list") {
-				myToDoList.list = []
-				myToDoList.storeList()
-			} else if (classText.text != "" && titleTxt != "" && descTxt != "") {
-				let newToDo = ToDoItem(className: classTxt, title: titleTxt, description: descTxt, dueDate: datePicker.date)
-				myToDoList.list.insert(newToDo, at: 0)
-				myToDoList.storeList()
+			if classText.text != "" && titleTxt != "" && descTxt != "" {
+                let newToDo = ToDoItem(className: classTxt, title: titleTxt, description: descTxt, dueDate: datePicker.date)
+                
+                let realm = realmManager.realm
+                if realm.isInWriteTransaction {
+                    realm.add(newToDo)
+                } else {
+                    do {
+                        try realm.write {
+                            realm.add(newToDo)
+                        }
+                    } catch {
+                        print(error)
+                    }
+                }
 
 				//If Users Have it Set, Sort List By Due Date
 				if globalData.wantsListByDate {
-					myToDoList.sortList()
+					//myToDoList.sortList()
+                    ///TODO: Fix Not Being Able To Rearrange
 				}
 			}
 			globalData.updateCourses(fromList: myToDoList)

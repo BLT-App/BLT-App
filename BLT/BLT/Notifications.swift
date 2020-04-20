@@ -18,10 +18,9 @@ class Notifications {
     var date: Date
     
     /// Basic initializer sets default notification date to 10s from when called.
-    init(){
+    init() {
         date = Date(timeIntervalSinceNow: 10)
     }
-    
     
     /**
      Creates a new notification and adds it to the notification center to be sent at a specified time.
@@ -31,42 +30,35 @@ class Notifications {
          - body: The string to be displayed in the body of the notification. can be nil
          - notifDate: The date when the user should recieve the notification. can be nil will resort to default date if nil.
     */
-    func prepareNotification(title: String?, subtitle: String?, body: String?, notifDate: Date?){
+    func prepareNotification(title: String?, subtitle: String?, body: String?, notifDate: Date?) {
         let center = UNUserNotificationCenter.current()
         let content = UNMutableNotificationContent()
         
         if let title: String = title {
             content.title = title
-        }
-        else {
+        } else {
             content.title = "Title"
         }
         
         if let subtitle: String = subtitle {
             content.subtitle = subtitle
-        }
-        else {
+        } else {
             content.subtitle = "Subtitle"
         }
         
         if let body: String = body {
             content.body = body
-        }
-            
-        else {
+        } else {
             content.body = "Body"
         }
         
-        if let ndate: Date = notifDate  {
+        if let ndate: Date = notifDate {
             date = ndate
-        }
-        else{
+        } else {
             date = Date(timeIntervalSinceNow: 10)
         }
             
-            
         content.sound = UNNotificationSound.default
-        
         
         content.threadIdentifier = UUID().uuidString
         

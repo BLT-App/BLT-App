@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           BLT Docs
         </a>
-         (100% documented)
+         (97% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -57,6 +57,9 @@
                 <a class="nav-group-task-link" href="../Classes/BlurView.html">BlurView</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CurrentDateManager.html">CurrentDateManager</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/CustomIntensityVisualEffectView.html">CustomIntensityVisualEffectView</a>
               </li>
               <li class="nav-group-task">
@@ -87,16 +90,19 @@
                 <a class="nav-group-task-link" href="../Classes/ListViewController/LastActions.html">– LastActions</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/MilestoneItem.html">MilestoneItem</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/NewItemViewController.html">NewItemViewController</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/Notifications.html">Notifications</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RealmManager.html">RealmManager</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/RenderTimer.html">RenderTimer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SettingsDeveloperSubmenuTableViewController.html">SettingsDeveloperSubmenuTableViewController</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/SettingsFocusPrefSubmenuTableViewController.html">SettingsFocusPrefSubmenuTableViewController</a>
@@ -115,18 +121,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/SubjectCell.html">SubjectCell</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/TaskDatabase.html">TaskDatabase</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/TaskDatabase/DatabaseLog.html">– DatabaseLog</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/TaskDatabase/DatabaseIndex.html">– DatabaseIndex</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/TaskDatabase/DatabaseError.html">– DatabaseError</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ToDoItem.html">ToDoItem</a>
@@ -152,13 +146,16 @@
             <a class="nav-group-name-link" href="../Global%20Variables.html">Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT11dateManagerAA011CurrentDateC0Cvp">dateManager</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT10globalDataAA04UserC0Cvp">globalData</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT18globalTaskDatabaseAA0cD0Cvp">globalTaskDatabase</a>
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT10myToDoListAA0cdE0Cvp">myToDoList</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT10myToDoListAA0cdE0Cvp">myToDoList</a>
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT12realmManagerAA05RealmC0Cvp">realmManager</a>
               </li>
             </ul>
           </li>
@@ -212,7 +209,8 @@
             <h1>GeneralEventType</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">GeneralEventType</span> <span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">Codable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">enum</span> <span class="kt">GeneralEventType</span> <span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kt">RealmEnum</span></code></pre>
 
                 </div>
               </div>
@@ -228,9 +226,36 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:3BLT16GeneralEventTypeO14dueDateChangedyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/dueDateChanged" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3BLT16GeneralEventTypeO14dueDateChangedyA2CmF">dueDateChanged</a>
+                    <a name="/c:@M@BLT@E@GeneralEventType@GeneralEventTypeCreatedItem"></a>
+                    <a name="//apple_ref/swift/Element/createdItem" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@E@GeneralEventType@GeneralEventTypeCreatedItem">createdItem</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Occurs when an item is created</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">createdItem</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@E@GeneralEventType@GeneralEventTypeItemDueDateChanged"></a>
+                    <a name="//apple_ref/swift/Element/itemDueDateChanged" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@E@GeneralEventType@GeneralEventTypeItemDueDateChanged">itemDueDateChanged</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -245,7 +270,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">dueDateChanged</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">itemDueDateChanged</span></code></pre>
 
                         </div>
                       </div>
@@ -255,9 +280,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:3BLT16GeneralEventTypeO26markedCompletedInFocusModeyA2CmF"></a>
+                    <a name="/c:@M@BLT@E@GeneralEventType@GeneralEventTypeMarkedCompletedInFocusMode"></a>
                     <a name="//apple_ref/swift/Element/markedCompletedInFocusMode" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3BLT16GeneralEventTypeO26markedCompletedInFocusModeyA2CmF">markedCompletedInFocusMode</a>
+                    <a class="token" href="#/c:@M@BLT@E@GeneralEventType@GeneralEventTypeMarkedCompletedInFocusMode">markedCompletedInFocusMode</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -282,36 +307,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:3BLT16GeneralEventTypeO7createdyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/created" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3BLT16GeneralEventTypeO7createdyA2CmF">created</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Occurs when an item is created</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">created</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:3BLT16GeneralEventTypeO25markedCompletedInListViewyA2CmF"></a>
+                    <a name="/c:@M@BLT@E@GeneralEventType@GeneralEventTypeMarkedCompletedInListView"></a>
                     <a name="//apple_ref/swift/Element/markedCompletedInListView" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3BLT16GeneralEventTypeO25markedCompletedInListViewyA2CmF">markedCompletedInListView</a>
+                    <a class="token" href="#/c:@M@BLT@E@GeneralEventType@GeneralEventTypeMarkedCompletedInListView">markedCompletedInListView</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -336,9 +334,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:3BLT16GeneralEventTypeO16unmarkedCompleteyA2CmF"></a>
+                    <a name="/c:@M@BLT@E@GeneralEventType@GeneralEventTypeUnmarkedComplete"></a>
                     <a name="//apple_ref/swift/Element/unmarkedComplete" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3BLT16GeneralEventTypeO16unmarkedCompleteyA2CmF">unmarkedComplete</a>
+                    <a class="token" href="#/c:@M@BLT@E@GeneralEventType@GeneralEventTypeUnmarkedComplete">unmarkedComplete</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -360,6 +358,168 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@E@GeneralEventType@GeneralEventTypeStartedStudyingInFocusMode"></a>
+                    <a name="//apple_ref/swift/Element/startedStudyingInFocusMode" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@E@GeneralEventType@GeneralEventTypeStartedStudyingInFocusMode">startedStudyingInFocusMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Occurs when an item has started to be studied in focus mode</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">startedStudyingInFocusMode</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@E@GeneralEventType@GeneralEventTypeStoppedStudyingInFocusMode"></a>
+                    <a name="//apple_ref/swift/Element/stoppedStudyingInFocusMode" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@E@GeneralEventType@GeneralEventTypeStoppedStudyingInFocusMode">stoppedStudyingInFocusMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Occurs when an item has stopped being studied in focus mode</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">stoppedStudyingInFocusMode</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@E@GeneralEventType@GeneralEventTypeFocusSessionOpened"></a>
+                    <a name="//apple_ref/swift/Element/focusSessionOpened" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@E@GeneralEventType@GeneralEventTypeFocusSessionOpened">focusSessionOpened</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Occurs when a Focus Mode session begins</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">focusSessionOpened</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@E@GeneralEventType@GeneralEventTypeFocusSessionClosed"></a>
+                    <a name="//apple_ref/swift/Element/focusSessionClosed" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@E@GeneralEventType@GeneralEventTypeFocusSessionClosed">focusSessionClosed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Occurs when a Focus Mode session ends</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">focusSessionClosed</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@E@GeneralEventType@GeneralEventTypeOpenedApp"></a>
+                    <a name="//apple_ref/swift/Element/openedApp" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@E@GeneralEventType@GeneralEventTypeOpenedApp">openedApp</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Occurs when the app is opened</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">openedApp</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@E@GeneralEventType@GeneralEventTypeClosedApp"></a>
+                    <a name="//apple_ref/swift/Element/closedApp" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@E@GeneralEventType@GeneralEventTypeClosedApp">closedApp</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Occurs when the app is closed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">closedApp</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -368,7 +528,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://https//blt-app.github.io/get-blt" target="_blank" rel="external">Nicholas Lorentzen, Jiahua Chen, and David Lloyd George</a>. All rights reserved. (Last updated: 2020-03-02)</p>
+      <p>&copy; 2020 <a class="link" href="https://https//blt-app.github.io/get-blt" target="_blank" rel="external">Nicholas Lorentzen, Jiahua Chen, and David Lloyd George</a>. All rights reserved. (Last updated: 2020-04-20)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

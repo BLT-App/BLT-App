@@ -127,11 +127,7 @@ Carthage/Build
 # 
 # Note: if you ignore the Pods directory, make sure to uncomment
 # `pod install` in .travis.yml
-#
-Pods/
-BLT/BLT/.DS_Store
-BLT/BLT/.DS_Store
-.DS_Store
+# /Pods/
 
 # Ignores .idea files. 
 BLT/.idea/*

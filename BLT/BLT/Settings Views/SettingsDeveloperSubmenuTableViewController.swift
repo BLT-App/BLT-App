@@ -82,6 +82,4 @@ class SettingsDeveloperSubmenuTableViewController: UITableViewController {
             dateManager.setDate(to: debugDatePicker.date)
         }
     }
-    
-    
 }

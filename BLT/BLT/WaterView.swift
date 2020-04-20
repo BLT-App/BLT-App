@@ -9,7 +9,6 @@
 import UIKit
 import Foundation
 
-
 /// Class That Manages The Water View Featured On The List Page
 class WaterView: UIView, RenderTimerDelegate {
 
@@ -34,7 +33,6 @@ class WaterView: UIView, RenderTimerDelegate {
 	/// Wavelength of Wave in Pixels
 	var waveLength: CGFloat = -1
 
-    
     /// Initializes A `WaterView` With A Frame
     ///
     /// - Parameter frame: Frame to hold the `WaterView`
@@ -48,7 +46,6 @@ class WaterView: UIView, RenderTimerDelegate {
 		renderTimer.delegate = self
 		renderTimer.runTimer(interval: 0.07)
 	}
-
     
     /// Init From Decoder As Required By `UIView`
     ///
@@ -60,7 +57,6 @@ class WaterView: UIView, RenderTimerDelegate {
 		renderTimer.delegate = self
 		renderTimer.runTimer(interval: 0.07)
 	}
-
     
     /// `UIView` Required Method For Reloading View
     ///

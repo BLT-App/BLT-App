@@ -1,6 +1,75 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsDeveloperSubmenuTableViewController.swift",
+      "line": 11,
+      "symbol": "SettingsDeveloperSubmenuTableViewController",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsDeveloperSubmenuTableViewController.swift",
+      "line": 31,
+      "symbol": "SettingsDeveloperSubmenuTableViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsDeveloperSubmenuTableViewController.swift",
+      "line": 36,
+      "symbol": "SettingsDeveloperSubmenuTableViewController.viewWillAppear(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsDeveloperSubmenuTableViewController.swift",
+      "line": 44,
+      "symbol": "SettingsDeveloperSubmenuTableViewController.loadExistingValues()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsDeveloperSubmenuTableViewController.swift",
+      "line": 50,
+      "symbol": "SettingsDeveloperSubmenuTableViewController.setTimeMultiplierText()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsDeveloperSubmenuTableViewController.swift",
+      "line": 54,
+      "symbol": "SettingsDeveloperSubmenuTableViewController.manageShowingTimeMenus()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsDeveloperSubmenuTableViewController.swift",
+      "line": 64,
+      "symbol": "SettingsDeveloperSubmenuTableViewController.didSetDateManager(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsDeveloperSubmenuTableViewController.swift",
+      "line": 71,
+      "symbol": "SettingsDeveloperSubmenuTableViewController.didChangeTimeSpeed(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/Settings Views/SettingsDeveloperSubmenuTableViewController.swift",
+      "line": 79,
+      "symbol": "SettingsDeveloperSubmenuTableViewController.didChangeDebugDate(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/UserProfileViewController.swift",
+      "line": 37,
+      "symbol": "UserProfileViewController.totalFocusHours",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
   ],
-  "source_directory": "/Users/jiahuachen/Documents/CO650/BLT-App/BLT"
+  "source_directory": "/Users/student/Documents/GitHub/CO650/BLT-App/BLT"
 }

@@ -10,12 +10,13 @@ import UIKit
 import LBConfettiView
 import VerticalCardSwiper
 import RetroProgress
+import RealmSwift
 
 /// The ViewController that controls the Focus View.
 class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewControllerDelegate {
 
 	/// The ToDoItem of the current task.
-	var currentTask: ToDoItem? = nil
+	var currentTask: ToDoItem?
   
 	/// Current index of the task displayed
 	var currentTaskNum: Int = 0
@@ -25,6 +26,12 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 
     /// the popup object that will be displayed
 	var popup: FMPopUpViewController = FMPopUpViewController()
+    
+    /// List Used For Temporary Reordering of ToDoItems
+    var focusModeList: [ToDoItem] = []
+    
+    /// Used For Singleton Pattern For Changeover Check
+    var isRunningChangeoverCheck: Bool = false
     
     /// the button to end focus mode
     @IBOutlet weak var endFocusModeButton: UIBarButtonItem!
@@ -52,11 +59,13 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 
     /// variable for whether or not to leave the focus view
 	var leaveView: Bool = false
+    
+    /// Time the last item started being studied
+    var lastItemStartTime: Date = dateManager.date
 
     /// To run when the view did finish loading.
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		setupButtons()
         
         verticalCardSwiper.delegate = self
         verticalCardSwiper.datasource = self
@@ -96,13 +105,18 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
         stylizeEndFocusModeButton()
         stylizePointsCounterBar()
         
-        setCurrentTask()
+        self.currentTask = getCurrentTask()
 	}
     
-    func setCurrentTask() {
+    
+    /// Gets The Currently Viewed Task
+    ///
+    /// - Returns: The Task
+    func getCurrentTask() -> ToDoItem? {
         if let index = verticalCardSwiper.focussedCardIndex {
-            currentTask = myToDoList.list[index]
+            return focusModeList[index]
         }
+        return nil
     }
     
     ///Sets Style Of End Focus Mode Button
@@ -137,9 +151,11 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     /// Sets progress bar color based on the current card.
     func setCurrentProgressColor() {
         if let index = verticalCardSwiper.focussedCardIndex {
-            if let color = globalData.subjects[myToDoList.list[index].className]?.uiColor {
+            let className = myToDoList.uncompletedList[index].className
+            if let color = globalData.subjects[className]?.uiColor {
                 changeProgressColor(color: color)
             }
+            
         }
     }
 
@@ -179,12 +195,17 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 
     /// Runs if the view will appear.
 	override func viewWillAppear(_ animated: Bool) {
+        focusModeList = []
+        for item in myToDoList.uncompletedList {
+            focusModeList.append(item)
+        }
+        
         verticalCardSwiper.reloadData()
         if verticalCardSwiper.scrollToCard(at: 0, animated: false) {
             print("Going Back To 0")
         }
     
-		if (!globalData.includeEndFocusButton && myToDoList.list.count > 0) {
+		if !globalData.includeEndFocusButton && myToDoList.uncompletedList.count > 0 {
 			endFocusModeButton.isEnabled = false
 		} else {
 			endFocusModeButton.isEnabled = true
@@ -195,19 +216,15 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     /// Runs when the view will disappear.
 	override func viewWillDisappear(_ animated: Bool) {
 		myTimer.stopRunning()
+        let realm = realmManager.realm
+        do {
+            try realm.write {
+                currentTask?.stoppedStudyingInFocusMode(duration: dateManager.date.timeIntervalSince(lastItemStartTime))
+            }
+        } catch {
+            print("Exception Occurred")
+        }
 	}
-
-	/// Stylizes buttons with curves.
-	func setupButtons() {
-		// Sets up curves
-//        btnCompleteTask.layer.cornerRadius = 25.0
-//        btnCompleteTask.layer.shadowColor = UIColor.blue.cgColor
-//        btnCompleteTask.layer.shadowOpacity = 0.2
-//        btnCompleteTask.layer.shadowOffset = CGSize(width: 0, height: 0)
-//        btnCompleteTask.layer.shadowRadius = 5.0
-//        btnCompleteTask.layer.masksToBounds = false
-	}
-
 
 	/// Hides the Tab Bar controller.
 	func hideTabBar() {
@@ -277,8 +294,15 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		myTimer.totalSecs = myTimer.cdt
 		myTimer.runTimer()
         progressView.animateProgress(to: 0.0, duration: myTimer.totalSecs / Double(dateManager.timeMultiplier))
-        
-        currentTask?.startedStudyingInFocusMode()
+        currentTask = getCurrentTask()
+        let realm = realmManager.realm
+        do {
+            try realm.write {
+                currentTask?.startedStudyingInFocusMode()
+            }
+        } catch {
+            print("Exception Occurred")
+        }
 	}
 
 	/// Animates a point incrementation with the pointCounter
@@ -304,29 +328,32 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDatasource {
 	/// Number of cards to show in list.
     func numberOfCards(verticalCardSwiperView: VerticalCardSwiperView) -> Int {
-        return myToDoList.list.count
+        return focusModeList.count
     }
 
 	/// Returns the CardCell of the current item.
     func cardForItemAt(verticalCardSwiperView: VerticalCardSwiperView, cardForItemAt index: Int) -> CardCell {
         if let cardCell = verticalCardSwiperView.dequeueReusableCell(withReuseIdentifier: "FocusCell", for: index) as? FocusCardCell {
-            cardCell.setupCard(fromItem: myToDoList.list[index])
+            cardCell.setupCard(fromItem: focusModeList[index])
             return cardCell
         }
         return CardCell()
     }
 
 	/// Called when the VerticalCardSwiper has been scrolled.
+    ///
+    /// - Parameter verticalCardSwiperView:
     func didScroll(verticalCardSwiperView: VerticalCardSwiperView) {
-        currentTask?.stoppedStudyingInFocusMode()
-        setCurrentTask()
-        currentTask?.startedStudyingInFocusMode()
+        if let item = currentTask {
+            changeoverCheckStart(oldItem: item)
+        }
+        
         if let index = verticalCardSwiper.focussedCardIndex {
-            if let color = globalData.subjects[myToDoList.list[index].className]?.uiColor {
+            if let color = globalData.subjects[focusModeList[index].className]?.uiColor {
                 DispatchQueue.main.async {
                     UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
                         self.changeProgressColor(color: color)
-                    }, completion: { (finished) in
+                    }, completion: { (_) in
                         
                     })
                 }
@@ -335,6 +362,11 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
     }
 
 	/// Called when a card has been dragged.
+    ///
+    /// - Parameters:
+    ///   - card:
+    ///   - index:
+    ///   - swipeDirection:
     func didDragCard(card: CardCell, index: Int, swipeDirection: SwipeDirection) {
         switch swipeDirection {
         case .Right:
@@ -361,7 +393,7 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
                 self.completePrompt.alpha = 0.8
-            }, completion: { (finished) in
+            }, completion: { (_) in
                 
             })
         }
@@ -375,7 +407,7 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
                 self.completePrompt.alpha = 0.8
-            }, completion: { (finished) in
+            }, completion: { (_) in
                 
             })
         }
@@ -386,21 +418,27 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
                 self.completePrompt.alpha = 0.0
-            }, completion: { (finished) in
+            }, completion: { (_) in
                 self.completePrompt.isHidden = true
             })
         }
     }
 
 	/// Called when card will be swiped away.
+    ///
+    /// - Parameters:
+    ///   - card: Card being swiped
+    ///   - index: Index of card being swiped
+    ///   - swipeDirection: Direction of swipe
     func willSwipeCardAway(card: CardCell, index: Int, swipeDirection: SwipeDirection) {
-        if index < myToDoList.list.count {
+        if index < focusModeList.count {
 			switch swipeDirection {
 			case .Left:
-				let task = myToDoList.list[index]
-				myToDoList.list.append(task)
-				verticalCardSwiper.insertCards(at: [myToDoList.list.count - 1])
-				myToDoList.list.remove(at: index)
+                let task = focusModeList[index]
+                focusModeList.append(task)
+                verticalCardSwiper.insertCards(at: [focusModeList.count - 1])
+                focusModeList.remove(at: index)
+                changeoverCheckStart(oldItem: task)
 			default:
 				completeTask(index: index)
 			}
@@ -416,11 +454,23 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
 	/// Called when a task is completed
 	/// - Parameter index: Index of completed card.
     func completeTask(index: Int) {
-        let task = myToDoList.list.remove(at: index)
-        task.stoppedStudyingInFocusMode()
-        task.completeTask(mark: .markedCompletedInFocusMode)
-        myToDoList.completedList.append(task)
-        myToDoList.storeList()
+        let task = focusModeList.remove(at: index)
+        let realm = realmManager.realm
+        currentTask = getCurrentTask()
+        if realm.isInWriteTransaction {
+            task.completeTaskInFocusMode(duration: dateManager.date.timeIntervalSince(lastItemStartTime))
+            currentTask?.startedStudyingInFocusMode()
+        } else {
+            do {
+                try realm.write {
+                    task.completeTaskInFocusMode(duration: dateManager.date.timeIntervalSince(dateManager.date))
+                    currentTask?.startedStudyingInFocusMode()
+                }
+            } catch {
+                print("Exception Occurred")
+            }
+        }
+        lastItemStartTime = dateManager.date
         
         if let confettiView = self.confettiView {
             confettiView.start()
@@ -432,6 +482,38 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             if let confettiView = self.confettiView {
                 confettiView.stop()
+            }
+        }
+    }
+    
+    /// Checks if there was a change in the focused Item using a singleton pattern
+    ///
+    /// - Parameter oldItem: Item that will be checked against
+    func changeoverCheckStart(oldItem: ToDoItem) {
+        if !isRunningChangeoverCheck {
+            isRunningChangeoverCheck = true
+            let oldToDo = oldItem
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                if oldToDo.identifier != self.getCurrentTask()?.identifier {
+                    let realm = realmManager.realm
+                    if realm.isInWriteTransaction {
+                        oldToDo.stoppedStudyingInFocusMode(duration: dateManager.date.timeIntervalSince(self.lastItemStartTime))
+                        self.currentTask = self.getCurrentTask()
+                        self.currentTask?.startedStudyingInFocusMode()
+                    } else {
+                        do {
+                            try realm.write {
+                                oldToDo.stoppedStudyingInFocusMode(duration: dateManager.date.timeIntervalSince(self.lastItemStartTime))
+                                self.currentTask = self.getCurrentTask()
+                                self.currentTask?.startedStudyingInFocusMode()
+                            }
+                        } catch {
+                            print("Unexpected Failure")
+                        }
+                    }
+                    self.lastItemStartTime = dateManager.date
+                }
+                self.isRunningChangeoverCheck = false
             }
         }
     }

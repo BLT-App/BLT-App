@@ -1,0 +1,6 @@
+framework module LBConfettiView {
+  umbrella header "LBConfettiView-umbrella.h"
+
+  export *
+  module * { export * }
+}

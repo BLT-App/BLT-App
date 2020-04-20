@@ -29,7 +29,6 @@ class ToDoTableViewCell: UITableViewCell {
 	/// Wrapper to enable a blur.
 	@IBOutlet weak var blurEffectView: UIView!
 
-
 	/// When cell is being drawn.
 	override func awakeFromNib() {
 		super.awakeFromNib()
@@ -65,8 +64,8 @@ class ToDoTableViewCell: UITableViewCell {
 			classLabel.backgroundColor = classColor
 		}
 		assignmentLabel.text = item.title
-		descLabel.text = item.description
-		dueLabel.text = item.dueString
+		descLabel.text = item.assignmentDescription
+        dueLabel.text = item.getDueString()
 	}
 }
 

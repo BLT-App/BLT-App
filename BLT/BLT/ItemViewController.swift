@@ -12,7 +12,7 @@ import UIKit
 class ItemViewController: UIViewController {
 
 	/// Delegate view controller.
-	var delegate: UIViewController?
+	weak var delegate: UIViewController?
 
 	/// Target index selected from list.
 	var targetIndex: Int?
@@ -48,12 +48,12 @@ class ItemViewController: UIViewController {
 	/// Loads the page by loading in the latest task into the current card.
 	func loadPage() {
 		if let thisIndex = targetIndex {
-			let thisToDo = myToDoList.list[thisIndex]
-			classNameField.text = thisToDo.className
-			classNameField.backgroundColor = globalData.subjects[thisToDo.className]?.uiColor
-			assignmentField.text = thisToDo.title
-			descriptionField.text = thisToDo.description
-			datePicker.date = thisToDo.dueDate
+            let thisToDo = myToDoList.uncompletedList[thisIndex]
+            classNameField.text = thisToDo.className
+            classNameField.backgroundColor = globalData.subjects[thisToDo.className]?.uiColor
+            assignmentField.text = thisToDo.title
+            descriptionField.text = thisToDo.assignmentDescription
+            datePicker.date = thisToDo.dueDate
 		}
 	}
 
@@ -71,18 +71,26 @@ class ItemViewController: UIViewController {
 	@IBAction func backButton(_ sender: UIButton) {
 		if let classTxt = classNameField.text, let titleTxt = assignmentField.text, let descTxt = descriptionField.text, let thisIndex = targetIndex {
 			// Debug for clearing/resetting entire list.
-			if (classTxt != "" && titleTxt != "") {
-				let targetItem = myToDoList.list[thisIndex]
-                targetItem.className = classTxt
-                targetItem.title = titleTxt
-                targetItem.description = descTxt
-                targetItem.dueDate = datePicker.date
-				myToDoList.storeList()
+			if classTxt != "" && titleTxt != "" {
+                
+                let realm = realmManager.realm
+                do {
+                    try realm.write {
+                        let targetItem = myToDoList.uncompletedList[thisIndex]
+                        targetItem.className = classTxt
+                        targetItem.title = titleTxt
+                        targetItem.assignmentDescription = descTxt
+                        targetItem.dueDate = datePicker.date
+                    }
+                } catch {
+                    print("Exception Occurred")
+                }
+                
 				globalData.updateCourses(fromList: myToDoList)
-
+                
 				//If Users Have it Set, Sort List By Due Date
 				if globalData.wantsListByDate {
-					myToDoList.sortList()
+					//myToDoList.sortList()
 				}
 			}
 			self.dismiss(animated: true, completion: nil)

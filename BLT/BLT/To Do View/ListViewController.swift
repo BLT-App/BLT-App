@@ -75,21 +75,13 @@ class ListViewController: UIViewController {
 		roundContainerView(cornerRadius: 40, view: tableContainerView, shadowView: shadowView)
 		addShadow(view: shadowView, color: UIColor.gray.cgColor, opacity: 0.2, radius: 10, offset: CGSize(width: 0, height: 5))
 		addShadow(view: addButton, color: UIColor.blue.cgColor, opacity: 0.1, radius: 5, offset: .zero)
-        
-		// Loads list from filesystem
-		myToDoList.retrieveList()
-        
-		// This creates an example list if there is nothing on the list. Debug only.
-		if myToDoList.list.count == 0 {
-			myToDoList.createExampleList()
-		}
 
 		tableView.reorder.delegate = self
 
 		globalData.updateCourses(fromList: myToDoList)
 		update()
 
-		print("Currently \(globalTaskDatabase.currentDatabaseLog.numOfEvents) in log")
+		print("Currently \(realmManager.realm.objects(DatabaseEvent.self).count) in log")
 	}
 
     /**
@@ -107,7 +99,7 @@ class ListViewController: UIViewController {
      - with event: the type of event
     */
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        if(motion  == .motionShake){
+        if motion  == .motionShake {
             print("shook")
             
             if lastAction == .none {
@@ -115,23 +107,27 @@ class ListViewController: UIViewController {
                 print("No Actions Taken This Session")
                 return
             } else if lastAction == .completedItem {
+                /**
                 if let itemToRestore: ToDoItem = myToDoList.completedList.popLast() {
                     itemToRestore.undoCompleteTask()
-                    myToDoList.list.append(itemToRestore)
+                    myToDoList.uncompletedList.append(itemToRestore)
                     insertNewTask()
                     update()
                 } else {
                     print("Error Occurred")
                 }
+                */
             } else if lastAction == .deletedItem {
+                /**
                 if let itemToRestore: ToDoItem = myToDoList.deletedList.popLast() {
                     itemToRestore.undoDeleteTask()
-                    myToDoList.list.append(itemToRestore)
+                    myToDoList.uncompletedList.append(itemToRestore)
                     insertNewTask()
                     update()
                 } else {
                     print("Error Occurred")
                 }
+                */
             }
         }
     }
@@ -139,7 +135,7 @@ class ListViewController: UIViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 
-		if (myToDoList.list.count > tableView.numberOfRows(inSection: 0)) {
+		if myToDoList.uncompletedList.count > tableView.numberOfRows(inSection: 0) {
 			insertNewTask()
 		}
 	}
@@ -153,7 +149,7 @@ class ListViewController: UIViewController {
 	/// Updates screen.
 	func update() {
 		if globalData.wantsListByDate {
-			myToDoList.sortList()
+			//myToDoList.sortList()
 			tableView.reorder.delegate = nil
 		} else {
 			tableView.reorder.delegate = self
@@ -164,8 +160,8 @@ class ListViewController: UIViewController {
 
 	/// Updates text on the page.
 	func updateText() {
-		let pluralSingularAssignment = (myToDoList.list.count == 1) ? "assignment" : "assignments"
-		assignmentsLeftLabel.text = "\(myToDoList.list.count) \(pluralSingularAssignment) left."
+		let pluralSingularAssignment = (myToDoList.uncompletedList.count == 1) ? "assignment" : "assignments"
+		assignmentsLeftLabel.text = "\(myToDoList.uncompletedList.count) \(pluralSingularAssignment) left."
 		updatePointsCounter(myToDoList.points)
 	}
 
@@ -249,7 +245,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 
 	/// Returns the number of rows in table view.
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return myToDoList.list.count
+		return myToDoList.uncompletedList.count
 	}
 
 	/// Returns the cell with correct content in table view.
@@ -258,7 +254,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 			return spacer
 		}
 
-		let toDoItem = myToDoList.list[indexPath.row]
+		let toDoItem = myToDoList.uncompletedList[indexPath.row]
 		var cell: ToDoTableViewCell = ToDoTableViewCell(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
 		if let tempcell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as? ToDoTableViewCell {
 			cell = tempcell
@@ -273,7 +269,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
 			deleteListIndexPath = indexPath
-			let itemToDelete = myToDoList.list[indexPath.row]
+			let itemToDelete = myToDoList.uncompletedList[indexPath.row]
 			confirmDelete(itemToDelete)
 		}
 	}
@@ -286,10 +282,10 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 
 	/// Reordered item.
 	func tableView(_ tableView: UITableView, reorderRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-		let movedItem = myToDoList.list[sourceIndexPath.row]
-		myToDoList.list.remove(at: sourceIndexPath.row)
-		myToDoList.list.insert(movedItem, at: destinationIndexPath.row)
-		myToDoList.storeList()
+		//let movedItem = myToDoList.uncompletedList[sourceIndexPath.row]
+		//myToDoList.uncompletedList.remove(at: sourceIndexPath.row)
+		//myToDoList.uncompletedList.insert(movedItem, at: destinationIndexPath.row)
+        print("Disabled Reordering For Database Migration")
 	}
 
 	/// Leading configuration.
@@ -301,10 +297,17 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 	/// Completed task function.
 	func contextualCompletedAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
 		let action = UIContextualAction(style: .normal, title: "Complete") { (_: UIContextualAction, _: UIView, completionHandler: (Bool) -> Void) in
-            let item = myToDoList.list.remove(at: indexPath.row)
-            item.completeTask(mark: .markedCompletedInListView)
-            myToDoList.completedList.append(item)
-			myToDoList.storeList()
+            let item = myToDoList.uncompletedList[indexPath.row]
+            
+            let realm = realmManager.realm
+            do {
+                try realm.write {
+                    item.completeTaskInListView()
+                }
+            } catch {
+                print("Exception Occurred")
+            }
+            
 			if let confettiView = self.confettiView {
 				confettiView.start()
 			}
@@ -334,7 +337,8 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 		- itemToDelete: The ToDoItem that is going to be deleted.
 	 */
 	func confirmDelete(_ itemToDelete: ToDoItem) {
-		let alert = UIAlertController(title: "Delete To-Do Item", message: "Are you sure you want to delete the item \(itemToDelete.title)?", preferredStyle: .actionSheet)
+        let alertMessage = "Are you sure you want to delete the item \(itemToDelete.title)?"
+		let alert = UIAlertController(title: "Delete To-Do Item", message: alertMessage, preferredStyle: .actionSheet)
 		let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: handleDeleteItem)
 		let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: cancelDeleteItem)
 
@@ -349,10 +353,15 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 	 */
 	func handleDeleteItem(alertAction: UIAlertAction!) {
 		if let indexPath = deleteListIndexPath {
-            let deletedItem = myToDoList.list.remove(at: indexPath.row)
-            deletedItem.markDeleted()
-            myToDoList.deletedList.append(deletedItem)
-			myToDoList.storeList()
+            let deletedItem = myToDoList.uncompletedList[indexPath.row]
+            let realm = realmManager.realm
+            do {
+                try realm.write {
+                    deletedItem.markDeleted()
+                }
+            } catch {
+                print("Exception Occurred")
+            }
 			tableView.beginUpdates()
 			tableView.deleteRows(at: [indexPath], with: .left)
 			tableView.endUpdates()
@@ -375,7 +384,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 		let diff = newValue - oldPoints
 		let deltaT: Double = 1.0 / Double(diff)
         
-        if(diff < 0){
+        if diff < 0 {
             let newDiff = abs(diff)
             for inc in 1...newDiff {
                 let seconds = Double(inc) * deltaT
@@ -384,8 +393,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
                     self.updatePointsCounter(currentPoints)
                 }
             }
-        }
-        else{
+        } else {
             for inc in 1...diff {
                 let seconds = Double(inc) * deltaT
                 let currentPoints = oldPoints + inc
@@ -394,7 +402,6 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
                 }
             }
         }
-		
 	}
 
 	/// Updates the point counter.

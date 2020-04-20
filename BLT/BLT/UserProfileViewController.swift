@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 import Charts
+import RealmSwift
 
 /// View controller class for the User Profile page.
-class UserProfileViewController: UIViewController
-{
+class UserProfileViewController: UIViewController {
     /// Label for the name of the user.
     @IBOutlet weak var userNameLabel: UILabel!
     /// UIImageView for the image of the user.
@@ -35,17 +35,11 @@ class UserProfileViewController: UIViewController
     @IBOutlet weak var focusLabel: UILabel!
     
     var totalFocusHours: Double {
-        var minutes = 0.0
-        for item in myToDoList.list {
-            minutes += item.timeSpentInFocusMode
+        var seconds = 0.0
+        for item in myToDoList.allToDoItems {
+            seconds += item.timeSpentInFocusMode
         }
-        for item in myToDoList.completedList {
-            minutes += item.timeSpentInFocusMode
-        }
-        for item in myToDoList.deletedList {
-            minutes += item.timeSpentInFocusMode
-        }
-        
+        let minutes = seconds / 60
         var hours: Double = (minutes / 6).rounded() / 10
         if hours > 10 {
             hours = hours.rounded()
@@ -56,24 +50,40 @@ class UserProfileViewController: UIViewController
 	/// Updates the chart from the globalTaskDatabase.
     func chartUpdate() {
         var trendData: [CGFloat] = []
+        var trendLabels: [String] = []
+        let realm = realmManager.realm
         
-        var previousDayTotal: Int = 0
-        for day in 1...7 {
-            var numEventsCompletedOnDay = 0
-            numEventsCompletedOnDay += globalTaskDatabase.getNumEventsOfTypeInLast(numDays: day, eventType: .markedCompletedInListView)
-            numEventsCompletedOnDay += globalTaskDatabase.getNumEventsOfTypeInLast(numDays: day, eventType: .markedCompletedInFocusMode)
-            numEventsCompletedOnDay -= globalTaskDatabase.getNumEventsOfTypeInLast(numDays: day, eventType: .unmarkedComplete)
-            print("Tasks completed on day \(day): \(numEventsCompletedOnDay - previousDayTotal)")
-            trendData.append(CGFloat(numEventsCompletedOnDay - previousDayTotal))
-            previousDayTotal = numEventsCompletedOnDay
+        let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        
+        //var previousDayTotal: Int = 0
+        for day in 0...6 {
+            let dateBegin: Date = dateManager.date - day.day.timeInterval
+            let dateEnd: Date = dateManager.date - (day + 1).day.timeInterval
+            let numEventsCompletedOnDay = realm.objects(DatabaseEvent.self).filter("eventType == \(GeneralEventType.markedCompletedInFocusMode.rawValue)" +
+                "OR eventType == \(GeneralEventType.markedCompletedInListView.rawValue)").filter("date >= %@ " +
+                    "AND date =< %@", dateEnd, dateBegin).count
+            print(numEventsCompletedOnDay)
+            trendData.append(CGFloat(numEventsCompletedOnDay))
+            
+            let myCalendar = Calendar(identifier: .gregorian)
+            let weekDay = myCalendar.component(.weekday, from: dateBegin)
+            trendLabels.append(daysOfWeek[weekDay - 1])
+            //previousDayTotal = numEventsCompletedOnDay
         }
+        trendLabels[0] = "Today"
         
-        // Example data for the trend. 
-        //trendData = [5, 2, 7, 8, 3, 5, 6]
+        // Example data for the trend.
+//        print(trendData)
+//        trendData = [5, 2, 7, 8, 3, 5, 6]
+//        trendData = [0, 0, 0, 0, 0, 0, 0]
         
         tasksCompletedChart.clear()
-        tasksCompletedChart.addLine(trendData)
-        tasksCompletedChart.y.grid.count = 7
+        tasksCompletedChart.addLine(trendData.reversed())
+        tasksCompletedChart.x.labels.values = trendLabels.reversed()
+        tasksCompletedChart.x.grid.visible = false
+        tasksCompletedChart.y.grid.count = (trendData.max() ?? 1) + 1
+        //let chart = tasksCompletedChart
+        print("Chart Setup Done")
     }
 
     /// Runs when the view did finish loading.
@@ -96,7 +106,7 @@ class UserProfileViewController: UIViewController
     }
     
     ///Updates The User Stats Bar By Calculating From Databases
-    func updateUserStats(){
+    func updateUserStats() {
         ///TODO: Calculate Stats Dynamically
         
         focusLabel.text = String(totalFocusHours)
@@ -113,7 +123,7 @@ class UserProfileViewController: UIViewController
     }
     
     /// Prepares profile name text and image.
-    func prepareProfile(){
+    func prepareProfile() {
         //add colors and round corners
         userImage.clipsToBounds = true
         userImage.layer.cornerRadius = 50
