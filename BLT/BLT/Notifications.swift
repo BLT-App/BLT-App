@@ -17,10 +17,15 @@ class Notifications {
     /// Date object for when the user receives a notification.
     var date: Date
     
+    var notifRequests: [String]
+    
     /// Basic initializer sets default notification date to 10s from when called.
     init() {
         date = Date(timeIntervalSinceNow: 10)
+        notifRequests = []
     }
+    
+    
     
     /**
      Creates a new notification and adds it to the notification center to be sent at a specified time.
@@ -62,7 +67,7 @@ class Notifications {
         
         content.threadIdentifier = UUID().uuidString
         
-        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        let dateComponents =  Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         
@@ -72,5 +77,61 @@ class Notifications {
                 print("Error")
             }
         }
+    }
+    
+    /// deletes all pending notifications
+    func deleteAllPendingNotifications(){
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
+        
+    }
+    
+    ///deletes specified notifications
+    func deleteSpecificNotifications(array: [String]){
+        let center = UNUserNotificationCenter.current()
+        center.removePendingNotificationRequests(withIdentifiers: array)
+        
+    }
+    
+    
+    ///function for preparing repeating notifications (not fully functional yet)
+    func prepareRegularUpdateNotif(notifnum: Int){
+        let center = UNUserNotificationCenter.current()
+        let content = UNMutableNotificationContent()
+        content.title = "update"
+        content.body = "body"
+        
+        var dateComponents = DateComponents()
+        var identifier: String
+        if(notifnum == 1){
+            dateComponents.hour = 12
+            identifier = "reminder1"
+        }
+        else if(notifnum == 3){
+            
+            identifier = "reminder3"
+        }
+            
+        else if(notifnum == 7){
+            dateComponents.weekday = 1
+            identifier = "reminder7"
+        }
+            
+        else if(notifnum == 14){
+            
+            identifier = "reminder14"
+        }
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        
+        let request = UNNotificationRequest(identifier: "", content: content, trigger: trigger)
+        center.add(request) {(error) in
+            if error != nil {
+                print("Error")
+            }
+        }
+        
+        
+        
     }
 }
