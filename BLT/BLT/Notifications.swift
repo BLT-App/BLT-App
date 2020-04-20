@@ -99,7 +99,7 @@ class Notifications {
         content.body = "body"
         
         var dateComponents = DateComponents()
-        var identifier: String
+        let identifier: String
         if notifnum == 1 {
             dateComponents.hour = 12
             identifier = "reminder1"
@@ -108,7 +108,7 @@ class Notifications {
         } else if notifnum == 7 {
             dateComponents.weekday = 1
             identifier = "reminder7"
-        } else if notifnum == 14  {
+        } else if notifnum == 14 {
             identifier = "reminder14"
         }
         
