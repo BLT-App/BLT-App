@@ -16,7 +16,7 @@ import RealmSwift
 class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewControllerDelegate {
 
 	/// The ToDoItem of the current task.
-	var currentTask: ToDoItem? = nil
+	var currentTask: ToDoItem?
   
 	/// Current index of the task displayed
 	var currentTaskNum: Int = 0
@@ -201,7 +201,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
             print("Going Back To 0")
         }
     
-		if (!globalData.includeEndFocusButton && myToDoList.uncompletedList.count > 0) {
+		if !globalData.includeEndFocusButton && myToDoList.uncompletedList.count > 0 {
 			endFocusModeButton.isEnabled = false
 		} else {
 			endFocusModeButton.isEnabled = true
@@ -349,7 +349,7 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
                 DispatchQueue.main.async {
                     UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
                         self.changeProgressColor(color: color)
-                    }, completion: { (finished) in
+                    }, completion: { (_) in
                         
                     })
                 }
@@ -389,7 +389,7 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
                 self.completePrompt.alpha = 0.8
-            }, completion: { (finished) in
+            }, completion: { (_) in
                 
             })
         }
@@ -403,7 +403,7 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
                 self.completePrompt.alpha = 0.8
-            }, completion: { (finished) in
+            }, completion: { (_) in
                 
             })
         }
@@ -414,7 +414,7 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
                 self.completePrompt.alpha = 0.0
-            }, completion: { (finished) in
+            }, completion: { (_) in
                 self.completePrompt.isHidden = true
             })
         }

@@ -78,7 +78,6 @@ class DatabaseEvent: Object {
         setEventText()
     }
     
-    
     /// Initializes a DatabaseEvent with parameters
     /// - Attention: Only Use This Initializer For StoppedStudyingInFocusMode
     ///

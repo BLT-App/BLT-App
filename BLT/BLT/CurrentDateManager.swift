@@ -9,7 +9,6 @@
 import Foundation
 import Datez
 
-
 /// Global Date Manager Variable For Accessing The Date
 var dateManager: CurrentDateManager = CurrentDateManager()
 
@@ -63,7 +62,6 @@ class CurrentDateManager {
         debugDate = to
         isInDebugMode = true
     }
-    
     
     /// Adds The Specified Amount Of Time To The Debug Date
     ///

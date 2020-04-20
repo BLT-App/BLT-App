@@ -91,8 +91,12 @@ class ToDoList {
         if realm.isInWriteTransaction {
             realm.add(exampleItems)
         } else {
-            try! realm.write {
-                realm.add(exampleItems)
+            do {
+                try realm.write {
+                    realm.add(exampleItems)
+                }
+            } catch {
+                print("Exception Occurred")
             }
         }
 	}

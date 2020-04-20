@@ -33,9 +33,4 @@ class RealmManager {
             realm = try! Realm()
         }
     }
-    
-    func getRealmInstance() -> Realm {
-        return try! Realm()
-    }
-    
 }

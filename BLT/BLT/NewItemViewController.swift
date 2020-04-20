@@ -91,21 +91,26 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
 	@IBAction func addButton(_ sender: UIButton) {
 		if let classTxt = classText.text, let titleTxt = titleText.text, let descTxt = descText.text {
 			// Debug for clearing/resetting entire list.
-			if (classText.text != "" && titleTxt != "" && descTxt != "") {
+			if classText.text != "" && titleTxt != "" && descTxt != "" {
                 let newToDo = ToDoItem(className: classTxt, title: titleTxt, description: descTxt, dueDate: datePicker.date)
                 
                 let realm = realmManager.realm
                 if realm.isInWriteTransaction {
                     realm.add(newToDo)
                 } else {
-                    try! realm.write {
-                        realm.add(newToDo)
+                    do {
+                        try realm.write {
+                            realm.add(newToDo)
+                        }
+                    } catch {
+                        print(error)
                     }
                 }
 
 				//If Users Have it Set, Sort List By Due Date
 				if globalData.wantsListByDate {
 					//myToDoList.sortList()
+                    ///TODO: Fix Not Being Able To Rearrange
 				}
 			}
 			globalData.updateCourses(fromList: myToDoList)

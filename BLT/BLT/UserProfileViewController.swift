@@ -12,8 +12,7 @@ import Charts
 import RealmSwift
 
 /// View controller class for the User Profile page.
-class UserProfileViewController: UIViewController
-{
+class UserProfileViewController: UIViewController {
     /// Label for the name of the user.
     @IBOutlet weak var userNameLabel: UILabel!
     /// UIImageView for the image of the user.
@@ -77,7 +76,6 @@ class UserProfileViewController: UIViewController
 //        print(trendData)
 //        trendData = [5, 2, 7, 8, 3, 5, 6]
 //        trendData = [0, 0, 0, 0, 0, 0, 0]
-
         
         tasksCompletedChart.clear()
         tasksCompletedChart.addLine(trendData.reversed())
@@ -108,7 +106,7 @@ class UserProfileViewController: UIViewController
     }
     
     ///Updates The User Stats Bar By Calculating From Databases
-    func updateUserStats(){
+    func updateUserStats() {
         ///TODO: Calculate Stats Dynamically
         
         focusLabel.text = String(totalFocusHours)
@@ -125,7 +123,7 @@ class UserProfileViewController: UIViewController
     }
     
     /// Prepares profile name text and image.
-    func prepareProfile(){
+    func prepareProfile() {
         //add colors and round corners
         userImage.clipsToBounds = true
         userImage.layer.cornerRadius = 50

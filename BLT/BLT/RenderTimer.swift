@@ -22,14 +22,12 @@ class RenderTimer {
 		myTimer = Timer()
 	}
 
-    
     /// Starts The Render Timer Sequence
     ///
     /// - Parameter interval:  Number of milliseconds between calls to render
 	func runTimer(interval: Double) {
 		myTimer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(updateVals), userInfo: nil, repeats: true)
 	}
-
     
     /// Function Called From Thread
 	@objc func updateVals() {

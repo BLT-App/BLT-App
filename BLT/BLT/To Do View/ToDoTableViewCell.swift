@@ -29,7 +29,6 @@ class ToDoTableViewCell: UITableViewCell {
 	/// Wrapper to enable a blur.
 	@IBOutlet weak var blurEffectView: UIView!
 
-
 	/// When cell is being drawn.
 	override func awakeFromNib() {
 		super.awakeFromNib()

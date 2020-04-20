@@ -30,19 +30,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         let options: UNAuthorizationOptions = [.sound, .alert]
         
-        center.requestAuthorization(options: options) {
-            (granted, error) in if error != nil {
+        center.requestAuthorization(options: options) { (_, error) in if error != nil {
                 print("Error")
             }
         }
         
         center.delegate = self
         
-        //let realm = realmManager.realm
-        
-        //try! realm.write {
-            //realm.add(DatabaseEvent(event: .openedApp))
-        //}
+        let realm = realmManager.realm
+        do {
+            try realm.write {
+                realm.add(DatabaseEvent(event: .openedApp))
+            }
+        } catch {
+            print(error)
+        }
         
         return true
     }
@@ -82,9 +84,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     /// Tells the delegate when the app is about to terminate.
     func applicationWillTerminate(_ application: UIApplication) {
         let realm = realmManager.realm
-        
-        try! realm.write {
-            realm.add(DatabaseEvent(event: .openedApp))
+        do {
+            try realm.write {
+                realm.add(DatabaseEvent(event: .closedApp))
+            }
+        } catch {
+            print("Exception Occurred")
         }
     }
 

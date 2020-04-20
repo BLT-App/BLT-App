@@ -12,7 +12,7 @@ import UIKit
 class ItemViewController: UIViewController {
 
 	/// Delegate view controller.
-	var delegate: UIViewController?
+	weak var delegate: UIViewController?
 
 	/// Target index selected from list.
 	var targetIndex: Int?
@@ -71,15 +71,19 @@ class ItemViewController: UIViewController {
 	@IBAction func backButton(_ sender: UIButton) {
 		if let classTxt = classNameField.text, let titleTxt = assignmentField.text, let descTxt = descriptionField.text, let thisIndex = targetIndex {
 			// Debug for clearing/resetting entire list.
-			if (classTxt != "" && titleTxt != "") {
+			if classTxt != "" && titleTxt != "" {
                 
                 let realm = realmManager.realm
-                try! realm.write {
-                    let targetItem = myToDoList.uncompletedList[thisIndex]
-                    targetItem.className = classTxt
-                    targetItem.title = titleTxt
-                    targetItem.assignmentDescription = descTxt
-                    targetItem.dueDate = datePicker.date
+                do {
+                    try realm.write {
+                        let targetItem = myToDoList.uncompletedList[thisIndex]
+                        targetItem.className = classTxt
+                        targetItem.title = titleTxt
+                        targetItem.assignmentDescription = descTxt
+                        targetItem.dueDate = datePicker.date
+                    }
+                } catch {
+                    print("Exception Occurred")
                 }
                 
 				globalData.updateCourses(fromList: myToDoList)

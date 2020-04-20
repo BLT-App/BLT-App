@@ -99,7 +99,7 @@ class ListViewController: UIViewController {
      - with event: the type of event
     */
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        if(motion  == .motionShake){
+        if motion  == .motionShake {
             print("shook")
             
             if lastAction == .none {
@@ -300,8 +300,12 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
             let item = myToDoList.uncompletedList[indexPath.row]
             
             let realm = realmManager.realm
-            try! realm.write {
-                item.completeTaskInListView()
+            do {
+                try realm.write {
+                    item.completeTaskInListView()
+                }
+            } catch {
+                print("Exception Occurred")
             }
             
 			if let confettiView = self.confettiView {
@@ -333,7 +337,8 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 		- itemToDelete: The ToDoItem that is going to be deleted.
 	 */
 	func confirmDelete(_ itemToDelete: ToDoItem) {
-		let alert = UIAlertController(title: "Delete To-Do Item", message: "Are you sure you want to delete the item \(itemToDelete.title)?", preferredStyle: .actionSheet)
+        let alertMessage = "Are you sure you want to delete the item \(itemToDelete.title)?"
+		let alert = UIAlertController(title: "Delete To-Do Item", message: alertMessage, preferredStyle: .actionSheet)
 		let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: handleDeleteItem)
 		let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: cancelDeleteItem)
 
@@ -350,8 +355,12 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 		if let indexPath = deleteListIndexPath {
             let deletedItem = myToDoList.uncompletedList[indexPath.row]
             let realm = realmManager.realm
-            try! realm.write {
-                deletedItem.markDeleted()
+            do {
+                try realm.write {
+                    deletedItem.markDeleted()
+                }
+            } catch {
+                print("Exception Occurred")
             }
 			tableView.beginUpdates()
 			tableView.deleteRows(at: [indexPath], with: .left)
@@ -375,7 +384,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 		let diff = newValue - oldPoints
 		let deltaT: Double = 1.0 / Double(diff)
         
-        if(diff < 0){
+        if diff < 0 {
             let newDiff = abs(diff)
             for inc in 1...newDiff {
                 let seconds = Double(inc) * deltaT
@@ -384,8 +393,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
                     self.updatePointsCounter(currentPoints)
                 }
             }
-        }
-        else{
+        } else {
             for inc in 1...diff {
                 let seconds = Double(inc) * deltaT
                 let currentPoints = oldPoints + inc
@@ -394,7 +402,6 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
                 }
             }
         }
-		
 	}
 
 	/// Updates the point counter.
