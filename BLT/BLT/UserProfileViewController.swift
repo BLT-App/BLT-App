@@ -63,6 +63,7 @@ class UserProfileViewController: UIViewController
             let numEventsCompletedOnDay = realm.objects(DatabaseEvent.self).filter("eventType == \(GeneralEventType.markedCompletedInFocusMode.rawValue)" +
                 "OR eventType == \(GeneralEventType.markedCompletedInListView.rawValue)").filter("date >= %@ " +
                     "AND date =< %@", dateEnd, dateBegin).count
+            print(numEventsCompletedOnDay)
             trendData.append(CGFloat(numEventsCompletedOnDay))
             
             let myCalendar = Calendar(identifier: .gregorian)
@@ -72,14 +73,17 @@ class UserProfileViewController: UIViewController
         }
         trendLabels[0] = "Today"
         
-        // Example data for the trend. 
-        //trendData = [5, 2, 7, 8, 3, 5, 6]
+        // Example data for the trend.
+//        print(trendData)
+        trendData = [5, 2, 7, 8, 3, 5, 6]
+//        trendData = [0, 0, 0, 0, 0, 0, 0]
+
         
         tasksCompletedChart.clear()
         tasksCompletedChart.addLine(trendData.reversed())
         tasksCompletedChart.x.labels.values = trendLabels.reversed()
         tasksCompletedChart.x.grid.visible = false
-        tasksCompletedChart.y.grid.count = trendData.max() ?? 1
+        tasksCompletedChart.y.grid.count = (trendData.max() ?? 1) + 1
         //let chart = tasksCompletedChart
         print("Chart Setup Done")
     }
