@@ -31,12 +31,18 @@ class ItemViewController: UIViewController {
 
 	/// Date picker.
 	@IBOutlet weak var datePicker: UIDatePicker!
-
+    
+    @IBOutlet weak var shadowView: UIView!
+    
+    @IBOutlet weak var containerView: UIView!
+    
 	/// Loads the view.
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
 		setupButtons()
+        
+        setupCard()
 		// Do any additional setup after loading the view.
 	}
 
@@ -109,4 +115,47 @@ class ItemViewController: UIViewController {
 	}
 	*/
 
+}
+
+/// Extension that contains the graphical functions.
+extension ItemViewController {
+    func setupCard() {
+        roundContainerView(cornerRadius: 20, view: containerView, shadowView: shadowView)
+        addShadow(view: shadowView, color: UIColor.gray.cgColor, opacity: 0.2, radius: 10, offset: CGSize(width: 0, height: 5))
+    }
+    
+    /**
+     Creates a rounded container view.
+     - parameters:
+     - cornerRadius: The corner radius of the rounded container.
+     - view: The UIView to round.
+     - shadowView: The accompanying shadowView of the main view to round.
+     */
+    func roundContainerView(cornerRadius: Double, view: UIView, shadowView: UIView) {
+        let path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = view.bounds
+        maskLayer.path = path.cgPath
+        view.layer.mask = maskLayer
+        
+        shadowView.layer.cornerRadius = CGFloat(cornerRadius)
+        shadowView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
+    
+    /**
+     Creates shadows for a view.
+     - parameters:
+     - view: The view to add a shadow to.
+     - color: The color of the shadow.
+     - opacity: The opacity of the shadow.
+     - radius: The radius of the shadow.
+     - offset: The offset of the shadow.
+     */
+    func addShadow(view: UIView, color: CGColor, opacity: Float, radius: CGFloat, offset: CGSize) {
+        view.layer.shadowColor = color
+        view.layer.shadowOpacity = opacity
+        view.layer.shadowOffset = offset
+        view.layer.shadowRadius = radius
+        view.layer.masksToBounds = false
+    }
 }
