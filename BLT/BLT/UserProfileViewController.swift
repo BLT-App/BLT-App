@@ -62,7 +62,7 @@ class UserProfileViewController: UIViewController {
             let numEventsCompletedOnDay = realm.objects(DatabaseEvent.self).filter("eventType == \(GeneralEventType.markedCompletedInFocusMode.rawValue)" +
                 "OR eventType == \(GeneralEventType.markedCompletedInListView.rawValue)").filter("date >= %@ " +
                     "AND date =< %@", dateEnd, dateBegin).count
-            print(numEventsCompletedOnDay)
+            //print(numEventsCompletedOnDay)
             trendData.append(CGFloat(numEventsCompletedOnDay))
             
             let myCalendar = Calendar(identifier: .gregorian)
@@ -107,13 +107,12 @@ class UserProfileViewController: UIViewController {
     
     ///Updates The User Stats Bar By Calculating From Databases
     func updateUserStats() {
-        ///TODO: Calculate Stats Dynamically
         
-//        focusLabel.text = String(totalFocusHours)
-        focusLabel.text = "14.5"
+        focusLabel.text = String(totalFocusHours)
+        //focusLabel.text = "14.5"
         
         completedLabel.text = String(myToDoList.completedList.count)
-        completedLabel.text = "23"
+        //completedLabel.text = "23"
     }
   
     /// Sets up UI appearance of cards.
