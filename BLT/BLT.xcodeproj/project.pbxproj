@@ -30,6 +30,7 @@
 		3FE61D7023D9DE36002C6A0C /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE61D6F23D9DE36002C6A0C /* UserProfileViewController.swift */; };
 		D7056147238CFB700030B257 /* Additional Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7056146238CFB700030B257 /* Additional Classes.swift */; };
 		D7093E9023EC661200513448 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7093E8F23EC661200513448 /* LineChart.swift */; };
+		D71AC3C0244DA76F00DA6E37 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71AC3BF244DA76F00DA6E37 /* OnboardingViewController.swift */; };
 		D721BD5C23830540008E934F /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D721BD5B23830540008E934F /* ItemViewController.swift */; };
 		D721FD562378AA0300ABD1EF /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D721FD552378AA0300ABD1EF /* ToDoTableViewCell.swift */; };
 		D721FD5C2378ACA300ABD1EF /* MilestoneItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D721FD572378ACA300ABD1EF /* MilestoneItem.swift */; };
@@ -45,6 +46,7 @@
 		D75B7474238E554A00FBE468 /* SubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B7473238E554A00FBE468 /* SubjectCell.swift */; };
 		D776EF8B240ABDF0007E842F /* FocusCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = D776EF8A240ABDF0007E842F /* FocusCard.xib */; };
 		D776EF8D240ABE2A007E842F /* FocusCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776EF8C240ABE2A007E842F /* FocusCardCell.swift */; };
+		D7781A62244DB42100536054 /* BeginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7781A61244DB42000536054 /* BeginViewController.swift */; };
 		D7F0D7302378A06E0044E694 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D7F0D72F2378A06E0044E694 /* Podfile */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +99,7 @@
 		99A0B2CAE0BB5E212506F565 /* Pods-BLT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLT.debug.xcconfig"; path = "Target Support Files/Pods-BLT/Pods-BLT.debug.xcconfig"; sourceTree = "<group>"; };
 		D7056146238CFB700030B257 /* Additional Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Additional Classes.swift"; sourceTree = "<group>"; };
 		D7093E8F23EC661200513448 /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		D71AC3BF244DA76F00DA6E37 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		D721BD5B23830540008E934F /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		D721FD552378AA0300ABD1EF /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		D721FD572378ACA300ABD1EF /* MilestoneItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneItem.swift; sourceTree = "<group>"; };
@@ -112,6 +115,7 @@
 		D75B7473238E554A00FBE468 /* SubjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCell.swift; sourceTree = "<group>"; };
 		D776EF8A240ABDF0007E842F /* FocusCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FocusCard.xib; sourceTree = "<group>"; };
 		D776EF8C240ABE2A007E842F /* FocusCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusCardCell.swift; sourceTree = "<group>"; };
+		D7781A61244DB42000536054 /* BeginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginViewController.swift; sourceTree = "<group>"; };
 		D7F0D72F2378A06E0044E694 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
@@ -169,6 +173,8 @@
 			children = (
 				3FB05C852445644B008A5A1C /* RealmManager.swift */,
 				3FE3EA66237718D3002B5303 /* Main.storyboard */,
+				D7781A61244DB42000536054 /* BeginViewController.swift */,
+				D71AC3BF244DA76F00DA6E37 /* OnboardingViewController.swift */,
 				D7093E8F23EC661200513448 /* LineChart.swift */,
 				3F2D6FF22399FE6100B8A989 /* WaterView.swift */,
 				3F2D6FF4239A004900B8A989 /* RenderTimer.swift */,
@@ -493,6 +499,8 @@
 				D776EF8D240ABE2A007E842F /* FocusCardCell.swift in Sources */,
 				D721FD642378ACA600ABD1EF /* ListViewController.swift in Sources */,
 				3FE3EA912378DA82002B5303 /* FocusViewController.swift in Sources */,
+				D71AC3C0244DA76F00DA6E37 /* OnboardingViewController.swift in Sources */,
+				D7781A62244DB42100536054 /* BeginViewController.swift in Sources */,
 				3FE3EA63237718D3002B5303 /* AppDelegate.swift in Sources */,
 				3FB05C862445644B008A5A1C /* RealmManager.swift in Sources */,
 				3FCE102E23E29D9A003F0D7D /* Notifications.swift in Sources */,

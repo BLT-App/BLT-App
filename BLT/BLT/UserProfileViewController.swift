@@ -74,7 +74,7 @@ class UserProfileViewController: UIViewController {
         
         // Example data for the trend.
 //        print(trendData)
-//        trendData = [5, 2, 7, 8, 3, 5, 6]
+        trendData = [5, 2, 7, 8, 3, 5, 6]
 //        trendData = [0, 0, 0, 0, 0, 0, 0]
         
         tasksCompletedChart.clear()
@@ -109,9 +109,11 @@ class UserProfileViewController: UIViewController {
     func updateUserStats() {
         ///TODO: Calculate Stats Dynamically
         
-        focusLabel.text = String(totalFocusHours)
+//        focusLabel.text = String(totalFocusHours)
+        focusLabel.text = "14.5"
         
         completedLabel.text = String(myToDoList.completedList.count)
+        completedLabel.text = "23"
     }
   
     /// Sets up UI appearance of cards.
