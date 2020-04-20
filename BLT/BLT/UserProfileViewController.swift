@@ -75,7 +75,7 @@ class UserProfileViewController: UIViewController
         
         // Example data for the trend.
 //        print(trendData)
-        trendData = [5, 2, 7, 8, 3, 5, 6]
+//        trendData = [5, 2, 7, 8, 3, 5, 6]
 //        trendData = [0, 0, 0, 0, 0, 0, 0]
 
         
