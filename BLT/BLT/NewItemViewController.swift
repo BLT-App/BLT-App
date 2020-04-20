@@ -19,9 +19,9 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
 	/// Text field for the title of the ToDoItem
 	@IBOutlet weak var titleText: UITextField!
 
-	/// Text field for the description of the ToDoitem
-	@IBOutlet weak var descText: UITextField!
-
+	/// Text view for the description of the ToDoitem
+    @IBOutlet weak var descText: UITextView!
+    
 	/// Date picker for the due date.
 	@IBOutlet weak var datePicker: UIDatePicker!
 
@@ -31,12 +31,22 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
 	/// Exiting button.
 	@IBOutlet weak var exitButton: UIButton!
 
-	/// Dropdown item.
+    @IBOutlet weak var addButton: UIButton!
+    
+    
+    /// Dropdown item.
 	var dropDown: DropDown = DropDown()
 
-	/// View did load function. Sets up rounded views.
+    @IBOutlet weak var shadowView: UIView!
+    
+    @IBOutlet weak var containerView: UIView!
+    
+    
+    /// View did load function. Sets up rounded views.
 	override func viewDidLoad() {
 		super.viewDidLoad()
+        
+        setupCard()
 		// Do any additional setup after loading the view.
 		exitButton.layer.cornerRadius = 15.0
 		exitButton.layer.shadowColor = UIColor.blue.cgColor
@@ -44,8 +54,14 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
 		exitButton.layer.shadowOffset = CGSize(width: 0, height: 0)
 		exitButton.layer.shadowRadius = 5.0
 		exitButton.layer.masksToBounds = false
+        
+        addButton.layer.cornerRadius = 25.0
+        addButton.layer.shadowColor = UIColor.blue.cgColor
+        addButton.layer.shadowOpacity = 0.2
+        addButton.layer.shadowOffset = CGSize(width: 0, height: 0)
+        addButton.layer.shadowRadius = 5.0
+        addButton.layer.masksToBounds = false
 		titleText.delegate = self
-		descText.delegate = self
 		globalData.retrieveUserData()
 
 		// Loads DropDown
@@ -189,4 +205,47 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
 		// Get the new view controller using segue.destination.
 		// Pass the selected object to the new view controller.
  */
+}
+
+/// Extension that contains the graphical functions.
+extension NewItemViewController {
+    func setupCard() {
+        roundContainerView(cornerRadius: 20, view: containerView, shadowView: shadowView)
+        addShadow(view: shadowView, color: UIColor.gray.cgColor, opacity: 0.2, radius: 10, offset: CGSize(width: 0, height: 5))
+    }
+    
+    /**
+     Creates a rounded container view.
+     - parameters:
+     - cornerRadius: The corner radius of the rounded container.
+     - view: The UIView to round.
+     - shadowView: The accompanying shadowView of the main view to round.
+     */
+    func roundContainerView(cornerRadius: Double, view: UIView, shadowView: UIView) {
+        let path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = view.bounds
+        maskLayer.path = path.cgPath
+        view.layer.mask = maskLayer
+        
+        shadowView.layer.cornerRadius = CGFloat(cornerRadius)
+        shadowView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
+    
+    /**
+     Creates shadows for a view.
+     - parameters:
+     - view: The view to add a shadow to.
+     - color: The color of the shadow.
+     - opacity: The opacity of the shadow.
+     - radius: The radius of the shadow.
+     - offset: The offset of the shadow.
+     */
+    func addShadow(view: UIView, color: CGColor, opacity: Float, radius: CGFloat, offset: CGSize) {
+        view.layer.shadowColor = color
+        view.layer.shadowOpacity = opacity
+        view.layer.shadowOffset = offset
+        view.layer.shadowRadius = radius
+        view.layer.masksToBounds = false
+    }
 }
