@@ -41,7 +41,7 @@ class ToDoList {
     
     var allToDoItems: Results<ToDoItem> {
         let realm = realmManager.realm
-        let results = realm.objects(ToDoItem.self).filter("completed == true").sorted(byKeyPath: "dateCreated")
+        let results = realm.objects(ToDoItem.self).sorted(byKeyPath: "dateCreated")
         return results
     }
     
@@ -50,7 +50,7 @@ class ToDoList {
 
 	/// Initializes a ToDoList object. If it has never been saved to disk before, it saves the object to file.
 	init() {
-        if allToDoItems.count <= 0 {
+        if allToDoItems.count == 0 {
             createExampleList()
         }
 	}
