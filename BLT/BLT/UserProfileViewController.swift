@@ -36,11 +36,11 @@ class UserProfileViewController: UIViewController
     @IBOutlet weak var focusLabel: UILabel!
     
     var totalFocusHours: Double {
-        var minutes = 0.0
+        var seconds = 0.0
         for item in myToDoList.allToDoItems {
-            minutes += item.timeSpentInFocusMode
+            seconds += item.timeSpentInFocusMode
         }
-        
+        let minutes = seconds / 60
         var hours: Double = (minutes / 6).rounded() / 10
         if hours > 10 {
             hours = hours.rounded()
