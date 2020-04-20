@@ -62,7 +62,7 @@ class ListViewController: UIViewController {
 	/// View did load function.
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+        
 		createWave()
 
 		let confV = ConfettiView(frame: self.view.bounds)
@@ -83,6 +83,13 @@ class ListViewController: UIViewController {
 
 		print("Currently \(realmManager.realm.objects(DatabaseEvent.self).count) in log")
 	}
+    
+    override func viewDidLayoutSubviews() {
+        if UserDefaults.standard.object(forKey: "HasOnboarded") == nil {
+            UserDefaults.standard.set(true, forKey: "HasOnboarded")
+            performSegue(withIdentifier: "showOnboarding", sender: self)
+        }
+    }
 
     /**
      allows the viewcontroller to respond to touch events
