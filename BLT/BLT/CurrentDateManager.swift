@@ -50,6 +50,7 @@ class CurrentDateManager {
     /// Timer For Incementing Debug Date
     private var timer = Timer()
     
+    /// Initializes A DateManager
     init() {
         print("Date Manager Created")
         timer.invalidate()

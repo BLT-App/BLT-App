@@ -174,11 +174,15 @@ class ToDoItem: Object {
         return "identifier"
     }
     
+    /// Performs setup for studying in Focus Mode
     func startedStudyingInFocusMode() {
         let event = DatabaseEvent(event: .startedStudyingInFocusMode, item: self)
         referencingEvents.append(event)
     }
     
+    /// Performs tear down after studying in Focus Mode
+    ///
+    /// - Parameter duration: Length of time spent in Focus Mode
     func stoppedStudyingInFocusMode(duration: TimeInterval) {
         timeSpentInFocusMode += duration
         let event = DatabaseEvent(event: .stoppedStudyingInFocusMode, item: self, duration: duration)

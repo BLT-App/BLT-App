@@ -9,12 +9,17 @@
 import Foundation
 import RealmSwift
 
+/// Object responsible for keeping Realms organized
 var realmManager: RealmManager = RealmManager()
 
+
+/// Class responsible for keeping Realms organized
 class RealmManager {
     
+    /// Main Realm object
     let realm: Realm
     
+    /// Initializes a RealmManager
     init() {
         var config = Realm.Configuration()
         

@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           BLT Docs
         </a>
-         (100% documented)
+         (97% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -57,6 +57,9 @@
                 <a class="nav-group-task-link" href="../Classes/BlurView.html">BlurView</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/CurrentDateManager.html">CurrentDateManager</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/CustomIntensityVisualEffectView.html">CustomIntensityVisualEffectView</a>
               </li>
               <li class="nav-group-task">
@@ -87,16 +90,19 @@
                 <a class="nav-group-task-link" href="../Classes/ListViewController/LastActions.html">– LastActions</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/MilestoneItem.html">MilestoneItem</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/NewItemViewController.html">NewItemViewController</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/Notifications.html">Notifications</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RealmManager.html">RealmManager</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/RenderTimer.html">RenderTimer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SettingsDeveloperSubmenuTableViewController.html">SettingsDeveloperSubmenuTableViewController</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/SettingsFocusPrefSubmenuTableViewController.html">SettingsFocusPrefSubmenuTableViewController</a>
@@ -115,18 +121,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/SubjectCell.html">SubjectCell</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/TaskDatabase.html">TaskDatabase</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/TaskDatabase/DatabaseLog.html">– DatabaseLog</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/TaskDatabase/DatabaseIndex.html">– DatabaseIndex</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/TaskDatabase/DatabaseError.html">– DatabaseError</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ToDoItem.html">ToDoItem</a>
@@ -152,13 +146,16 @@
             <a class="nav-group-name-link" href="../Global%20Variables.html">Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT11dateManagerAA011CurrentDateC0Cvp">dateManager</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT10globalDataAA04UserC0Cvp">globalData</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT18globalTaskDatabaseAA0cD0Cvp">globalTaskDatabase</a>
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT10myToDoListAA0cdE0Cvp">myToDoList</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT10myToDoListAA0cdE0Cvp">myToDoList</a>
+                <a class="nav-group-task-link" href="../Global%20Variables.html#/s:3BLT12realmManagerAA05RealmC0Cvp">realmManager</a>
               </li>
             </ul>
           </li>
@@ -212,7 +209,7 @@
             <h1>DatabaseEvent</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">DatabaseEvent</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">DatabaseEvent</span> <span class="p">:</span> <span class="kt">Object</span></code></pre>
 
                 </div>
               </div>
@@ -228,9 +225,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:3BLT13DatabaseEventC9eventTypeAA07GeneralcE0Ovp"></a>
+                    <a name="/c:@M@BLT@objc(cs)DatabaseEvent(py)eventType"></a>
                     <a name="//apple_ref/swift/Property/eventType" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3BLT13DatabaseEventC9eventTypeAA07GeneralcE0Ovp">eventType</a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)DatabaseEvent(py)eventType">eventType</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -245,7 +242,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">eventType</span><span class="p">:</span> <span class="kt"><a href="../Enums/GeneralEventType.html">GeneralEventType</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">eventType</span><span class="p">:</span> <span class="kt"><a href="../Enums/GeneralEventType.html">GeneralEventType</a></span></code></pre>
 
                         </div>
                       </div>
@@ -255,9 +253,37 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:3BLT13DatabaseEventC4date10Foundation4DateVvp"></a>
+                    <a name="/s:3BLT13DatabaseEventC9eventText33_2CFE3F6EC5390FCAD9AC1C96F62BB272LLSSvp"></a>
+                    <a name="//apple_ref/swift/Property/eventText" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT13DatabaseEventC9eventText33_2CFE3F6EC5390FCAD9AC1C96F62BB272LLSSvp">eventText</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>String Description Of The Event Text</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">private</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">eventText</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)DatabaseEvent(py)date"></a>
                     <a name="//apple_ref/swift/Property/date" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3BLT13DatabaseEventC4date10Foundation4DateVvp">date</a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)DatabaseEvent(py)date">date</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -272,7 +298,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">date</span><span class="p">:</span> <span class="kt">Date</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">date</span><span class="p">:</span> <span class="kt">Date</span></code></pre>
 
                         </div>
                       </div>
@@ -282,9 +309,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:3BLT13DatabaseEventC18toDoItemIdentifierSSvp"></a>
-                    <a name="//apple_ref/swift/Property/toDoItemIdentifier" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3BLT13DatabaseEventC18toDoItemIdentifierSSvp">toDoItemIdentifier</a>
+                    <a name="/c:@M@BLT@objc(cs)DatabaseEvent(py)item"></a>
+                    <a name="//apple_ref/swift/Property/item" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)DatabaseEvent(py)item">item</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -292,14 +319,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Identifier of the ToDoItem that triggered the event</p>
+                        <p><code><a href="../Classes/ToDoItem.html">ToDoItem</a></code> that triggered the event</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">toDoItemIdentifier</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">item</span><span class="p">:</span> <span class="kt"><a href="../Classes/ToDoItem.html">ToDoItem</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -309,9 +337,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:3BLT13DatabaseEventC11eventNumberSivp"></a>
-                    <a name="//apple_ref/swift/Property/eventNumber" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3BLT13DatabaseEventC11eventNumberSivp">eventNumber</a>
+                    <a name="/c:@M@BLT@objc(cs)DatabaseEvent(py)eventID"></a>
+                    <a name="//apple_ref/swift/Property/eventID" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)DatabaseEvent(py)eventID">eventID</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -319,14 +347,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sequential Identifier For Each Event</p>
+                        <p>Identifier For Each Event</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">eventNumber</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">eventID</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -336,9 +365,62 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:3BLT13DatabaseEventC4item5event11currentDateAcA8ToDoItemC_AA07GeneralC4TypeO10Foundation0G0Vtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(item:event:currentDate:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3BLT13DatabaseEventC4item5event11currentDateAcA8ToDoItemC_AA07GeneralC4TypeO10Foundation0G0Vtcfc">init(item:event:currentDate:)</a>
+                    <a name="/s:3BLT13DatabaseEventC8duration10RealmSwift0E8OptionalCySdGvp"></a>
+                    <a name="//apple_ref/swift/Property/duration" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT13DatabaseEventC8duration10RealmSwift0E8OptionalCySdGvp">duration</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Duration Of Event Pair (For StoppedStudyingInFocusMode)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">RealmOptional</span><span class="o">&lt;</span><span class="kt">TimeInterval</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)DatabaseEvent(im)init"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)DatabaseEvent(im)init">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">required</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT13DatabaseEventC5event4itemAcA07GeneralC4TypeO_AA8ToDoItemCtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(event:item:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT13DatabaseEventC5event4itemAcA07GeneralC4TypeO_AA8ToDoItemCtcfc">init(event:item:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -353,7 +435,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">item</span><span class="p">:</span> <span class="kt"><a href="../Classes/ToDoItem.html">ToDoItem</a></span><span class="p">,</span> <span class="nv">event</span><span class="p">:</span> <span class="kt"><a href="../Enums/GeneralEventType.html">GeneralEventType</a></span><span class="p">,</span> <span class="nv">currentDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">event</span><span class="p">:</span> <span class="kt"><a href="../Enums/GeneralEventType.html">GeneralEventType</a></span><span class="p">,</span> <span class="nv">item</span><span class="p">:</span> <span class="kt"><a href="../Classes/ToDoItem.html">ToDoItem</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -361,18 +443,6 @@
                         <h4>Parameters</h4>
                         <table class="graybox">
                           <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>item</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The ToDoItem triggering the event</p>
-                                </div>
-                              </td>
-                            </tr>
                             <tr>
                               <td>
                                 <code>
@@ -388,17 +458,192 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>currentDate</em>
+                                <em>item</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The date of the event</p>
+                                  <p>The ToDoItem triggering the event</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT13DatabaseEventC5eventAcA07GeneralC4TypeO_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(event:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT13DatabaseEventC5eventAcA07GeneralC4TypeO_tcfc">init(event:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a DatabaseEvent with parameters</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">event</span><span class="p">:</span> <span class="kt"><a href="../Enums/GeneralEventType.html">GeneralEventType</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>event</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Type of event</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT13DatabaseEventC5event4item8durationAcA07GeneralC4TypeO_AA8ToDoItemCSdtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(event:item:duration:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT13DatabaseEventC5event4item8durationAcA07GeneralC4TypeO_AA8ToDoItemCSdtcfc">init(event:item:duration:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a DatabaseEvent with parameters</p>
+<div class="aside aside-attention">
+    <p class="aside-title">Attention</p>
+    <p>Only Use This Initializer For StoppedStudyingInFocusMode</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">event</span><span class="p">:</span> <span class="kt"><a href="../Enums/GeneralEventType.html">GeneralEventType</a></span><span class="p">,</span> <span class="nv">item</span><span class="p">:</span> <span class="kt"><a href="../Classes/ToDoItem.html">ToDoItem</a></span><span class="p">,</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>event</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Type of event</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>item</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ToDoItem triggering the event</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>duration</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p></p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT13DatabaseEventC03setC4TextyyF"></a>
+                    <a name="//apple_ref/swift/Method/setEventText()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT13DatabaseEventC03setC4TextyyF">setEventText()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the text representation of the event type</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setEventText</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@BLT@objc(cs)DatabaseEvent(cm)primaryKey"></a>
+                    <a name="//apple_ref/swift/Method/primaryKey()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@BLT@objc(cs)DatabaseEvent(cm)primaryKey">primaryKey()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Occurs when the app is closed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">primaryKey</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -411,7 +656,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://https//blt-app.github.io/get-blt" target="_blank" rel="external">Nicholas Lorentzen, Jiahua Chen, and David Lloyd George</a>. All rights reserved. (Last updated: 2020-03-02)</p>
+      <p>&copy; 2020 <a class="link" href="https://https//blt-app.github.io/get-blt" target="_blank" rel="external">Nicholas Lorentzen, Jiahua Chen, and David Lloyd George</a>. All rights reserved. (Last updated: 2020-04-20)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

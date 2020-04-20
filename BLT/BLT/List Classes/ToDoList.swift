@@ -18,27 +18,28 @@ var myToDoList: ToDoList = ToDoList()
  */
 class ToDoList {
 
-	/// The list of to-do items.
+	/// List of uncompleted `ToDoItem`s
     var uncompletedList: Results<ToDoItem> {
         let realm = realmManager.realm
         let results = realm.objects(ToDoItem.self).filter("deleted == false AND completed == false").sorted(byKeyPath: "dueDate")
         return results
     }
     
-    ///List Of Deleted Items
+    /// List of deleted `ToDoItem`s
     var deletedList: Results<ToDoItem> {
         let realm = realmManager.realm
         let results = realm.objects(ToDoItem.self).filter("deleted == true").sorted(byKeyPath: "dateCreated")
         return results
     }
     
-    ///List Of Completed Items
+    /// List Of completed `ToDoItem`s
     var completedList: Results<ToDoItem> {
         let realm = realmManager.realm
         let results = realm.objects(ToDoItem.self).filter("completed == true").sorted(byKeyPath: "dateCompleted")
         return results
     }
     
+    /// List of all `ToDoItem`s
     var allToDoItems: Results<ToDoItem> {
         let realm = realmManager.realm
         let results = realm.objects(ToDoItem.self).sorted(byKeyPath: "dateCreated")

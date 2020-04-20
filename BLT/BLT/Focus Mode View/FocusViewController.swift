@@ -108,6 +108,10 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
         self.currentTask = getCurrentTask()
 	}
     
+    
+    /// Gets The Currently Viewed Task
+    ///
+    /// - Returns: The Task
     func getCurrentTask() -> ToDoItem? {
         if let index = verticalCardSwiper.focussedCardIndex {
             return focusModeList[index]
@@ -482,6 +486,9 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
         }
     }
     
+    /// Checks if there was a change in the focused Item using a singleton pattern
+    ///
+    /// - Parameter oldItem: Item that will be checked against
     func changeoverCheckStart(oldItem: ToDoItem) {
         if !isRunningChangeoverCheck {
             isRunningChangeoverCheck = true

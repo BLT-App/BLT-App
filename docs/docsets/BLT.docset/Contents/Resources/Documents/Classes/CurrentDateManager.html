@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>CustomIntensityVisualEffectView Class Reference</title>
+    <title>CurrentDateManager Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/CustomIntensityVisualEffectView" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Class/CurrentDateManager" class="dashAnchor"></a>
 
-    <a title="CustomIntensityVisualEffectView Class Reference"></a>
+    <a title="CurrentDateManager Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">BLT Reference</a>
       <img class="carat" src="../img/carat.png" />
-      CustomIntensityVisualEffectView Class Reference
+      CurrentDateManager Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -206,14 +206,14 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>CustomIntensityVisualEffectView</h1>
+            <h1>CurrentDateManager</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">CustomIntensityVisualEffectView</span> <span class="p">:</span> <span class="kt">UIVisualEffectView</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">CurrentDateManager</span></code></pre>
 
                 </div>
               </div>
-            <p>Allows Custom Intesities for Blur Views</p>
+            <p>A Debugger Helping Class That Allows For Time Manipulation Within The App</p>
 
           </div>
         </section>
@@ -225,9 +225,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:3BLT31CustomIntensityVisualEffectViewC6effect9intensityACSo08UIVisualE0C_12CoreGraphics7CGFloatVtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(effect:intensity:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3BLT31CustomIntensityVisualEffectViewC6effect9intensityACSo08UIVisualE0C_12CoreGraphics7CGFloatVtcfc">init(effect:intensity:)</a>
+                    <a name="/s:3BLT18CurrentDateManagerC4date10Foundation0C0Vvp"></a>
+                    <a name="//apple_ref/swift/Property/date" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT18CurrentDateManagerC4date10Foundation0C0Vvp">date</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -235,14 +235,176 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Create visual effect view with given effect and its intensity</p>
+                        <p>Date The App Gets</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">effect</span><span class="p">:</span> <span class="kt">UIVisualEffect</span><span class="p">,</span> <span class="nv">intensity</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">date</span><span class="p">:</span> <span class="kt">Date</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT18CurrentDateManagerC13isInDebugModeSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isInDebugMode" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT18CurrentDateManagerC13isInDebugModeSbvp">isInDebugMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Boolean of whether or not to use the debug date</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isInDebugMode</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT18CurrentDateManagerC05debugC033_445524C71037876577A0D2CBFC7458D9LL10Foundation0C0Vvp"></a>
+                    <a name="//apple_ref/swift/Property/debugDate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT18CurrentDateManagerC05debugC033_445524C71037876577A0D2CBFC7458D9LL10Foundation0C0Vvp">debugDate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Debug Date</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">debugDate</span><span class="p">:</span> <span class="kt">Date</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT18CurrentDateManagerC14timeMultiplierSfvp"></a>
+                    <a name="//apple_ref/swift/Property/timeMultiplier" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT18CurrentDateManagerC14timeMultiplierSfvp">timeMultiplier</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Time Speed Multiplier For Debug Date</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">timeMultiplier</span><span class="p">:</span> <span class="kt">Float</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT18CurrentDateManagerC5timer33_445524C71037876577A0D2CBFC7458D9LLSo7NSTimerCvp"></a>
+                    <a name="//apple_ref/swift/Property/timer" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT18CurrentDateManagerC5timer33_445524C71037876577A0D2CBFC7458D9LLSo7NSTimerCvp">timer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Timer For Incementing Debug Date</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">timer</span><span class="p">:</span> <span class="kt">Timer</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT18CurrentDateManagerCACycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT18CurrentDateManagerCACycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes A DateManager</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT18CurrentDateManagerC03setC02toy10Foundation0C0V_tF"></a>
+                    <a name="//apple_ref/swift/Method/setDate(to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT18CurrentDateManagerC03setC02toy10Foundation0C0V_tF">setDate(to:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets The Debug Date</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setDate</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">Date</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -253,24 +415,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>effect</em>
+                                <em>to</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>visual effect, eg UIBlurEffect(style: .dark)</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>intensity</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>custom intensity from 0.0 (no effect) to 1.0 (full effect) using linear scale</p>
+                                  <p>Date To Set The Debug Date To</p>
                                 </div>
                               </td>
                             </tr>
@@ -283,9 +433,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@BLT@objc(cs)CustomIntensityVisualEffectView(im)initWithCoder:"></a>
-                    <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@BLT@objc(cs)CustomIntensityVisualEffectView(im)initWithCoder:">init(coder:)</a>
+                    <a name="/s:3BLT18CurrentDateManagerC017addTimeIntervalToC0yySdF"></a>
+                    <a name="//apple_ref/swift/Method/addTimeIntervalToDate(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT18CurrentDateManagerC017addTimeIntervalToC0yySdF">addTimeIntervalToDate(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -293,14 +443,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Initializer From Decoder</p>
+                        <p>Adds The Specified Amount Of Time To The Debug Date</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addTimeIntervalToDate</span><span class="p">(</span><span class="n">_</span> <span class="nv">interval</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3BLT18CurrentDateManagerC8runTimeryyF"></a>
+                    <a name="//apple_ref/swift/Method/runTimer()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT18CurrentDateManagerC8runTimeryyF">runTimer()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Begins Incrementing The Date</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">runTimer</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -311,12 +488,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>aDecoder</em>
+                                <em>interval</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>Decoder</p>
+                                  <p>Number of milliseconds between calls to render</p>
                                 </div>
                               </td>
                             </tr>
@@ -329,9 +506,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:3BLT31CustomIntensityVisualEffectViewC8animator33_DB65483B1FFC2D2E31B4BB02C4C703C5LLSo22UIViewPropertyAnimatorCSgvp"></a>
-                    <a name="//apple_ref/swift/Property/animator" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3BLT31CustomIntensityVisualEffectViewC8animator33_DB65483B1FFC2D2E31B4BB02C4C703C5LLSo22UIViewPropertyAnimatorCSgvp">animator</a>
+                    <a name="/s:3BLT18CurrentDateManagerC09incrementC0yyF"></a>
+                    <a name="//apple_ref/swift/Method/incrementDate()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3BLT18CurrentDateManagerC09incrementC0yyF">incrementDate()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -339,14 +516,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Animator Object</p>
+                        <p>Simulates Time Flow To The Debug Date</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">animator</span><span class="p">:</span> <span class="kt">UIViewPropertyAnimator</span><span class="o">!</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">func</span> <span class="nf">incrementDate</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
