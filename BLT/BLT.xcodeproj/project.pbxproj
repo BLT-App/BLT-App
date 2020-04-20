@@ -461,7 +461,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Comment Out Line Below For Swift Lint\n#${PODS_ROOT}/SwiftLint/swiftlint\n";
+			shellScript = "# Comment Out Line Below For Swift Lint\n${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

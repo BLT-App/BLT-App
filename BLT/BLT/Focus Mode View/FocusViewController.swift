@@ -108,7 +108,6 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
         self.currentTask = getCurrentTask()
 	}
     
-    
     /// Gets The Currently Viewed Task
     ///
     /// - Returns: The Task

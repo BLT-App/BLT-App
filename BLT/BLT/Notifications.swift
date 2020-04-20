@@ -25,8 +25,6 @@ class Notifications {
         notifRequests = []
     }
     
-    
-    
     /**
      Creates a new notification and adds it to the notification center to be sent at a specified time.
      - Parameters:
@@ -80,22 +78,21 @@ class Notifications {
     }
     
     /// deletes all pending notifications
-    func deleteAllPendingNotifications(){
+    func deleteAllPendingNotifications() {
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()
         
     }
     
     ///deletes specified notifications
-    func deleteSpecificNotifications(array: [String]){
+    func deleteSpecificNotifications(array: [String]) {
         let center = UNUserNotificationCenter.current()
         center.removePendingNotificationRequests(withIdentifiers: array)
         
     }
     
-    
     ///function for preparing repeating notifications (not fully functional yet)
-    func prepareRegularUpdateNotif(notifnum: Int){
+    func prepareRegularUpdateNotif(notifnum: Int) {
         let center = UNUserNotificationCenter.current()
         let content = UNMutableNotificationContent()
         content.title = "update"
@@ -103,22 +100,15 @@ class Notifications {
         
         var dateComponents = DateComponents()
         var identifier: String
-        if(notifnum == 1){
+        if notifnum == 1 {
             dateComponents.hour = 12
             identifier = "reminder1"
-        }
-        else if(notifnum == 3){
-            
+        } else if notifnum == 3 {
             identifier = "reminder3"
-        }
-            
-        else if(notifnum == 7){
+        } else if notifnum == 7 {
             dateComponents.weekday = 1
             identifier = "reminder7"
-        }
-            
-        else if(notifnum == 14){
-            
+        } else if notifnum == 14  {
             identifier = "reminder14"
         }
         
@@ -130,8 +120,6 @@ class Notifications {
                 print("Error")
             }
         }
-        
-        
         
     }
 }

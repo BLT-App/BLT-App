@@ -29,8 +29,6 @@ class UserData: Codable {
 		return Array(subjects.keys).sorted()
 	}
     
-    
-    
 	/// Whether or not user wants to do list sorted by date.
 	var wantsListByDate: Bool = true {
 		didSet {

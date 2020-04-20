@@ -12,7 +12,6 @@ import RealmSwift
 /// Object responsible for keeping Realms organized
 var realmManager: RealmManager = RealmManager()
 
-
 /// Class responsible for keeping Realms organized
 class RealmManager {
     
