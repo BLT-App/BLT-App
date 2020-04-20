@@ -49,19 +49,6 @@ class ToDoItem: Object {
     /// Initializes A New ToDoItem
     required init() {
         super.init()
-        /**
-        DispatchQueue.main.async {
-            let realm = realmManager.getRealmInstance()
-            let createdTaskEvent = DatabaseEvent(event: .createdItem, item: self)
-            if realm.isInWriteTransaction {
-                realm.add(createdTaskEvent)
-            } else {
-                try! realm.write {
-                    realm.add(createdTaskEvent)
-                }
-            }
-        }
-        */
 
     }
     
@@ -131,8 +118,8 @@ class ToDoItem: Object {
         if completed {
             completed = false
             dateCompleted = nil
-            let realm = realmManager.realm
-            realm.add(DatabaseEvent(event: .unmarkedComplete, item: self))
+            let event = DatabaseEvent(event: .unmarkedComplete, item: self)
+            referencingEvents.append(event)
         }
 	}
     
@@ -171,15 +158,15 @@ class ToDoItem: Object {
     override static func primaryKey() -> String? {
         return "identifier"
     }
-}
-
-// ToDoItems have a strict ordering using the duedate. 
-extension ToDoItem: Comparable {
-	static func <(lhs: ToDoItem, rhs: ToDoItem) -> Bool {
-		return lhs.getDueCounter() < rhs.getDueCounter()
-	}
-
-	static func ==(lhs: ToDoItem, rhs: ToDoItem) -> Bool {
-		return lhs.getDueCounter() == rhs.getDueCounter()
-	}
+    
+    func startedStudyingInFocusMode() {
+        let event = DatabaseEvent(event: .startedStudyingInFocusMode, item: self)
+        referencingEvents.append(event)
+    }
+    
+    func stoppedStudyingInFocusMode(duration: TimeInterval) {
+        timeSpentInFocusMode += duration
+        let event = DatabaseEvent(event: .stoppedStudyingInFocusMode, item: self, duration: duration)
+        referencingEvents.append(event)
+    }
 }

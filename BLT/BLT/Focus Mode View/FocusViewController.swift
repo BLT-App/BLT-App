@@ -27,7 +27,11 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     /// the popup object that will be displayed
 	var popup: FMPopUpViewController = FMPopUpViewController()
     
+    /// List Used For Temporary Reordering of ToDoItems
     var focusModeList: [ToDoItem] = []
+    
+    /// Used For Singleton Pattern For Changeover Check
+    var isRunningChangeoverCheck: Bool = false
     
     /// the button to end focus mode
     @IBOutlet weak var endFocusModeButton: UIBarButtonItem!
@@ -55,11 +59,13 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 
     /// variable for whether or not to leave the focus view
 	var leaveView: Bool = false
+    
+    /// Time the last item started being studied
+    var lastItemStartTime: Date = dateManager.date
 
     /// To run when the view did finish loading.
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		setupButtons()
         
         verticalCardSwiper.delegate = self
         verticalCardSwiper.datasource = self
@@ -99,13 +105,14 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
         stylizeEndFocusModeButton()
         stylizePointsCounterBar()
         
-        setCurrentTask()
+        self.currentTask = getCurrentTask()
 	}
     
-    func setCurrentTask() {
+    func getCurrentTask() -> ToDoItem? {
         if let index = verticalCardSwiper.focussedCardIndex {
-            currentTask = myToDoList.uncompletedList[index]
+            return myToDoList.uncompletedList[index]
         }
+        return nil
     }
     
     ///Sets Style Of End Focus Mode Button
@@ -206,18 +213,6 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 	override func viewWillDisappear(_ animated: Bool) {
 		myTimer.stopRunning()
 	}
-
-	/// Stylizes buttons with curves.
-	func setupButtons() {
-		// Sets up curves
-//        btnCompleteTask.layer.cornerRadius = 25.0
-//        btnCompleteTask.layer.shadowColor = UIColor.blue.cgColor
-//        btnCompleteTask.layer.shadowOpacity = 0.2
-//        btnCompleteTask.layer.shadowOffset = CGSize(width: 0, height: 0)
-//        btnCompleteTask.layer.shadowRadius = 5.0
-//        btnCompleteTask.layer.masksToBounds = false
-	}
-
 
 	/// Hides the Tab Bar controller.
 	func hideTabBar() {
@@ -330,9 +325,7 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
     ///
     /// - Parameter verticalCardSwiperView:
     func didScroll(verticalCardSwiperView: VerticalCardSwiperView) {
-        //currentTask?.stoppedStudyingInFocusMode()
-        setCurrentTask()
-        //currentTask?.startedStudyingInFocusMode()
+        changeoverCheckStart()
         if let index = verticalCardSwiper.focussedCardIndex {
             if let color = globalData.subjects[focusModeList[index].className]?.uiColor {
                 DispatchQueue.main.async {
@@ -458,6 +451,34 @@ extension FocusViewController: VerticalCardSwiperDelegate, VerticalCardSwiperDat
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             if let confettiView = self.confettiView {
                 confettiView.stop()
+            }
+        }
+    }
+    
+    func changeoverCheckStart() {
+        if !isRunningChangeoverCheck {
+            isRunningChangeoverCheck = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                if self.currentTask?.identifier != self.getCurrentTask()?.identifier {
+                    let realm = realmManager.realm
+                    if realm.isInWriteTransaction {
+                        self.currentTask?.stoppedStudyingInFocusMode(duration: dateManager.date.timeIntervalSince(self.lastItemStartTime))
+                        self.currentTask = self.getCurrentTask()
+                        self.currentTask?.startedStudyingInFocusMode()
+                    } else {
+                        do {
+                            try realm.write {
+                                self.currentTask?.stoppedStudyingInFocusMode(duration: dateManager.date.timeIntervalSince(self.lastItemStartTime))
+                                self.currentTask = self.getCurrentTask()
+                                self.currentTask?.startedStudyingInFocusMode()
+                            }
+                        } catch {
+                            print("Unexpected Failure")
+                        }
+                    }
+                    self.lastItemStartTime = dateManager.date
+                }
+                self.isRunningChangeoverCheck = false
             }
         }
     }

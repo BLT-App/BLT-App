@@ -60,7 +60,9 @@ class UserProfileViewController: UIViewController
         for day in 0...6 {
             let dateBegin: Date = dateManager.date - day.day.timeInterval
             let dateEnd: Date = dateManager.date - (day + 1).day.timeInterval
-            let numEventsCompletedOnDay = realm.objects(DatabaseEvent.self).filter("eventType == \(GeneralEventType.markedCompletedInFocusMode.rawValue) OR eventType == \(GeneralEventType.markedCompletedInListView.rawValue)").filter("date >= %@ AND date =< %@", dateEnd, dateBegin).count
+            let numEventsCompletedOnDay = realm.objects(DatabaseEvent.self).filter("eventType == \(GeneralEventType.markedCompletedInFocusMode.rawValue)" +
+                "OR eventType == \(GeneralEventType.markedCompletedInListView.rawValue)").filter("date >= %@ " +
+                    "AND date =< %@", dateEnd, dateBegin).count
             trendData.append(CGFloat(numEventsCompletedOnDay))
             
             let myCalendar = Calendar(identifier: .gregorian)

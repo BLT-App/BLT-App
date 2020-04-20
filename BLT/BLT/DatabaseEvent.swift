@@ -37,16 +37,18 @@ import RealmSwift
 
 ///Used For Logging Various Events For Later Use
 class DatabaseEvent: Object {
-    ///Type Of Event
+    /// Type Of Event
     @objc dynamic var eventType: GeneralEventType
     /// String Description Of The Event Text
     @objc private dynamic var eventText: String = ""
-    ///Date of Event
+    /// Date of Event
     @objc dynamic var date: Date = dateManager.date
-    ///`ToDoItem` that triggered the event
+    /// `ToDoItem` that triggered the event
     @objc dynamic var item: ToDoItem?
-    ///Sequential Identifier For Each Event
+    /// Identifier For Each Event
     @objc dynamic var eventID: String = UUID().uuidString
+    /// Duration Of Event Pair (For StoppedStudyingInFocusMode)
+    let duration: RealmOptional<TimeInterval> = RealmOptional<TimeInterval>()
     
     required init() {
         self.eventType = .openedApp
@@ -67,13 +69,32 @@ class DatabaseEvent: Object {
         setEventText()
     }
     
-    
     /// Initializes a DatabaseEvent with parameters
     ///
     /// - Parameter event: Type of event
     convenience init(event: GeneralEventType) {
         self.init()
         self.eventType = event
+        setEventText()
+    }
+    
+    
+    /// Initializes a DatabaseEvent with parameters
+    /// - Attention: Only Use This Initializer For StoppedStudyingInFocusMode
+    ///
+    /// - Parameters:
+    ///   - event: Type of event
+    ///   - item: ToDoItem triggering the event
+    ///   - duration:
+    convenience init(event: GeneralEventType, item: ToDoItem, duration: TimeInterval) {
+        if event != GeneralEventType.stoppedStudyingInFocusMode {
+            print("WARNING: INCORRECT INITIALIZER USED FOR DATABASEEVENT")
+            exit(0)
+        }
+        self.init()
+        self.eventType = event
+        self.item = item
+        self.duration.value = duration
         setEventText()
     }
     
