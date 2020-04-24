@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import gooey_cell
 
 /// TableView Cell for individual to-do items.
-class ToDoTableViewCell: UITableViewCell {
+class ToDoTableViewCell: GooeyEffectTableViewCell {
 
 	/// Label of the class.
 	@IBOutlet weak var classLabel: UILabel!
