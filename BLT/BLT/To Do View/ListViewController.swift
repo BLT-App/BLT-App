@@ -207,7 +207,9 @@ class ListViewController: UIViewController {
 		- shadowView: The accompanying shadowView of the main view to round.
 	 */
 	func roundContainerView(cornerRadius: Double, view: UIView, shadowView: UIView) {
-		let path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+		let path = UIBezierPath(roundedRect: view.bounds,
+                                byRoundingCorners: [.bottomLeft, .bottomRight],
+                                cornerRadii: CGSize(width: cornerRadius,height: cornerRadius))
 		let maskLayer = CAShapeLayer()
 		maskLayer.frame = view.bounds
 		maskLayer.path = path.cgPath
@@ -236,17 +238,6 @@ class ListViewController: UIViewController {
 			}
 		}
 	}
-
-	/*
-	// MARK: - Navigation
-
-	// In a storyboard-based application, you will often want to do a little preparation before navigation
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		// Get the new view controller using segue.destination.
-		// Pass the selected object to the new view controller.
-	}
-	*/
-
 }
 
 /// Conforms to Table View classes.
@@ -275,17 +266,6 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 		return cell
 	}
 
-    /**
-	/// Delete action (swipe left).
-	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-		if editingStyle == .delete {
-			deleteListIndexPath = indexPath
-			let itemToDelete = myToDoList.uncompletedList[indexPath.row]
-			confirmDelete(itemToDelete)
-		}
-	}
-    */
-
 	/// Selected row at path.
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		selectedIndex = indexPath.row
@@ -299,26 +279,10 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 		//myToDoList.uncompletedList.insert(movedItem, at: destinationIndexPath.row)
         print("Disabled Reordering For Database Migration")
 	}
-
-    /**
-	/// Leading configuration.
-	func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-		let configuration = UISwipeActionsConfiguration(actions: [contextualCompletedAction(forRowAtIndexPath: indexPath)])
-		return configuration
-	}
-    */
-
-	/// Completed task function.
-    /*
-	func contextualCompletedAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
-		let action = UIContextualAction(style: .normal, title: "Complete") { (_: UIContextualAction, _: UIView, completionHandler: (Bool) -> Void) in
-            completeItemAt(index: indexPath)
-		}
-		action.backgroundColor = .blue
-		return action
-	}
-    **/
     
+    /// Creates Confetti On The Screen
+    ///
+    /// - Parameter seconds: Number of Seconds Confetti Should Appear For
     func createConfetti(seconds: Double) {
         if let confettiView = self.confettiView {
             confettiView.start()
@@ -330,6 +294,9 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
         }
     }
     
+    /// Completes The Item At The Specified Index
+    ///
+    /// - Parameter index: Index of Item
     func completeItemAt(index: IndexPath) {
         let item = myToDoList.uncompletedList[index.row]
         let realm = realmManager.realm
@@ -368,10 +335,8 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 
 		self.present(alert, animated: true, completion: nil)
 	}
-
-	/**
-	 Handles the deletion of an item.
-	 */
+    
+    /// Handles Deletion Of An Item
 	func handleDeleteItem(alertAction: UIAlertAction!) {
 		if let indexPath = deleteListIndexPath {
             let deletedItem = myToDoList.uncompletedList[indexPath.row]
@@ -392,10 +357,8 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
             lastAction = .deletedItem
 		}
 	}
-
-	/**
-	 Cancels the deletion of an item.
-	 */
+	
+    /// Cancels the deletion of an item.
 	func cancelDeleteItem(alertAction: UIAlertAction!) {
 		deleteListIndexPath = nil
 	}
@@ -433,6 +396,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 }
 
 extension ListViewController: GooeyCellDelegate {
+    
     func gooeyCellActionConfig(for cell: UITableViewCell, direction: GooeyEffect.Direction) -> GooeyEffectTableViewCell.ActionConfig? {
         let color: UIColor
         if let toDoCell = cell as? ToDoTableViewCell {
@@ -464,4 +428,3 @@ extension ListViewController: GooeyCellDelegate {
         }
     }
 }
-
