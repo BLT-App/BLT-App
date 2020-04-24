@@ -407,7 +407,6 @@ extension ListViewController: GooeyCellDelegate {
         
         let image: UIImage = direction == .toLeft ? #imageLiteral(resourceName: "trash") : #imageLiteral(resourceName: "RoundedCheckMark")
         
-        
         let effectConfig = GooeyEffect.Config(color: color, image: image)
         
         let actionConfig = GooeyEffectTableViewCell.ActionConfig(effectConfig: effectConfig,
