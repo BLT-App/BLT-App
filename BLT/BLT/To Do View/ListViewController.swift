@@ -405,10 +405,10 @@ extension ListViewController: GooeyCellDelegate {
             color = #colorLiteral(red: 0.02649694125, green: 0.3554508787, blue: 0.4980392157, alpha: 1)
         }
         
-        //let image = direction == .toLeft ? #imageLiteral(resourceName: "image_cross") : #imageLiteral(resourceName: "image_mark")
-        //let isCellDeletingAction = direction == .toLeft
+        let image: UIImage = direction == .toLeft ? #imageLiteral(resourceName: "trash") : #imageLiteral(resourceName: "RoundedCheckMark")
         
-        let effectConfig = GooeyEffect.Config(color: color, image: nil)
+        
+        let effectConfig = GooeyEffect.Config(color: color, image: image)
         
         let actionConfig = GooeyEffectTableViewCell.ActionConfig(effectConfig: effectConfig,
                                                                  isCellDeletingAction: false)
