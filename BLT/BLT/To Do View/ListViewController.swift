@@ -10,6 +10,7 @@ import UIKit
 import SwiftReorder
 import UserNotifications
 import LBConfettiView
+import gooey_cell
 
 /// Main view controller of the to do list.
 class ListViewController: UIViewController {
@@ -110,7 +111,7 @@ class ListViewController: UIViewController {
             print("shook")
             
             if lastAction == .none {
-                ///TODO: Create A Popup Message About Shake-To-Undo
+                /// TODO: Create A Popup Message About Shake-To-Undo
                 print("No Actions Taken This Session")
                 return
             } else if lastAction == .completedItem {
@@ -138,6 +139,7 @@ class ListViewController: UIViewController {
             }
         }
     }
+    
 	/// View did appear function. (If a new task is added then put the task into the tableView. )
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
@@ -205,7 +207,9 @@ class ListViewController: UIViewController {
 		- shadowView: The accompanying shadowView of the main view to round.
 	 */
 	func roundContainerView(cornerRadius: Double, view: UIView, shadowView: UIView) {
-		let path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+		let path = UIBezierPath(roundedRect: view.bounds,
+                                byRoundingCorners: [.bottomLeft, .bottomRight],
+                                cornerRadii: CGSize(width: cornerRadius,height: cornerRadius))
 		let maskLayer = CAShapeLayer()
 		maskLayer.frame = view.bounds
 		maskLayer.path = path.cgPath
@@ -234,17 +238,6 @@ class ListViewController: UIViewController {
 			}
 		}
 	}
-
-	/*
-	// MARK: - Navigation
-
-	// In a storyboard-based application, you will often want to do a little preparation before navigation
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		// Get the new view controller using segue.destination.
-		// Pass the selected object to the new view controller.
-	}
-	*/
-
 }
 
 /// Conforms to Table View classes.
@@ -268,17 +261,9 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 		}
 
 		cell.setItem(item: toDoItem)
+        cell.gooeyCellDelegate = self
         
 		return cell
-	}
-
-	/// Delete action (swipe left).
-	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-		if editingStyle == .delete {
-			deleteListIndexPath = indexPath
-			let itemToDelete = myToDoList.uncompletedList[indexPath.row]
-			confirmDelete(itemToDelete)
-		}
 	}
 
 	/// Selected row at path.
@@ -294,56 +279,52 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 		//myToDoList.uncompletedList.insert(movedItem, at: destinationIndexPath.row)
         print("Disabled Reordering For Database Migration")
 	}
-
-	/// Leading configuration.
-	func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-		let configuration = UISwipeActionsConfiguration(actions: [contextualCompletedAction(forRowAtIndexPath: indexPath)])
-		return configuration
-	}
-
-	/// Completed task function.
-	func contextualCompletedAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
-		let action = UIContextualAction(style: .normal, title: "Complete") { (_: UIContextualAction, _: UIView, completionHandler: (Bool) -> Void) in
-            let item = myToDoList.uncompletedList[indexPath.row]
-            
-            let realm = realmManager.realm
-            do {
-                try realm.write {
-                    item.completeTaskInListView()
-                }
-            } catch {
-                print("Exception Occurred")
+    
+    /// Creates Confetti On The Screen
+    ///
+    /// - Parameter seconds: Number of Seconds Confetti Should Appear For
+    func createConfetti(seconds: Double) {
+        if let confettiView = self.confettiView {
+            confettiView.start()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            if let confettiView = self.confettiView {
+                confettiView.stop()
             }
-            
-			if let confettiView = self.confettiView {
-				confettiView.start()
-			}
-			self.tableView.beginUpdates()
-			self.tableView.deleteRows(at: [indexPath], with: .top)
-			self.tableView.endUpdates()
-			self.updateText()
-			let seconds = 1.0
-			let oldPoints = myToDoList.points
-			myToDoList.points += 10
-			self.incrementPoints(oldPoints: oldPoints)
-			DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-				if let confettiView = self.confettiView {
-					confettiView.stop()
-				}
-			}
-			completionHandler(true)
-            self.lastAction = .completedItem
-		}
-		action.backgroundColor = .blue
-		return action
-	}
+        }
+    }
+    
+    /// Completes The Item At The Specified Index
+    ///
+    /// - Parameter index: Index of Item
+    func completeItemAt(index: IndexPath) {
+        let item = myToDoList.uncompletedList[index.row]
+        let realm = realmManager.realm
+        do {
+            try realm.write {
+                item.completeTaskInListView()
+            }
+        } catch {
+            print("Exception Occurred")
+        }
+        createConfetti(seconds: 1.0)
+        self.tableView.beginUpdates()
+        self.tableView.deleteRows(at: [index], with: .right)
+        self.tableView.endUpdates()
+        self.updateText()
+        let oldPoints = myToDoList.points
+        myToDoList.points += 10
+        self.incrementPoints(oldPoints: oldPoints)
+        self.lastAction = .completedItem
+    }
 
 	/**
 	 Prompts a confirmation for a deletion of a ToDoItem.
 	 - parameters:
 		- itemToDelete: The ToDoItem that is going to be deleted.
 	 */
-	func confirmDelete(_ itemToDelete: ToDoItem) {
+    func confirmDelete(_ itemToDelete: ToDoItem, index: IndexPath) {
+        deleteListIndexPath = index
         let alertMessage = "Are you sure you want to delete the item \(itemToDelete.title)?"
 		let alert = UIAlertController(title: "Delete To-Do Item", message: alertMessage, preferredStyle: .actionSheet)
 		let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: handleDeleteItem)
@@ -354,10 +335,8 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 
 		self.present(alert, animated: true, completion: nil)
 	}
-
-	/**
-	 Handles the deletion of an item.
-	 */
+    
+    /// Handles Deletion Of An Item
 	func handleDeleteItem(alertAction: UIAlertAction!) {
 		if let indexPath = deleteListIndexPath {
             let deletedItem = myToDoList.uncompletedList[indexPath.row]
@@ -370,17 +349,16 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
                 print("Exception Occurred")
             }
 			tableView.beginUpdates()
-			tableView.deleteRows(at: [indexPath], with: .left)
+			tableView.deleteRows(at: [indexPath], with: .fade)
 			tableView.endUpdates()
+            tableView.reloadData()
 			deleteListIndexPath = nil
 			updateText()
             lastAction = .deletedItem
 		}
 	}
-
-	/**
-	 Cancels the deletion of an item.
-	 */
+	
+    /// Cancels the deletion of an item.
 	func cancelDeleteItem(alertAction: UIAlertAction!) {
 		deleteListIndexPath = nil
 	}
@@ -415,4 +393,37 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate, TableV
 	func updatePointsCounter(_ points: Int) {
 		pointsCounter.text = "\(points) ⭐"
 	}
+}
+
+extension ListViewController: GooeyCellDelegate {
+    
+    func gooeyCellActionConfig(for cell: UITableViewCell, direction: GooeyEffect.Direction) -> GooeyEffectTableViewCell.ActionConfig? {
+        let color: UIColor
+        if let toDoCell = cell as? ToDoTableViewCell {
+            color = toDoCell.classLabel.backgroundColor ?? #colorLiteral(red: 0.02649694125, green: 0.3554508787, blue: 0.4980392157, alpha: 1)
+        } else {
+            color = #colorLiteral(red: 0.02649694125, green: 0.3554508787, blue: 0.4980392157, alpha: 1)
+        }
+        
+        let image: UIImage = direction == .toLeft ? #imageLiteral(resourceName: "trash") : #imageLiteral(resourceName: "RoundedCheckMark")
+        
+        let effectConfig = GooeyEffect.Config(color: color, image: image)
+        
+        let actionConfig = GooeyEffectTableViewCell.ActionConfig(effectConfig: effectConfig,
+                                                                 isCellDeletingAction: false)
+        return actionConfig
+    }
+    
+    func gooeyCellActionTriggered(for cell: UITableViewCell,
+                                  direction: GooeyEffect.Direction) {
+        switch direction {
+        case .toLeft:
+            guard let indexPath = tableView.indexPath(for: cell) else { return }
+            let itemToDelete = myToDoList.uncompletedList[indexPath.row]
+            confirmDelete(itemToDelete, index: indexPath)
+        case .toRight:
+            guard let indexPath = tableView.indexPath(for: cell) else { return }
+            completeItemAt(index: indexPath)
+        }
+    }
 }

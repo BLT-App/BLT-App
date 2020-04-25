@@ -171,6 +171,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/RetroProgress/RetroProgress.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftReorder/SwiftReorder.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/VerticalCardSwiper/VerticalCardSwiper.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/gooey-cell/gooey_cell.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/pop/pop.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Charts/Charts.framework"
@@ -183,6 +185,8 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/RetroProgress/RetroProgress.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftReorder/SwiftReorder.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/VerticalCardSwiper/VerticalCardSwiper.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/gooey-cell/gooey_cell.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/pop/pop.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
