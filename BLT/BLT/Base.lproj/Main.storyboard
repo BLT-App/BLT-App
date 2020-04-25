@@ -1475,7 +1475,7 @@
         <!--Main Tab Bar-->
         <scene sceneID="DDJ-ga-4dG">
             <objects>
-                <tabBarController title="Main Tab Bar" automaticallyAdjustsScrollViewInsets="NO" id="yO5-Fo-in6" sceneMemberID="viewController">
+                <tabBarController title="Main Tab Bar" automaticallyAdjustsScrollViewInsets="NO" id="yO5-Fo-in6" customClass="CBFlashyTabBarController" customModule="CBFlashyTabBarController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EE5-UN-3od">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
