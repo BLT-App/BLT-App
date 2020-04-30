@@ -1,5 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-BLT/Pods-BLT-frameworks.sh
-${BUILT_PRODUCTS_DIR}/CBFlashyTabBarController/CBFlashyTabBarController.framework
 ${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
 ${BUILT_PRODUCTS_DIR}/Datez/Datez.framework
 ${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework

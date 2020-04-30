@@ -1,5 +1,4 @@
 PODS:
-  - CBFlashyTabBarController (0.8.3)
   - Charts (3.2.2):
     - Charts/Core (= 3.2.2)
   - Charts/Core (3.2.2)
@@ -21,7 +20,6 @@ PODS:
   - VerticalCardSwiper (2.2.0)
 
 DEPENDENCIES:
-  - CBFlashyTabBarController
   - Charts (~> 3.2.2)
   - Datez
   - DropDown (= 2.3.4)
@@ -36,7 +34,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - CBFlashyTabBarController
     - Charts
     - Datez
     - DropDown
@@ -52,7 +49,6 @@ SPEC REPOS:
     - VerticalCardSwiper
 
 SPEC CHECKSUMS:
-  CBFlashyTabBarController: bc6b11dd4cbc9b54785c8944156e2f4d4f03b088
   Charts: f69cf0518b6d1d62608ca504248f1bbe0b6ae77e
   Datez: 4a10fa184e8f0501624b6ff0e0e5608b4d184f61
   DropDown: f225ff0fd09dde064d17aa03db7e4d4e4ff40b6b
@@ -67,6 +63,6 @@ SPEC CHECKSUMS:
   SwiftReorder: 60ef1faf6446cf68f9a647cb975530db8efd6620
   VerticalCardSwiper: 41c8c0d8d87511ec269347f5671386acf66cd31a
 
-PODFILE CHECKSUM: 22b7f77e8f4f1453abe7383f1825a6b52d7848d8
+PODFILE CHECKSUM: 0f41222b08879c05fb7676b5381985305fed2e62
 
 COCOAPODS: 1.8.4
