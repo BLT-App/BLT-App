@@ -12,5 +12,7 @@ target 'BLT' do
   pod 'VerticalCardSwiper'
   pod 'RetroProgress'
   pod 'RealmSwift', '~> 4.3.2'
+  pod 'gooey-cell'
+  pod 'CBFlashyTabBarController'
 end
 

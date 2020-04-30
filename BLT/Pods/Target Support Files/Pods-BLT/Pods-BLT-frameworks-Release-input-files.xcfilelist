@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-BLT/Pods-BLT-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CBFlashyTabBarController/CBFlashyTabBarController.framework
 ${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
 ${BUILT_PRODUCTS_DIR}/Datez/Datez.framework
 ${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework
@@ -9,3 +10,5 @@ ${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework
 ${BUILT_PRODUCTS_DIR}/RetroProgress/RetroProgress.framework
 ${BUILT_PRODUCTS_DIR}/SwiftReorder/SwiftReorder.framework
 ${BUILT_PRODUCTS_DIR}/VerticalCardSwiper/VerticalCardSwiper.framework
+${BUILT_PRODUCTS_DIR}/gooey-cell/gooey_cell.framework
+${BUILT_PRODUCTS_DIR}/pop/pop.framework

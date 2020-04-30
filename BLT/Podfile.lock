@@ -1,10 +1,14 @@
 PODS:
+  - CBFlashyTabBarController (0.8.3)
   - Charts (3.2.2):
     - Charts/Core (= 3.2.2)
   - Charts/Core (3.2.2)
   - Datez (3.1.1)
   - DropDown (2.3.4)
+  - gooey-cell (0.1.0):
+    - pop (~> 1.0)
   - LBConfettiView (1.0.0)
+  - pop (1.0.12)
   - RandomColorSwift (2.0.0)
   - Realm (4.3.2):
     - Realm/Headers (= 4.3.2)
@@ -17,9 +21,11 @@ PODS:
   - VerticalCardSwiper (2.2.0)
 
 DEPENDENCIES:
+  - CBFlashyTabBarController
   - Charts (~> 3.2.2)
   - Datez
   - DropDown (= 2.3.4)
+  - gooey-cell
   - LBConfettiView
   - RandomColorSwift
   - RealmSwift (~> 4.3.2)
@@ -30,10 +36,13 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - CBFlashyTabBarController
     - Charts
     - Datez
     - DropDown
+    - gooey-cell
     - LBConfettiView
+    - pop
     - RandomColorSwift
     - Realm
     - RealmSwift
@@ -43,10 +52,13 @@ SPEC REPOS:
     - VerticalCardSwiper
 
 SPEC CHECKSUMS:
+  CBFlashyTabBarController: bc6b11dd4cbc9b54785c8944156e2f4d4f03b088
   Charts: f69cf0518b6d1d62608ca504248f1bbe0b6ae77e
   Datez: 4a10fa184e8f0501624b6ff0e0e5608b4d184f61
   DropDown: f225ff0fd09dde064d17aa03db7e4d4e4ff40b6b
+  gooey-cell: ed8d8fa67b57dfca89e655faf8c30ac5fd71c46d
   LBConfettiView: 29e99668b3c0dca25160486dd593f91a0ceeca8e
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   RandomColorSwift: d18b9b025403137b5543a002187489b06cc1782b
   Realm: 5e92902e2875dff4bb0fd02f67bb737c3d5db2bc
   RealmSwift: 9a360fc7bae04fc2e308a34fbd899d5faa2d6b22
@@ -55,6 +67,6 @@ SPEC CHECKSUMS:
   SwiftReorder: 60ef1faf6446cf68f9a647cb975530db8efd6620
   VerticalCardSwiper: 41c8c0d8d87511ec269347f5671386acf66cd31a
 
-PODFILE CHECKSUM: d3e5a80acc963ea4d81073ad22ccaa752b52f659
+PODFILE CHECKSUM: 22b7f77e8f4f1453abe7383f1825a6b52d7848d8
 
 COCOAPODS: 1.8.4

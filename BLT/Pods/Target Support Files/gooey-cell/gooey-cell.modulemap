@@ -1,0 +1,6 @@
+framework module gooey_cell {
+  umbrella header "gooey-cell-umbrella.h"
+
+  export *
+  module * { export * }
+}
