@@ -27,7 +27,7 @@ class SettingsTableViewController: UITableViewController {
 	}
     
     @IBAction func bugReportTouched(_ sender: UIButton) {
-        if let url = URL(string: "https://forms.gle/u1trNa8YpKNF6wnR8") {
+        if let url = URL(string: "https://bit.ly/BLT-Bug-Report") {
             if UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:])
             }
