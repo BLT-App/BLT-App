@@ -366,7 +366,27 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDR-sa-cOD">
+                                                    <rect key="frame" x="346" y="25" width="50" height="30"/>
+                                                    <state key="normal" title="Credits"/>
+                                                    <connections>
+                                                        <segue destination="t15-xb-g9x" kind="presentation" id="wc8-lC-nxZ"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwg-Es-zrs">
+                                                    <rect key="frame" x="318" y="56" width="78" height="30"/>
+                                                    <state key="normal" title="Bug Report"/>
+                                                    <connections>
+                                                        <action selector="bugReportTouched:" destination="NZ1-lP-gNC" eventType="touchUpInside" id="2bZ-43-VDr"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kwg-Es-zrs" firstAttribute="top" secondItem="ZDR-sa-cOD" secondAttribute="bottom" constant="1" id="0mE-3J-Zss"/>
+                                                <constraint firstAttribute="trailing" secondItem="kwg-Es-zrs" secondAttribute="trailing" constant="18" id="9Ig-rd-1tg"/>
+                                                <constraint firstItem="ZDR-sa-cOD" firstAttribute="top" secondItem="cHH-5g-AtN" secondAttribute="top" constant="25" id="RM0-Rq-Ck6"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZDR-sa-cOD" secondAttribute="trailing" constant="18" id="s7f-P6-ypw"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="User Info" rowHeight="97" id="vLp-a7-7iq">
@@ -573,6 +593,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="pZq-lD-GtL"/>
+                    <connections>
+                        <outlet property="bugReportButton" destination="kwg-Es-zrs" id="pJb-W8-IqA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iuk-02-pzq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1748,6 +1771,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caQ-JA-q55" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3905.7971014492755" y="136.60714285714286"/>
+        </scene>
+        <!--Credits View Controller-->
+        <scene sceneID="ySh-eI-1AB">
+            <objects>
+                <viewController id="t15-xb-g9x" customClass="CreditsViewController" customModule="BLT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AyM-st-BuT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cuh-Xo-Gcr">
+                                <rect key="frame" x="38" y="61" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButton:" destination="t15-xb-g9x" eventType="touchUpInside" id="WIE-vN-SEB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNk-DL-J7b">
+                                <rect key="frame" x="28" y="99" width="366" height="117"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">BLT is made through CO652, Digital Innovation. Team members: Jiahua Chen, Nicholas Lorentzen, David Lloyd George. Product Manager: Roger Wistar. Customers: TLC at the Hotchkiss School. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="HZm-Qm-e1D"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lJm-zV-d3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5808.6956521739139" y="1208.7053571428571"/>
         </scene>
         <!--Focus-->
         <scene sceneID="vnM-LW-oat">
