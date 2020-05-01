@@ -17,6 +17,7 @@ PODS:
   - RetroProgress (1.0.1)
   - SwiftLint (0.39.2)
   - SwiftReorder (6.0.2)
+  - TimelineCards (1.0.5)
   - VerticalCardSwiper (2.2.0)
 
 DEPENDENCIES:
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - RetroProgress
   - SwiftLint
   - SwiftReorder (~> 6.0.2)
+  - TimelineCards
   - VerticalCardSwiper
 
 SPEC REPOS:
@@ -46,6 +48,7 @@ SPEC REPOS:
     - RetroProgress
     - SwiftLint
     - SwiftReorder
+    - TimelineCards
     - VerticalCardSwiper
 
 SPEC CHECKSUMS:
@@ -61,8 +64,9 @@ SPEC CHECKSUMS:
   RetroProgress: a5b2514485c0ce75838ad321c77d5746150901cd
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
   SwiftReorder: 60ef1faf6446cf68f9a647cb975530db8efd6620
+  TimelineCards: 8f3377fbe40ae587b5ad9e6d29dd7e6d2654e418
   VerticalCardSwiper: 41c8c0d8d87511ec269347f5671386acf66cd31a
 
-PODFILE CHECKSUM: 0f41222b08879c05fb7676b5381985305fed2e62
+PODFILE CHECKSUM: 09b6ac54a02bbc1dd589b3c2679338c2e96e3e48
 
 COCOAPODS: 1.8.4

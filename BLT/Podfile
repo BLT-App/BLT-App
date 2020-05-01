@@ -13,5 +13,6 @@ target 'BLT' do
   pod 'RetroProgress'
   pod 'RealmSwift', '~> 4.3.2'
   pod 'gooey-cell'
+  pod 'TimelineCards'
 end
 
