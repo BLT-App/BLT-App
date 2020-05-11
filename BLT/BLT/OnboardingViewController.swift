@@ -24,14 +24,12 @@ class OnboardingViewController: UIPageViewController {
         
         setViewControllers([screens[0]], direction: .forward, animated: false, completion: nil)
 
-
         // Do any additional setup after loading the view.
     }
     
     func getPage(_ identifier: String) -> UIViewController {
         return storyboard!.instantiateViewController(withIdentifier: identifier)
     }
-    
 
     /*
     // MARK: - Navigation
@@ -78,6 +76,4 @@ extension OnboardingViewController: UIPageViewControllerDelegate, UIPageViewCont
         return screens[nextIndex]
 
     }
-    
-    
 }
