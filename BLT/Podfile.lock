@@ -4,6 +4,7 @@ PODS:
   - Charts/Core (3.2.2)
   - Datez (3.1.1)
   - DropDown (2.3.4)
+  - Eureka (4.3.1)
   - gooey-cell (0.1.0):
     - pop (~> 1.0)
   - LBConfettiView (1.0.0)
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - Charts (~> 3.2.2)
   - Datez
   - DropDown (= 2.3.4)
+  - Eureka (~> 4.3.1)
   - gooey-cell
   - LBConfettiView
   - RandomColorSwift
@@ -37,6 +39,7 @@ SPEC REPOS:
     - Charts
     - Datez
     - DropDown
+    - Eureka
     - gooey-cell
     - LBConfettiView
     - pop
@@ -52,6 +55,7 @@ SPEC CHECKSUMS:
   Charts: f69cf0518b6d1d62608ca504248f1bbe0b6ae77e
   Datez: 4a10fa184e8f0501624b6ff0e0e5608b4d184f61
   DropDown: f225ff0fd09dde064d17aa03db7e4d4e4ff40b6b
+  Eureka: 28ea296f06710f6745266b71f17862048941a32d
   gooey-cell: ed8d8fa67b57dfca89e655faf8c30ac5fd71c46d
   LBConfettiView: 29e99668b3c0dca25160486dd593f91a0ceeca8e
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
@@ -63,6 +67,6 @@ SPEC CHECKSUMS:
   SwiftReorder: 60ef1faf6446cf68f9a647cb975530db8efd6620
   VerticalCardSwiper: 41c8c0d8d87511ec269347f5671386acf66cd31a
 
-PODFILE CHECKSUM: 0f41222b08879c05fb7676b5381985305fed2e62
+PODFILE CHECKSUM: 036a38721dc23200876863c4eb6f91c6db5940a5
 
 COCOAPODS: 1.8.4
