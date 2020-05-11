@@ -13,7 +13,7 @@ class SettingsViewController: FormViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        form +++ Section(header: "User Info", footer: "So we know who you are and how to address you.")
+        form +++ Section(header: "User Info", footer: "So we can tailor the BLT experience to you.")
             <<< TextRow(){ row in
                 row.title = "First Name"
                 row.placeholder = "Enter here"
@@ -29,6 +29,10 @@ class SettingsViewController: FormViewController {
                 
                 }.onChange { row in
                     globalData.lastName = row.value ?? ""
+            }
+            <<< ButtonRow("Courses") { (row: ButtonRow) -> Void in
+                row.title = row.tag
+                row.presentationMode = .segueName(segueName: "courseListSegue", onDismiss: nil)
             }
             +++ Section(header: "To-Do List", footer: "Change how you would like to view your to-do list.")
             <<< SwitchRow() {
@@ -62,7 +66,7 @@ class SettingsViewController: FormViewController {
                 label.title = "Notification Dates"
             }
             <<< WeekDayRow(){
-                $0.value = [.monday, .wednesday, .friday]
+                $0.value = [.monday, .tuesday, .wednesday, .thursday, .friday]
             }
             <<< TimeRow() {
                 $0.title = "Notification Time"
@@ -74,6 +78,7 @@ class SettingsViewController: FormViewController {
                 $0.value = false
                 // Implementation not set yet!!
             }
+            
             <<< SwitchRow("Change Date") {
                 $0.hidden = .function(["Enable Developer Mode"], { form -> Bool in
                     let row: RowOf<Bool>! = form.rowBy(tag: "Enable Developer Mode")
@@ -82,6 +87,8 @@ class SettingsViewController: FormViewController {
                 $0.title = $0.tag
                 $0.value = false
                 // Implementation not set yet!!
+                }.onChange { swt in
+                    dateManager.isInDebugMode = swt.value ?? false
             }
             <<< DateTimeRow() {
                 $0.hidden = .function(["Enable Developer Mode"], { form -> Bool in
@@ -93,7 +100,9 @@ class SettingsViewController: FormViewController {
                     return !(row.value ?? false)
                 })
                 $0.title = "Custom Time"
-                $0.value = Date()
+                $0.value = dateManager.date
+                }.onChange { dateTimeSlider in
+                    dateManager.setDate(to: dateTimeSlider.value ?? Date())
             }
             <<< SliderRow() {
                 $0.hidden = .function(["Enable Developer Mode"], { form -> Bool in
@@ -105,15 +114,25 @@ class SettingsViewController: FormViewController {
                     return !(row.value ?? false)
                 })
                 $0.title = "Time Speed"
-                $0.value = 1.0
+                $0.value = dateManager.timeMultiplier
+                }.onChange { multiplier in
+                    dateManager.timeMultiplier = multiplier.value ?? 1.0
             }
-            +++ Section(header: "End Matter", footer: "© 2020 BLT Group")
+            +++ Section(header: "End Matter", footer: "© 2020 🥪 BLT")
             <<< ButtonRow() { (row: ButtonRow) -> Void in
                 row.title = "Credits"
+                }.onCellSelection { [weak self] (cell, row) in
+                    self?.performSegue(withIdentifier: "creditsSegue", sender: self)
             }
             <<< ButtonRow() { (row: ButtonRow) -> Void in
                 row.title = "Bug Report"
-            }
+                }.onCellSelection { [weak self] (cell, row) in
+                    if let url = URL(string: "https://bit.ly/BLT-Bug-Report") {
+                        if UIApplication.shared.canOpenURL(url) {
+                            UIApplication.shared.open(url, options: [:])
+                        }
+                    }
+        }
         
         
 
