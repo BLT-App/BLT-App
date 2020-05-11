@@ -73,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         if(isScreenDisplayed == true && timerActive == true){
             print("if statement satisfied")
             let notificationOBj: Notifications = Notifications()
-            notificationOBj.prepareNotification(title: "Hold On!", subtitle: "", body: "Are you sure you want to leave focus mode", notifDate: Date(timeIntervalSinceNow: 3))
+            notificationOBj.prepareNotification(title: "Hold On!", subtitle: "", body: "Are you sure you want to leave focus mode?", notifDate: Date(timeIntervalSinceNow: 3))
         }
     }
 
