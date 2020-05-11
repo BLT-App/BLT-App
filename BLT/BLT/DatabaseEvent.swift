@@ -40,7 +40,7 @@ class DatabaseEvent: Object {
     /// Type Of Event
     @objc dynamic var eventType: GeneralEventType
     /// String Description Of The Event Text
-    @objc private dynamic var eventText: String = ""
+    @objc dynamic var eventText: String = ""
     /// Date of Event
     @objc dynamic var date: Date = dateManager.date
     /// `ToDoItem` that triggered the event
