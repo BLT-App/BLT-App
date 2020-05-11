@@ -8,6 +8,7 @@
 
 import Foundation
 
+public var timerActive: Bool = false
 /// Handles The Countdown Of `FocusViewController`
 class FocusTimer {
 	/// Timer object for running the thread
@@ -34,10 +35,13 @@ class FocusTimer {
 
     /// Reference To The Storyboard With The Countdown.
 	weak var delegate: FocusTimerDelegate?
-
+    
+    //var isTimerActive: Bool
+    
     /// Initializes A New FocusTimer.
     /// - Parameter countdownTime: Number Of Seconds To Run The Timer For
 	init(countdownTime: TimeInterval) {
+        //self.isTimerActive = false
 		self.cdt = countdownTime
 		self.totalSecs = countdownTime
 		print(totalSecs)
@@ -45,6 +49,8 @@ class FocusTimer {
 
 	/// Starts the timer.
 	func runTimer() {
+        timerActive = true
+        //isTimerActive = true
 		myTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(updateVals)), userInfo: nil, repeats: true)
 	}
 
@@ -65,9 +71,13 @@ class FocusTimer {
 
 	/// Stops running the timer and notifies delegate.
 	func stopRunning() {
+        timerActive = false
+        //self.isTimerActive = false
 		myTimer.invalidate()
 		delegate?.timerEnded()
 	}
+    
+    
 
 	/// Updates the values for minutes and seconds.
 	@objc func updateVals() {
