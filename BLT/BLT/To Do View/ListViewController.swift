@@ -209,7 +209,7 @@ class ListViewController: UIViewController {
 	func roundContainerView(cornerRadius: Double, view: UIView, shadowView: UIView) {
 		let path = UIBezierPath(roundedRect: view.bounds,
                                 byRoundingCorners: [.bottomLeft, .bottomRight],
-                                cornerRadii: CGSize(width: cornerRadius,height: cornerRadius))
+                                cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
 		let maskLayer = CAShapeLayer()
 		maskLayer.frame = view.bounds
 		maskLayer.path = path.cgPath
