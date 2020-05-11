@@ -52,7 +52,7 @@ class SettingsViewController: FormViewController {
                 $0.value = false
                 // Implementation not set yet!!
             }
-            +++ Section(header: "Notifiaction Settings", footer: "Adjust your notification settings and frequency. ") {
+            +++ Section(header: "Notification Settings", footer: "Adjust your notification settings and frequency. ") {
                 $0.hidden = .function(["Enable Notifications"], { form -> Bool in
                     let row: RowOf<Bool>! = form.rowBy(tag: "Enable Notifications")
                     return row.value ?? false == false
@@ -107,7 +107,7 @@ class SettingsViewController: FormViewController {
                 $0.title = "Time Speed"
                 $0.value = 1.0
             }
-            +++ Section(header: "End Matter", footer: "hi :)")
+            +++ Section(header: "End Matter", footer: "© 2020 BLT Group")
             <<< ButtonRow() { (row: ButtonRow) -> Void in
                 row.title = "Credits"
             }
