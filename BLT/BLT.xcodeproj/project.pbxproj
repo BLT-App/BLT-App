@@ -12,10 +12,6 @@
 		3F2D6FF32399FE6100B8A989 /* WaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D6FF22399FE6100B8A989 /* WaterView.swift */; };
 		3F2D6FF5239A004900B8A989 /* RenderTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D6FF4239A004900B8A989 /* RenderTimer.swift */; };
 		3F73230823860D9300155B70 /* FocusTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F73230723860D9300155B70 /* FocusTimer.swift */; };
-		3FA479A3241C73BE00ADCEB7 /* SettingsDeveloperSubmenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA479A2241C73BE00ADCEB7 /* SettingsDeveloperSubmenuTableViewController.swift */; };
-		3FA808C223DE83C400CB4127 /* SettingsListPrefSubmenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA808C123DE83C400CB4127 /* SettingsListPrefSubmenuTableViewController.swift */; };
-		3FA808C423DE843300CB4127 /* SettingsNotifPrefSubmenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA808C323DE843300CB4127 /* SettingsNotifPrefSubmenuTableViewController.swift */; };
-		3FA808C623DE967800CB4127 /* SettingsFocusPrefSubmenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA808C523DE967800CB4127 /* SettingsFocusPrefSubmenuTableViewController.swift */; };
 		3FB05C862445644B008A5A1C /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB05C852445644B008A5A1C /* RealmManager.swift */; };
 		3FB956C0240FF310003C96C4 /* CurrentDateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB956BF240FF30F003C96C4 /* CurrentDateManager.swift */; };
 		3FBFEE5623E3112F0003394F /* DatabaseEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBFEE5523E3112F0003394F /* DatabaseEvent.swift */; };
@@ -40,13 +36,14 @@
 		D721FD602378ACA300ABD1EF /* ToDoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D721FD5B2378ACA300ABD1EF /* ToDoList.swift */; };
 		D721FD632378ACA600ABD1EF /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D721FD612378ACA600ABD1EF /* NewItemViewController.swift */; };
 		D721FD642378ACA600ABD1EF /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D721FD622378ACA600ABD1EF /* ListViewController.swift */; };
-		D745011E23DEB1DA00508639 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D745011C23DEB1DA00508639 /* SettingsTableViewController.swift */; };
-		D745011F23DEB1DA00508639 /* SettingsUserProfileSubmenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D745011D23DEB1DA00508639 /* SettingsUserProfileSubmenuTableViewController.swift */; };
 		D75B7472238E551000FBE468 /* SubjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75B7471238E551000FBE468 /* SubjectCell.xib */; };
 		D75B7474238E554A00FBE468 /* SubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B7473238E554A00FBE468 /* SubjectCell.swift */; };
 		D776EF8B240ABDF0007E842F /* FocusCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = D776EF8A240ABDF0007E842F /* FocusCard.xib */; };
 		D776EF8D240ABE2A007E842F /* FocusCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776EF8C240ABE2A007E842F /* FocusCardCell.swift */; };
 		D7781A62244DB42100536054 /* BeginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7781A61244DB42000536054 /* BeginViewController.swift */; };
+		D7AEF4C224692375000F4F62 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AEF4C124692375000F4F62 /* SettingsViewController.swift */; };
+		D7AEF4C6246949DB000F4F62 /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AEF4C5246949DB000F4F62 /* CustomViews.swift */; };
+		D7AEF4C824694A03000F4F62 /* WeekDaysCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7AEF4C724694A03000F4F62 /* WeekDaysCell.xib */; };
 		D7B16241245B1C26002EA848 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B16240245B1C26002EA848 /* CreditsViewController.swift */; };
 		D7F0D7302378A06E0044E694 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D7F0D72F2378A06E0044E694 /* Podfile */; };
 /* End PBXBuildFile section */
@@ -74,10 +71,6 @@
 		3F2D6FF22399FE6100B8A989 /* WaterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterView.swift; sourceTree = "<group>"; };
 		3F2D6FF4239A004900B8A989 /* RenderTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderTimer.swift; sourceTree = "<group>"; };
 		3F73230723860D9300155B70 /* FocusTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTimer.swift; sourceTree = "<group>"; };
-		3FA479A2241C73BE00ADCEB7 /* SettingsDeveloperSubmenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDeveloperSubmenuTableViewController.swift; sourceTree = "<group>"; };
-		3FA808C123DE83C400CB4127 /* SettingsListPrefSubmenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListPrefSubmenuTableViewController.swift; sourceTree = "<group>"; };
-		3FA808C323DE843300CB4127 /* SettingsNotifPrefSubmenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNotifPrefSubmenuTableViewController.swift; sourceTree = "<group>"; };
-		3FA808C523DE967800CB4127 /* SettingsFocusPrefSubmenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFocusPrefSubmenuTableViewController.swift; sourceTree = "<group>"; };
 		3FB05C852445644B008A5A1C /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		3FB956BF240FF30F003C96C4 /* CurrentDateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDateManager.swift; sourceTree = "<group>"; };
 		3FBFEE5523E3112F0003394F /* DatabaseEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseEvent.swift; sourceTree = "<group>"; };
@@ -110,13 +103,14 @@
 		D721FD5B2378ACA300ABD1EF /* ToDoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
 		D721FD612378ACA600ABD1EF /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 		D721FD622378ACA600ABD1EF /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		D745011C23DEB1DA00508639 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		D745011D23DEB1DA00508639 /* SettingsUserProfileSubmenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsUserProfileSubmenuTableViewController.swift; sourceTree = "<group>"; };
 		D75B7471238E551000FBE468 /* SubjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectCell.xib; sourceTree = "<group>"; };
 		D75B7473238E554A00FBE468 /* SubjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCell.swift; sourceTree = "<group>"; };
 		D776EF8A240ABDF0007E842F /* FocusCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FocusCard.xib; sourceTree = "<group>"; };
 		D776EF8C240ABE2A007E842F /* FocusCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusCardCell.swift; sourceTree = "<group>"; };
 		D7781A61244DB42000536054 /* BeginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginViewController.swift; sourceTree = "<group>"; };
+		D7AEF4C124692375000F4F62 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D7AEF4C5246949DB000F4F62 /* CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
+		D7AEF4C724694A03000F4F62 /* WeekDaysCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekDaysCell.xib; sourceTree = "<group>"; };
 		D7B16240245B1C26002EA848 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		D7F0D72F2378A06E0044E694 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
@@ -173,6 +167,7 @@
 		3FE3EA61237718D3002B5303 /* BLT */ = {
 			isa = PBXGroup;
 			children = (
+				D7AEF4C32469498A000F4F62 /* Settings */,
 				3FB05C852445644B008A5A1C /* RealmManager.swift */,
 				3FE3EA66237718D3002B5303 /* Main.storyboard */,
 				D7B16240245B1C26002EA848 /* CreditsViewController.swift */,
@@ -184,9 +179,8 @@
 				3FE3EA62237718D3002B5303 /* AppDelegate.swift */,
 				3FE61D6F23D9DE36002C6A0C /* UserProfileViewController.swift */,
 				3FCE102D23E29D9A003F0D7D /* Notifications.swift */,
-				D745012223DEB26A00508639 /* Focus Mode View */,
-				D745012123DEB25400508639 /* Settings Views */,
-				D745012323DEB28300508639 /* To Do View */,
+				D745012223DEB26A00508639 /* FocusModeView */,
+				D745012323DEB28300508639 /* ToDoView */,
 				D721FD612378ACA600ABD1EF /* NewItemViewController.swift */,
 				D721BD5B23830540008E934F /* ItemViewController.swift */,
 				D75B7471238E551000FBE468 /* SubjectCell.xib */,
@@ -196,7 +190,7 @@
 				3FE3EA6E237718DB002B5303 /* Info.plist */,
 				D721FD5A2378ACA300ABD1EF /* UserData.swift */,
 				3FBFEE5523E3112F0003394F /* DatabaseEvent.swift */,
-				D745012423DEB29C00508639 /* List Classes */,
+				D745012423DEB29C00508639 /* ListClasses */,
 				D7056146238CFB700030B257 /* Additional Classes.swift */,
 				3FB956BF240FF30F003C96C4 /* CurrentDateManager.swift */,
 			);
@@ -230,20 +224,7 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		D745012123DEB25400508639 /* Settings Views */ = {
-			isa = PBXGroup;
-			children = (
-				3FA479A2241C73BE00ADCEB7 /* SettingsDeveloperSubmenuTableViewController.swift */,
-				3FA808C123DE83C400CB4127 /* SettingsListPrefSubmenuTableViewController.swift */,
-				3FA808C323DE843300CB4127 /* SettingsNotifPrefSubmenuTableViewController.swift */,
-				3FA808C523DE967800CB4127 /* SettingsFocusPrefSubmenuTableViewController.swift */,
-				D745011C23DEB1DA00508639 /* SettingsTableViewController.swift */,
-				D745011D23DEB1DA00508639 /* SettingsUserProfileSubmenuTableViewController.swift */,
-			);
-			path = "Settings Views";
-			sourceTree = "<group>";
-		};
-		D745012223DEB26A00508639 /* Focus Mode View */ = {
+		D745012223DEB26A00508639 /* FocusModeView */ = {
 			isa = PBXGroup;
 			children = (
 				D776EF8A240ABDF0007E842F /* FocusCard.xib */,
@@ -252,19 +233,19 @@
 				3F73230723860D9300155B70 /* FocusTimer.swift */,
 				3F19AE3F23EC620100DECA17 /* FMPopUpViewController.swift */,
 			);
-			path = "Focus Mode View";
+			path = FocusModeView;
 			sourceTree = "<group>";
 		};
-		D745012323DEB28300508639 /* To Do View */ = {
+		D745012323DEB28300508639 /* ToDoView */ = {
 			isa = PBXGroup;
 			children = (
 				D721FD622378ACA600ABD1EF /* ListViewController.swift */,
 				D721FD552378AA0300ABD1EF /* ToDoTableViewCell.swift */,
 			);
-			path = "To Do View";
+			path = ToDoView;
 			sourceTree = "<group>";
 		};
-		D745012423DEB29C00508639 /* List Classes */ = {
+		D745012423DEB29C00508639 /* ListClasses */ = {
 			isa = PBXGroup;
 			children = (
 				D721FD5B2378ACA300ABD1EF /* ToDoList.swift */,
@@ -272,7 +253,25 @@
 				D721FD572378ACA300ABD1EF /* MilestoneItem.swift */,
 				D721FD592378ACA300ABD1EF /* ToDoItem.swift */,
 			);
-			path = "List Classes";
+			path = ListClasses;
+			sourceTree = "<group>";
+		};
+		D7AEF4C32469498A000F4F62 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D7AEF4C42469499E000F4F62 /* CustomViews */,
+				D7AEF4C124692375000F4F62 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D7AEF4C42469499E000F4F62 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				D7AEF4C724694A03000F4F62 /* WeekDaysCell.xib */,
+				D7AEF4C5246949DB000F4F62 /* CustomViews.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		EAEB83B371FD10016D1ACC75 /* Frameworks */ = {
@@ -396,6 +395,7 @@
 				D75B7472238E551000FBE468 /* SubjectCell.xib in Resources */,
 				D776EF8B240ABDF0007E842F /* FocusCard.xib in Resources */,
 				3FE3EA68237718D3002B5303 /* Main.storyboard in Resources */,
+				D7AEF4C824694A03000F4F62 /* WeekDaysCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,17 +479,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FA808C423DE843300CB4127 /* SettingsNotifPrefSubmenuTableViewController.swift in Sources */,
 				3F2D6FF5239A004900B8A989 /* RenderTimer.swift in Sources */,
 				3FE61D7023D9DE36002C6A0C /* UserProfileViewController.swift in Sources */,
 				D7093E9023EC661200513448 /* LineChart.swift in Sources */,
 				D7056147238CFB700030B257 /* Additional Classes.swift in Sources */,
 				D721FD562378AA0300ABD1EF /* ToDoTableViewCell.swift in Sources */,
 				3FBFEE5623E3112F0003394F /* DatabaseEvent.swift in Sources */,
-				3FA479A3241C73BE00ADCEB7 /* SettingsDeveloperSubmenuTableViewController.swift in Sources */,
+				D7AEF4C6246949DB000F4F62 /* CustomViews.swift in Sources */,
 				D721FD5C2378ACA300ABD1EF /* MilestoneItem.swift in Sources */,
 				3F73230823860D9300155B70 /* FocusTimer.swift in Sources */,
-				3FA808C623DE967800CB4127 /* SettingsFocusPrefSubmenuTableViewController.swift in Sources */,
 				3F2D6FF32399FE6100B8A989 /* WaterView.swift in Sources */,
 				D721BD5C23830540008E934F /* ItemViewController.swift in Sources */,
 				D721FD632378ACA600ABD1EF /* NewItemViewController.swift in Sources */,
@@ -508,9 +506,7 @@
 				3FE3EA63237718D3002B5303 /* AppDelegate.swift in Sources */,
 				3FB05C862445644B008A5A1C /* RealmManager.swift in Sources */,
 				3FCE102E23E29D9A003F0D7D /* Notifications.swift in Sources */,
-				3FA808C223DE83C400CB4127 /* SettingsListPrefSubmenuTableViewController.swift in Sources */,
-				D745011F23DEB1DA00508639 /* SettingsUserProfileSubmenuTableViewController.swift in Sources */,
-				D745011E23DEB1DA00508639 /* SettingsTableViewController.swift in Sources */,
+				D7AEF4C224692375000F4F62 /* SettingsViewController.swift in Sources */,
 				3FB956C0240FF310003C96C4 /* CurrentDateManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -688,7 +684,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V4L723KGVB;
+				DEVELOPMENT_TEAM = 7SR627V48N;
 				INFOPLIST_FILE = BLT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -707,7 +703,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = V4L723KGVB;
+				DEVELOPMENT_TEAM = 7SR627V48N;
 				INFOPLIST_FILE = BLT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
