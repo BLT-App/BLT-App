@@ -41,6 +41,7 @@
 		D776EF8B240ABDF0007E842F /* FocusCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = D776EF8A240ABDF0007E842F /* FocusCard.xib */; };
 		D776EF8D240ABE2A007E842F /* FocusCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776EF8C240ABE2A007E842F /* FocusCardCell.swift */; };
 		D7781A62244DB42100536054 /* BeginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7781A61244DB42000536054 /* BeginViewController.swift */; };
+		D79B7051246973E200660650 /* CourseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79B7050246973E200660650 /* CourseListViewController.swift */; };
 		D7AEF4C224692375000F4F62 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AEF4C124692375000F4F62 /* SettingsViewController.swift */; };
 		D7AEF4C6246949DB000F4F62 /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AEF4C5246949DB000F4F62 /* CustomViews.swift */; };
 		D7AEF4C824694A03000F4F62 /* WeekDaysCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7AEF4C724694A03000F4F62 /* WeekDaysCell.xib */; };
@@ -108,6 +109,7 @@
 		D776EF8A240ABDF0007E842F /* FocusCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FocusCard.xib; sourceTree = "<group>"; };
 		D776EF8C240ABE2A007E842F /* FocusCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusCardCell.swift; sourceTree = "<group>"; };
 		D7781A61244DB42000536054 /* BeginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginViewController.swift; sourceTree = "<group>"; };
+		D79B7050246973E200660650 /* CourseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListViewController.swift; sourceTree = "<group>"; };
 		D7AEF4C124692375000F4F62 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D7AEF4C5246949DB000F4F62 /* CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
 		D7AEF4C724694A03000F4F62 /* WeekDaysCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekDaysCell.xib; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			children = (
 				D7AEF4C42469499E000F4F62 /* CustomViews */,
 				D7AEF4C124692375000F4F62 /* SettingsViewController.swift */,
+				D79B7050246973E200660650 /* CourseListViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				3F73230823860D9300155B70 /* FocusTimer.swift in Sources */,
 				3F2D6FF32399FE6100B8A989 /* WaterView.swift in Sources */,
 				D721BD5C23830540008E934F /* ItemViewController.swift in Sources */,
+				D79B7051246973E200660650 /* CourseListViewController.swift in Sources */,
 				D721FD632378ACA600ABD1EF /* NewItemViewController.swift in Sources */,
 				D721FD5F2378ACA300ABD1EF /* UserData.swift in Sources */,
 				D721FD602378ACA300ABD1EF /* ToDoList.swift in Sources */,
