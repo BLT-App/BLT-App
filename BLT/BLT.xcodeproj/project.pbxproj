@@ -64,6 +64,20 @@
 			remoteGlobalIDString = 3FE3EA5E237718D3002B5303;
 			remoteInfo = BLT;
 		};
+		D79B705B24697AA000660650 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D79B705624697AA000660650 /* CareKitUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5174225B224185290054E97C;
+			remoteInfo = CareKitUI;
+		};
+		D79B705D24697AA000660650 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D79B705624697AA000660650 /* CareKitUI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 512B012E22C2F82900ABCB1D;
+			remoteInfo = CareKitUITests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +124,7 @@
 		D776EF8C240ABE2A007E842F /* FocusCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusCardCell.swift; sourceTree = "<group>"; };
 		D7781A61244DB42000536054 /* BeginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginViewController.swift; sourceTree = "<group>"; };
 		D79B7050246973E200660650 /* CourseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListViewController.swift; sourceTree = "<group>"; };
+		D79B705624697AA000660650 /* CareKitUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CareKitUI.xcodeproj; path = "../../../../Downloads/CareKit-master/CareKitUI/CareKitUI.xcodeproj"; sourceTree = "<group>"; };
 		D7AEF4C124692375000F4F62 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D7AEF4C5246949DB000F4F62 /* CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
 		D7AEF4C724694A03000F4F62 /* WeekDaysCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekDaysCell.xib; sourceTree = "<group>"; };
@@ -258,6 +273,15 @@
 			path = ListClasses;
 			sourceTree = "<group>";
 		};
+		D79B705724697AA000660650 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D79B705C24697AA000660650 /* CareKitUI.framework */,
+				D79B705E24697AA000660650 /* CareKitUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D7AEF4C32469498A000F4F62 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +304,7 @@
 		EAEB83B371FD10016D1ACC75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D79B705624697AA000660650 /* CareKitUI.xcodeproj */,
 				7F91D4AFD792A74BF3945EDA /* Pods_BLT.framework */,
 			);
 			name = Frameworks;
@@ -378,6 +403,12 @@
 			mainGroup = 3FE3EA56237718D3002B5303;
 			productRefGroup = 3FE3EA60237718D3002B5303 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D79B705724697AA000660650 /* Products */;
+					ProjectRef = D79B705624697AA000660650 /* CareKitUI.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				3FE3EA5E237718D3002B5303 /* BLT */,
@@ -386,6 +417,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D79B705C24697AA000660650 /* CareKitUI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CareKitUI.framework;
+			remoteRef = D79B705B24697AA000660650 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D79B705E24697AA000660650 /* CareKitUITests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CareKitUITests.xctest;
+			remoteRef = D79B705D24697AA000660650 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3FE3EA5D237718D3002B5303 /* Resources */ = {

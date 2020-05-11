@@ -16,7 +16,7 @@ class CourseListViewController: FormViewController {
         title = "Courses"
         form +++
             MultivaluedSection(multivaluedOptions: [.Reorder, .Insert, .Delete],
-                               header: "Manage all your courses",
+                               header: "Manage all your courses (WIP, not working)",
                                footer: "Insert and delete all the courses you have referenced in to-do items. ") {
                                 $0.tag = "textfields"
                                 $0.addButtonProvider = { section in
