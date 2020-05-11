@@ -33,14 +33,12 @@ class NewItemViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var addButton: UIButton!
     
-    
     /// Dropdown item.
 	var dropDown: DropDown = DropDown()
 
     @IBOutlet weak var shadowView: UIView!
     
     @IBOutlet weak var containerView: UIView!
-    
     
     /// View did load function. Sets up rounded views.
 	override func viewDidLoad() {

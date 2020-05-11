@@ -49,11 +49,12 @@ class UserProfileViewController: UIViewController {
 
 	/// Updates the chart from the globalTaskDatabase.
     func chartUpdate() {
+        userNameLabel.text = "\(globalData.firstName) \(globalData.lastName)"
         var trendData: [CGFloat] = []
         var trendLabels: [String] = []
         let realm = realmManager.realm
         
-        let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        let daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
         
         //var previousDayTotal: Int = 0
         for day in 0...6 {
@@ -95,14 +96,12 @@ class UserProfileViewController: UIViewController {
         chartUpdate()
         setupCards()
         updateUserStats()
-        
     }
 
 	  /// Runs when the view has appeared.
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         chartUpdate()
-        
     }
     
     ///Updates The User Stats Bar By Calculating From Databases
@@ -128,8 +127,6 @@ class UserProfileViewController: UIViewController {
         //add colors and round corners
         userImage.clipsToBounds = true
         userImage.layer.cornerRadius = 50
-        
-        userNameLabel.text = "\(globalData.firstName) \(globalData.lastName)"
     }
 }
 
