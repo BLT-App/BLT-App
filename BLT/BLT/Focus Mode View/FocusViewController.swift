@@ -12,18 +12,20 @@ import VerticalCardSwiper
 import RetroProgress
 import RealmSwift
 
+
+public var isScreenDisplayed: Bool = false
 /// The ViewController that controls the Focus View.
 class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewControllerDelegate {
 
 	/// The ToDoItem of the current task.
 	var currentTask: ToDoItem?
-  
+    
 	/// Current index of the task displayed
 	var currentTaskNum: Int = 0
-
+    
 	/// Timer that handles the countdown
 	var myTimer: FocusTimer = FocusTimer(countdownTime: 0)
-
+    
     /// the popup object that will be displayed
 	var popup: FMPopUpViewController = FMPopUpViewController()
     
@@ -60,9 +62,15 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     /// variable for whether or not to leave the focus view
 	var leaveView: Bool = false
     
+    /// variable that represents the isTimerActive variable in the timer class
+    //var tempBoolVariable: Bool
     /// Time the last item started being studied
     var lastItemStartTime: Date = dateManager.date
-
+    
+    
+    
+    
+    
     /// To run when the view did finish loading.
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -82,10 +90,10 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 		confV.intensity = 0.7
 		self.view.addSubview(confV)
 		confettiView = confV
-
+        
 		myTimer = FocusTimer(countdownTime: 0.0)
 		myTimer.delegate = self
-        
+        //tempBoolVariable = myTimer.getTimerActive()
         // *** Setup Progress Bar
         progressView = ProgressView(frame: progressContainer.frame)
         progressView.numberOfSteps = 0
@@ -107,6 +115,8 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
         
         self.currentTask = getCurrentTask()
 	}
+    
+    
     
     /// Gets The Currently Viewed Task
     ///
@@ -173,8 +183,10 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     /// Runs if the view appears.
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
+        //tempBoolVariable = myTimer.getTimerActive()
 		hideTabBar()
 		print("view has appeared")
+        isScreenDisplayed = true
 		print(globalData.includeEndFocusButton)
         
         self.updatePointsCounter(myToDoList.points)
@@ -195,6 +207,8 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     /// Runs if the view will appear.
 	override func viewWillAppear(_ animated: Bool) {
         focusModeList = []
+        //tempBoolVariable = myTimer.getTimerActive()
+        isScreenDisplayed = true
         for item in myToDoList.uncompletedList {
             focusModeList.append(item)
         }
@@ -214,8 +228,11 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
     
     /// Runs when the view will disappear.
 	override func viewWillDisappear(_ animated: Bool) {
+        //tempBoolVariable = myTimer.getTimerActive()
 		myTimer.stopRunning()
+        isScreenDisplayed = false
         let realm = realmManager.realm
+        print("view will disappear!")
         do {
             try realm.write {
                 currentTask?.stoppedStudyingInFocusMode(duration: dateManager.date.timeIntervalSince(lastItemStartTime))
@@ -224,7 +241,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
             print("Exception Occurred")
         }
 	}
-
+    
 	/// Hides the Tab Bar controller.
 	func hideTabBar() {
 		var frame = self.tabBarController?.tabBar.frame
@@ -234,7 +251,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 			self.tabBarController?.tabBar.frame = frame!
 		})
 	}
-
+    
 	/// Shows the Tab Bar controller.
 	func showTabBar() {
 		var frame = self.tabBarController?.tabBar.frame
@@ -244,7 +261,7 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 			self.tabBarController?.tabBar.frame = frame!
 		})
 	}
-  
+    
 	/**
      Runs when the timer has updated its own values
      - Parameters:
@@ -260,10 +277,10 @@ class FocusViewController: UIViewController, FocusTimerDelegate, FMPopUpViewCont
 
 	/// Runs when the timer has hit zero
 	func timerEnded() {
+        //myTimer.isTimerActive = false
+        //tempBoolVariable = myTimer.getTimerActive()
 		print("timerEnded called")
-        
 		endFocusModeButton.isEnabled = true
-
 	}
 
     /// Ending focus mode brings user back to the list view.

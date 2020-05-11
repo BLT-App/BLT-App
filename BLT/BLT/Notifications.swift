@@ -99,7 +99,7 @@ class Notifications {
         content.body = "body"
         
         var dateComponents = DateComponents()
-        let identifier: String
+        var identifier: String = ""
         if notifnum == 1 {
             dateComponents.hour = 12
             identifier = "reminder1"
@@ -114,12 +114,17 @@ class Notifications {
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
-        let request = UNNotificationRequest(identifier: "", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
         center.add(request) {(error) in
             if error != nil {
                 print("Error")
             }
         }
+        
+    }
+    
+    func updateNotifications(notifnum: Int){
         
     }
 }
