@@ -1220,29 +1220,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="83" id="3ED-pT-Eg0" customClass="ActivityTableViewCell" customModule="BLT" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="83" id="3ED-pT-Eg0" customClass="ActivityTableViewCell" customModule="BLT" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3ED-pT-Eg0" id="7sH-W7-0pi">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="82.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6:32 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aj0-ws-fVr">
-                                            <rect key="frame" x="20" y="31" width="64" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:32 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aj0-ws-fVr">
+                                            <rect key="frame" x="20" y="31" width="81" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="81" id="d8O-NM-G9h"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I40-Jd-EdM">
-                                            <rect key="frame" x="111" y="11" width="283" height="61"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample Item was created" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I40-Jd-EdM">
+                                            <rect key="frame" x="115" y="31" width="279" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="I40-Jd-EdM" firstAttribute="trailing" secondItem="7sH-W7-0pi" secondAttribute="trailingMargin" id="8XY-VK-DBf"/>
+                                        <constraint firstItem="I40-Jd-EdM" firstAttribute="centerY" secondItem="7sH-W7-0pi" secondAttribute="centerY" id="SoD-Qa-Td0"/>
+                                        <constraint firstItem="aj0-ws-fVr" firstAttribute="centerY" secondItem="7sH-W7-0pi" secondAttribute="centerY" id="du8-wE-TY3"/>
+                                        <constraint firstItem="I40-Jd-EdM" firstAttribute="leading" secondItem="aj0-ws-fVr" secondAttribute="trailing" constant="14" id="hDb-XV-s65"/>
+                                        <constraint firstItem="aj0-ws-fVr" firstAttribute="leading" secondItem="7sH-W7-0pi" secondAttribute="leadingMargin" id="ihU-Mx-n3o"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblDescription" destination="I40-Jd-EdM" id="deD-ao-CVi"/>
+                                    <outlet property="lblTime" destination="aj0-ws-fVr" id="dEF-Gc-xMJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

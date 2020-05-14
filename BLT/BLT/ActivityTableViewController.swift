@@ -12,70 +12,64 @@ import Datez
 
 class ActivityTableViewController: UITableViewController {
     
-    //var activityHistory: [DatabaseEvent] = []
-    
-    var tableData: [[DatabaseEvent]] = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        createTableData()
-        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        createTableData()
         tableView.reloadData()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return tableData.count
+        let tableData = createTableData()
+        return tableData.keys.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableData[section].count
+        let tableData = createTableData()
+        return tableData[tableData.keys.sorted()[section]]?.count ?? 0
     }
     
-    func createTableData() {
-        if tableData.count != 0 {
-            return
-        }
+    func createTableData() -> [Date: Results<DatabaseEvent>] {
+        var tableData: [Date: Results<DatabaseEvent>] = [:]
+        let startDate = dateManager.date.addingTimeInterval(1.days.timeInterval)
         
-        let realm = realmManager.realm
-        let results = realm.objects(DatabaseEvent.self).sorted(byKeyPath: "date")
-        var eventIdx = 0
-        while eventIdx < results.count {
-            var currentSection: [DatabaseEvent] = []
-            var currentEvent = results[eventIdx]
-            let lastDateView = currentEvent.date.currentCalendar.beginningOfDay
-            while currentEvent.date.currentCalendar.beginningOfDay == lastDateView && eventIdx < results.count {
-                currentSection.append(currentEvent)
-                eventIdx += 1
-                currentEvent = results[eventIdx]
+        for day in 0...30 {
+            let results = realmManager.realm.objects(DatabaseEvent.self).filter("date >= %@ " +
+                "AND date =< %@", startDate - (1 + day).days.timeInterval, startDate - day.days.timeInterval)
+            if results.count != 0 {
+                tableData[startDate - day.days.timeInterval] = results
             }
-            tableData.append(currentSection)
         }
+        return tableData
     }
 
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        let tableData = createTableData()
         var titles: [String]? = []
-        for section in tableData {
-            let date = section[0].date.currentCalendar.beginningOfDay.components
+        for section in tableData.keys {
+            let date = section.currentCalendar.beginningOfDay.components
             titles?.append("\(date.month) \(date.day), \(date.year)")
         }
         return titles
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let tableData = createTableData()
         var cell = ActivityTableViewCell(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         
         if let tempcell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as? ActivityTableViewCell {
             cell = tempcell
         }
-        
-        cell.timeStamp.text = "\(tableData[indexPath.section][indexPath.row].date)"
-        cell.eventDescription.text = tableData[indexPath.section][indexPath.row].eventText
+        let key = tableData.keys.sorted()[indexPath.section]
+        if let event = tableData[key]?[indexPath.row] {
+            let tempEvent = DatabaseEvent()
+            tempEvent.date = event.date
+            tempEvent.eventText = event.eventText
+            cell.event = tempEvent
+        }
         
         return cell
     }
