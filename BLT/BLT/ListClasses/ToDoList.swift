@@ -49,7 +49,7 @@ class ToDoList {
     /// List of All `DatabaseEvent`s
     var allDatabaseEvents: Results<DatabaseEvent> {
         let realm = realmManager.realm
-        let results = realm.objects(DatabaseEvent.self).sorted(byKeyPath: "dateCreated")
+        let results = realm.objects(DatabaseEvent.self).sorted(byKeyPath: "date")
         return results
     }
     
