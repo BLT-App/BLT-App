@@ -52,8 +52,8 @@ class DatabaseEvent: Object {
     
     required init() {
         self.eventType = .openedApp
+        self.eventText = "Initialized As Blank DatabaseEvent"
         super.init()
-        setEventText()
     }
     
     /**
