@@ -46,6 +46,13 @@ class ToDoList {
         return results
     }
     
+    /// List of All `DatabaseEvent`s
+    var allDatabaseEvents: Results<DatabaseEvent> {
+        let realm = realmManager.realm
+        let results = realm.objects(DatabaseEvent.self).sorted(byKeyPath: "dateCreated")
+        return results
+    }
+    
     /// Current number of points.
     var points: Int = 0
 
