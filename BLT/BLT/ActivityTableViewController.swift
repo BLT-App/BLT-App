@@ -29,19 +29,22 @@ class ActivityTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let tableData = createTableData()
-        return tableData[tableData.keys.sorted()[section]]?.count ?? 0
+        return tableData[tableData.keys.sorted().reversed()[section]]?.count ?? 0
     }
     
     func createTableData() -> [Date: Results<DatabaseEvent>] {
         var tableData: [Date: Results<DatabaseEvent>] = [:]
-        let startDate = dateManager.date.addingTimeInterval(1.days.timeInterval)
+        var startDate = dateManager.date.currentCalendar.beginningOfDay
         
-        for day in 0...30 {
+        for _ in 0...30 {
+            let endDate = startDate + 23.hours + 59.minutes + 59.seconds
             let results = realmManager.realm.objects(DatabaseEvent.self).filter("date >= %@ " +
-                "AND date =< %@", startDate - (1 + day).days.timeInterval, startDate - day.days.timeInterval)
+                "AND date =< %@", startDate.date, endDate.date)
             if results.count != 0 {
-                tableData[startDate - day.days.timeInterval] = results
+                tableData[startDate.date] = results
             }
+            let tempDate = startDate + -1.day
+            startDate = tempDate
         }
         return tableData
     }
@@ -49,7 +52,7 @@ class ActivityTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let tableData = createTableData()
         var titles: [String]? = []
-        for section in tableData.keys.sorted() {
+        for section in tableData.keys.sorted().reversed() {
             let date = section.currentCalendar.beginningOfDay.components
             titles?.append("\(date.month)/\(date.day)/\(date.year)")
         }
@@ -63,7 +66,7 @@ class ActivityTableViewController: UITableViewController {
         if let tempcell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as? ActivityTableViewCell {
             cell = tempcell
         }
-        let key = tableData.keys.sorted()[indexPath.section]
+        let key = tableData.keys.sorted().reversed()[indexPath.section]
         if let event = tableData[key]?[indexPath.row] {
             cell.eventID = event.eventID
         }
