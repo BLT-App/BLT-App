@@ -45,15 +45,15 @@ class ActivityTableViewController: UITableViewController {
         }
         return tableData
     }
-
-    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let tableData = createTableData()
         var titles: [String]? = []
-        for section in tableData.keys {
+        for section in tableData.keys.sorted() {
             let date = section.currentCalendar.beginningOfDay.components
-            titles?.append("\(date.month) \(date.day), \(date.year)")
+            titles?.append("\(date.month)/\(date.day)/\(date.year)")
         }
-        return titles
+        return titles?[section]
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
