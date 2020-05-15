@@ -63,12 +63,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     /// Tells the delegate that the app is about to become inactive.
     func applicationWillResignActive(_ application: UIApplication) {
-
+        
     }
 
     /// Tells the delegate that the app is now in the background.
     func applicationDidEnterBackground(_ application: UIApplication) {
+        print("app did enter background")
         
+        if(isScreenDisplayed == true && timerActive == true){
+            print("if statement satisfied")
+            let notificationOBj: Notifications = Notifications()
+            notificationOBj.prepareNotification(title: "Hold On!", subtitle: "", body: "Are you sure you want to leave focus mode?", notifDate: Date(timeIntervalSinceNow: 3))
+        }
     }
 
     /// Tells the delegate that the app is about to enter the foreground.

@@ -856,10 +856,14 @@
                         <viewLayoutGuide key="safeArea" id="pvv-OF-h7C"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="IXU-uv-aBs"/>
+                    <connections>
+                        <segue destination="t15-xb-g9x" kind="presentation" identifier="creditsSegue" id="Lv7-kD-M9I"/>
+                        <segue destination="nGT-KT-W0T" kind="show" identifier="courseListSegue" id="3Cd-o8-y80"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j3f-Pj-ONg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3041" y="795"/>
+            <point key="canvasLocation" x="3041" y="868"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="VJf-6A-mEx">
@@ -1171,7 +1175,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lJm-zV-d3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3041" y="1466"/>
+            <point key="canvasLocation" x="3754" y="868"/>
+        </scene>
+        <!--Course List View Controller-->
+        <scene sceneID="Qcn-ay-4gx">
+            <objects>
+                <viewController id="nGT-KT-W0T" customClass="CourseListViewController" customModule="BLT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2eF-FV-ObI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="SXM-si-Xil"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nwE-wP-OBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3754" y="1663"/>
         </scene>
         <!--Focus-->
         <scene sceneID="vnM-LW-oat">
