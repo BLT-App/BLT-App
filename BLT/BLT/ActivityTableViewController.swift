@@ -65,10 +65,7 @@ class ActivityTableViewController: UITableViewController {
         }
         let key = tableData.keys.sorted()[indexPath.section]
         if let event = tableData[key]?[indexPath.row] {
-            let tempEvent = DatabaseEvent()
-            tempEvent.date = event.date
-            tempEvent.eventText = event.eventText
-            cell.event = tempEvent
+            cell.eventID = event.eventID
         }
         
         return cell
