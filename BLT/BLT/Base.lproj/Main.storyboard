@@ -1115,8 +1115,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="krn-Hr-Uh5"/>
-                        <segue destination="rDP-A0-cmk" kind="relationship" relationship="viewControllers" id="Xno-7n-0MZ"/>
                         <segue destination="eDD-HD-1Wx" kind="relationship" relationship="viewControllers" id="yNB-ez-gCM"/>
+                        <segue destination="rDP-A0-cmk" kind="relationship" relationship="viewControllers" id="Xno-7n-0MZ"/>
+                        <segue destination="oBG-kH-waz" kind="relationship" relationship="viewControllers" id="Nc6-RK-GsQ"/>
                         <segue destination="8qF-av-Ab6" kind="relationship" relationship="viewControllers" id="58p-4x-rfi"/>
                     </connections>
                 </tabBarController>
@@ -1228,6 +1229,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uig-5R-qIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3041" y="137"/>
+        </scene>
+        <!--Activity View Controller-->
+        <scene sceneID="Z0L-LT-EQe">
+            <objects>
+                <tableViewController title="Activity" id="oBG-kH-waz" userLabel="Activity View Controller" customClass="ActivityTableViewController" customModule="BLT" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="erH-dK-PgL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="126" id="3ED-pT-Eg0" customClass="ActivityTableViewCell" customModule="BLT" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="126"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3ED-pT-Eg0" id="7sH-W7-0pi">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="125.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:32 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aj0-ws-fVr">
+                                            <rect key="frame" x="20" y="52.5" width="81" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="81" id="d8O-NM-G9h"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Sample Item was created" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I40-Jd-EdM">
+                                            <rect key="frame" x="115" y="52.5" width="279" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="I40-Jd-EdM" firstAttribute="trailing" secondItem="7sH-W7-0pi" secondAttribute="trailingMargin" id="8XY-VK-DBf"/>
+                                        <constraint firstItem="I40-Jd-EdM" firstAttribute="centerY" secondItem="7sH-W7-0pi" secondAttribute="centerY" id="SoD-Qa-Td0"/>
+                                        <constraint firstItem="aj0-ws-fVr" firstAttribute="centerY" secondItem="7sH-W7-0pi" secondAttribute="centerY" id="du8-wE-TY3"/>
+                                        <constraint firstItem="I40-Jd-EdM" firstAttribute="leading" secondItem="aj0-ws-fVr" secondAttribute="trailing" constant="14" id="hDb-XV-s65"/>
+                                        <constraint firstItem="aj0-ws-fVr" firstAttribute="leading" secondItem="7sH-W7-0pi" secondAttribute="leadingMargin" id="ihU-Mx-n3o"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblDescription" destination="I40-Jd-EdM" id="deD-ao-CVi"/>
+                                    <outlet property="lblTime" destination="aj0-ws-fVr" id="dEF-Gc-xMJ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oBG-kH-waz" id="UG8-CC-HFq"/>
+                            <outlet property="delegate" destination="oBG-kH-waz" id="vKM-Tk-v5m"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="History" id="KZ8-UJ-4gC"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zSc-YJ-oiR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3756.521739130435" y="136.60714285714286"/>
         </scene>
     </scenes>
     <resources>

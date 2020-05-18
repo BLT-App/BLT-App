@@ -40,7 +40,7 @@ class DatabaseEvent: Object {
     /// Type Of Event
     @objc dynamic var eventType: GeneralEventType
     /// String Description Of The Event Text
-    @objc private dynamic var eventText: String = ""
+    @objc dynamic var eventText: String = ""
     /// Date of Event
     @objc dynamic var date: Date = dateManager.date
     /// `ToDoItem` that triggered the event
@@ -52,8 +52,8 @@ class DatabaseEvent: Object {
     
     required init() {
         self.eventType = .openedApp
+        self.eventText = "Initialized As Blank DatabaseEvent"
         super.init()
-        setEventText()
     }
     
     /**
@@ -99,28 +99,29 @@ class DatabaseEvent: Object {
     
     /// Sets the text representation of the event type
     func setEventText() {
+        
         switch self.eventType {
         ///Occurs when an item is created
         case .createdItem:
-            eventText = "Occurs when an item is created"
+            eventText = "Task \(item?.title ?? "") was created"
         ///Occurs when a user changes the due date of an item
         case .itemDueDateChanged:
-            eventText = "Occurs when a user changes the due date of an item"
+            eventText = "Task \(item?.title ?? "") had its due date changed"
         ///Occurs when a user marks an item as complete from the Focus Mode page
         case .markedCompletedInFocusMode:
-            eventText = "Occurs when a user marks an item as complete from the Focus Mode page"
+            eventText = "Task \(item?.title ?? "") was completed in Focus Mode after \(Int((duration.value ?? 0) / 60)) mins"
         ///Occurs when a user marks an item as complete from the List View page
         case .markedCompletedInListView:
-            eventText = "Occurs when a user marks an item as complete from the List View page"
+            eventText = "Task \(item?.title ?? "") was completed from List View"
         ///Occurs when a user unmarks an item as complete
         case .unmarkedComplete:
-            eventText = "Occurs when a user unmarks an item as complete"
+            eventText = "Task \(item?.title ?? "") was marked as uncompleted"
         ///Occurs when an item has started to be studied in focus mode
         case .startedStudyingInFocusMode:
-            eventText = "Occurs when an item has started to be studied in focus mode"
+            eventText = "Task \(item?.title ?? "") started to be studied in Focus Mode"
         ///Occurs when an item has stopped being studied in focus mode
         case .stoppedStudyingInFocusMode:
-            eventText = "Occurs when an item has stopped being studied in focus mode"
+            eventText = "Task \(item?.title ?? "") stopped being studied after \(Int((duration.value ?? 0) / 60)) mins"
         ///Occurs when a Focus Mode session begins
         case .focusSessionOpened:
             eventText = "Occurs when a Focus Mode session begins"
@@ -129,10 +130,10 @@ class DatabaseEvent: Object {
             eventText = "Occurs when a Focus Mode session begins"
         ///Occurs when the app is opened
         case .openedApp:
-            eventText = "Occurs when a Focus Mode session begins"
+            eventText = "App was opened"
         ///Occurs when the app is closed
         case .closedApp:
-            eventText = "Occurs when a Focus Mode session begins"
+            eventText = "App was closed"
         default:
             eventText = ""
         }
