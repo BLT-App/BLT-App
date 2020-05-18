@@ -38,7 +38,7 @@ class ActivityTableViewController: UITableViewController {
         
         for _ in 0...30 {
             let endDate = startDate + 23.hours + 59.minutes + 59.seconds
-            let results = realmManager.realm.objects(DatabaseEvent.self).filter("date >= %@ " +
+            let results = realmManager.realm.objects(DatabaseEvent.self).sorted(byKeyPath: "date").filter("date >= %@ " +
                 "AND date =< %@", startDate.date, endDate.date)
             if results.count != 0 {
                 tableData[startDate.date] = results
