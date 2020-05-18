@@ -23,8 +23,8 @@ class ActivityTableViewCell: UITableViewCell {
         didSet {
             if event != nil {
                 lblDescription.text = event?.eventText
-                let numHour = (event?.date.currentCalendar.components.hour ?? 0) % 12
-                var numMin = event?.date.currentCalendar.components.minute ?? 0
+                var numHour = (event?.date.currentCalendar.components.hour ?? 0) % 12
+                let numMin = event?.date.currentCalendar.components.minute ?? 0
                 var textMin = "\(numMin)"
                 if numMin < 10 {
                     textMin = "0\(numMin)"
@@ -32,6 +32,9 @@ class ActivityTableViewCell: UITableViewCell {
                 var indicator = "am"
                 if event?.date.currentCalendar.components.hour ?? 0 >= 12 {
                     indicator = "pm"
+                }
+                if numHour == 0 {
+                    numHour = 12
                 }
                 lblTime.text = "\(numHour):\(textMin) \(indicator)"
             }
