@@ -10,7 +10,6 @@
 		29B260FD69F88A8B2177E188 /* Pods_BLT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F91D4AFD792A74BF3945EDA /* Pods_BLT.framework */; };
 		3F19AE4023EC620100DECA17 /* FMPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F19AE3F23EC620100DECA17 /* FMPopUpViewController.swift */; };
 		3F24C279246961DD00260342 /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24C278246961DC00260342 /* ActivityTableViewController.swift */; };
-		3F24C280246DCC3400260342 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F24C27F246DCC3300260342 /* ActivityTableViewCell.swift */; };
 		3F2D6FF32399FE6100B8A989 /* WaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D6FF22399FE6100B8A989 /* WaterView.swift */; };
 		3F2D6FF5239A004900B8A989 /* RenderTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D6FF4239A004900B8A989 /* RenderTimer.swift */; };
 		3F73230823860D9300155B70 /* FocusTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F73230723860D9300155B70 /* FocusTimer.swift */; };
@@ -43,6 +42,7 @@
 		D776EF8B240ABDF0007E842F /* FocusCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = D776EF8A240ABDF0007E842F /* FocusCard.xib */; };
 		D776EF8D240ABE2A007E842F /* FocusCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D776EF8C240ABE2A007E842F /* FocusCardCell.swift */; };
 		D7781A62244DB42100536054 /* BeginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7781A61244DB42000536054 /* BeginViewController.swift */; };
+		D793D0F624724BF000E3A005 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793D0F524724BF000E3A005 /* ActivityTableViewCell.swift */; };
 		D79B7051246973E200660650 /* CourseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79B7050246973E200660650 /* CourseListViewController.swift */; };
 		D7AEF4C224692375000F4F62 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AEF4C124692375000F4F62 /* SettingsViewController.swift */; };
 		D7AEF4C6246949DB000F4F62 /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AEF4C5246949DB000F4F62 /* CustomViews.swift */; };
@@ -86,7 +86,6 @@
 		35BEFF2B1EE934257F0EEB3C /* Pods-BLT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLT.release.xcconfig"; path = "Target Support Files/Pods-BLT/Pods-BLT.release.xcconfig"; sourceTree = "<group>"; };
 		3F19AE3F23EC620100DECA17 /* FMPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FMPopUpViewController.swift; sourceTree = "<group>"; };
 		3F24C278246961DC00260342 /* ActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
-		3F24C27F246DCC3300260342 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityTableViewCell.swift; path = "/Users/student/Documents/GitHub/CO650/BLT-App/BLT/BLT/ActivityTableViewCell.swift"; sourceTree = "<absolute>"; };
 		3F2D6FF22399FE6100B8A989 /* WaterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterView.swift; sourceTree = "<group>"; };
 		3F2D6FF4239A004900B8A989 /* RenderTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderTimer.swift; sourceTree = "<group>"; };
 		3F73230723860D9300155B70 /* FocusTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTimer.swift; sourceTree = "<group>"; };
@@ -127,6 +126,7 @@
 		D776EF8A240ABDF0007E842F /* FocusCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FocusCard.xib; sourceTree = "<group>"; };
 		D776EF8C240ABE2A007E842F /* FocusCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusCardCell.swift; sourceTree = "<group>"; };
 		D7781A61244DB42000536054 /* BeginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginViewController.swift; sourceTree = "<group>"; };
+		D793D0F524724BF000E3A005 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		D79B7050246973E200660650 /* CourseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListViewController.swift; sourceTree = "<group>"; };
 		D79B705624697AA000660650 /* CareKitUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CareKitUI.xcodeproj; path = "../../../../Downloads/CareKit-master/CareKitUI/CareKitUI.xcodeproj"; sourceTree = "<group>"; };
 		D7AEF4C124692375000F4F62 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				3F24C278246961DC00260342 /* ActivityTableViewController.swift */,
-				3F24C27F246DCC3300260342 /* ActivityTableViewCell.swift */,
+				D793D0F524724BF000E3A005 /* ActivityTableViewCell.swift */,
 				D7AEF4C32469498A000F4F62 /* Settings */,
 				3FB05C852445644B008A5A1C /* RealmManager.swift */,
 				3FE3EA66237718D3002B5303 /* Main.storyboard */,
@@ -542,12 +542,12 @@
 				D7056147238CFB700030B257 /* Additional Classes.swift in Sources */,
 				D721FD562378AA0300ABD1EF /* ToDoTableViewCell.swift in Sources */,
 				3FBFEE5623E3112F0003394F /* DatabaseEvent.swift in Sources */,
+				D793D0F624724BF000E3A005 /* ActivityTableViewCell.swift in Sources */,
 				D7AEF4C6246949DB000F4F62 /* CustomViews.swift in Sources */,
 				D721FD5C2378ACA300ABD1EF /* MilestoneItem.swift in Sources */,
 				3F73230823860D9300155B70 /* FocusTimer.swift in Sources */,
 				3F2D6FF32399FE6100B8A989 /* WaterView.swift in Sources */,
 				D721BD5C23830540008E934F /* ItemViewController.swift in Sources */,
-				3F24C280246DCC3400260342 /* ActivityTableViewCell.swift in Sources */,
 				D79B7051246973E200660650 /* CourseListViewController.swift in Sources */,
 				D721FD632378ACA600ABD1EF /* NewItemViewController.swift in Sources */,
 				D721FD5F2378ACA300ABD1EF /* UserData.swift in Sources */,
