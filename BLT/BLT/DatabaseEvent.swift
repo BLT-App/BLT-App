@@ -109,7 +109,7 @@ class DatabaseEvent: Object {
             eventText = "Task \(item?.title ?? "") had its due date changed"
         ///Occurs when a user marks an item as complete from the Focus Mode page
         case .markedCompletedInFocusMode:
-            eventText = "Task \(item?.title ?? "") was completed in Focus Mode after \(Int(duration.value ?? 0 / 60)) mins"
+            eventText = "Task \(item?.title ?? "") was completed in Focus Mode after \(Int((duration.value ?? 0) / 60)) mins"
         ///Occurs when a user marks an item as complete from the List View page
         case .markedCompletedInListView:
             eventText = "Task \(item?.title ?? "") was completed from List View"
@@ -121,7 +121,7 @@ class DatabaseEvent: Object {
             eventText = "Task \(item?.title ?? "") started to be studied in Focus Mode"
         ///Occurs when an item has stopped being studied in focus mode
         case .stoppedStudyingInFocusMode:
-            eventText = "Task \(item?.title ?? "") stopped being studied after \(Int(duration.value ?? 0 / 60)) mins"
+            eventText = "Task \(item?.title ?? "") stopped being studied after \(Int((duration.value ?? 0) / 60)) mins"
         ///Occurs when a Focus Mode session begins
         case .focusSessionOpened:
             eventText = "Occurs when a Focus Mode session begins"
