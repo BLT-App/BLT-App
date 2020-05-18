@@ -49,7 +49,6 @@ class ToDoItem: Object {
     /// Initializes A New ToDoItem
     required init() {
         super.init()
-
     }
     
     /// Initializer With Values
