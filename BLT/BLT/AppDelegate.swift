@@ -29,9 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let center = UNUserNotificationCenter.current()
         
         let options: UNAuthorizationOptions = [.sound, .alert]
-        
-        center.requestAuthorization(options: options) { (_, error) in if error != nil {
+        if UserDefaults.standard.object(forKey: "IsTesting") == nil {
+            center.requestAuthorization(options: options) { (_, error) in if error != nil {
                 print("Error")
+                }
             }
         }
         

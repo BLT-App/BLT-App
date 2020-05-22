@@ -400,6 +400,7 @@
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Oz3-Tt-AdL">
                                                         <rect key="frame" x="0.0" y="306" width="344" height="122"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="DescriptionField" label="DescriptionField"/>
                                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -520,6 +521,7 @@
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ixx-D0-9cM">
                                                         <rect key="frame" x="0.0" y="220.5" width="344" height="207.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="DescriptionField" label="DescriptionField"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
@@ -608,7 +610,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="af1-Ln-f3c">
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="af1-Ln-f3c" userLabel="FocusModeTimeSelector">
                                                 <rect key="frame" x="0.0" y="31" width="326" height="140"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="326" id="aY4-d4-glw"/>
@@ -617,6 +619,9 @@
                                                 <date key="date" timeIntervalSinceReferenceDate="602693943.82151604">
                                                     <!--2020-02-06 14:59:03 +0000-->
                                                 </date>
+                                                <attributedString key="userComments">
+                                                    <fragment content="FocusModeTimeSelector"/>
+                                                </attributedString>
                                             </datePicker>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="v9T-cK-2ze">
                                                 <rect key="frame" x="73" y="179" width="180" height="30"/>
@@ -637,6 +642,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ny4-37-GM5">
                                                         <rect key="frame" x="70" y="0.0" width="110" height="30"/>
                                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="BeginTimer" label="BeginTimer"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="110" id="3Te-GP-ckt"/>
                                                         </constraints>
