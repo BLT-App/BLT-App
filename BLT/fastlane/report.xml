@@ -5,22 +5,22 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.099004">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.236748">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: capture_screenshots" time="2661.072018">
+      <testcase classname="fastlane.lanes" name="1: capture_screenshots" time="3062.082914">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: brew install imagemagick" time="56.963314">
+      <testcase classname="fastlane.lanes" name="2: brew install imagemagick" time="59.494336">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: frame_screenshots" time="32.515806">
+      <testcase classname="fastlane.lanes" name="3: frame_screenshots" time="40.625261">
         
       </testcase>
     
