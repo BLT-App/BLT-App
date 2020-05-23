@@ -20,10 +20,9 @@ jobs:
     
     steps:
     - uses: actions/checkout@master
-    - name: Echo Swift Version
+    - name: Set Swift Version
       run: |
-        sudo xcode-select -s /Applications/Xcode_10.3.app/Contents/Developer
-        swiftc -version
+        DEVELOPER_DIR="$HOME/Applications/Xcode_10.3.app" xcrun swiftc -version
     - name: Run Jazzy
       run: |
         cd BLT
