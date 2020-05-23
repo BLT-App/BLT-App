@@ -38,6 +38,7 @@ platform :ios do
   end
   desc "Generate Jazzy Documentation"
   lane :documentation do
+    xcode_select("/Applications/Xcode_10.3.app")
     jazzy(config:".jazzy.yaml")
   end
 end
