@@ -9,6 +9,9 @@ on:
       - '.github/workflows/documentation.yml'
       - '.documentation.yml'
       - 'BLT/**/*.swift'
+      - 'BLT/.jazzy.yaml'
+      - 'BLT/fastlane/Snapfile'
+      - 'BLT/fastlane/Fastfile'
 
 jobs:
   GenerateDocumentation:
