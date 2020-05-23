@@ -30,7 +30,12 @@ Create A Beta Build
 ```
 fastlane ios regencerts
 ```
-
+Resets All Certifications And Regens Them
+### ios documentation
+```
+fastlane ios documentation
+```
+Generate Jazzy Documentation
 
 ----
 

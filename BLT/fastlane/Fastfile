@@ -19,6 +19,8 @@ platform :ios do
   desc "Generate new localized screenshots"
   lane :screenshots do
     capture_screenshots(workspace: "BLT.xcworkspace", scheme: "BLT Screenshots")
+    sh("brew", "install", "imagemagick")
+    frame_screenshots(path: "../docs/screenshots")
   end
   desc "Create A Beta Build"
   lane :beta do
@@ -33,5 +35,9 @@ platform :ios do
     match(type: "development")
     match(type: "distribution")
     match(type: "appstore")
+  end
+  desc "Generate Jazzy Documentation"
+  lane :documentation do
+    jazzy(config:".jazzy.yaml")
   end
 end
