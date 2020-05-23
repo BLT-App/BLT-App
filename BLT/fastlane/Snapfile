@@ -8,7 +8,9 @@
 #   "iPhone X"
 # ])
 devices([
-    "iPhone XR"
+    "iPhone 11",
+    "iPhone 8",
+    "iPhone 11 Pro Max"
 ])
 
 languages([
