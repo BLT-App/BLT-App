@@ -22,7 +22,7 @@ jobs:
     - uses: actions/checkout@master
     - name: Echo Swift Version
       run: |
-        xcode-select -s /Applications/Xcode_10.3.app/Contents/Developer
+        sudo xcode-select -s /Applications/Xcode_10.3.app/Contents/Developer
         swiftc -version
     - name: Run Jazzy
       run: |
