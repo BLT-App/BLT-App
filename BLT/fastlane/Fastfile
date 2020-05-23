@@ -39,6 +39,7 @@ platform :ios do
   desc "Generate Jazzy Documentation"
   lane :documentation do
     xcode_select("/Applications/Xcode_10.3.app")
+    puts(sh("swiftc", "-version"))
     jazzy(config:".jazzy.yaml")
   end
 end

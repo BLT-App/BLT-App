@@ -20,9 +20,6 @@ jobs:
     
     steps:
     - uses: actions/checkout@master
-    - name: Set Swift Version
-      run: |
-        sudo xcode-select -s $HOME/Applications/Xcode_10.3.app/Contents/Developers
     - name: Run Jazzy
       run: |
         cd BLT
