@@ -24,8 +24,9 @@ platform :ios do
   end
   desc "Create A Beta Build"
   lane :beta do
+    xcversion(version: "10.1") # Selects Xcode 10.1
     match(type: "development", readonly: is_ci)
-    gym(scheme: "BLT")
+    build_app(scheme: "BLT", workspace: "BLT.xcworkspace", export_method: "development")
   end
   desc "Resets All Certifications And Regens Them"
   lane :regencerts do
@@ -39,7 +40,7 @@ platform :ios do
   desc "Generate Jazzy Documentation"
   lane :documentation do
     xcode_select("/Applications/Xcode_10.3.app")
-    puts(sh("swiftc", "-version"))
+    puts(sh("swiftc", "--version"))
     jazzy(config:".jazzy.yaml")
   end
 end
