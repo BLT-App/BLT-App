@@ -41,7 +41,7 @@ class bltscreenshots: XCTestCase {
         snapshot("NewItem")
         print("Screenshotted New Item")
         
-        app.buttons["Add"].tap()
+        app.buttons["back"].tap()
         app.tabBars.buttons["Focus"].tap()
         app.datePickers.pickerWheels.firstMatch.adjust(toPickerWheelValue: "0")
         app.datePickers.pickerWheels.element(boundBy: 1).adjust(toPickerWheelValue: "3")
