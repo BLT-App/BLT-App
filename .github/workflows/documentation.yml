@@ -14,28 +14,6 @@ on:
       - 'BLT/fastlane/Fastfile'
 
 jobs:
-  GenerateDocumentation:
-    name: Generate Jazzy Documentation
-    runs-on: macOS-latest
-    
-    steps:
-    - uses: actions/checkout@master
-    - name: Run Jazzy
-      run: |
-        cd BLT
-        fastlane documentation
-    - name: Commit Files
-      run: |
-        git config --local user.email "${{ secrets.BLT_BOT_EMAIL }}"
-        git config --local user.name "BLT-BOT"
-        git add -A
-        git commit -m "Generated Documentation" -a
-    - name: Push Documentation To Repository
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.ref }}
-  
   GetScreenshots:
     name: Updates The Screenshots Of Each Page
     runs-on: macOS-latest
