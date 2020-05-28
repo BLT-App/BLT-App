@@ -33,7 +33,7 @@ class bltscreenshots: XCTestCase {
         
         app.buttons["Add New Task Button"].tap()
         app.textFields["Class Name"].tap()
-        app/*@START_MENU_TOKEN@*/.otherElements["drop_down"].tables/*[[".otherElements[\"drop_down\"].tables",".tables"],[[[-1,1],[-1,0]]],[1]]@END_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"English").element.tap()
+        app.tables.cells.containing(.staticText, identifier:"English").element.tap()
         app.textFields["Assignment"].tap()
         app.typeText("Read Gatsby")
         app.textViews["DescriptionField"].tap()
