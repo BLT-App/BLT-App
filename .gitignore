@@ -132,4 +132,5 @@ Carthage/Build
 # Ignores .idea files. 
 BLT/.idea/*
 BLT/.idea/
-BLT/fastlane/report.xml
+
+**/report.xml
