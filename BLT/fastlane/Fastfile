@@ -25,8 +25,11 @@ platform :ios do
   desc "Create A Beta Build"
   lane :beta do
     xcversion(version: "10.1") # Selects Xcode 10.1
-    match(type: "development", readonly: is_ci)
-    build_app(scheme: "BLT", workspace: "BLT.xcworkspace", export_method: "development")
+    match(type: "appstore", readonly: is_ci)
+    increment_build_number
+    commit_version_bump
+    build_app(scheme: "BLT", workspace: "BLT.xcworkspace")
+    pilot
   end
   desc "Resets All Certifications And Regens Them"
   lane :regencerts do
