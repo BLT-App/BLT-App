@@ -828,9 +828,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.getblt.blt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Nick's BLT Provisioning Profile";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore app.getblt.blt";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -848,9 +849,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = app.getblt.blt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Nick's BLT Provisioning Profile";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore app.getblt.blt";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
