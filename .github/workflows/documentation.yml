@@ -1,0 +1,37 @@
+name: Documentation
+
+on:
+  push:
+    branches:
+     - master
+     - fastlane
+    paths:
+      - '.github/workflows/documentation.yml'
+      - '.documentation.yml'
+      - 'BLT/**/*.swift'
+      - 'BLT/.jazzy.yaml'
+      - 'BLT/fastlane/Snapfile'
+      - 'BLT/fastlane/Fastfile'
+
+jobs:
+  GetScreenshots:
+    name: Updates The Screenshots Of Each Page
+    runs-on: macOS-latest
+    
+    steps:
+    - uses: actions/checkout@master
+    - name: Run Snapshot
+      run: |
+        cd BLT
+        fastlane screenshots
+    - name: Commit Files
+      run: |
+        git config --local user.email "${{ secrets.BLT_BOT_EMAIL }}"
+        git config --local user.name "BLT-BOT"
+        git add -A
+        git commit -m "Generated Screenshots" -a
+    - name: Push Screenshots To Repository
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}

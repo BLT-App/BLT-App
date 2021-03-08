@@ -46,6 +46,7 @@ class FMPopUpViewController: UIViewController {
 		self.popUpView.layer.cornerRadius = 20
         addShadow(view: popUpView, color: UIColor.gray.cgColor, opacity: 0.5, radius: 10, offset: CGSize(width: 0, height: 5))
 		timePicker.datePickerMode = .countDownTimer
+        timePicker.countDownDuration = 60.0
 		self.showAnimate()
 	}
     

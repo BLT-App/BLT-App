@@ -8,7 +8,7 @@ readme: README.md
 documentation: Documentation/*.md
 hide_documentation_coverage: false
 sdk: iphonesimulator
-swift_version: '4.2.1'
+swift_version: '5.0.1'
 module: 'BLT'
 xcodebuild_arguments: ["-workspace","BLT.xcworkspace", "-scheme", "BLT"]
 output: ../docs

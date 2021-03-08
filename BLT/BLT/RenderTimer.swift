@@ -27,6 +27,10 @@ class RenderTimer {
     /// - Parameter interval:  Number of milliseconds between calls to render
 	func runTimer(interval: Double) {
 		myTimer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(updateVals), userInfo: nil, repeats: true)
+        if UserDefaults.standard.object(forKey: "IsTesting") == nil {
+            myTimer.invalidate()
+            delegate?.render()
+        }
 	}
     
     /// Function Called From Thread

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.101433">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: capture_screenshots" time="1014.301419">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: brew install imagemagick" time="78.630835">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: frame_screenshots" time="25.325815">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>
